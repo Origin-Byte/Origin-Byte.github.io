@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OriginByte</title>
+
+<link type="text/css" rel="stylesheet" href="./assets/style.css">
+
+</head>
+<body>
+<nav>
+<a href="./index.html">
+    <img src="./assets/accent.svg" style="position: absolute">
+    <img src="./assets/ob.svg" class="logo">
+</a>
+<h3>Modules</h3>
+<ul><li>
+<a href="./err.html">err</a>
+<ul class="methods"></ul></li><li>
+<a href="./utils.html">utils</a>
+<ul class="methods"><li data-type="struct">
+    <a href="./utils.html#Marker">Marker</a>       
+</li></ul></li><li>
+<a href="./supply.html">supply</a>
+<ul class="methods"><li data-type="struct">
+    <a href="./supply.html#Supply">Supply</a>       
+</li></ul></li><li>
+<a href="./supply_policy.html">supply_policy</a>
+<ul class="methods"><li data-type="struct">
+    <a href="./supply_policy.html#SupplyPolicy">SupplyPolicy</a>       
+</li></ul></li><li>
+<a href="./collection.html">collection</a>
+<ul class="methods"><li data-type="struct">
+    <a href="./collection.html#BurnEvent">BurnEvent</a>       
+</li><li data-type="struct">
+    <a href="./collection.html#Collection">Collection</a>       
+</li><li data-type="struct">
+    <a href="./collection.html#MintCap">MintCap</a>       
+</li><li data-type="struct">
+    <a href="./collection.html#MintEvent">MintEvent</a>       
+</li></ul></li><li>
+<a href="./attribution.html">attribution</a>
+<ul class="methods"><li data-type="struct">
+    <a href="./attribution.html#Witness">Witness</a>       
+</li><li data-type="struct">
+    <a href="./attribution.html#AttributionDomain">AttributionDomain</a>       
+</li><li data-type="struct">
+    <a href="./attribution.html#Creator">Creator</a>       
+</li></ul></li><li>
+<a href="./transfer_whitelist.html">transfer_whitelist</a>
+<ul class="methods"><li data-type="struct">
+    <a href="./transfer_whitelist.html#CollectionControlCap">CollectionControlCap</a>       
+</li><li data-type="struct">
+    <a href="./transfer_whitelist.html#Whitelist">Whitelist</a>       
+</li></ul></li><li>
+<a href="./royalties.html">royalties</a>
+<ul class="methods"><li data-type="struct">
+    <a href="./royalties.html#TradePayment">TradePayment</a>       
+</li></ul></li><li>
+<a href="./trading.html">trading</a>
+<ul class="methods"><li data-type="struct">
+    <a href="./trading.html#AskCommission">AskCommission</a>       
+</li><li data-type="struct">
+    <a href="./trading.html#BidCommission">BidCommission</a>       
+</li></ul></li><li>
+<a href="./nft.html">nft</a>
+<ul class="methods"><li data-type="struct">
+    <a href="./nft.html#Nft">Nft</a>       
+</li></ul></li><li>
+<a href="./unprotected_safe.html">unprotected_safe</a>
+<ul class="methods"><li data-type="struct">
+    <a href="./unprotected_safe.html#DepositEvent">DepositEvent</a>       
+</li><li data-type="struct">
+    <a href="./unprotected_safe.html#NftRef">NftRef</a>       
+</li><li data-type="struct">
+    <a href="./unprotected_safe.html#OwnerCap">OwnerCap</a>       
+</li><li data-type="struct">
+    <a href="./unprotected_safe.html#TransferCap">TransferCap</a>       
+</li><li data-type="struct">
+    <a href="./unprotected_safe.html#TransferEvent">TransferEvent</a>       
+</li><li data-type="struct">
+    <a href="./unprotected_safe.html#UnprotectedSafe">UnprotectedSafe</a>       
+</li></ul></li><li>
+<a href="./safe.html">safe</a>
+<ul class="methods"><li data-type="struct">
+    <a href="./safe.html#OwnerCap">OwnerCap</a>       
+</li><li data-type="struct">
+    <a href="./safe.html#TransferCap">TransferCap</a>       
+</li><li data-type="struct">
+    <a href="./safe.html#Safe">Safe</a>       
+</li></ul></li><li>
+<a href="./bidding.html">bidding</a>
+<ul class="methods"><li data-type="struct">
+    <a href="./bidding.html#Witness">Witness</a>       
+</li><li data-type="struct">
+    <a href="./bidding.html#Bid">Bid</a>       
+</li><li data-type="struct">
+    <a href="./bidding.html#BidClosed">BidClosed</a>       
+</li><li data-type="struct">
+    <a href="./bidding.html#BidCreated">BidCreated</a>       
+</li></ul></li><li>
+<a href="./display.html">display</a>
+<ul class="methods"><li data-type="struct">
+    <a href="./display.html#Witness">Witness</a>       
+</li><li data-type="struct">
+    <a href="./display.html#AttributesDomain">AttributesDomain</a>       
+</li><li data-type="struct">
+    <a href="./display.html#DisplayDomain">DisplayDomain</a>       
+</li><li data-type="struct">
+    <a href="./display.html#SymbolDomain">SymbolDomain</a>       
+</li><li data-type="struct">
+    <a href="./display.html#UrlDomain">UrlDomain</a>       
+</li></ul></li><li>
+<a href="./proceeds.html">proceeds</a>
+<ul class="methods"><li data-type="struct">
+    <a href="./proceeds.html#Proceeds">Proceeds</a>       
+</li><li data-type="struct">
+    <a href="./proceeds.html#QtSold">QtSold</a>       
+</li></ul></li><li>
+<a href="./object_box.html">object_box</a>
+<ul class="methods"><li data-type="struct">
+    <a href="./object_box.html#ObjectBox">ObjectBox</a>       
+</li></ul></li><li>
+<a href="./launchpad.html">launchpad</a>
+<ul class="methods"><li data-type="struct">
+    <a href="./launchpad.html#Launchpad">Launchpad</a>       
+</li></ul></li><li>
+<a href="./inventory.html">inventory</a>
+<ul class="methods"><li data-type="struct">
+    <a href="./inventory.html#Inventory">Inventory</a>       
+</li></ul></li><li>
+<a href="./slot.html">slot</a>
+<ul class="methods"><li data-type="struct">
+    <a href="./slot.html#CreateSlotEvent">CreateSlotEvent</a>       
+</li><li data-type="struct">
+    <a href="./slot.html#DeleteSlotEvent">DeleteSlotEvent</a>       
+</li><li data-type="struct">
+    <a href="./slot.html#NftCertificate">NftCertificate</a>       
+</li><li data-type="struct">
+    <a href="./slot.html#Slot">Slot</a>       
+</li><li data-type="struct">
+    <a href="./slot.html#WhitelistCertificate">WhitelistCertificate</a>       
+</li></ul></li><li>
+<a href="./dutch_auction.html">dutch_auction</a>
+<ul class="methods"><li data-type="struct">
+    <a href="./dutch_auction.html#Witness">Witness</a>       
+</li><li data-type="struct">
+    <a href="./dutch_auction.html#Bid">Bid</a>       
+</li><li data-type="struct">
+    <a href="./dutch_auction.html#DutchAuctionMarket">DutchAuctionMarket</a>       
+</li></ul></li><li>
+<a href="./fixed_price.html">fixed_price</a>
+<ul class="methods"><li data-type="struct">
+    <a href="./fixed_price.html#Witness">Witness</a>       
+</li><li data-type="struct">
+    <a href="./fixed_price.html#FixedPriceMarket">FixedPriceMarket</a>       
+</li></ul></li><li>
+<a href="./flat_fee.html">flat_fee</a>
+<ul class="methods"><li data-type="struct">
+    <a href="./flat_fee.html#FlatFee">FlatFee</a>       
+</li></ul></li><li>
+<a href="./flyweight.html">flyweight</a>
+<ul class="methods"><li data-type="struct">
+    <a href="./flyweight.html#BurnEvent">BurnEvent</a>       
+</li><li data-type="struct">
+    <a href="./flyweight.html#MintEvent">MintEvent</a>       
+</li><li data-type="struct">
+    <a href="./flyweight.html#Archetype">Archetype</a>       
+</li><li data-type="struct">
+    <a href="./flyweight.html#Pointer">Pointer</a>       
+</li><li data-type="struct">
+    <a href="./flyweight.html#Registry">Registry</a>       
+</li></ul></li><li>
+<a href="./ob.html">ob</a>
+<ul class="methods"><li data-type="struct">
+    <a href="./ob.html#Witness">Witness</a>       
+</li><li data-type="struct">
+    <a href="./ob.html#Bid">Bid</a>       
+</li><li data-type="struct">
+    <a href="./ob.html#BidClosed">BidClosed</a>       
+</li><li data-type="struct">
+    <a href="./ob.html#BidCreated">BidCreated</a>       
+</li><li data-type="struct">
+    <a href="./ob.html#Ask">Ask</a>       
+</li><li data-type="struct">
+    <a href="./ob.html#AskClosed">AskClosed</a>       
+</li><li data-type="struct">
+    <a href="./ob.html#AskCreated">AskCreated</a>       
+</li><li data-type="struct">
+    <a href="./ob.html#Orderbook">Orderbook</a>       
+</li><li data-type="struct">
+    <a href="./ob.html#TradeExecuted">TradeExecuted</a>       
+</li><li data-type="struct">
+    <a href="./ob.html#TradeIntermediate">TradeIntermediate</a>       
+</li><li data-type="struct">
+    <a href="./ob.html#WitnessProtectedActions">WitnessProtectedActions</a>       
+</li></ul></li><li>
+<a href="./royalty_strategy_constant.html">royalty_strategy_constant</a>
+<ul class="methods"><li data-type="struct">
+    <a href="./royalty_strategy_constant.html#ConstantRoyaltyStrategy">ConstantRoyaltyStrategy</a>       
+</li></ul></li><li>
+<a href="./royalty_strategy_bps.html">royalty_strategy_bps</a>
+<ul class="methods"><li data-type="struct">
+    <a href="./royalty_strategy_bps.html#BpsRoyaltyStrategy">BpsRoyaltyStrategy</a>       
+</li></ul></li><li>
+<a href="./royalty.html">royalty</a>
+<ul class="methods"><li data-type="struct">
+    <a href="./royalty.html#Witness">Witness</a>       
+</li><li data-type="struct">
+    <a href="./royalty.html#RoyaltyDomain">RoyaltyDomain</a>       
+</li></ul></li><li>
+<a href="./tags.html">tags</a>
+<ul class="methods"><li data-type="struct">
+    <a href="./tags.html#Witness">Witness</a>       
+</li><li data-type="struct">
+    <a href="./tags.html#Art">Art</a>       
+</li><li data-type="struct">
+    <a href="./tags.html#Collectible">Collectible</a>       
+</li><li data-type="struct">
+    <a href="./tags.html#DomainName">DomainName</a>       
+</li><li data-type="struct">
+    <a href="./tags.html#GameAsset">GameAsset</a>       
+</li><li data-type="struct">
+    <a href="./tags.html#License">License</a>       
+</li><li data-type="struct">
+    <a href="./tags.html#Music">Music</a>       
+</li><li data-type="struct">
+    <a href="./tags.html#ProfilePicture">ProfilePicture</a>       
+</li><li data-type="struct">
+    <a href="./tags.html#TagDomain">TagDomain</a>       
+</li><li data-type="struct">
+    <a href="./tags.html#Ticker">Ticker</a>       
+</li><li data-type="struct">
+    <a href="./tags.html#Ticket">Ticket</a>       
+</li><li data-type="struct">
+    <a href="./tags.html#TokenisedAsset">TokenisedAsset</a>       
+</li><li data-type="struct">
+    <a href="./tags.html#Video">Video</a>       
+</li></ul></li></ul></nav>
+<div id="main"><h1 class="page-title">bidding</h1>
+<section class="readme">
+    <header>
+        <h2>0x0::bidding</h2>
+    </header>
+    <article>
+        <p>Bidding module that allows users to bid for any given NFT in a safe,
+giving NFT owners a platform to sell their NFTs to any available bid.</p>
+
+        <h3 class="subsection-title">Structs</h3>
+        <div class="container-overview">
+    <h2>Witness</h2>
+    <span class="name-container">
+        <h4 class="name" id="Witness">0x0::bidding::Witness</h4>
+    </span>
+    <div class="description"></div>
+    <h5>Fields:</h5>
+    <table class="params">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th class="last">Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+    <td class="name">
+        <code>dummy_field</code>            
+    </td>
+    <td class="type">
+        <code>bool</code>  
+    </td>
+    <td class="description last"></td>
+</tr>
+        </tbody>
+    </table>
+</div><div class="container-overview">
+    <h2>Bid</h2>
+    <span class="name-container">
+        <h4 class="name" id="Bid">0x0::bidding::Bid</h4>
+    </span>
+    <div class="description"></div>
+    <h5>Fields:</h5>
+    <table class="params">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th class="last">Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+    <td class="name">
+        <code>id</code>            
+    </td>
+    <td class="type">
+        <code>object::UID</code>  
+    </td>
+    <td class="description last"></td>
+</tr><tr>
+    <td class="name">
+        <code>nft</code>            
+    </td>
+    <td class="type">
+        <code>object::ID</code>  
+    </td>
+    <td class="description last"></td>
+</tr><tr>
+    <td class="name">
+        <code>buyer</code>            
+    </td>
+    <td class="type">
+        <code>address</code>  
+    </td>
+    <td class="description last"></td>
+</tr><tr>
+    <td class="name">
+        <code>safe</code>            
+    </td>
+    <td class="type">
+        <code>object::ID</code>  
+    </td>
+    <td class="description last"></td>
+</tr><tr>
+    <td class="name">
+        <code>offer</code>            
+    </td>
+    <td class="type">
+        <code>balance::Balance<#0></code>  
+    </td>
+    <td class="description last"></td>
+</tr><tr>
+    <td class="name">
+        <code>commission</code>            
+    </td>
+    <td class="type">
+        <code>option::Option<trading::BidCommission<#0>></code>  
+    </td>
+    <td class="description last"></td>
+</tr>
+        </tbody>
+    </table>
+</div><div class="container-overview">
+    <h2>BidCreated</h2>
+    <span class="name-container">
+        <h4 class="name" id="BidCreated">0x0::bidding::BidCreated</h4>
+    </span>
+    <div class="description"></div>
+    <h5>Fields:</h5>
+    <table class="params">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th class="last">Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+    <td class="name">
+        <code>id</code>            
+    </td>
+    <td class="type">
+        <code>object::ID</code>  
+    </td>
+    <td class="description last"></td>
+</tr><tr>
+    <td class="name">
+        <code>for_nft</code>            
+    </td>
+    <td class="type">
+        <code>object::ID</code>  
+    </td>
+    <td class="description last"></td>
+</tr><tr>
+    <td class="name">
+        <code>price</code>            
+    </td>
+    <td class="type">
+        <code>u64</code>  
+    </td>
+    <td class="description last"></td>
+</tr>
+        </tbody>
+    </table>
+</div><div class="container-overview">
+    <h2>BidClosed</h2>
+    <span class="name-container">
+        <h4 class="name" id="BidClosed">0x0::bidding::BidClosed</h4>
+    </span>
+    <div class="description"></div>
+    <h5>Fields:</h5>
+    <table class="params">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th class="last">Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+    <td class="name">
+        <code>id</code>            
+    </td>
+    <td class="type">
+        <code>object::ID</code>  
+    </td>
+    <td class="description last"></td>
+</tr><tr>
+    <td class="name">
+        <code>sold</code>            
+    </td>
+    <td class="type">
+        <code>bool</code>  
+    </td>
+    <td class="description last"><p>Either sold or canceled</p>
+</td>
+</tr>
+        </tbody>
+    </table>
+</div>
+        <h3 class="subsection-title">Methods</h3>
+        <span class="name-container">
+    <h4 class="name" id="create_bid"><pre>public fun create_bid&lt;FT&gt;(
+    nft: object::ID,
+    buyers_safe: object::ID,
+    price: u64,
+    wallet: &amp;mut coin::Coin&lt;FT&gt;,
+    ctx: &amp;mut tx_context::TxContext,
+)</pre></h4>
+</span>
+<div class="description"><p>Payable entry function to create a bid for an NFT.</p>
+<p>It performs the following:</p>
+<ul>
+<li>Sends funds Balance<!-- raw HTML omitted --> from <code>wallet</code> to the <code>bid</code></li>
+<li>Creates object <code>bid</code> and shares it.</li>
+</ul>
+</div><span class="name-container">
+    <h4 class="name" id="create_bid_with_commission"><pre>public fun create_bid_with_commission&lt;FT&gt;(
+    nft: object::ID,
+    buyers_safe: object::ID,
+    price: u64,
+    beneficiary: address,
+    commission_ft: u64,
+    wallet: &amp;mut coin::Coin&lt;FT&gt;,
+    ctx: &amp;mut tx_context::TxContext,
+)</pre></h4>
+</span>
+<div class="description"><p>Payable entry function to create a bid for an NFT.</p>
+<p>It performs the following:</p>
+<ul>
+<li>Sends funds Balance<!-- raw HTML omitted --> from <code>wallet</code> to the <code>bid</code></li>
+<li>Creates object <code>bid</code> with <code>commission</code> and shares it.</li>
+</ul>
+<p>To be called by a intermediate application, for the purpose
+of securing a commission for intermediating the process.</p>
+</div><span class="name-container">
+    <h4 class="name" id="sell_nft"><pre>public fun sell_nft&lt;C, FT&gt;(
+    bid: &amp;mut bidding::Bid&lt;FT&gt;,
+    transfer_cap: safe::TransferCap,
+    sellers_safe: &amp;mut safe::Safe,
+    buyers_safe: &amp;mut safe::Safe,
+    whitelist: &amp;transfer_whitelist::Whitelist,
+    ctx: &amp;mut tx_context::TxContext,
+)</pre></h4>
+</span>
+<div class="description"><p>Entry function to sell an NFT with an open <code>bid</code>.</p>
+<p>It performs the following:</p>
+<ul>
+<li>Splits funds from <code>Bid&lt;FT&gt;</code> by:
+<ul>
+<li>(1) Creating TradePayment&lt;C, FT&gt; for the trade amount</li>
+</ul>
+</li>
+<li>Transfers NFT from <code>sellers_safe</code> to <code>buyers_safe</code> and
+burns <code>TransferCap</code></li>
+<li>Transfers bid commission funds to the address
+<code>bid.commission.beneficiary</code></li>
+</ul>
+</div><span class="name-container">
+    <h4 class="name" id="sell_nft_with_commission"><pre>public fun sell_nft_with_commission&lt;C, FT&gt;(
+    bid: &amp;mut bidding::Bid&lt;FT&gt;,
+    transfer_cap: safe::TransferCap,
+    beneficiary: address,
+    commission_ft: u64,
+    sellers_safe: &amp;mut safe::Safe,
+    buyers_safe: &amp;mut safe::Safe,
+    whitelist: &amp;transfer_whitelist::Whitelist,
+    ctx: &amp;mut tx_context::TxContext,
+)</pre></h4>
+</span>
+<div class="description"><p>Entry function to sell an NFT with an open <code>bid</code>.</p>
+<p>It performs the following:</p>
+<ul>
+<li>Splits funds from <code>Bid&lt;FT&gt;</code> by:
+<ul>
+<li>(1) Creating TradePayment&lt;C, FT&gt; for the Ask commision</li>
+<li>(2) Creating TradePayment&lt;C, FT&gt; for the net trade amount</li>
+</ul>
+</li>
+<li>Transfers NFT from <code>sellers_safe</code> to <code>buyers_safe</code> and
+burns <code>TransferCap</code></li>
+<li>Transfers bid commission funds to the address
+<code>bid.commission.beneficiary</code></li>
+</ul>
+<p>To be called by a intermediate application, for the purpose of
+securing a commission for intermediating the process.</p>
+</div><span class="name-container">
+    <h4 class="name" id="close_bid"><pre>public fun close_bid&lt;FT&gt;(
+    bid: &amp;mut bidding::Bid&lt;FT&gt;,
+    ctx: &amp;mut tx_context::TxContext,
+)</pre></h4>
+</span>
+<div class="description"><p>If a user wants to cancel their position, they get their coins back.</p>
+</div>
+    </article>
+</section><br class="clear">
+<!--<footer>OriginByte.io</footer>-->
+</div>
+</body>
+</html>

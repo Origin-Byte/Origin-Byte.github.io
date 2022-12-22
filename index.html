@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OriginByte</title>
+
+<link type="text/css" rel="stylesheet" href="./assets/style.css">
+
+</head>
+<body>
+<nav>
+<a href="./index.html">
+    <img src="./assets/accent.svg" style="position: absolute">
+    <img src="./assets/ob.svg" class="logo">
+</a>
+<h3>Modules</h3>
+<ul><li>
+<a href="./err.html">err</a>
+<ul class="methods"></ul></li><li>
+<a href="./utils.html">utils</a>
+<ul class="methods"><li data-type="struct">
+    <a href="./utils.html#Marker">Marker</a>       
+</li></ul></li><li>
+<a href="./supply.html">supply</a>
+<ul class="methods"><li data-type="struct">
+    <a href="./supply.html#Supply">Supply</a>       
+</li></ul></li><li>
+<a href="./supply_policy.html">supply_policy</a>
+<ul class="methods"><li data-type="struct">
+    <a href="./supply_policy.html#SupplyPolicy">SupplyPolicy</a>       
+</li></ul></li><li>
+<a href="./collection.html">collection</a>
+<ul class="methods"><li data-type="struct">
+    <a href="./collection.html#BurnEvent">BurnEvent</a>       
+</li><li data-type="struct">
+    <a href="./collection.html#Collection">Collection</a>       
+</li><li data-type="struct">
+    <a href="./collection.html#MintCap">MintCap</a>       
+</li><li data-type="struct">
+    <a href="./collection.html#MintEvent">MintEvent</a>       
+</li></ul></li><li>
+<a href="./attribution.html">attribution</a>
+<ul class="methods"><li data-type="struct">
+    <a href="./attribution.html#Witness">Witness</a>       
+</li><li data-type="struct">
+    <a href="./attribution.html#AttributionDomain">AttributionDomain</a>       
+</li><li data-type="struct">
+    <a href="./attribution.html#Creator">Creator</a>       
+</li></ul></li><li>
+<a href="./transfer_whitelist.html">transfer_whitelist</a>
+<ul class="methods"><li data-type="struct">
+    <a href="./transfer_whitelist.html#CollectionControlCap">CollectionControlCap</a>       
+</li><li data-type="struct">
+    <a href="./transfer_whitelist.html#Whitelist">Whitelist</a>       
+</li></ul></li><li>
+<a href="./royalties.html">royalties</a>
+<ul class="methods"><li data-type="struct">
+    <a href="./royalties.html#TradePayment">TradePayment</a>       
+</li></ul></li><li>
+<a href="./trading.html">trading</a>
+<ul class="methods"><li data-type="struct">
+    <a href="./trading.html#AskCommission">AskCommission</a>       
+</li><li data-type="struct">
+    <a href="./trading.html#BidCommission">BidCommission</a>       
+</li></ul></li><li>
+<a href="./nft.html">nft</a>
+<ul class="methods"><li data-type="struct">
+    <a href="./nft.html#Nft">Nft</a>       
+</li></ul></li><li>
+<a href="./unprotected_safe.html">unprotected_safe</a>
+<ul class="methods"><li data-type="struct">
+    <a href="./unprotected_safe.html#DepositEvent">DepositEvent</a>       
+</li><li data-type="struct">
+    <a href="./unprotected_safe.html#NftRef">NftRef</a>       
+</li><li data-type="struct">
+    <a href="./unprotected_safe.html#OwnerCap">OwnerCap</a>       
+</li><li data-type="struct">
+    <a href="./unprotected_safe.html#TransferCap">TransferCap</a>       
+</li><li data-type="struct">
+    <a href="./unprotected_safe.html#TransferEvent">TransferEvent</a>       
+</li><li data-type="struct">
+    <a href="./unprotected_safe.html#UnprotectedSafe">UnprotectedSafe</a>       
+</li></ul></li><li>
+<a href="./safe.html">safe</a>
+<ul class="methods"><li data-type="struct">
+    <a href="./safe.html#OwnerCap">OwnerCap</a>       
+</li><li data-type="struct">
+    <a href="./safe.html#TransferCap">TransferCap</a>       
+</li><li data-type="struct">
+    <a href="./safe.html#Safe">Safe</a>       
+</li></ul></li><li>
+<a href="./bidding.html">bidding</a>
+<ul class="methods"><li data-type="struct">
+    <a href="./bidding.html#Witness">Witness</a>       
+</li><li data-type="struct">
+    <a href="./bidding.html#Bid">Bid</a>       
+</li><li data-type="struct">
+    <a href="./bidding.html#BidClosed">BidClosed</a>       
+</li><li data-type="struct">
+    <a href="./bidding.html#BidCreated">BidCreated</a>       
+</li></ul></li><li>
+<a href="./display.html">display</a>
+<ul class="methods"><li data-type="struct">
+    <a href="./display.html#Witness">Witness</a>       
+</li><li data-type="struct">
+    <a href="./display.html#AttributesDomain">AttributesDomain</a>       
+</li><li data-type="struct">
+    <a href="./display.html#DisplayDomain">DisplayDomain</a>       
+</li><li data-type="struct">
+    <a href="./display.html#SymbolDomain">SymbolDomain</a>       
+</li><li data-type="struct">
+    <a href="./display.html#UrlDomain">UrlDomain</a>       
+</li></ul></li><li>
+<a href="./proceeds.html">proceeds</a>
+<ul class="methods"><li data-type="struct">
+    <a href="./proceeds.html#Proceeds">Proceeds</a>       
+</li><li data-type="struct">
+    <a href="./proceeds.html#QtSold">QtSold</a>       
+</li></ul></li><li>
+<a href="./object_box.html">object_box</a>
+<ul class="methods"><li data-type="struct">
+    <a href="./object_box.html#ObjectBox">ObjectBox</a>       
+</li></ul></li><li>
+<a href="./launchpad.html">launchpad</a>
+<ul class="methods"><li data-type="struct">
+    <a href="./launchpad.html#Launchpad">Launchpad</a>       
+</li></ul></li><li>
+<a href="./inventory.html">inventory</a>
+<ul class="methods"><li data-type="struct">
+    <a href="./inventory.html#Inventory">Inventory</a>       
+</li></ul></li><li>
+<a href="./slot.html">slot</a>
+<ul class="methods"><li data-type="struct">
+    <a href="./slot.html#CreateSlotEvent">CreateSlotEvent</a>       
+</li><li data-type="struct">
+    <a href="./slot.html#DeleteSlotEvent">DeleteSlotEvent</a>       
+</li><li data-type="struct">
+    <a href="./slot.html#NftCertificate">NftCertificate</a>       
+</li><li data-type="struct">
+    <a href="./slot.html#Slot">Slot</a>       
+</li><li data-type="struct">
+    <a href="./slot.html#WhitelistCertificate">WhitelistCertificate</a>       
+</li></ul></li><li>
+<a href="./dutch_auction.html">dutch_auction</a>
+<ul class="methods"><li data-type="struct">
+    <a href="./dutch_auction.html#Witness">Witness</a>       
+</li><li data-type="struct">
+    <a href="./dutch_auction.html#Bid">Bid</a>       
+</li><li data-type="struct">
+    <a href="./dutch_auction.html#DutchAuctionMarket">DutchAuctionMarket</a>       
+</li></ul></li><li>
+<a href="./fixed_price.html">fixed_price</a>
+<ul class="methods"><li data-type="struct">
+    <a href="./fixed_price.html#Witness">Witness</a>       
+</li><li data-type="struct">
+    <a href="./fixed_price.html#FixedPriceMarket">FixedPriceMarket</a>       
+</li></ul></li><li>
+<a href="./flat_fee.html">flat_fee</a>
+<ul class="methods"><li data-type="struct">
+    <a href="./flat_fee.html#FlatFee">FlatFee</a>       
+</li></ul></li><li>
+<a href="./flyweight.html">flyweight</a>
+<ul class="methods"><li data-type="struct">
+    <a href="./flyweight.html#BurnEvent">BurnEvent</a>       
+</li><li data-type="struct">
+    <a href="./flyweight.html#MintEvent">MintEvent</a>       
+</li><li data-type="struct">
+    <a href="./flyweight.html#Archetype">Archetype</a>       
+</li><li data-type="struct">
+    <a href="./flyweight.html#Pointer">Pointer</a>       
+</li><li data-type="struct">
+    <a href="./flyweight.html#Registry">Registry</a>       
+</li></ul></li><li>
+<a href="./ob.html">ob</a>
+<ul class="methods"><li data-type="struct">
+    <a href="./ob.html#Witness">Witness</a>       
+</li><li data-type="struct">
+    <a href="./ob.html#Bid">Bid</a>       
+</li><li data-type="struct">
+    <a href="./ob.html#BidClosed">BidClosed</a>       
+</li><li data-type="struct">
+    <a href="./ob.html#BidCreated">BidCreated</a>       
+</li><li data-type="struct">
+    <a href="./ob.html#Ask">Ask</a>       
+</li><li data-type="struct">
+    <a href="./ob.html#AskClosed">AskClosed</a>       
+</li><li data-type="struct">
+    <a href="./ob.html#AskCreated">AskCreated</a>       
+</li><li data-type="struct">
+    <a href="./ob.html#Orderbook">Orderbook</a>       
+</li><li data-type="struct">
+    <a href="./ob.html#TradeExecuted">TradeExecuted</a>       
+</li><li data-type="struct">
+    <a href="./ob.html#TradeIntermediate">TradeIntermediate</a>       
+</li><li data-type="struct">
+    <a href="./ob.html#WitnessProtectedActions">WitnessProtectedActions</a>       
+</li></ul></li><li>
+<a href="./royalty_strategy_constant.html">royalty_strategy_constant</a>
+<ul class="methods"><li data-type="struct">
+    <a href="./royalty_strategy_constant.html#ConstantRoyaltyStrategy">ConstantRoyaltyStrategy</a>       
+</li></ul></li><li>
+<a href="./royalty_strategy_bps.html">royalty_strategy_bps</a>
+<ul class="methods"><li data-type="struct">
+    <a href="./royalty_strategy_bps.html#BpsRoyaltyStrategy">BpsRoyaltyStrategy</a>       
+</li></ul></li><li>
+<a href="./royalty.html">royalty</a>
+<ul class="methods"><li data-type="struct">
+    <a href="./royalty.html#Witness">Witness</a>       
+</li><li data-type="struct">
+    <a href="./royalty.html#RoyaltyDomain">RoyaltyDomain</a>       
+</li></ul></li><li>
+<a href="./tags.html">tags</a>
+<ul class="methods"><li data-type="struct">
+    <a href="./tags.html#Witness">Witness</a>       
+</li><li data-type="struct">
+    <a href="./tags.html#Art">Art</a>       
+</li><li data-type="struct">
+    <a href="./tags.html#Collectible">Collectible</a>       
+</li><li data-type="struct">
+    <a href="./tags.html#DomainName">DomainName</a>       
+</li><li data-type="struct">
+    <a href="./tags.html#GameAsset">GameAsset</a>       
+</li><li data-type="struct">
+    <a href="./tags.html#License">License</a>       
+</li><li data-type="struct">
+    <a href="./tags.html#Music">Music</a>       
+</li><li data-type="struct">
+    <a href="./tags.html#ProfilePicture">ProfilePicture</a>       
+</li><li data-type="struct">
+    <a href="./tags.html#TagDomain">TagDomain</a>       
+</li><li data-type="struct">
+    <a href="./tags.html#Ticker">Ticker</a>       
+</li><li data-type="struct">
+    <a href="./tags.html#Ticket">Ticket</a>       
+</li><li data-type="struct">
+    <a href="./tags.html#TokenisedAsset">TokenisedAsset</a>       
+</li><li data-type="struct">
+    <a href="./tags.html#Video">Video</a>       
+</li></ul></li></ul></nav>
+<div id="main"><section class="readme">
+    <article>
+        <p><span class="rule"></span></p>
+        <h2>Modules</h2>
+        
+<p><span class="rule"></span></p>
+<h3><a href="./err.html">0x0::err</a></h3>
+<p><p>Exports error functions. All errors in this smart contract have a prefix</p>
+</p>
+<p><span class="rule"></span></p>
+<h3><a href="./utils.html">0x0::utils</a></h3>
+<p><p>Utility functions</p>
+</p>
+<p><span class="rule"></span></p>
+<h3><a href="./supply.html">0x0::supply</a></h3>
+<p><p>Module contaning <code>Supply</code> type.</p>
+</p>
+<p><span class="rule"></span></p>
+<h3><a href="./supply_policy.html">0x0::supply_policy</a></h3>
+<p><p>Module contaning <code>SupplyPolicy</code> type.</p>
+</p>
+<p><span class="rule"></span></p>
+<h3><a href="./collection.html">0x0::collection</a></h3>
+<p><p>Module of a generic <code>Collection</code> type and a <code>MintAuthority</code> type.</p>
+</p>
+<p><span class="rule"></span></p>
+<h3><a href="./attribution.html">0x0::attribution</a></h3>
+<p><p>Module of Collection <code>Attribution</code> domain.</p>
+</p>
+<p><span class="rule"></span></p>
+<h3><a href="./transfer_whitelist.html">0x0::transfer_whitelist</a></h3>
+<p><p>Whitelists NFT transfers.</p>
+</p>
+<p><span class="rule"></span></p>
+<h3><a href="./royalties.html">0x0::royalties</a></h3>
+<p><p>To enable custom royalty functionality with current Move design, we need</p>
+</p>
+<p><span class="rule"></span></p>
+<h3><a href="./trading.html">0x0::trading</a></h3>
+<p><p>Reusable trading primitives.</p>
+</p>
+<p><span class="rule"></span></p>
+<h3><a href="./nft.html">0x0::nft</a></h3>
+<p><p>Module of a generic <code>Nft</code> type.</p>
+</p>
+<p><span class="rule"></span></p>
+<h3><a href="./unprotected_safe.html">0x0::unprotected_safe</a></h3>
+<p><p>Module of <code>UnprotectedSafe</code> type.</p>
+</p>
+<p><span class="rule"></span></p>
+<h3><a href="./safe.html">0x0::safe</a></h3>
+<p><p>This module extends the functionality of the <code>UnprotectedSafe</code> with</p>
+</p>
+<p><span class="rule"></span></p>
+<h3><a href="./bidding.html">0x0::bidding</a></h3>
+<p><p>Bidding module that allows users to bid for any given NFT in a safe,</p>
+</p>
+<p><span class="rule"></span></p>
+<h3><a href="./display.html">0x0::display</a></h3>
+<p><p>Module of NFT domains for displaying standard information</p>
+</p>
+<p><span class="rule"></span></p>
+<h3><a href="./proceeds.html">0x0::proceeds</a></h3>
+<p><p>Module performing custody of the funds acquired from the sale proceeds of</p>
+</p>
+<p><span class="rule"></span></p>
+<h3><a href="./object_box.html">0x0::object_box</a></h3>
+<p></p>
+<p><span class="rule"></span></p>
+<h3><a href="./launchpad.html">0x0::launchpad</a></h3>
+<p><p>Module of a <code>Launchpad</code> type.</p>
+</p>
+<p><span class="rule"></span></p>
+<h3><a href="./inventory.html">0x0::inventory</a></h3>
+<p><p>Module representing the Nft bookeeping Inventories of <code>Slot</code>s.</p>
+</p>
+<p><span class="rule"></span></p>
+<h3><a href="./slot.html">0x0::slot</a></h3>
+<p><p>Module for an NFT release <code>Slot</code></p>
+</p>
+<p><span class="rule"></span></p>
+<h3><a href="./dutch_auction.html">0x0::dutch_auction</a></h3>
+<p><p>Module of a Dutch Auction Sale <code>Market</code> type.</p>
+</p>
+<p><span class="rule"></span></p>
+<h3><a href="./fixed_price.html">0x0::fixed_price</a></h3>
+<p><p>Module of a Fixed Price Sale <code>Market</code> type.</p>
+</p>
+<p><span class="rule"></span></p>
+<h3><a href="./flat_fee.html">0x0::flat_fee</a></h3>
+<p></p>
+<p><span class="rule"></span></p>
+<h3><a href="./flyweight.html">0x0::flyweight</a></h3>
+<p><p>Module of Nft Flyweight domain.</p>
+</p>
+<p><span class="rule"></span></p>
+<h3><a href="./ob.html">0x0::ob</a></h3>
+<p><p>Orderbook where bids are fungible tokens and asks are NFTs.</p>
+</p>
+<p><span class="rule"></span></p>
+<h3><a href="./royalty_strategy_constant.html">0x0::royalty_strategy_constant</a></h3>
+<p></p>
+<p><span class="rule"></span></p>
+<h3><a href="./royalty_strategy_bps.html">0x0::royalty_strategy_bps</a></h3>
+<p></p>
+<p><span class="rule"></span></p>
+<h3><a href="./royalty.html">0x0::royalty</a></h3>
+<p><p>Module of Collection <code>Royalty</code> domain.</p>
+</p>
+<p><span class="rule"></span></p>
+<h3><a href="./tags.html">0x0::tags</a></h3>
+<p><p>Module of NFT and Collection <code>Tags</code> domain</p>
+</p>    
+    </article>
+</section><br class="clear">
+<!--<footer>OriginByte.io</footer>-->
+</div>
+</body>
+</html>

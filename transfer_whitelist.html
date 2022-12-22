@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OriginByte</title>
+
+<link type="text/css" rel="stylesheet" href="./assets/style.css">
+
+</head>
+<body>
+<nav>
+<a href="./index.html">
+    <img src="./assets/accent.svg" style="position: absolute">
+    <img src="./assets/ob.svg" class="logo">
+</a>
+<h3>Modules</h3>
+<ul><li>
+<a href="./err.html">err</a>
+<ul class="methods"></ul></li><li>
+<a href="./utils.html">utils</a>
+<ul class="methods"><li data-type="struct">
+    <a href="./utils.html#Marker">Marker</a>       
+</li></ul></li><li>
+<a href="./supply.html">supply</a>
+<ul class="methods"><li data-type="struct">
+    <a href="./supply.html#Supply">Supply</a>       
+</li></ul></li><li>
+<a href="./supply_policy.html">supply_policy</a>
+<ul class="methods"><li data-type="struct">
+    <a href="./supply_policy.html#SupplyPolicy">SupplyPolicy</a>       
+</li></ul></li><li>
+<a href="./collection.html">collection</a>
+<ul class="methods"><li data-type="struct">
+    <a href="./collection.html#BurnEvent">BurnEvent</a>       
+</li><li data-type="struct">
+    <a href="./collection.html#Collection">Collection</a>       
+</li><li data-type="struct">
+    <a href="./collection.html#MintCap">MintCap</a>       
+</li><li data-type="struct">
+    <a href="./collection.html#MintEvent">MintEvent</a>       
+</li></ul></li><li>
+<a href="./attribution.html">attribution</a>
+<ul class="methods"><li data-type="struct">
+    <a href="./attribution.html#Witness">Witness</a>       
+</li><li data-type="struct">
+    <a href="./attribution.html#AttributionDomain">AttributionDomain</a>       
+</li><li data-type="struct">
+    <a href="./attribution.html#Creator">Creator</a>       
+</li></ul></li><li>
+<a href="./transfer_whitelist.html">transfer_whitelist</a>
+<ul class="methods"><li data-type="struct">
+    <a href="./transfer_whitelist.html#CollectionControlCap">CollectionControlCap</a>       
+</li><li data-type="struct">
+    <a href="./transfer_whitelist.html#Whitelist">Whitelist</a>       
+</li></ul></li><li>
+<a href="./royalties.html">royalties</a>
+<ul class="methods"><li data-type="struct">
+    <a href="./royalties.html#TradePayment">TradePayment</a>       
+</li></ul></li><li>
+<a href="./trading.html">trading</a>
+<ul class="methods"><li data-type="struct">
+    <a href="./trading.html#AskCommission">AskCommission</a>       
+</li><li data-type="struct">
+    <a href="./trading.html#BidCommission">BidCommission</a>       
+</li></ul></li><li>
+<a href="./nft.html">nft</a>
+<ul class="methods"><li data-type="struct">
+    <a href="./nft.html#Nft">Nft</a>       
+</li></ul></li><li>
+<a href="./unprotected_safe.html">unprotected_safe</a>
+<ul class="methods"><li data-type="struct">
+    <a href="./unprotected_safe.html#DepositEvent">DepositEvent</a>       
+</li><li data-type="struct">
+    <a href="./unprotected_safe.html#NftRef">NftRef</a>       
+</li><li data-type="struct">
+    <a href="./unprotected_safe.html#OwnerCap">OwnerCap</a>       
+</li><li data-type="struct">
+    <a href="./unprotected_safe.html#TransferCap">TransferCap</a>       
+</li><li data-type="struct">
+    <a href="./unprotected_safe.html#TransferEvent">TransferEvent</a>       
+</li><li data-type="struct">
+    <a href="./unprotected_safe.html#UnprotectedSafe">UnprotectedSafe</a>       
+</li></ul></li><li>
+<a href="./safe.html">safe</a>
+<ul class="methods"><li data-type="struct">
+    <a href="./safe.html#OwnerCap">OwnerCap</a>       
+</li><li data-type="struct">
+    <a href="./safe.html#TransferCap">TransferCap</a>       
+</li><li data-type="struct">
+    <a href="./safe.html#Safe">Safe</a>       
+</li></ul></li><li>
+<a href="./bidding.html">bidding</a>
+<ul class="methods"><li data-type="struct">
+    <a href="./bidding.html#Witness">Witness</a>       
+</li><li data-type="struct">
+    <a href="./bidding.html#Bid">Bid</a>       
+</li><li data-type="struct">
+    <a href="./bidding.html#BidClosed">BidClosed</a>       
+</li><li data-type="struct">
+    <a href="./bidding.html#BidCreated">BidCreated</a>       
+</li></ul></li><li>
+<a href="./display.html">display</a>
+<ul class="methods"><li data-type="struct">
+    <a href="./display.html#Witness">Witness</a>       
+</li><li data-type="struct">
+    <a href="./display.html#AttributesDomain">AttributesDomain</a>       
+</li><li data-type="struct">
+    <a href="./display.html#DisplayDomain">DisplayDomain</a>       
+</li><li data-type="struct">
+    <a href="./display.html#SymbolDomain">SymbolDomain</a>       
+</li><li data-type="struct">
+    <a href="./display.html#UrlDomain">UrlDomain</a>       
+</li></ul></li><li>
+<a href="./proceeds.html">proceeds</a>
+<ul class="methods"><li data-type="struct">
+    <a href="./proceeds.html#Proceeds">Proceeds</a>       
+</li><li data-type="struct">
+    <a href="./proceeds.html#QtSold">QtSold</a>       
+</li></ul></li><li>
+<a href="./object_box.html">object_box</a>
+<ul class="methods"><li data-type="struct">
+    <a href="./object_box.html#ObjectBox">ObjectBox</a>       
+</li></ul></li><li>
+<a href="./launchpad.html">launchpad</a>
+<ul class="methods"><li data-type="struct">
+    <a href="./launchpad.html#Launchpad">Launchpad</a>       
+</li></ul></li><li>
+<a href="./inventory.html">inventory</a>
+<ul class="methods"><li data-type="struct">
+    <a href="./inventory.html#Inventory">Inventory</a>       
+</li></ul></li><li>
+<a href="./slot.html">slot</a>
+<ul class="methods"><li data-type="struct">
+    <a href="./slot.html#CreateSlotEvent">CreateSlotEvent</a>       
+</li><li data-type="struct">
+    <a href="./slot.html#DeleteSlotEvent">DeleteSlotEvent</a>       
+</li><li data-type="struct">
+    <a href="./slot.html#NftCertificate">NftCertificate</a>       
+</li><li data-type="struct">
+    <a href="./slot.html#Slot">Slot</a>       
+</li><li data-type="struct">
+    <a href="./slot.html#WhitelistCertificate">WhitelistCertificate</a>       
+</li></ul></li><li>
+<a href="./dutch_auction.html">dutch_auction</a>
+<ul class="methods"><li data-type="struct">
+    <a href="./dutch_auction.html#Witness">Witness</a>       
+</li><li data-type="struct">
+    <a href="./dutch_auction.html#Bid">Bid</a>       
+</li><li data-type="struct">
+    <a href="./dutch_auction.html#DutchAuctionMarket">DutchAuctionMarket</a>       
+</li></ul></li><li>
+<a href="./fixed_price.html">fixed_price</a>
+<ul class="methods"><li data-type="struct">
+    <a href="./fixed_price.html#Witness">Witness</a>       
+</li><li data-type="struct">
+    <a href="./fixed_price.html#FixedPriceMarket">FixedPriceMarket</a>       
+</li></ul></li><li>
+<a href="./flat_fee.html">flat_fee</a>
+<ul class="methods"><li data-type="struct">
+    <a href="./flat_fee.html#FlatFee">FlatFee</a>       
+</li></ul></li><li>
+<a href="./flyweight.html">flyweight</a>
+<ul class="methods"><li data-type="struct">
+    <a href="./flyweight.html#BurnEvent">BurnEvent</a>       
+</li><li data-type="struct">
+    <a href="./flyweight.html#MintEvent">MintEvent</a>       
+</li><li data-type="struct">
+    <a href="./flyweight.html#Archetype">Archetype</a>       
+</li><li data-type="struct">
+    <a href="./flyweight.html#Pointer">Pointer</a>       
+</li><li data-type="struct">
+    <a href="./flyweight.html#Registry">Registry</a>       
+</li></ul></li><li>
+<a href="./ob.html">ob</a>
+<ul class="methods"><li data-type="struct">
+    <a href="./ob.html#Witness">Witness</a>       
+</li><li data-type="struct">
+    <a href="./ob.html#Bid">Bid</a>       
+</li><li data-type="struct">
+    <a href="./ob.html#BidClosed">BidClosed</a>       
+</li><li data-type="struct">
+    <a href="./ob.html#BidCreated">BidCreated</a>       
+</li><li data-type="struct">
+    <a href="./ob.html#Ask">Ask</a>       
+</li><li data-type="struct">
+    <a href="./ob.html#AskClosed">AskClosed</a>       
+</li><li data-type="struct">
+    <a href="./ob.html#AskCreated">AskCreated</a>       
+</li><li data-type="struct">
+    <a href="./ob.html#Orderbook">Orderbook</a>       
+</li><li data-type="struct">
+    <a href="./ob.html#TradeExecuted">TradeExecuted</a>       
+</li><li data-type="struct">
+    <a href="./ob.html#TradeIntermediate">TradeIntermediate</a>       
+</li><li data-type="struct">
+    <a href="./ob.html#WitnessProtectedActions">WitnessProtectedActions</a>       
+</li></ul></li><li>
+<a href="./royalty_strategy_constant.html">royalty_strategy_constant</a>
+<ul class="methods"><li data-type="struct">
+    <a href="./royalty_strategy_constant.html#ConstantRoyaltyStrategy">ConstantRoyaltyStrategy</a>       
+</li></ul></li><li>
+<a href="./royalty_strategy_bps.html">royalty_strategy_bps</a>
+<ul class="methods"><li data-type="struct">
+    <a href="./royalty_strategy_bps.html#BpsRoyaltyStrategy">BpsRoyaltyStrategy</a>       
+</li></ul></li><li>
+<a href="./royalty.html">royalty</a>
+<ul class="methods"><li data-type="struct">
+    <a href="./royalty.html#Witness">Witness</a>       
+</li><li data-type="struct">
+    <a href="./royalty.html#RoyaltyDomain">RoyaltyDomain</a>       
+</li></ul></li><li>
+<a href="./tags.html">tags</a>
+<ul class="methods"><li data-type="struct">
+    <a href="./tags.html#Witness">Witness</a>       
+</li><li data-type="struct">
+    <a href="./tags.html#Art">Art</a>       
+</li><li data-type="struct">
+    <a href="./tags.html#Collectible">Collectible</a>       
+</li><li data-type="struct">
+    <a href="./tags.html#DomainName">DomainName</a>       
+</li><li data-type="struct">
+    <a href="./tags.html#GameAsset">GameAsset</a>       
+</li><li data-type="struct">
+    <a href="./tags.html#License">License</a>       
+</li><li data-type="struct">
+    <a href="./tags.html#Music">Music</a>       
+</li><li data-type="struct">
+    <a href="./tags.html#ProfilePicture">ProfilePicture</a>       
+</li><li data-type="struct">
+    <a href="./tags.html#TagDomain">TagDomain</a>       
+</li><li data-type="struct">
+    <a href="./tags.html#Ticker">Ticker</a>       
+</li><li data-type="struct">
+    <a href="./tags.html#Ticket">Ticket</a>       
+</li><li data-type="struct">
+    <a href="./tags.html#TokenisedAsset">TokenisedAsset</a>       
+</li><li data-type="struct">
+    <a href="./tags.html#Video">Video</a>       
+</li></ul></li></ul></nav>
+<div id="main"><h1 class="page-title">transfer_whitelist</h1>
+<section class="readme">
+    <header>
+        <h2>0x0::transfer_whitelist</h2>
+    </header>
+    <article>
+        <p>Whitelists NFT transfers.</p>
+<p>This module is a set of functions for implementing and managing a
+whitelist for NFT (non-fungible token) transfers.
+The whitelist is used to authorize which contracts are allowed to
+transfer NFTs of a particular collection.
+The module includes functions for creating and managing the whitelist,
+adding and removing collections from the whitelist, and checking whether
+a contract is authorized to transfer a particular NFT.
+The module uses generics and reflection to allow for flexibility in
+implementing and managing the whitelist.</p>
+<p>Three generics at play:</p>
+<ol>
+<li>Admin (whitelist witness) enables any organization to start their own
+whitelist and manage it according to their own rules;</li>
+<li>CW (collection witness) enpowers creators to add or remove their
+collections to whitelists;</li>
+<li>Auth (3rd party witness) is used to authorize contracts via their
+witness types. If e.g. an orderbook trading contract wants to be
+included in a whitelist, the whitelist admin adds the stringified
+version of their witness type. The OB then uses this witness type
+to authorize transfers.</li>
+</ol>
+
+        <h3 class="subsection-title">Structs</h3>
+        <div class="container-overview">
+    <h2>Whitelist</h2>
+    <span class="name-container">
+        <h4 class="name" id="Whitelist">0x0::transfer_whitelist::Whitelist</h4>
+    </span>
+    <div class="description"></div>
+    <h5>Fields:</h5>
+    <table class="params">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th class="last">Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+    <td class="name">
+        <code>id</code>            
+    </td>
+    <td class="type">
+        <code>object::UID</code>  
+    </td>
+    <td class="description last"></td>
+</tr><tr>
+    <td class="name">
+        <code>admin_witness</code>            
+    </td>
+    <td class="type">
+        <code>type_name::TypeName</code>  
+    </td>
+    <td class="description last"><p>We don't store it as generic because then it has to be propagated
+around and it's very unergonomic.</p>
+</td>
+</tr><tr>
+    <td class="name">
+        <code>collections</code>            
+    </td>
+    <td class="type">
+        <code>vec_set::VecSet<type_name::TypeName></code>  
+    </td>
+    <td class="description last"><p>Which collections does this whitelist apply to?</p>
+<p>We use reflection to avoid generics.</p>
+</td>
+</tr><tr>
+    <td class="name">
+        <code>authorities</code>            
+    </td>
+    <td class="type">
+        <code>option::Option<vec_set::VecSet<type_name::TypeName>></code>  
+    </td>
+    <td class="description last"><p>If None, then there's no whitelist and everyone is allowed.</p>
+<p>Otherwise we use a witness pattern but store the witness object as
+the output of <code>type_name::get</code>.</p>
+</td>
+</tr>
+        </tbody>
+    </table>
+</div><div class="container-overview">
+    <h2>CollectionControlCap</h2>
+    <span class="name-container">
+        <h4 class="name" id="CollectionControlCap">0x0::transfer_whitelist::CollectionControlCap</h4>
+    </span>
+    <div class="description"><p>Gives the collection admin a capability to insert and remove their
+collection from a whitelist.</p>
+<p>To create this cap, the contract which defines the collection generic
+must call <code>create_collection_cap</code> with a witness that belongs to the
+same contract as the generic <code>C</code>.
+Additionally, the witness type must be called <code>Witness</code>.</p>
+</div>
+    <h5>Fields:</h5>
+    <table class="params">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th class="last">Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+    <td class="name">
+        <code>id</code>            
+    </td>
+    <td class="type">
+        <code>object::UID</code>  
+    </td>
+    <td class="description last"></td>
+</tr>
+        </tbody>
+    </table>
+</div>
+        <h3 class="subsection-title">Methods</h3>
+        <span class="name-container">
+    <h4 class="name" id="create"><pre>public fun create&lt;Admin: drop&gt;(
+    _witness: Admin,
+    ctx: &amp;mut tx_context::TxContext,
+): transfer_whitelist::Whitelist</pre></h4>
+</span>
+<div class="description"></div><span class="name-container">
+    <h4 class="name" id="create_collection_cap"><pre>public fun create_collection_cap&lt;C, W&gt;(
+    _witness: &amp;W,
+    ctx: &amp;mut tx_context::TxContext,
+): transfer_whitelist::CollectionControlCap&lt;C&gt;</pre></h4>
+</span>
+<div class="description"><p>See the docs for struct <code>CollectionControlCap</code>.</p>
+</div><span class="name-container">
+    <h4 class="name" id="insert_collection"><pre>public fun insert_collection&lt;
+    Admin: drop,
+    C,
+&gt;(
+    _whitelist_witness: Admin,
+    _authority: &amp;transfer_whitelist::CollectionControlCap&lt;C&gt;,
+    list: &amp;mut transfer_whitelist::Whitelist,
+)</pre></h4>
+</span>
+<div class="description"><p>To add a collection to the list, we need a confirmation by both the
+whitelist authority and the collection creator via witness pattern.</p>
+<p>If the whitelist authority wants to enable any creator to add their
+collection to the whitelist, they can reexport this function in their
+module without the witness protection. However, we opt for witness
+collection to give the whitelist owner a way to combat spam.</p>
+</div><span class="name-container">
+    <h4 class="name" id="remove_itself"><pre>public fun remove_itself&lt;
+    C,
+&gt;(
+    _authority: &amp;transfer_whitelist::CollectionControlCap&lt;C&gt;,
+    list: &amp;mut transfer_whitelist::Whitelist,
+)</pre></h4>
+</span>
+<div class="description"><p>Any collection is allowed to remove itself from any whitelist at any
+time.</p>
+<p>It's always the creator's right to decide at any point what authorities
+can transfer NFTs of that collection.</p>
+</div><span class="name-container">
+    <h4 class="name" id="remove_collection"><pre>public fun remove_collection&lt;Admin: drop, C&gt;(
+    _whitelist_witness: Admin,
+    list: &amp;mut transfer_whitelist::Whitelist,
+)</pre></h4>
+</span>
+<div class="description"><p>The whitelist owner can remove any collection at any point.</p>
+</div><span class="name-container">
+    <h4 class="name" id="clear_collections"><pre>public fun clear_collections&lt;Admin: drop&gt;(
+    _whitelist_witness: Admin,
+    list: &amp;mut transfer_whitelist::Whitelist,
+)</pre></h4>
+</span>
+<div class="description"><p>Removes all collections from this list.</p>
+</div><span class="name-container">
+    <h4 class="name" id="insert_authority"><pre>public fun insert_authority&lt;Admin: drop, Auth&gt;(
+    _whitelist_witness: Admin,
+    list: &amp;mut transfer_whitelist::Whitelist,
+)</pre></h4>
+</span>
+<div class="description"><p>To insert a new authority into a list we need confirmation by the
+whitelist authority (via witness.)</p>
+</div><span class="name-container">
+    <h4 class="name" id="remove_authority"><pre>public fun remove_authority&lt;Admin: drop, Auth&gt;(
+    _whitelist_witness: Admin,
+    list: &amp;mut transfer_whitelist::Whitelist,
+)</pre></h4>
+</span>
+<div class="description"><p>The whitelist authority (via witness) can at any point remove any
+authority from their list.</p>
+</div><span class="name-container">
+    <h4 class="name" id="can_be_transferred"><pre>public fun can_be_transferred&lt;C, Auth: drop&gt;(
+    _authority_witness: Auth,
+    whitelist: &amp;transfer_whitelist::Whitelist,
+): bool</pre></h4>
+</span>
+<div class="description"><p>Checks whether given authority witness is in the whitelist, and also
+whether given collection witness (C) is in the whitelist.</p>
+</div>
+    </article>
+</section><br class="clear">
+<!--<footer>OriginByte.io</footer>-->
+</div>
+</body>
+</html>
