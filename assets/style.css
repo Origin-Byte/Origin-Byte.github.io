@@ -1,3 +1,8 @@
+:root {
+    --type-link-color: #ad378a;
+    --ability-color: #6e4fc9;
+}
+
 @font-face {
     font-family: "Avenir Next W01";
     font-style: normal;
@@ -168,7 +173,6 @@ h4 {
 
 h4.name {
     font-size: 20px;
-    margin-top: 0;
     font-weight: 500;
 }
 
@@ -204,7 +208,6 @@ samp {
     font-family: "Source Code Pro", monospace;
     background: #f4f4f4;
     padding: 1px 5px;
-    border-radius: 5px;
 }
 
 .class-description {
@@ -480,10 +483,6 @@ footer {
     list-style-type: none
 }
 
-.details pre.prettyprint {
-    margin: 0
-}
-
 .details .object-value {
     padding-top: 0
 }
@@ -500,72 +499,17 @@ footer {
     color: #545454;
 }
 
-.prettyprint {
-    font-size: 13px;
-    border: 1px solid #ddd;
-    border-radius: 3px;
-    overflow: auto;
-    background-color: #fbfbfb;
-}
-
-.prettyprint.source {
-    width: inherit;
-}
-
-.prettyprint code {
+code {
     font-size: 100%;
     line-height: 18px;
-    display: block;
-    margin: 0 30px;
     background-color: #fbfbfb;
     color: #4D4E53;
 }
 
-.prettyprint>code {
-    padding: 30px 15px;
-}
-
-.prettyprint .linenums code {
-    padding: 0 15px;
-}
-
-.prettyprint .linenums li:first-of-type code {
-    padding-top: 15px;
-}
-
-.prettyprint code span.line {
-    display: inline-block;
-}
-
-.prettyprint.linenums {
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-}
-
-.prettyprint.linenums ol {
-    padding-left: 0
-}
-
-.prettyprint.linenums li {
-    border-left: 3px #ddd solid
-}
-
-.prettyprint.linenums li.selected,
-.prettyprint.linenums li.selected * {
-    background-color: lightyellow
-}
-
-.prettyprint.linenums li * {
-    -webkit-user-select: text;
-    -moz-user-select: text;
-    -ms-user-select: text;
-    user-select: text;
-}
-
-.readme .prettyprint {
-    max-width: 800px;
+pre code {
+    display: block;
+    font-size: 13px;
+    padding: 15px;
 }
 
 .params,
@@ -807,17 +751,19 @@ dl.param-type {
 
 table {
     border-collapse: separate;
-    ;
     display: block;
     overflow-x: auto;
-    /*table-layout:fixed;*/
 }
 
 table tbody td {
     border-top: 1px solid hsl(207, 10%, 86%);
     border-right: 1px solid #eee;
     padding: 5px;
-    /*word-wrap: break-word;*/
+}
+
+td.last {
+    border-right: 0;
+    width: 100%;
 }
 
 td table.params,
@@ -920,88 +866,12 @@ input.search-input:focus {
     outline: none;
 }
 
+/* Code highlighting */
 
-/* Hightlight JS Paradiso Light Theme */
-
-.hljs-comment,
-.hljs-quote {
-    color: #776e71
+span.struct {
+    color: var(--type-link-color);
 }
 
-.hljs-variable,
-.hljs-template-variable,
-.hljs-tag,
-.hljs-name,
-.hljs-selector-id,
-.hljs-selector-class,
-.hljs-regexp,
-.hljs-link,
-.hljs-meta {
-    color: #ef6155
-}
-
-.hljs-number,
-.hljs-built_in,
-.hljs-builtin-name,
-.hljs-literal,
-.hljs-type,
-.hljs-params,
-.hljs-deletion {
-    color: #f99b15
-}
-
-.hljs-title,
-.hljs-section,
-.hljs-attribute {
-    color: #fec418
-}
-
-.hljs-string,
-.hljs-symbol,
-.hljs-bullet,
-.hljs-addition {
-    color: #48b685
-}
-
-.hljs-keyword,
-.hljs-selector-tag {
-    color: #815ba4
-}
-
-.hljs {
-    display: block;
-    overflow-x: auto;
-    background: #e7e9db;
-    color: #4f424c;
-    padding: 0.5em
-}
-
-.hljs-emphasis {
-    font-style: italic
-}
-
-.hljs-strong {
-    font-weight: bold
-}
-
-.link-icon {
-    opacity: 0;
-    position: absolute;
-    margin-left: -25px;
-    padding-right: 5px;
-    padding-top: 2px;
-}
-
-.example-container .link-icon {
-    margin-top: -6px;
-}
-
-.example-container:hover .link-icon,
-.name-container:hover .link-icon {
-    opacity: .5;
-}
-
-.name-container {
-    display: flex;
-    padding-top: 1em;
+span.ability {
+    color: var(--ability-color);
 }

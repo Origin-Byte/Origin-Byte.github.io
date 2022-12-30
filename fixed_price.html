@@ -22,14 +22,6 @@
 <ul class="methods"><li data-type="struct">
     <a href="./utils.html#Marker">Marker</a>       
 </li></ul></li><li>
-<a href="./supply.html">supply</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./supply.html#Supply">Supply</a>       
-</li></ul></li><li>
-<a href="./supply_policy.html">supply_policy</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./supply_policy.html#SupplyPolicy">SupplyPolicy</a>       
-</li></ul></li><li>
 <a href="./collection.html">collection</a>
 <ul class="methods"><li data-type="struct">
     <a href="./collection.html#BurnEvent">BurnEvent</a>       
@@ -48,11 +40,11 @@
 </li><li data-type="struct">
     <a href="./attribution.html#Creator">Creator</a>       
 </li></ul></li><li>
-<a href="./transfer_whitelist.html">transfer_whitelist</a>
+<a href="./transfer_allowlist.html">transfer_allowlist</a>
 <ul class="methods"><li data-type="struct">
-    <a href="./transfer_whitelist.html#CollectionControlCap">CollectionControlCap</a>       
+    <a href="./transfer_allowlist.html#Allowlist">Allowlist</a>       
 </li><li data-type="struct">
-    <a href="./transfer_whitelist.html#Whitelist">Whitelist</a>       
+    <a href="./transfer_allowlist.html#CollectionControlCap">CollectionControlCap</a>       
 </li></ul></li><li>
 <a href="./royalties.html">royalties</a>
 <ul class="methods"><li data-type="struct">
@@ -122,25 +114,25 @@
 <ul class="methods"><li data-type="struct">
     <a href="./object_box.html#ObjectBox">ObjectBox</a>       
 </li></ul></li><li>
-<a href="./launchpad.html">launchpad</a>
+<a href="./marketplace.html">marketplace</a>
 <ul class="methods"><li data-type="struct">
-    <a href="./launchpad.html#Launchpad">Launchpad</a>       
+    <a href="./marketplace.html#Marketplace">Marketplace</a>       
 </li></ul></li><li>
 <a href="./inventory.html">inventory</a>
 <ul class="methods"><li data-type="struct">
     <a href="./inventory.html#Inventory">Inventory</a>       
 </li></ul></li><li>
-<a href="./slot.html">slot</a>
+<a href="./listing.html">listing</a>
 <ul class="methods"><li data-type="struct">
-    <a href="./slot.html#CreateSlotEvent">CreateSlotEvent</a>       
+    <a href="./listing.html#CreateListingEvent">CreateListingEvent</a>       
 </li><li data-type="struct">
-    <a href="./slot.html#DeleteSlotEvent">DeleteSlotEvent</a>       
+    <a href="./listing.html#DeleteListingEvent">DeleteListingEvent</a>       
 </li><li data-type="struct">
-    <a href="./slot.html#NftCertificate">NftCertificate</a>       
+    <a href="./listing.html#Listing">Listing</a>       
 </li><li data-type="struct">
-    <a href="./slot.html#Slot">Slot</a>       
+    <a href="./listing.html#RequestToJoin">RequestToJoin</a>       
 </li><li data-type="struct">
-    <a href="./slot.html#WhitelistCertificate">WhitelistCertificate</a>       
+    <a href="./listing.html#WhitelistCertificate">WhitelistCertificate</a>       
 </li></ul></li><li>
 <a href="./dutch_auction.html">dutch_auction</a>
 <ul class="methods"><li data-type="struct">
@@ -159,6 +151,10 @@
 <a href="./flat_fee.html">flat_fee</a>
 <ul class="methods"><li data-type="struct">
     <a href="./flat_fee.html#FlatFee">FlatFee</a>       
+</li></ul></li><li>
+<a href="./supply.html">supply</a>
+<ul class="methods"><li data-type="struct">
+    <a href="./supply.html#Supply">Supply</a>       
 </li></ul></li><li>
 <a href="./flyweight.html">flyweight</a>
 <ul class="methods"><li data-type="struct">
@@ -210,6 +206,10 @@
 </li><li data-type="struct">
     <a href="./royalty.html#RoyaltyDomain">RoyaltyDomain</a>       
 </li></ul></li><li>
+<a href="./supply_policy.html">supply_policy</a>
+<ul class="methods"><li data-type="struct">
+    <a href="./supply_policy.html#SupplyPolicy">SupplyPolicy</a>       
+</li></ul></li><li>
 <a href="./tags.html">tags</a>
 <ul class="methods"><li data-type="struct">
     <a href="./tags.html#Witness">Witness</a>       
@@ -258,7 +258,7 @@ whitelist tokens.</p>
         <div class="container-overview">
     <h2>FixedPriceMarket</h2>
     <span class="name-container">
-        <h4 class="name" id="FixedPriceMarket">0x0::fixed_price::FixedPriceMarket</h4>
+        <h4 class="name" id="FixedPriceMarket"><pre>0x0::fixed_price::<a href="./0x0::fixed_price.html#FixedPriceMarket"><span class="struct">FixedPriceMarket</span></a>&lt;FT&gt; has <span class="ability">store</span>, <span class="ability">key</span><pre></h4>
     </span>
     <div class="description"></div>
     <h5>Fields:</h5>
@@ -293,7 +293,7 @@ whitelist tokens.</p>
 </div><div class="container-overview">
     <h2>Witness</h2>
     <span class="name-container">
-        <h4 class="name" id="Witness">0x0::fixed_price::Witness</h4>
+        <h4 class="name" id="Witness"><pre>0x0::fixed_price::<a href="./0x0::fixed_price.html#Witness"><span class="struct">Witness</span></a>&lt;&gt; has <span class="ability">drop</span><pre></h4>
     </span>
     <div class="description"></div>
     <h5>Fields:</h5>
@@ -323,31 +323,38 @@ whitelist tokens.</p>
     <h4 class="name" id="new"><pre>public fun new&lt;FT&gt;(
     price: u64,
     ctx: &amp;mut tx_context::TxContext,
-): fixed_price::FixedPriceMarket&lt;FT&gt;</pre></h4>
+): fixed_price::FixedPriceMarket<FT></pre></h4>
 </span>
 <div class="description"></div><span class="name-container">
     <h4 class="name" id="init_market"><pre>public fun init_market&lt;FT&gt;(
-    slot: &amp;mut slot::Slot,
+    price: u64,
+    ctx: &amp;mut tx_context::TxContext,
+)</pre></h4>
+</span>
+<div class="description"><p>Creates a <code>FixedPriceMarket&lt;FT&gt;</code> and transfers to transaction sender</p>
+</div><span class="name-container">
+    <h4 class="name" id="create_market_on_inventory"><pre>public fun create_market_on_inventory&lt;FT&gt;(
+    inventory: &amp;mut inventory::Inventory,
     is_whitelisted: bool,
     price: u64,
     ctx: &amp;mut tx_context::TxContext,
 )</pre></h4>
 </span>
-<div class="description"><p>Creates a fixed price <code>Slot</code> market</p>
+<div class="description"><p>Creates a <code>FixedPriceMarket&lt;FT&gt;</code> on <code>Inventory</code></p>
 </div><span class="name-container">
-    <h4 class="name" id="init_market_with_inventory"><pre>fun init_market_with_inventory&lt;FT&gt;(
-    slot: &amp;mut slot::Slot,
-    inventory: inventory::Inventory,
+    <h4 class="name" id="create_market_on_listing"><pre>public fun create_market_on_listing&lt;FT&gt;(
+    listing: &amp;mut listing::Listing,
+    inventory_id: object::ID,
+    is_whitelisted: bool,
     price: u64,
     ctx: &amp;mut tx_context::TxContext,
 )</pre></h4>
 </span>
-<div class="description"><p>Creates a fixed price <code>Slot</code> market with a prepared <code>Inventory</code></p>
-<p>Useful for pre-minting NFTs to an <code>Inventory</code></p>
+<div class="description"><p>Creates a <code>FixedPriceMarket&lt;FT&gt;</code> on <code>Listing</code></p>
 </div><span class="name-container">
-    <h4 class="name" id="buy_nft_certificate"><pre>public fun buy_nft_certificate&lt;FT&gt;(
-    launchpad: &amp;launchpad::Launchpad,
-    slot: &amp;mut slot::Slot,
+    <h4 class="name" id="buy_nft"><pre>public fun buy_nft&lt;C, FT&gt;(
+    listing: &amp;mut listing::Listing,
+    inventory_id: object::ID,
     market_id: object::ID,
     wallet: &amp;mut coin::Coin&lt;FT&gt;,
     ctx: &amp;mut tx_context::TxContext,
@@ -360,12 +367,12 @@ A <code>NftCertificate</code> object will be minted and transfered to the sender
 of transaction. The sender can then use this certificate to call
 <code>claim_nft</code> and claim the NFT that has been allocated by the slingshot</p>
 </div><span class="name-container">
-    <h4 class="name" id="buy_whitelisted_nft_certificate"><pre>public fun buy_whitelisted_nft_certificate&lt;FT&gt;(
-    launchpad: &amp;launchpad::Launchpad,
-    slot: &amp;mut slot::Slot,
+    <h4 class="name" id="buy_whitelisted_nft"><pre>public fun buy_whitelisted_nft&lt;C, FT&gt;(
+    listing: &amp;mut listing::Listing,
+    inventory_id: object::ID,
     market_id: object::ID,
     wallet: &amp;mut coin::Coin&lt;FT&gt;,
-    whitelist_token: slot::WhitelistCertificate,
+    whitelist_token: listing::WhitelistCertificate,
     ctx: &amp;mut tx_context::TxContext,
 )</pre></h4>
 </span>
@@ -377,21 +384,21 @@ of transaction. The sender can then use this certificate to call
 <code>claim_nft</code> and claim the NFT that has been allocated by the slingshot</p>
 </div><span class="name-container">
     <h4 class="name" id="set_price"><pre>public fun set_price&lt;FT&gt;(
-    slot: &amp;mut slot::Slot,
+    listing: &amp;mut listing::Listing,
+    inventory_id: object::ID,
     market_id: object::ID,
     new_price: u64,
     ctx: &amp;mut tx_context::TxContext,
 )</pre></h4>
 </span>
 <div class="description"><p>Permissioned endpoint to be called by <code>admin</code> to edit the fixed price
-of the launchpad configuration.</p>
+of the Listing configuration.</p>
 </div><span class="name-container">
     <h4 class="name" id="price"><pre>public fun price&lt;FT&gt;(
-    slot: &amp;slot::Slot,
-    market_id: object::ID,
+    market: &amp;fixed_price::FixedPriceMarket&lt;FT&gt;,
 ): u64</pre></h4>
 </span>
-<div class="description"><p>Get the Slingshot Configs's <code>price</code></p>
+<div class="description"><p>Get the market's fixed price</p>
 </div>
     </article>
 </section><br class="clear">

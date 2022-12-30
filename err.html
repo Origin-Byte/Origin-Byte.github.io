@@ -22,14 +22,6 @@
 <ul class="methods"><li data-type="struct">
     <a href="./utils.html#Marker">Marker</a>       
 </li></ul></li><li>
-<a href="./supply.html">supply</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./supply.html#Supply">Supply</a>       
-</li></ul></li><li>
-<a href="./supply_policy.html">supply_policy</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./supply_policy.html#SupplyPolicy">SupplyPolicy</a>       
-</li></ul></li><li>
 <a href="./collection.html">collection</a>
 <ul class="methods"><li data-type="struct">
     <a href="./collection.html#BurnEvent">BurnEvent</a>       
@@ -48,11 +40,11 @@
 </li><li data-type="struct">
     <a href="./attribution.html#Creator">Creator</a>       
 </li></ul></li><li>
-<a href="./transfer_whitelist.html">transfer_whitelist</a>
+<a href="./transfer_allowlist.html">transfer_allowlist</a>
 <ul class="methods"><li data-type="struct">
-    <a href="./transfer_whitelist.html#CollectionControlCap">CollectionControlCap</a>       
+    <a href="./transfer_allowlist.html#Allowlist">Allowlist</a>       
 </li><li data-type="struct">
-    <a href="./transfer_whitelist.html#Whitelist">Whitelist</a>       
+    <a href="./transfer_allowlist.html#CollectionControlCap">CollectionControlCap</a>       
 </li></ul></li><li>
 <a href="./royalties.html">royalties</a>
 <ul class="methods"><li data-type="struct">
@@ -122,25 +114,25 @@
 <ul class="methods"><li data-type="struct">
     <a href="./object_box.html#ObjectBox">ObjectBox</a>       
 </li></ul></li><li>
-<a href="./launchpad.html">launchpad</a>
+<a href="./marketplace.html">marketplace</a>
 <ul class="methods"><li data-type="struct">
-    <a href="./launchpad.html#Launchpad">Launchpad</a>       
+    <a href="./marketplace.html#Marketplace">Marketplace</a>       
 </li></ul></li><li>
 <a href="./inventory.html">inventory</a>
 <ul class="methods"><li data-type="struct">
     <a href="./inventory.html#Inventory">Inventory</a>       
 </li></ul></li><li>
-<a href="./slot.html">slot</a>
+<a href="./listing.html">listing</a>
 <ul class="methods"><li data-type="struct">
-    <a href="./slot.html#CreateSlotEvent">CreateSlotEvent</a>       
+    <a href="./listing.html#CreateListingEvent">CreateListingEvent</a>       
 </li><li data-type="struct">
-    <a href="./slot.html#DeleteSlotEvent">DeleteSlotEvent</a>       
+    <a href="./listing.html#DeleteListingEvent">DeleteListingEvent</a>       
 </li><li data-type="struct">
-    <a href="./slot.html#NftCertificate">NftCertificate</a>       
+    <a href="./listing.html#Listing">Listing</a>       
 </li><li data-type="struct">
-    <a href="./slot.html#Slot">Slot</a>       
+    <a href="./listing.html#RequestToJoin">RequestToJoin</a>       
 </li><li data-type="struct">
-    <a href="./slot.html#WhitelistCertificate">WhitelistCertificate</a>       
+    <a href="./listing.html#WhitelistCertificate">WhitelistCertificate</a>       
 </li></ul></li><li>
 <a href="./dutch_auction.html">dutch_auction</a>
 <ul class="methods"><li data-type="struct">
@@ -159,6 +151,10 @@
 <a href="./flat_fee.html">flat_fee</a>
 <ul class="methods"><li data-type="struct">
     <a href="./flat_fee.html#FlatFee">FlatFee</a>       
+</li></ul></li><li>
+<a href="./supply.html">supply</a>
+<ul class="methods"><li data-type="struct">
+    <a href="./supply.html#Supply">Supply</a>       
 </li></ul></li><li>
 <a href="./flyweight.html">flyweight</a>
 <ul class="methods"><li data-type="struct">
@@ -209,6 +205,10 @@
     <a href="./royalty.html#Witness">Witness</a>       
 </li><li data-type="struct">
     <a href="./royalty.html#RoyaltyDomain">RoyaltyDomain</a>       
+</li></ul></li><li>
+<a href="./supply_policy.html">supply_policy</a>
+<ul class="methods"><li data-type="struct">
+    <a href="./supply_policy.html#SupplyPolicy">SupplyPolicy</a>       
 </li></ul></li><li>
 <a href="./tags.html">tags</a>
 <ul class="methods"><li data-type="struct">
@@ -281,10 +281,10 @@ which distinguishes them from errors in other packages.</p>
     <h4 class="name" id="supply_maxed_out"><pre>public fun supply_maxed_out(): u64</pre></h4>
 </span>
 <div class="description"></div><span class="name-container">
-    <h4 class="name" id="wrong_launchpad_admin"><pre>public fun wrong_launchpad_admin(): u64</pre></h4>
+    <h4 class="name" id="wrong_marketplace_admin"><pre>public fun wrong_marketplace_admin(): u64</pre></h4>
 </span>
 <div class="description"></div><span class="name-container">
-    <h4 class="name" id="slot_not_live"><pre>public fun slot_not_live(): u64</pre></h4>
+    <h4 class="name" id="listing_not_live"><pre>public fun listing_not_live(): u64</pre></h4>
 </span>
 <div class="description"></div><span class="name-container">
     <h4 class="name" id="nft_sale_incompleted"><pre>public fun nft_sale_incompleted(): u64</pre></h4>
@@ -308,13 +308,13 @@ which distinguishes them from errors in other packages.</p>
     <h4 class="name" id="no_nfts_left"><pre>public fun no_nfts_left(): u64</pre></h4>
 </span>
 <div class="description"></div><span class="name-container">
-    <h4 class="name" id="launchpad_slot_mismatch"><pre>public fun launchpad_slot_mismatch(): u64</pre></h4>
+    <h4 class="name" id="marketplace_listing_mismatch"><pre>public fun marketplace_listing_mismatch(): u64</pre></h4>
 </span>
 <div class="description"></div><span class="name-container">
-    <h4 class="name" id="wrong_launchpad_or_slot_admin"><pre>public fun wrong_launchpad_or_slot_admin(): u64</pre></h4>
+    <h4 class="name" id="wrong_marketplace_or_listing_admin"><pre>public fun wrong_marketplace_or_listing_admin(): u64</pre></h4>
 </span>
 <div class="description"></div><span class="name-container">
-    <h4 class="name" id="wrong_slot_admin"><pre>public fun wrong_slot_admin(): u64</pre></h4>
+    <h4 class="name" id="wrong_listing_admin"><pre>public fun wrong_listing_admin(): u64</pre></h4>
 </span>
 <div class="description"></div><span class="name-container">
     <h4 class="name" id="wrong_fee_policy_type"><pre>public fun wrong_fee_policy_type(): u64</pre></h4>
@@ -323,13 +323,25 @@ which distinguishes them from errors in other packages.</p>
     <h4 class="name" id="has_custom_fee_policy"><pre>public fun has_custom_fee_policy(): u64</pre></h4>
 </span>
 <div class="description"></div><span class="name-container">
-    <h4 class="name" id="slot_not_approved"><pre>public fun slot_not_approved(): u64</pre></h4>
+    <h4 class="name" id="listing_not_approved"><pre>public fun listing_not_approved(): u64</pre></h4>
+</span>
+<div class="description"></div><span class="name-container">
+    <h4 class="name" id="undefined_inventory"><pre>public fun undefined_inventory(): u64</pre></h4>
 </span>
 <div class="description"></div><span class="name-container">
     <h4 class="name" id="undefined_market"><pre>public fun undefined_market(): u64</pre></h4>
 </span>
 <div class="description"></div><span class="name-container">
     <h4 class="name" id="incorrect_nft_certificate"><pre>public fun incorrect_nft_certificate(): u64</pre></h4>
+</span>
+<div class="description"></div><span class="name-container">
+    <h4 class="name" id="listing_already_attached_to_marketplace"><pre>public fun listing_already_attached_to_marketplace(): u64</pre></h4>
+</span>
+<div class="description"></div><span class="name-container">
+    <h4 class="name" id="listing_has_not_applied_to_this_marketplace"><pre>public fun listing_has_not_applied_to_this_marketplace(): u64</pre></h4>
+</span>
+<div class="description"></div><span class="name-container">
+    <h4 class="name" id="action_exclusive_to_standalone_listings"><pre>public fun action_exclusive_to_standalone_listings(): u64</pre></h4>
 </span>
 <div class="description"></div><span class="name-container">
     <h4 class="name" id="order_does_not_exist"><pre>public fun order_does_not_exist(): u64</pre></h4>
@@ -371,10 +383,10 @@ which distinguishes them from errors in other packages.</p>
     <h4 class="name" id="generic_nft_must_not_be_protocol_type"><pre>public fun generic_nft_must_not_be_protocol_type(): u64</pre></h4>
 </span>
 <div class="description"></div><span class="name-container">
-    <h4 class="name" id="authority_not_whitelisted"><pre>public fun authority_not_whitelisted(): u64</pre></h4>
+    <h4 class="name" id="authority_not_allowlisted"><pre>public fun authority_not_allowlisted(): u64</pre></h4>
 </span>
 <div class="description"></div><span class="name-container">
-    <h4 class="name" id="sender_not_whitelist_admin"><pre>public fun sender_not_whitelist_admin(): u64</pre></h4>
+    <h4 class="name" id="sender_not_allowlist_admin"><pre>public fun sender_not_allowlist_admin(): u64</pre></h4>
 </span>
 <div class="description"></div><span class="name-container">
     <h4 class="name" id="witness_source_mismatch"><pre>public fun witness_source_mismatch(): u64</pre></h4>

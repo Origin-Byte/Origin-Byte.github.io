@@ -22,14 +22,6 @@
 <ul class="methods"><li data-type="struct">
     <a href="./utils.html#Marker">Marker</a>       
 </li></ul></li><li>
-<a href="./supply.html">supply</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./supply.html#Supply">Supply</a>       
-</li></ul></li><li>
-<a href="./supply_policy.html">supply_policy</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./supply_policy.html#SupplyPolicy">SupplyPolicy</a>       
-</li></ul></li><li>
 <a href="./collection.html">collection</a>
 <ul class="methods"><li data-type="struct">
     <a href="./collection.html#BurnEvent">BurnEvent</a>       
@@ -48,11 +40,11 @@
 </li><li data-type="struct">
     <a href="./attribution.html#Creator">Creator</a>       
 </li></ul></li><li>
-<a href="./transfer_whitelist.html">transfer_whitelist</a>
+<a href="./transfer_allowlist.html">transfer_allowlist</a>
 <ul class="methods"><li data-type="struct">
-    <a href="./transfer_whitelist.html#CollectionControlCap">CollectionControlCap</a>       
+    <a href="./transfer_allowlist.html#Allowlist">Allowlist</a>       
 </li><li data-type="struct">
-    <a href="./transfer_whitelist.html#Whitelist">Whitelist</a>       
+    <a href="./transfer_allowlist.html#CollectionControlCap">CollectionControlCap</a>       
 </li></ul></li><li>
 <a href="./royalties.html">royalties</a>
 <ul class="methods"><li data-type="struct">
@@ -122,25 +114,25 @@
 <ul class="methods"><li data-type="struct">
     <a href="./object_box.html#ObjectBox">ObjectBox</a>       
 </li></ul></li><li>
-<a href="./launchpad.html">launchpad</a>
+<a href="./marketplace.html">marketplace</a>
 <ul class="methods"><li data-type="struct">
-    <a href="./launchpad.html#Launchpad">Launchpad</a>       
+    <a href="./marketplace.html#Marketplace">Marketplace</a>       
 </li></ul></li><li>
 <a href="./inventory.html">inventory</a>
 <ul class="methods"><li data-type="struct">
     <a href="./inventory.html#Inventory">Inventory</a>       
 </li></ul></li><li>
-<a href="./slot.html">slot</a>
+<a href="./listing.html">listing</a>
 <ul class="methods"><li data-type="struct">
-    <a href="./slot.html#CreateSlotEvent">CreateSlotEvent</a>       
+    <a href="./listing.html#CreateListingEvent">CreateListingEvent</a>       
 </li><li data-type="struct">
-    <a href="./slot.html#DeleteSlotEvent">DeleteSlotEvent</a>       
+    <a href="./listing.html#DeleteListingEvent">DeleteListingEvent</a>       
 </li><li data-type="struct">
-    <a href="./slot.html#NftCertificate">NftCertificate</a>       
+    <a href="./listing.html#Listing">Listing</a>       
 </li><li data-type="struct">
-    <a href="./slot.html#Slot">Slot</a>       
+    <a href="./listing.html#RequestToJoin">RequestToJoin</a>       
 </li><li data-type="struct">
-    <a href="./slot.html#WhitelistCertificate">WhitelistCertificate</a>       
+    <a href="./listing.html#WhitelistCertificate">WhitelistCertificate</a>       
 </li></ul></li><li>
 <a href="./dutch_auction.html">dutch_auction</a>
 <ul class="methods"><li data-type="struct">
@@ -159,6 +151,10 @@
 <a href="./flat_fee.html">flat_fee</a>
 <ul class="methods"><li data-type="struct">
     <a href="./flat_fee.html#FlatFee">FlatFee</a>       
+</li></ul></li><li>
+<a href="./supply.html">supply</a>
+<ul class="methods"><li data-type="struct">
+    <a href="./supply.html#Supply">Supply</a>       
 </li></ul></li><li>
 <a href="./flyweight.html">flyweight</a>
 <ul class="methods"><li data-type="struct">
@@ -209,6 +205,10 @@
     <a href="./royalty.html#Witness">Witness</a>       
 </li><li data-type="struct">
     <a href="./royalty.html#RoyaltyDomain">RoyaltyDomain</a>       
+</li></ul></li><li>
+<a href="./supply_policy.html">supply_policy</a>
+<ul class="methods"><li data-type="struct">
+    <a href="./supply_policy.html#SupplyPolicy">SupplyPolicy</a>       
 </li></ul></li><li>
 <a href="./tags.html">tags</a>
 <ul class="methods"><li data-type="struct">
@@ -263,7 +263,7 @@ An ask is one NFT with a min price condition.</p>
         <div class="container-overview">
     <h2>Witness</h2>
     <span class="name-container">
-        <h4 class="name" id="Witness">0x0::ob::Witness</h4>
+        <h4 class="name" id="Witness"><pre>0x0::ob::<a href="./0x0::ob.html#Witness"><span class="struct">Witness</span></a>&lt;&gt; has <span class="ability">drop</span><pre></h4>
     </span>
     <div class="description"></div>
     <h5>Fields:</h5>
@@ -290,7 +290,7 @@ An ask is one NFT with a min price condition.</p>
 </div><div class="container-overview">
     <h2>Orderbook</h2>
     <span class="name-container">
-        <h4 class="name" id="Orderbook">0x0::ob::Orderbook</h4>
+        <h4 class="name" id="Orderbook"><pre>0x0::ob::<a href="./0x0::ob.html#Orderbook"><span class="struct">Orderbook</span></a>&lt;C, FT&gt; has <span class="ability">key</span><pre></h4>
     </span>
     <div class="description"><p>A critbit order book implementation. Contains two ordered trees:</p>
 <ol>
@@ -358,7 +358,7 @@ order is saying:</p>
 </div><div class="container-overview">
     <h2>WitnessProtectedActions</h2>
     <span class="name-container">
-        <h4 class="name" id="WitnessProtectedActions">0x0::ob::WitnessProtectedActions</h4>
+        <h4 class="name" id="WitnessProtectedActions"><pre>0x0::ob::<a href="./0x0::ob.html#WitnessProtectedActions"><span class="struct">WitnessProtectedActions</span></a>&lt;&gt; has <span class="ability">store</span><pre></h4>
     </span>
     <div class="description"><p>The contract which creates the orderbook can restrict specific actions
 to be only callable with a witness pattern and not via the entry point
@@ -431,7 +431,7 @@ not enable to perform that specific action at all.</p>
 </div><div class="container-overview">
     <h2>Bid</h2>
     <span class="name-container">
-        <h4 class="name" id="Bid">0x0::ob::Bid</h4>
+        <h4 class="name" id="Bid"><pre>0x0::ob::<a href="./0x0::ob.html#Bid"><span class="struct">Bid</span></a>&lt;FT&gt; has <span class="ability">store</span><pre></h4>
     </span>
     <div class="description"><p>An offer for a single NFT in a collection.</p>
 </div>
@@ -490,7 +490,7 @@ on top of the offer.</p>
 </div><div class="container-overview">
     <h2>Ask</h2>
     <span class="name-container">
-        <h4 class="name" id="Ask">0x0::ob::Ask</h4>
+        <h4 class="name" id="Ask"><pre>0x0::ob::<a href="./0x0::ob.html#Ask"><span class="struct">Ask</span></a>&lt;&gt; has <span class="ability">store</span>, <span class="ability">key</span><pre></h4>
     </span>
     <div class="description"><p>Object which is associated with a single NFT.</p>
 <p>When [<code>Ask</code>] is created, we transfer the ownership of the NFT to this
@@ -561,9 +561,9 @@ from the price of the NFT for themselves as a commission.</p>
 </div><div class="container-overview">
     <h2>TradeIntermediate</h2>
     <span class="name-container">
-        <h4 class="name" id="TradeIntermediate">0x0::ob::TradeIntermediate</h4>
+        <h4 class="name" id="TradeIntermediate"><pre>0x0::ob::<a href="./0x0::ob.html#TradeIntermediate"><span class="struct">TradeIntermediate</span></a>&lt;C, FT&gt; has <span class="ability">key</span><pre></h4>
     </span>
-    <div class="description"><p>TradeIntermediate` is made a shared object and can be called
+    <div class="description"><p><code>TradeIntermediate</code> is made a shared object and can be called
 permissionlessly.</p>
 </div>
     <h5>Fields:</h5>
@@ -633,7 +633,7 @@ in Sui yet</p>
 </div><div class="container-overview">
     <h2>AskCreated</h2>
     <span class="name-container">
-        <h4 class="name" id="AskCreated">0x0::ob::AskCreated</h4>
+        <h4 class="name" id="AskCreated"><pre>0x0::ob::<a href="./0x0::ob.html#AskCreated"><span class="struct">AskCreated</span></a>&lt;FT&gt; has <span class="ability">copy</span>, <span class="ability">drop</span><pre></h4>
     </span>
     <div class="description"></div>
     <h5>Fields:</h5>
@@ -684,7 +684,7 @@ in Sui yet</p>
 </div><div class="container-overview">
     <h2>AskClosed</h2>
     <span class="name-container">
-        <h4 class="name" id="AskClosed">0x0::ob::AskClosed</h4>
+        <h4 class="name" id="AskClosed"><pre>0x0::ob::<a href="./0x0::ob.html#AskClosed"><span class="struct">AskClosed</span></a>&lt;FT&gt; has <span class="ability">copy</span>, <span class="ability">drop</span><pre></h4>
     </span>
     <div class="description"><p>When de-listed, not when sold!</p>
 </div>
@@ -728,7 +728,7 @@ in Sui yet</p>
 </div><div class="container-overview">
     <h2>BidCreated</h2>
     <span class="name-container">
-        <h4 class="name" id="BidCreated">0x0::ob::BidCreated</h4>
+        <h4 class="name" id="BidCreated"><pre>0x0::ob::<a href="./0x0::ob.html#BidCreated"><span class="struct">BidCreated</span></a>&lt;FT&gt; has <span class="ability">copy</span>, <span class="ability">drop</span><pre></h4>
     </span>
     <div class="description"></div>
     <h5>Fields:</h5>
@@ -771,7 +771,7 @@ in Sui yet</p>
 </div><div class="container-overview">
     <h2>BidClosed</h2>
     <span class="name-container">
-        <h4 class="name" id="BidClosed">0x0::ob::BidClosed</h4>
+        <h4 class="name" id="BidClosed"><pre>0x0::ob::<a href="./0x0::ob.html#BidClosed"><span class="struct">BidClosed</span></a>&lt;FT&gt; has <span class="ability">copy</span>, <span class="ability">drop</span><pre></h4>
     </span>
     <div class="description"><p>When de-listed, not when bought!</p>
 </div>
@@ -807,7 +807,7 @@ in Sui yet</p>
 </div><div class="container-overview">
     <h2>TradeExecuted</h2>
     <span class="name-container">
-        <h4 class="name" id="TradeExecuted">0x0::ob::TradeExecuted</h4>
+        <h4 class="name" id="TradeExecuted"><pre>0x0::ob::<a href="./0x0::ob.html#TradeExecuted"><span class="struct">TradeExecuted</span></a>&lt;FT&gt; has <span class="ability">copy</span>, <span class="ability">drop</span><pre></h4>
     </span>
     <div class="description"></div>
     <h5>Fields:</h5>
@@ -881,7 +881,7 @@ and put into the orderbook with the intention of exchanging them for
 execute a trade straight away. Otherwise we add the bid to the
 orderbook's state.</p>
 </div><span class="name-container">
-    <h4 class="name" id="create_bid_protected"><pre>public fun create_bid_protected&lt;W: drop, C, FT&gt;(
+    <h4 class="name" id="create_bid_protected"><pre>public fun create_bid_protected&lt;W: <span class="ability">drop</span>, C, FT&gt;(
     _witness: W,
     book: &amp;mut ob::Orderbook&lt;C, FT&gt;,
     buyer_safe: &amp;mut safe::Safe,
@@ -903,7 +903,7 @@ orderbook's state.</p>
 </span>
 <div class="description"></div><span class="name-container">
     <h4 class="name" id="create_bid_with_commission_protected"><pre>public fun create_bid_with_commission_protected&lt;
-    W: drop,
+    W: <span class="ability">drop</span>,
     C,
     FT,
 &gt;(
@@ -928,7 +928,7 @@ orderbook's state.</p>
 <div class="description"><p>Cancel a bid owned by the sender at given price. If there are two bids
 with the same price, the one created later is cancelled.</p>
 </div><span class="name-container">
-    <h4 class="name" id="cancel_bid_protected"><pre>public fun cancel_bid_protected&lt;W: drop, C, FT&gt;(
+    <h4 class="name" id="cancel_bid_protected"><pre>public fun cancel_bid_protected&lt;W: <span class="ability">drop</span>, C, FT&gt;(
     _witness: W,
     book: &amp;mut ob::Orderbook&lt;C, FT&gt;,
     bid_price_level: u64,
@@ -950,7 +950,7 @@ there exists a bid with higher offer than <code>requested_tokens</code>, then tr
 is immediately executed. Otherwise the NFT is transferred to a newly
 created ask object and the object is inserted to the orderbook.</p>
 </div><span class="name-container">
-    <h4 class="name" id="create_ask_protected"><pre>public fun create_ask_protected&lt;W: drop, C, FT&gt;(
+    <h4 class="name" id="create_ask_protected"><pre>public fun create_ask_protected&lt;W: <span class="ability">drop</span>, C, FT&gt;(
     _witness: W,
     book: &amp;mut ob::Orderbook&lt;C, FT&gt;,
     requested_tokens: u64,
@@ -972,7 +972,7 @@ created ask object and the object is inserted to the orderbook.</p>
 </span>
 <div class="description"></div><span class="name-container">
     <h4 class="name" id="create_ask_with_commission_protected"><pre>public fun create_ask_with_commission_protected&lt;
-    W: drop,
+    W: <span class="ability">drop</span>,
     C,
     FT,
 &gt;(
@@ -999,7 +999,7 @@ search for the ask would be O(n) instead of O(log n).</p>
 <p>This API might be improved in future as we use a different data
 structure for the orderbook.</p>
 </div><span class="name-container">
-    <h4 class="name" id="cancel_ask_protected"><pre>public fun cancel_ask_protected&lt;W: drop, C, FT&gt;(
+    <h4 class="name" id="cancel_ask_protected"><pre>public fun cancel_ask_protected&lt;W: <span class="ability">drop</span>, C, FT&gt;(
     _witness: W,
     book: &amp;mut ob::Orderbook&lt;C, FT&gt;,
     nft_price_level: u64,
@@ -1015,7 +1015,7 @@ structure for the orderbook.</p>
     wallet: &amp;mut coin::Coin&lt;FT&gt;,
     seller_safe: &amp;mut safe::Safe,
     buyer_safe: &amp;mut safe::Safe,
-    whitelist: &amp;transfer_whitelist::Whitelist,
+    allowlist: &amp;transfer_allowlist::Allowlist,
     ctx: &amp;mut tx_context::TxContext,
 )</pre></h4>
 </span>
@@ -1023,7 +1023,7 @@ structure for the orderbook.</p>
 with fungible tokens, you just want to get the cheapest ask.
 However, with NFTs, you might want to get a specific one.</p>
 </div><span class="name-container">
-    <h4 class="name" id="buy_nft_protected"><pre>public fun buy_nft_protected&lt;W: drop, C, FT&gt;(
+    <h4 class="name" id="buy_nft_protected"><pre>public fun buy_nft_protected&lt;W: <span class="ability">drop</span>, C, FT&gt;(
     _witness: W,
     book: &amp;mut ob::Orderbook&lt;C, FT&gt;,
     nft_id: object::ID,
@@ -1031,7 +1031,7 @@ However, with NFTs, you might want to get a specific one.</p>
     wallet: &amp;mut coin::Coin&lt;FT&gt;,
     seller_safe: &amp;mut safe::Safe,
     buyer_safe: &amp;mut safe::Safe,
-    whitelist: &amp;transfer_whitelist::Whitelist,
+    allowlist: &amp;transfer_allowlist::Allowlist,
     ctx: &amp;mut tx_context::TxContext,
 )</pre></h4>
 </span>
@@ -1040,7 +1040,7 @@ However, with NFTs, you might want to get a specific one.</p>
     trade: &amp;mut ob::TradeIntermediate&lt;C, FT&gt;,
     seller_safe: &amp;mut safe::Safe,
     buyer_safe: &amp;mut safe::Safe,
-    whitelist: &amp;transfer_whitelist::Whitelist,
+    allowlist: &amp;transfer_allowlist::Allowlist,
     ctx: &amp;mut tx_context::TxContext,
 )</pre></h4>
 </span>
@@ -1053,7 +1053,7 @@ permission-lessly resolved via this endpoint.</p>
     <h4 class="name" id="new"><pre>public fun new&lt;C, FT&gt;(
     protected_actions: ob::WitnessProtectedActions,
     ctx: &amp;mut tx_context::TxContext,
-): ob::Orderbook&lt;C, FT&gt;</pre></h4>
+): ob::Orderbook<C, FT></pre></h4>
 </span>
 <div class="description"><p><code>C</code>ollection kind of NFTs to be traded, and <code>F</code>ungible <code>T</code>oken to be
 quoted for an NFT in such a collection.</p>
@@ -1065,7 +1065,7 @@ witness protected methods.</p>
 </div><span class="name-container">
     <h4 class="name" id="new_unprotected"><pre>public fun new_unprotected&lt;C, FT&gt;(
     ctx: &amp;mut tx_context::TxContext,
-): ob::Orderbook&lt;C, FT&gt;</pre></h4>
+): ob::Orderbook<C, FT></pre></h4>
 </span>
 <div class="description"></div><span class="name-container">
     <h4 class="name" id="create"><pre>public fun create&lt;C, FT&gt;(
@@ -1088,14 +1088,14 @@ witness protected methods.</p>
 ): ob::WitnessProtectedActions</pre></h4>
 </span>
 <div class="description"></div><span class="name-container">
-    <h4 class="name" id="toggle_protection_on_buy_nft"><pre>public fun toggle_protection_on_buy_nft&lt;W: drop, C, FT&gt;(
+    <h4 class="name" id="toggle_protection_on_buy_nft"><pre>public fun toggle_protection_on_buy_nft&lt;W: <span class="ability">drop</span>, C, FT&gt;(
     _witness: W,
     book: &amp;mut ob::Orderbook&lt;C, FT&gt;,
 )</pre></h4>
 </span>
 <div class="description"></div><span class="name-container">
     <h4 class="name" id="toggle_protection_on_cancel_ask"><pre>public fun toggle_protection_on_cancel_ask&lt;
-    W: drop,
+    W: <span class="ability">drop</span>,
     C,
     FT,
 &gt;(
@@ -1105,7 +1105,7 @@ witness protected methods.</p>
 </span>
 <div class="description"></div><span class="name-container">
     <h4 class="name" id="toggle_protection_on_cancel_bid"><pre>public fun toggle_protection_on_cancel_bid&lt;
-    W: drop,
+    W: <span class="ability">drop</span>,
     C,
     FT,
 &gt;(
@@ -1115,7 +1115,7 @@ witness protected methods.</p>
 </span>
 <div class="description"></div><span class="name-container">
     <h4 class="name" id="toggle_protection_on_create_ask"><pre>public fun toggle_protection_on_create_ask&lt;
-    W: drop,
+    W: <span class="ability">drop</span>,
     C,
     FT,
 &gt;(
@@ -1125,7 +1125,7 @@ witness protected methods.</p>
 </span>
 <div class="description"></div><span class="name-container">
     <h4 class="name" id="toggle_protection_on_create_bid"><pre>public fun toggle_protection_on_create_bid&lt;
-    W: drop,
+    W: <span class="ability">drop</span>,
     C,
     FT,
 &gt;(
@@ -1136,11 +1136,11 @@ witness protected methods.</p>
 <div class="description"></div><span class="name-container">
     <h4 class="name" id="borrow_bids"><pre>public fun borrow_bids&lt;C, FT&gt;(
     book: &amp;ob::Orderbook&lt;C, FT&gt;,
-): &amp;crit_bit_u64::CB&lt;vector&lt;ob::Bid&lt;FT&gt;&gt;&gt;</pre></h4>
+): &crit_bit_u64::CB<vector<ob::Bid<FT>>></pre></h4>
 </span>
 <div class="description"></div><span class="name-container">
     <h4 class="name" id="bid_offer"><pre>public fun bid_offer&lt;FT&gt;(bid: &amp;ob::Bid&lt;FT&gt;): 
-    &amp;balance::Balance&lt;FT&gt;</pre></h4>
+    &balance::Balance<FT></pre></h4>
 </span>
 <div class="description"></div><span class="name-container">
     <h4 class="name" id="bid_owner"><pre>public fun bid_owner&lt;FT&gt;(bid: &amp;ob::Bid&lt;FT&gt;): 
@@ -1149,13 +1149,13 @@ witness protected methods.</p>
 <div class="description"></div><span class="name-container">
     <h4 class="name" id="borrow_asks"><pre>public fun borrow_asks&lt;C, FT&gt;(
     book: &amp;ob::Orderbook&lt;C, FT&gt;,
-): &amp;crit_bit_u64::CB&lt;vector&lt;ob::Ask&gt;&gt;</pre></h4>
+): &crit_bit_u64::CB<vector<ob::Ask>></pre></h4>
 </span>
 <div class="description"></div><span class="name-container">
     <h4 class="name" id="ask_price"><pre>public fun ask_price(ask: &amp;ob::Ask): u64</pre></h4>
 </span>
 <div class="description"></div><span class="name-container">
-    <h4 class="name" id="ask_nft"><pre>public fun ask_nft(ask: &amp;ob::Ask): &amp;safe::TransferCap</pre></h4>
+    <h4 class="name" id="ask_nft"><pre>public fun ask_nft(ask: &amp;ob::Ask): &safe::TransferCap</pre></h4>
 </span>
 <div class="description"></div><span class="name-container">
     <h4 class="name" id="ask_owner"><pre>public fun ask_owner(ask: &amp;ob::Ask): address</pre></h4>

@@ -22,14 +22,6 @@
 <ul class="methods"><li data-type="struct">
     <a href="./utils.html#Marker">Marker</a>       
 </li></ul></li><li>
-<a href="./supply.html">supply</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./supply.html#Supply">Supply</a>       
-</li></ul></li><li>
-<a href="./supply_policy.html">supply_policy</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./supply_policy.html#SupplyPolicy">SupplyPolicy</a>       
-</li></ul></li><li>
 <a href="./collection.html">collection</a>
 <ul class="methods"><li data-type="struct">
     <a href="./collection.html#BurnEvent">BurnEvent</a>       
@@ -48,11 +40,11 @@
 </li><li data-type="struct">
     <a href="./attribution.html#Creator">Creator</a>       
 </li></ul></li><li>
-<a href="./transfer_whitelist.html">transfer_whitelist</a>
+<a href="./transfer_allowlist.html">transfer_allowlist</a>
 <ul class="methods"><li data-type="struct">
-    <a href="./transfer_whitelist.html#CollectionControlCap">CollectionControlCap</a>       
+    <a href="./transfer_allowlist.html#Allowlist">Allowlist</a>       
 </li><li data-type="struct">
-    <a href="./transfer_whitelist.html#Whitelist">Whitelist</a>       
+    <a href="./transfer_allowlist.html#CollectionControlCap">CollectionControlCap</a>       
 </li></ul></li><li>
 <a href="./royalties.html">royalties</a>
 <ul class="methods"><li data-type="struct">
@@ -122,25 +114,25 @@
 <ul class="methods"><li data-type="struct">
     <a href="./object_box.html#ObjectBox">ObjectBox</a>       
 </li></ul></li><li>
-<a href="./launchpad.html">launchpad</a>
+<a href="./marketplace.html">marketplace</a>
 <ul class="methods"><li data-type="struct">
-    <a href="./launchpad.html#Launchpad">Launchpad</a>       
+    <a href="./marketplace.html#Marketplace">Marketplace</a>       
 </li></ul></li><li>
 <a href="./inventory.html">inventory</a>
 <ul class="methods"><li data-type="struct">
     <a href="./inventory.html#Inventory">Inventory</a>       
 </li></ul></li><li>
-<a href="./slot.html">slot</a>
+<a href="./listing.html">listing</a>
 <ul class="methods"><li data-type="struct">
-    <a href="./slot.html#CreateSlotEvent">CreateSlotEvent</a>       
+    <a href="./listing.html#CreateListingEvent">CreateListingEvent</a>       
 </li><li data-type="struct">
-    <a href="./slot.html#DeleteSlotEvent">DeleteSlotEvent</a>       
+    <a href="./listing.html#DeleteListingEvent">DeleteListingEvent</a>       
 </li><li data-type="struct">
-    <a href="./slot.html#NftCertificate">NftCertificate</a>       
+    <a href="./listing.html#Listing">Listing</a>       
 </li><li data-type="struct">
-    <a href="./slot.html#Slot">Slot</a>       
+    <a href="./listing.html#RequestToJoin">RequestToJoin</a>       
 </li><li data-type="struct">
-    <a href="./slot.html#WhitelistCertificate">WhitelistCertificate</a>       
+    <a href="./listing.html#WhitelistCertificate">WhitelistCertificate</a>       
 </li></ul></li><li>
 <a href="./dutch_auction.html">dutch_auction</a>
 <ul class="methods"><li data-type="struct">
@@ -159,6 +151,10 @@
 <a href="./flat_fee.html">flat_fee</a>
 <ul class="methods"><li data-type="struct">
     <a href="./flat_fee.html#FlatFee">FlatFee</a>       
+</li></ul></li><li>
+<a href="./supply.html">supply</a>
+<ul class="methods"><li data-type="struct">
+    <a href="./supply.html#Supply">Supply</a>       
 </li></ul></li><li>
 <a href="./flyweight.html">flyweight</a>
 <ul class="methods"><li data-type="struct">
@@ -210,6 +206,10 @@
 </li><li data-type="struct">
     <a href="./royalty.html#RoyaltyDomain">RoyaltyDomain</a>       
 </li></ul></li><li>
+<a href="./supply_policy.html">supply_policy</a>
+<ul class="methods"><li data-type="struct">
+    <a href="./supply_policy.html#SupplyPolicy">SupplyPolicy</a>       
+</li></ul></li><li>
 <a href="./tags.html">tags</a>
 <ul class="methods"><li data-type="struct">
     <a href="./tags.html#Witness">Witness</a>       
@@ -252,14 +252,6 @@
 <p><p>Utility functions</p>
 </p>
 <p><span class="rule"></span></p>
-<h3><a href="./supply.html">0x0::supply</a></h3>
-<p><p>Module contaning <code>Supply</code> type.</p>
-</p>
-<p><span class="rule"></span></p>
-<h3><a href="./supply_policy.html">0x0::supply_policy</a></h3>
-<p><p>Module contaning <code>SupplyPolicy</code> type.</p>
-</p>
-<p><span class="rule"></span></p>
 <h3><a href="./collection.html">0x0::collection</a></h3>
 <p><p>Module of a generic <code>Collection</code> type and a <code>MintAuthority</code> type.</p>
 </p>
@@ -268,8 +260,8 @@
 <p><p>Module of Collection <code>Attribution</code> domain.</p>
 </p>
 <p><span class="rule"></span></p>
-<h3><a href="./transfer_whitelist.html">0x0::transfer_whitelist</a></h3>
-<p><p>Whitelists NFT transfers.</p>
+<h3><a href="./transfer_allowlist.html">0x0::transfer_allowlist</a></h3>
+<p><p>Allowlists NFT transfers.</p>
 </p>
 <p><span class="rule"></span></p>
 <h3><a href="./royalties.html">0x0::royalties</a></h3>
@@ -281,7 +273,7 @@
 </p>
 <p><span class="rule"></span></p>
 <h3><a href="./nft.html">0x0::nft</a></h3>
-<p><p>Module of a generic <code>Nft</code> type.</p>
+<p><p>Module defining the OriginByte <code>NFT</code> object</p>
 </p>
 <p><span class="rule"></span></p>
 <h3><a href="./unprotected_safe.html">0x0::unprotected_safe</a></h3>
@@ -307,16 +299,16 @@
 <h3><a href="./object_box.html">0x0::object_box</a></h3>
 <p></p>
 <p><span class="rule"></span></p>
-<h3><a href="./launchpad.html">0x0::launchpad</a></h3>
-<p><p>Module of a <code>Launchpad</code> type.</p>
+<h3><a href="./marketplace.html">0x0::marketplace</a></h3>
+<p><p>Module of a <code>Marketplace</code> type.</p>
 </p>
 <p><span class="rule"></span></p>
 <h3><a href="./inventory.html">0x0::inventory</a></h3>
 <p><p>Module representing the Nft bookeeping Inventories of <code>Slot</code>s.</p>
 </p>
 <p><span class="rule"></span></p>
-<h3><a href="./slot.html">0x0::slot</a></h3>
-<p><p>Module for an NFT release <code>Slot</code></p>
+<h3><a href="./listing.html">0x0::listing</a></h3>
+<p><p>Module for an NFT <code>Listing</code></p>
 </p>
 <p><span class="rule"></span></p>
 <h3><a href="./dutch_auction.html">0x0::dutch_auction</a></h3>
@@ -329,6 +321,10 @@
 <p><span class="rule"></span></p>
 <h3><a href="./flat_fee.html">0x0::flat_fee</a></h3>
 <p></p>
+<p><span class="rule"></span></p>
+<h3><a href="./supply.html">0x0::supply</a></h3>
+<p><p>Module contaning <code>Supply</code> type.</p>
+</p>
 <p><span class="rule"></span></p>
 <h3><a href="./flyweight.html">0x0::flyweight</a></h3>
 <p><p>Module of Nft Flyweight domain.</p>
@@ -346,6 +342,10 @@
 <p><span class="rule"></span></p>
 <h3><a href="./royalty.html">0x0::royalty</a></h3>
 <p><p>Module of Collection <code>Royalty</code> domain.</p>
+</p>
+<p><span class="rule"></span></p>
+<h3><a href="./supply_policy.html">0x0::supply_policy</a></h3>
+<p><p>Module contaning <code>SupplyPolicy</code> type.</p>
 </p>
 <p><span class="rule"></span></p>
 <h3><a href="./tags.html">0x0::tags</a></h3>

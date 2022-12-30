@@ -22,14 +22,6 @@
 <ul class="methods"><li data-type="struct">
     <a href="./utils.html#Marker">Marker</a>       
 </li></ul></li><li>
-<a href="./supply.html">supply</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./supply.html#Supply">Supply</a>       
-</li></ul></li><li>
-<a href="./supply_policy.html">supply_policy</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./supply_policy.html#SupplyPolicy">SupplyPolicy</a>       
-</li></ul></li><li>
 <a href="./collection.html">collection</a>
 <ul class="methods"><li data-type="struct">
     <a href="./collection.html#BurnEvent">BurnEvent</a>       
@@ -48,11 +40,11 @@
 </li><li data-type="struct">
     <a href="./attribution.html#Creator">Creator</a>       
 </li></ul></li><li>
-<a href="./transfer_whitelist.html">transfer_whitelist</a>
+<a href="./transfer_allowlist.html">transfer_allowlist</a>
 <ul class="methods"><li data-type="struct">
-    <a href="./transfer_whitelist.html#CollectionControlCap">CollectionControlCap</a>       
+    <a href="./transfer_allowlist.html#Allowlist">Allowlist</a>       
 </li><li data-type="struct">
-    <a href="./transfer_whitelist.html#Whitelist">Whitelist</a>       
+    <a href="./transfer_allowlist.html#CollectionControlCap">CollectionControlCap</a>       
 </li></ul></li><li>
 <a href="./royalties.html">royalties</a>
 <ul class="methods"><li data-type="struct">
@@ -122,25 +114,25 @@
 <ul class="methods"><li data-type="struct">
     <a href="./object_box.html#ObjectBox">ObjectBox</a>       
 </li></ul></li><li>
-<a href="./launchpad.html">launchpad</a>
+<a href="./marketplace.html">marketplace</a>
 <ul class="methods"><li data-type="struct">
-    <a href="./launchpad.html#Launchpad">Launchpad</a>       
+    <a href="./marketplace.html#Marketplace">Marketplace</a>       
 </li></ul></li><li>
 <a href="./inventory.html">inventory</a>
 <ul class="methods"><li data-type="struct">
     <a href="./inventory.html#Inventory">Inventory</a>       
 </li></ul></li><li>
-<a href="./slot.html">slot</a>
+<a href="./listing.html">listing</a>
 <ul class="methods"><li data-type="struct">
-    <a href="./slot.html#CreateSlotEvent">CreateSlotEvent</a>       
+    <a href="./listing.html#CreateListingEvent">CreateListingEvent</a>       
 </li><li data-type="struct">
-    <a href="./slot.html#DeleteSlotEvent">DeleteSlotEvent</a>       
+    <a href="./listing.html#DeleteListingEvent">DeleteListingEvent</a>       
 </li><li data-type="struct">
-    <a href="./slot.html#NftCertificate">NftCertificate</a>       
+    <a href="./listing.html#Listing">Listing</a>       
 </li><li data-type="struct">
-    <a href="./slot.html#Slot">Slot</a>       
+    <a href="./listing.html#RequestToJoin">RequestToJoin</a>       
 </li><li data-type="struct">
-    <a href="./slot.html#WhitelistCertificate">WhitelistCertificate</a>       
+    <a href="./listing.html#WhitelistCertificate">WhitelistCertificate</a>       
 </li></ul></li><li>
 <a href="./dutch_auction.html">dutch_auction</a>
 <ul class="methods"><li data-type="struct">
@@ -159,6 +151,10 @@
 <a href="./flat_fee.html">flat_fee</a>
 <ul class="methods"><li data-type="struct">
     <a href="./flat_fee.html#FlatFee">FlatFee</a>       
+</li></ul></li><li>
+<a href="./supply.html">supply</a>
+<ul class="methods"><li data-type="struct">
+    <a href="./supply.html#Supply">Supply</a>       
 </li></ul></li><li>
 <a href="./flyweight.html">flyweight</a>
 <ul class="methods"><li data-type="struct">
@@ -210,6 +206,10 @@
 </li><li data-type="struct">
     <a href="./royalty.html#RoyaltyDomain">RoyaltyDomain</a>       
 </li></ul></li><li>
+<a href="./supply_policy.html">supply_policy</a>
+<ul class="methods"><li data-type="struct">
+    <a href="./supply_policy.html#SupplyPolicy">SupplyPolicy</a>       
+</li></ul></li><li>
 <a href="./tags.html">tags</a>
 <ul class="methods"><li data-type="struct">
     <a href="./tags.html#Witness">Witness</a>       
@@ -255,7 +255,7 @@
         <div class="container-overview">
     <h2>Witness</h2>
     <span class="name-container">
-        <h4 class="name" id="Witness">0x0::display::Witness</h4>
+        <h4 class="name" id="Witness"><pre>0x0::display::<a href="./0x0::display.html#Witness"><span class="struct">Witness</span></a>&lt;&gt; has <span class="ability">drop</span><pre></h4>
     </span>
     <div class="description"></div>
     <h5>Fields:</h5>
@@ -282,7 +282,7 @@
 </div><div class="container-overview">
     <h2>DisplayDomain</h2>
     <span class="name-container">
-        <h4 class="name" id="DisplayDomain">0x0::display::DisplayDomain</h4>
+        <h4 class="name" id="DisplayDomain"><pre>0x0::display::<a href="./0x0::display.html#DisplayDomain"><span class="struct">DisplayDomain</span></a>&lt;&gt; has <span class="ability">store</span><pre></h4>
     </span>
     <div class="description"></div>
     <h5>Fields:</h5>
@@ -317,7 +317,7 @@
 </div><div class="container-overview">
     <h2>UrlDomain</h2>
     <span class="name-container">
-        <h4 class="name" id="UrlDomain">0x0::display::UrlDomain</h4>
+        <h4 class="name" id="UrlDomain"><pre>0x0::display::<a href="./0x0::display.html#UrlDomain"><span class="struct">UrlDomain</span></a>&lt;&gt; has <span class="ability">store</span><pre></h4>
     </span>
     <div class="description"><p>=== UrlDomain ===</p>
 </div>
@@ -345,7 +345,7 @@
 </div><div class="container-overview">
     <h2>SymbolDomain</h2>
     <span class="name-container">
-        <h4 class="name" id="SymbolDomain">0x0::display::SymbolDomain</h4>
+        <h4 class="name" id="SymbolDomain"><pre>0x0::display::<a href="./0x0::display.html#SymbolDomain"><span class="struct">SymbolDomain</span></a>&lt;&gt; has <span class="ability">store</span><pre></h4>
     </span>
     <div class="description"><p>=== SymbolDomain ===</p>
 </div>
@@ -373,7 +373,7 @@
 </div><div class="container-overview">
     <h2>AttributesDomain</h2>
     <span class="name-container">
-        <h4 class="name" id="AttributesDomain">0x0::display::AttributesDomain</h4>
+        <h4 class="name" id="AttributesDomain"><pre>0x0::display::<a href="./0x0::display.html#AttributesDomain"><span class="struct">AttributesDomain</span></a>&lt;&gt; has <span class="ability">store</span><pre></h4>
     </span>
     <div class="description"><p>=== AttributesDomain ===</p>
 </div>
@@ -402,12 +402,12 @@
         <h3 class="subsection-title">Methods</h3>
         <span class="name-container">
     <h4 class="name" id="name"><pre>public fun name(domain: &amp;display::DisplayDomain): 
-    &amp;string::String</pre></h4>
+    &string::String</pre></h4>
 </span>
 <div class="description"><p>Gets name of <code>DisplayDomain</code></p>
 </div><span class="name-container">
     <h4 class="name" id="description"><pre>public fun description(domain: &amp;display::DisplayDomain): 
-    &amp;string::String</pre></h4>
+    &string::String</pre></h4>
 </span>
 <div class="description"><p>Gets description of <code>DisplayDomain</code></p>
 </div><span class="name-container">
@@ -438,13 +438,13 @@
 </div><span class="name-container">
     <h4 class="name" id="display_domain"><pre>public fun display_domain&lt;C&gt;(
     nft: &amp;nft::Nft&lt;C&gt;,
-): &amp;display::DisplayDomain</pre></h4>
+): &display::DisplayDomain</pre></h4>
 </span>
 <div class="description"><p>====== Interoperability ===</p>
 </div><span class="name-container">
     <h4 class="name" id="collection_display_domain"><pre>public fun collection_display_domain&lt;C&gt;(
     nft: &amp;collection::Collection&lt;C&gt;,
-): &amp;display::DisplayDomain</pre></h4>
+): &display::DisplayDomain</pre></h4>
 </span>
 <div class="description"></div><span class="name-container">
     <h4 class="name" id="add_display_domain"><pre>public fun add_display_domain&lt;C&gt;(
@@ -463,7 +463,7 @@
 )</pre></h4>
 </span>
 <div class="description"></div><span class="name-container">
-    <h4 class="name" id="url"><pre>public fun url(domain: &amp;display::UrlDomain): &amp;url::Url</pre></h4>
+    <h4 class="name" id="url"><pre>public fun url(domain: &amp;display::UrlDomain): &url::Url</pre></h4>
 </span>
 <div class="description"><p>Gets URL of <code>UrlDomain</code></p>
 </div><span class="name-container">
@@ -481,13 +481,13 @@
 <p>Requires that <code>AttributionDomain</code> is defined and sender is a creator</p>
 </div><span class="name-container">
     <h4 class="name" id="display_url"><pre>public fun display_url&lt;C&gt;(nft: &amp;nft::Nft&lt;C&gt;): 
-    option::Option&lt;url::Url&gt;</pre></h4>
+    option::Option<url::Url></pre></h4>
 </span>
 <div class="description"><p>====== Interoperability ===</p>
 </div><span class="name-container">
     <h4 class="name" id="display_collection_url"><pre>public fun display_collection_url&lt;C&gt;(
     nft: &amp;collection::Collection&lt;C&gt;,
-): option::Option&lt;url::Url&gt;</pre></h4>
+): option::Option<url::Url></pre></h4>
 </span>
 <div class="description"></div><span class="name-container">
     <h4 class="name" id="add_url_domain"><pre>public fun add_url_domain&lt;C&gt;(
@@ -505,7 +505,7 @@
 </span>
 <div class="description"></div><span class="name-container">
     <h4 class="name" id="symbol"><pre>public fun symbol(domain: &amp;display::SymbolDomain): 
-    &amp;string::String</pre></h4>
+    &string::String</pre></h4>
 </span>
 <div class="description"><p>Gets symbol of <code>SymbolDomain</code></p>
 </div><span class="name-container">
@@ -525,13 +525,13 @@
 </div><span class="name-container">
     <h4 class="name" id="display_symbol"><pre>public fun display_symbol&lt;C&gt;(
     nft: &amp;nft::Nft&lt;C&gt;,
-): option::Option&lt;string::String&gt;</pre></h4>
+): option::Option<string::String></pre></h4>
 </span>
 <div class="description"><p>====== Interoperability ===</p>
 </div><span class="name-container">
     <h4 class="name" id="display_collection_symbol"><pre>public fun display_collection_symbol&lt;C&gt;(
     nft: &amp;collection::Collection&lt;C&gt;,
-): option::Option&lt;string::String&gt;</pre></h4>
+): option::Option<string::String></pre></h4>
 </span>
 <div class="description"></div><span class="name-container">
     <h4 class="name" id="add_symbol_domain"><pre>public fun add_symbol_domain&lt;C&gt;(
@@ -549,17 +549,16 @@
 </span>
 <div class="description"></div><span class="name-container">
     <h4 class="name" id="attributes"><pre>public fun attributes(domain: &amp;display::AttributesDomain): 
-    &amp;vec_map::VecMap&lt;string::String, string::String&gt;</pre></h4>
+    &vec_map::VecMap<string::String, string::String></pre></h4>
 </span>
 <div class="description"><p>Gets Keys of <code>Attributes</code></p>
 </div><span class="name-container">
-    <h4 class="name" id="keys"><pre>public fun keys(domain: &amp;display::AttributesDomain): 
-    vector&lt;string::String&gt;</pre></h4>
+    <h4 class="name" id="keys"><pre>public fun keys(domain: &amp;display::AttributesDomain): vector<string::String></pre></h4>
 </span>
 <div class="description"><p>Gets Keys of <code>Attributes</code></p>
 </div><span class="name-container">
     <h4 class="name" id="values"><pre>public fun values(domain: &amp;display::AttributesDomain): 
-    vector&lt;string::String&gt;</pre></h4>
+    vector<string::String></pre></h4>
 </span>
 <div class="description"><p>Gets Values of <code>Attributes</code></p>
 </div><span class="name-container">
@@ -571,7 +570,7 @@
 </div><span class="name-container">
     <h4 class="name" id="display_attribute"><pre>public fun display_attribute&lt;C&gt;(
     nft: &amp;nft::Nft&lt;C&gt;,
-): &amp;display::AttributesDomain</pre></h4>
+): &display::AttributesDomain</pre></h4>
 </span>
 <div class="description"><p>====== Interoperability ===</p>
 </div><span class="name-container">
@@ -579,7 +578,7 @@
     nft: &amp;mut nft::Nft&lt;C&gt;,
     collection: &amp;mut collection::Collection&lt;C&gt;,
     ctx: &amp;mut tx_context::TxContext,
-): &amp;mut display::AttributesDomain</pre></h4>
+): &mut display::AttributesDomain</pre></h4>
 </span>
 <div class="description"></div><span class="name-container">
     <h4 class="name" id="add_attributes_domain"><pre>public fun add_attributes_domain&lt;C&gt;(

@@ -22,14 +22,6 @@
 <ul class="methods"><li data-type="struct">
     <a href="./utils.html#Marker">Marker</a>       
 </li></ul></li><li>
-<a href="./supply.html">supply</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./supply.html#Supply">Supply</a>       
-</li></ul></li><li>
-<a href="./supply_policy.html">supply_policy</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./supply_policy.html#SupplyPolicy">SupplyPolicy</a>       
-</li></ul></li><li>
 <a href="./collection.html">collection</a>
 <ul class="methods"><li data-type="struct">
     <a href="./collection.html#BurnEvent">BurnEvent</a>       
@@ -48,11 +40,11 @@
 </li><li data-type="struct">
     <a href="./attribution.html#Creator">Creator</a>       
 </li></ul></li><li>
-<a href="./transfer_whitelist.html">transfer_whitelist</a>
+<a href="./transfer_allowlist.html">transfer_allowlist</a>
 <ul class="methods"><li data-type="struct">
-    <a href="./transfer_whitelist.html#CollectionControlCap">CollectionControlCap</a>       
+    <a href="./transfer_allowlist.html#Allowlist">Allowlist</a>       
 </li><li data-type="struct">
-    <a href="./transfer_whitelist.html#Whitelist">Whitelist</a>       
+    <a href="./transfer_allowlist.html#CollectionControlCap">CollectionControlCap</a>       
 </li></ul></li><li>
 <a href="./royalties.html">royalties</a>
 <ul class="methods"><li data-type="struct">
@@ -122,25 +114,25 @@
 <ul class="methods"><li data-type="struct">
     <a href="./object_box.html#ObjectBox">ObjectBox</a>       
 </li></ul></li><li>
-<a href="./launchpad.html">launchpad</a>
+<a href="./marketplace.html">marketplace</a>
 <ul class="methods"><li data-type="struct">
-    <a href="./launchpad.html#Launchpad">Launchpad</a>       
+    <a href="./marketplace.html#Marketplace">Marketplace</a>       
 </li></ul></li><li>
 <a href="./inventory.html">inventory</a>
 <ul class="methods"><li data-type="struct">
     <a href="./inventory.html#Inventory">Inventory</a>       
 </li></ul></li><li>
-<a href="./slot.html">slot</a>
+<a href="./listing.html">listing</a>
 <ul class="methods"><li data-type="struct">
-    <a href="./slot.html#CreateSlotEvent">CreateSlotEvent</a>       
+    <a href="./listing.html#CreateListingEvent">CreateListingEvent</a>       
 </li><li data-type="struct">
-    <a href="./slot.html#DeleteSlotEvent">DeleteSlotEvent</a>       
+    <a href="./listing.html#DeleteListingEvent">DeleteListingEvent</a>       
 </li><li data-type="struct">
-    <a href="./slot.html#NftCertificate">NftCertificate</a>       
+    <a href="./listing.html#Listing">Listing</a>       
 </li><li data-type="struct">
-    <a href="./slot.html#Slot">Slot</a>       
+    <a href="./listing.html#RequestToJoin">RequestToJoin</a>       
 </li><li data-type="struct">
-    <a href="./slot.html#WhitelistCertificate">WhitelistCertificate</a>       
+    <a href="./listing.html#WhitelistCertificate">WhitelistCertificate</a>       
 </li></ul></li><li>
 <a href="./dutch_auction.html">dutch_auction</a>
 <ul class="methods"><li data-type="struct">
@@ -159,6 +151,10 @@
 <a href="./flat_fee.html">flat_fee</a>
 <ul class="methods"><li data-type="struct">
     <a href="./flat_fee.html#FlatFee">FlatFee</a>       
+</li></ul></li><li>
+<a href="./supply.html">supply</a>
+<ul class="methods"><li data-type="struct">
+    <a href="./supply.html#Supply">Supply</a>       
 </li></ul></li><li>
 <a href="./flyweight.html">flyweight</a>
 <ul class="methods"><li data-type="struct">
@@ -210,6 +206,10 @@
 </li><li data-type="struct">
     <a href="./royalty.html#RoyaltyDomain">RoyaltyDomain</a>       
 </li></ul></li><li>
+<a href="./supply_policy.html">supply_policy</a>
+<ul class="methods"><li data-type="struct">
+    <a href="./supply_policy.html#SupplyPolicy">SupplyPolicy</a>       
+</li></ul></li><li>
 <a href="./tags.html">tags</a>
 <ul class="methods"><li data-type="struct">
     <a href="./tags.html#Witness">Witness</a>       
@@ -245,17 +245,17 @@
     </header>
     <article>
         <p>Module performing custody of the funds acquired from the sale proceeds of
-an NFT releaset <code>Slot</code>. In addition, <code>Proceeds</code> also performs the bookeeping
+an NFT <code>Listing</code>. In addition, <code>Proceeds</code> also performs the bookeeping
 of the sales, in quantities and <!-- raw HTML omitted -->-amount.</p>
 <p>The process of retrieving the funds from the  <code>Proceeds</code> object embedded in
-a <code>Slot</code> guarantees that fees are transferred to the <code>launchpad.receiver</code>
+a <code>Slot</code> guarantees that fees are transferred to the <code>marketplace.receiver</code>
 and therefore the <code>Slot.receiver</code> receives the proceeds net of fees.</p>
 
         <h3 class="subsection-title">Structs</h3>
         <div class="container-overview">
     <h2>Proceeds</h2>
     <span class="name-container">
-        <h4 class="name" id="Proceeds">0x0::proceeds::Proceeds</h4>
+        <h4 class="name" id="Proceeds"><pre>0x0::proceeds::<a href="./0x0::proceeds.html#Proceeds"><span class="struct">Proceeds</span></a>&lt;&gt; has <span class="ability">store</span>, <span class="ability">key</span><pre></h4>
     </span>
     <div class="description"></div>
     <h5>Fields:</h5>
@@ -290,7 +290,7 @@ and therefore the <code>Slot.receiver</code> receives the proceeds net of fees.<
 </div><div class="container-overview">
     <h2>QtSold</h2>
     <span class="name-container">
-        <h4 class="name" id="QtSold">0x0::proceeds::QtSold</h4>
+        <h4 class="name" id="QtSold"><pre>0x0::proceeds::<a href="./0x0::proceeds.html#QtSold"><span class="struct">QtSold</span></a>&lt;&gt; has <span class="ability">copy</span>, <span class="ability">drop</span>, <span class="ability">store</span><pre></h4>
     </span>
     <div class="description"></div>
     <h5>Fields:</h5>
@@ -336,11 +336,18 @@ and therefore the <code>Slot.receiver</code> receives the proceeds net of fees.<
 )</pre></h4>
 </span>
 <div class="description"></div><span class="name-container">
-    <h4 class="name" id="collect"><pre>public fun collect&lt;FT&gt;(
+    <h4 class="name" id="collect_with_fees"><pre>public fun collect_with_fees&lt;FT&gt;(
     proceeds: &amp;mut proceeds::Proceeds,
     fees: u64,
-    launchpad_receiver: address,
-    slot_receiver: address,
+    marketplace_receiver: address,
+    listing_receiver: address,
+    ctx: &amp;mut tx_context::TxContext,
+)</pre></h4>
+</span>
+<div class="description"></div><span class="name-container">
+    <h4 class="name" id="collect_without_fees"><pre>public fun collect_without_fees&lt;FT&gt;(
+    proceeds: &amp;mut proceeds::Proceeds,
+    listing_receiver: address,
     ctx: &amp;mut tx_context::TxContext,
 )</pre></h4>
 </span>
@@ -353,7 +360,7 @@ and therefore the <code>Slot.receiver</code> receives the proceeds net of fees.<
 <div class="description"></div><span class="name-container">
     <h4 class="name" id="balance"><pre>public fun balance&lt;FT&gt;(
     proceeds: &amp;proceeds::Proceeds,
-): &amp;balance::Balance&lt;FT&gt;</pre></h4>
+): &balance::Balance<FT></pre></h4>
 </span>
 <div class="description"></div>
     </article>

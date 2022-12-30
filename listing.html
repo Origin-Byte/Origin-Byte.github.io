@@ -22,14 +22,6 @@
 <ul class="methods"><li data-type="struct">
     <a href="./utils.html#Marker">Marker</a>       
 </li></ul></li><li>
-<a href="./supply.html">supply</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./supply.html#Supply">Supply</a>       
-</li></ul></li><li>
-<a href="./supply_policy.html">supply_policy</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./supply_policy.html#SupplyPolicy">SupplyPolicy</a>       
-</li></ul></li><li>
 <a href="./collection.html">collection</a>
 <ul class="methods"><li data-type="struct">
     <a href="./collection.html#BurnEvent">BurnEvent</a>       
@@ -48,11 +40,11 @@
 </li><li data-type="struct">
     <a href="./attribution.html#Creator">Creator</a>       
 </li></ul></li><li>
-<a href="./transfer_whitelist.html">transfer_whitelist</a>
+<a href="./transfer_allowlist.html">transfer_allowlist</a>
 <ul class="methods"><li data-type="struct">
-    <a href="./transfer_whitelist.html#CollectionControlCap">CollectionControlCap</a>       
+    <a href="./transfer_allowlist.html#Allowlist">Allowlist</a>       
 </li><li data-type="struct">
-    <a href="./transfer_whitelist.html#Whitelist">Whitelist</a>       
+    <a href="./transfer_allowlist.html#CollectionControlCap">CollectionControlCap</a>       
 </li></ul></li><li>
 <a href="./royalties.html">royalties</a>
 <ul class="methods"><li data-type="struct">
@@ -122,25 +114,25 @@
 <ul class="methods"><li data-type="struct">
     <a href="./object_box.html#ObjectBox">ObjectBox</a>       
 </li></ul></li><li>
-<a href="./launchpad.html">launchpad</a>
+<a href="./marketplace.html">marketplace</a>
 <ul class="methods"><li data-type="struct">
-    <a href="./launchpad.html#Launchpad">Launchpad</a>       
+    <a href="./marketplace.html#Marketplace">Marketplace</a>       
 </li></ul></li><li>
 <a href="./inventory.html">inventory</a>
 <ul class="methods"><li data-type="struct">
     <a href="./inventory.html#Inventory">Inventory</a>       
 </li></ul></li><li>
-<a href="./slot.html">slot</a>
+<a href="./listing.html">listing</a>
 <ul class="methods"><li data-type="struct">
-    <a href="./slot.html#CreateSlotEvent">CreateSlotEvent</a>       
+    <a href="./listing.html#CreateListingEvent">CreateListingEvent</a>       
 </li><li data-type="struct">
-    <a href="./slot.html#DeleteSlotEvent">DeleteSlotEvent</a>       
+    <a href="./listing.html#DeleteListingEvent">DeleteListingEvent</a>       
 </li><li data-type="struct">
-    <a href="./slot.html#NftCertificate">NftCertificate</a>       
+    <a href="./listing.html#Listing">Listing</a>       
 </li><li data-type="struct">
-    <a href="./slot.html#Slot">Slot</a>       
+    <a href="./listing.html#RequestToJoin">RequestToJoin</a>       
 </li><li data-type="struct">
-    <a href="./slot.html#WhitelistCertificate">WhitelistCertificate</a>       
+    <a href="./listing.html#WhitelistCertificate">WhitelistCertificate</a>       
 </li></ul></li><li>
 <a href="./dutch_auction.html">dutch_auction</a>
 <ul class="methods"><li data-type="struct">
@@ -159,6 +151,10 @@
 <a href="./flat_fee.html">flat_fee</a>
 <ul class="methods"><li data-type="struct">
     <a href="./flat_fee.html#FlatFee">FlatFee</a>       
+</li></ul></li><li>
+<a href="./supply.html">supply</a>
+<ul class="methods"><li data-type="struct">
+    <a href="./supply.html#Supply">Supply</a>       
 </li></ul></li><li>
 <a href="./flyweight.html">flyweight</a>
 <ul class="methods"><li data-type="struct">
@@ -210,6 +206,10 @@
 </li><li data-type="struct">
     <a href="./royalty.html#RoyaltyDomain">RoyaltyDomain</a>       
 </li></ul></li><li>
+<a href="./supply_policy.html">supply_policy</a>
+<ul class="methods"><li data-type="struct">
+    <a href="./supply_policy.html#SupplyPolicy">SupplyPolicy</a>       
+</li></ul></li><li>
 <a href="./tags.html">tags</a>
 <ul class="methods"><li data-type="struct">
     <a href="./tags.html#Witness">Witness</a>       
@@ -238,88 +238,31 @@
 </li><li data-type="struct">
     <a href="./tags.html#Video">Video</a>       
 </li></ul></li></ul></nav>
-<div id="main"><h1 class="page-title">slot</h1>
+<div id="main"><h1 class="page-title">listing</h1>
 <section class="readme">
     <header>
-        <h2>0x0::slot</h2>
+        <h2>0x0::listing</h2>
     </header>
     <article>
-        <p>Module for an NFT release <code>Slot</code></p>
-<p>After the creation of the <code>Launchpad</code> a <code>Slot</code> for the NFT release needs
-to be created. Whilst the <code>Launchpad</code> stipulates a default fee policy,
-the launchpad admin can decide to create a custom fee policy for each
-release <code>Slot</code>.</p>
-<p>The slot acts as the object that configures the primary NFT release
+        <p>Module for an NFT <code>Listing</code></p>
+<p>A <code>Listing</code> allows creators to sell their NFTs to the primary market using
+bespoke market primitives, such as Fixed Price Sales and Dutch Auctions.
+<code>Listings</code> can be standalone or be attached to Marketplace, in which case
+they will pay fees to it.</p>
+<p>Whilst the associated <code>Marketplace</code> object stipulates a default fee policy,
+the marketplace admin can decide to create a custom fee policy for each
+<code>Listing</code>.</p>
+<p>The listing acts as the object that configures the primary NFT listing
 strategy, that is the primary market sale. Primary market sales can take
 many shapes, depending on the business level requirements.</p>
 
         <h3 class="subsection-title">Structs</h3>
         <div class="container-overview">
-    <h2>NftCertificate</h2>
-    <span class="name-container">
-        <h4 class="name" id="NftCertificate">0x0::slot::NftCertificate</h4>
-    </span>
-    <div class="description"><p>This object acts as an intermediate step between the payment
-and the transfer of the NFT. The user first has to call
-<code>buy_nft_certificate</code> which mints and transfers the <code>NftCertificate</code> to
-the user. This object will dictate which NFT will the user receive by
-calling the endpoint <code>claim_nft</code></p>
-</div>
-    <h5>Fields:</h5>
-    <table class="params">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Type</th>
-                <th class="last">Description</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-    <td class="name">
-        <code>id</code>            
-    </td>
-    <td class="type">
-        <code>object::UID</code>  
-    </td>
-    <td class="description last"></td>
-</tr><tr>
-    <td class="name">
-        <code>launchpad_id</code>            
-    </td>
-    <td class="type">
-        <code>object::ID</code>  
-    </td>
-    <td class="description last"><p><code>Launchpad</code> ID to which the <code>Slot</code> this certificate is assigned</p>
-<p>Intended for discoverability</p>
-</td>
-</tr><tr>
-    <td class="name">
-        <code>slot_id</code>            
-    </td>
-    <td class="type">
-        <code>object::ID</code>  
-    </td>
-    <td class="description last"><p><code>Slot</code> from which this certificate can withdraw an <code>Nft</code></p>
-</td>
-</tr><tr>
-    <td class="name">
-        <code>nft_id</code>            
-    </td>
-    <td class="type">
-        <code>object::ID</code>  
-    </td>
-    <td class="description last"><p>ID of the <code>Nft</code> which can be withdrawn using this certificate</p>
-</td>
-</tr>
-        </tbody>
-    </table>
-</div><div class="container-overview">
     <h2>WhitelistCertificate</h2>
     <span class="name-container">
-        <h4 class="name" id="WhitelistCertificate">0x0::slot::WhitelistCertificate</h4>
+        <h4 class="name" id="WhitelistCertificate"><pre>0x0::listing::<a href="./0x0::listing.html#WhitelistCertificate"><span class="struct">WhitelistCertificate</span></a>&lt;&gt; has <span class="ability">store</span>, <span class="ability">key</span><pre></h4>
     </span>
-    <div class="description"><p>Whitin a release <code>Slot</code>, each market has its own whitelist policy.
+    <div class="description"><p>Whitin a <code>Listing</code>, each market has its own whitelist policy.
 As an example, creators can create tiered sales based on the NFT rarity,
 and then whitelist only the rare NFT sale. They can then emit whitelist
 tokens and send them to users who have completed a set of defined actions.</p>
@@ -344,21 +287,12 @@ tokens and send them to users who have completed a set of defined actions.</p>
     <td class="description last"></td>
 </tr><tr>
     <td class="name">
-        <code>launchpad_id</code>            
+        <code>listing_id</code>            
     </td>
     <td class="type">
         <code>object::ID</code>  
     </td>
-    <td class="description last"><p><code>Launchpad</code> ID intended for discoverability</p>
-</td>
-</tr><tr>
-    <td class="name">
-        <code>slot_id</code>            
-    </td>
-    <td class="type">
-        <code>object::ID</code>  
-    </td>
-    <td class="description last"><p><code>Slot</code> from which this certificate can withdraw an <code>Nft</code></p>
+    <td class="description last"><p><code>Listing</code> from which this certificate can withdraw an <code>Nft</code></p>
 </td>
 </tr><tr>
     <td class="name">
@@ -373,9 +307,9 @@ tokens and send them to users who have completed a set of defined actions.</p>
         </tbody>
     </table>
 </div><div class="container-overview">
-    <h2>Slot</h2>
+    <h2>Listing</h2>
     <span class="name-container">
-        <h4 class="name" id="Slot">0x0::slot::Slot</h4>
+        <h4 class="name" id="Listing"><pre>0x0::listing::<a href="./0x0::listing.html#Listing"><span class="struct">Listing</span></a>&lt;&gt; has <span class="ability">store</span>, <span class="ability">key</span><pre></h4>
     </span>
     <div class="description"></div>
     <h5>Fields:</h5>
@@ -398,20 +332,12 @@ tokens and send them to users who have completed a set of defined actions.</p>
     <td class="description last"></td>
 </tr><tr>
     <td class="name">
-        <code>launchpad_id</code>            
+        <code>marketplace_id</code>            
     </td>
     <td class="type">
-        <code>object::ID</code>  
+        <code>option::Option<typed_id::TypedID<marketplace::Marketplace>></code>  
     </td>
-    <td class="description last"></td>
-</tr><tr>
-    <td class="name">
-        <code>live</code>            
-    </td>
-    <td class="type">
-        <code>bool</code>  
-    </td>
-    <td class="description last"><p>Boolean indicating if the <code>Slot</code> is live</p>
+    <td class="description last"><p>The ID of the marketplace if any</p>
 </td>
 </tr><tr>
     <td class="name">
@@ -420,7 +346,7 @@ tokens and send them to users who have completed a set of defined actions.</p>
     <td class="type">
         <code>address</code>  
     </td>
-    <td class="description last"><p>The address of the <code>Slot</code> administrator</p>
+    <td class="description last"><p>The address of the <code>Listing</code> administrator</p>
 </td>
 </tr><tr>
     <td class="name">
@@ -430,16 +356,6 @@ tokens and send them to users who have completed a set of defined actions.</p>
         <code>address</code>  
     </td>
     <td class="description last"><p>The address of the receiver of funds</p>
-</td>
-</tr><tr>
-    <td class="name">
-        <code>markets</code>            
-    </td>
-    <td class="type">
-        <code>object_bag::ObjectBag</code>  
-    </td>
-    <td class="description last"><p>Vector of all markets outlets that, each outles holding IDs
-owned by the slot</p>
 </td>
 </tr><tr>
     <td class="name">
@@ -457,7 +373,7 @@ owned by the slot</p>
         <code>proceeds::Proceeds</code>  
     </td>
     <td class="description last"><p>Proceeds object holds the balance of Fungible Tokens acquired from
-the sale of the Slot</p>
+the sale of the Listing</p>
 </td>
 </tr><tr>
     <td class="name">
@@ -468,15 +384,50 @@ the sale of the Slot</p>
     </td>
     <td class="description last"><p>Field with Object Box holding a Custom Fee implementation if any.
 In case this box is empty the calculation will applied on the
-default fee object in the associated launchpad</p>
+default fee object in the associated Marketplace</p>
 </td>
 </tr>
         </tbody>
     </table>
 </div><div class="container-overview">
-    <h2>CreateSlotEvent</h2>
+    <h2>RequestToJoin</h2>
     <span class="name-container">
-        <h4 class="name" id="CreateSlotEvent">0x0::slot::CreateSlotEvent</h4>
+        <h4 class="name" id="RequestToJoin"><pre>0x0::listing::<a href="./0x0::listing.html#RequestToJoin"><span class="struct">RequestToJoin</span></a>&lt;&gt; has <span class="ability">store</span>, <span class="ability">key</span><pre></h4>
+    </span>
+    <div class="description"></div>
+    <h5>Fields:</h5>
+    <table class="params">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th class="last">Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+    <td class="name">
+        <code>id</code>            
+    </td>
+    <td class="type">
+        <code>object::UID</code>  
+    </td>
+    <td class="description last"></td>
+</tr><tr>
+    <td class="name">
+        <code>marketplace_id</code>            
+    </td>
+    <td class="type">
+        <code>typed_id::TypedID<marketplace::Marketplace></code>  
+    </td>
+    <td class="description last"></td>
+</tr>
+        </tbody>
+    </table>
+</div><div class="container-overview">
+    <h2>CreateListingEvent</h2>
+    <span class="name-container">
+        <h4 class="name" id="CreateListingEvent"><pre>0x0::listing::<a href="./0x0::listing.html#CreateListingEvent"><span class="struct">CreateListingEvent</span></a>&lt;&gt; has <span class="ability">copy</span>, <span class="ability">drop</span><pre></h4>
     </span>
     <div class="description"></div>
     <h5>Fields:</h5>
@@ -509,9 +460,9 @@ default fee object in the associated launchpad</p>
         </tbody>
     </table>
 </div><div class="container-overview">
-    <h2>DeleteSlotEvent</h2>
+    <h2>DeleteListingEvent</h2>
     <span class="name-container">
-        <h4 class="name" id="DeleteSlotEvent">0x0::slot::DeleteSlotEvent</h4>
+        <h4 class="name" id="DeleteListingEvent"><pre>0x0::listing::<a href="./0x0::listing.html#DeleteListingEvent"><span class="struct">DeleteListingEvent</span></a>&lt;&gt; has <span class="ability">copy</span>, <span class="ability">drop</span><pre></h4>
     </span>
     <div class="description"></div>
     <h5>Fields:</h5>
@@ -546,57 +497,15 @@ default fee object in the associated launchpad</p>
 </div>
         <h3 class="subsection-title">Methods</h3>
         <span class="name-container">
-    <h4 class="name" id="issue_nft_certificate"><pre>public fun issue_nft_certificate(
-    launchpad: &amp;launchpad::Launchpad,
-    slot: &amp;mut slot::Slot,
-    market_id: object::ID,
-    ctx: &amp;mut tx_context::TxContext,
-): slot::NftCertificate</pre></h4>
-</span>
-<div class="description"><p>Issue <code>NftCertificate</code></p>
-<p>Requires that sender is the <code>Slot</code> admin</p>
-</div><span class="name-container">
-    <h4 class="name" id="issue_nft_certificate_internal"><pre>public fun issue_nft_certificate_internal&lt;
-    Market: store + key,
-    Witness: drop,
-&gt;(
-    _witness: Witness,
-    launchpad: &amp;launchpad::Launchpad,
-    slot: &amp;mut slot::Slot,
-    market_id: object::ID,
-    ctx: &amp;mut tx_context::TxContext,
-): 
-    slot::NftCertificate</pre></h4>
-</span>
-<div class="description"><p>Issue <code>NftCertificate</code></p>
-<p>Does not require that sender is the <code>Slot</code> admin allowing markets to
-issue certificates.</p>
-</div><span class="name-container">
-    <h4 class="name" id="transfer_nft_certificate"><pre>public fun transfer_nft_certificate(
-    launchpad: &amp;launchpad::Launchpad,
-    slot: &amp;mut slot::Slot,
-    market_id: object::ID,
-    recipient: address,
-    ctx: &amp;mut tx_context::TxContext,
-)</pre></h4>
-</span>
-<div class="description"></div><span class="name-container">
-    <h4 class="name" id="burn_nft_certificate"><pre>public fun burn_nft_certificate(
-    certificate: slot::NftCertificate,
-)</pre></h4>
-</span>
-<div class="description"></div><span class="name-container">
     <h4 class="name" id="issue_whitelist_certificate"><pre>public fun issue_whitelist_certificate(
-    launchpad: &amp;launchpad::Launchpad,
-    slot: &amp;slot::Slot,
+    listing: &amp;listing::Listing,
     market_id: object::ID,
     ctx: &amp;mut tx_context::TxContext,
-): slot::WhitelistCertificate</pre></h4>
+): listing::WhitelistCertificate</pre></h4>
 </span>
 <div class="description"></div><span class="name-container">
     <h4 class="name" id="transfer_whitelist_certificate"><pre>public fun transfer_whitelist_certificate(
-    launchpad: &amp;launchpad::Launchpad,
-    slot: &amp;slot::Slot,
+    listing: &amp;listing::Listing,
     market_id: object::ID,
     recipient: address,
     ctx: &amp;mut tx_context::TxContext,
@@ -604,79 +513,100 @@ issue certificates.</p>
 </span>
 <div class="description"></div><span class="name-container">
     <h4 class="name" id="burn_whitelist_certificate"><pre>public fun burn_whitelist_certificate(
-    certificate: slot::WhitelistCertificate,
+    certificate: listing::WhitelistCertificate,
 )</pre></h4>
 </span>
 <div class="description"></div><span class="name-container">
     <h4 class="name" id="new"><pre>public fun new(
-    launchpad: &amp;launchpad::Launchpad,
-    slot_admin: address,
+    listing_admin: address,
     receiver: address,
     ctx: &amp;mut tx_context::TxContext,
-): slot::Slot</pre></h4>
+): listing::Listing</pre></h4>
 </span>
-<div class="description"><p>Initialises a <code>Slot</code> object and registers it in the <code>Launchpad</code> object
-and returns it.
-Depending if the Launchpad alllows for auto-approval, the launchpad
-admin might have to call <code>approve_slot</code> in order to validate the slot.</p>
+<div class="description"><p>Initialises a <code>Listing</code> object and returns it.</p>
 </div><span class="name-container">
-    <h4 class="name" id="init_slot"><pre>public fun init_slot(
-    launchpad: &amp;launchpad::Launchpad,
-    slot_admin: address,
+    <h4 class="name" id="init_listing"><pre>public fun init_listing(
+    listing_admin: address,
     receiver: address,
     ctx: &amp;mut tx_context::TxContext,
 )</pre></h4>
 </span>
-<div class="description"><p>Initialises a <code>Slot</code> object and registers it in the <code>Launchpad</code> object
-and shares it.
-Depending if the Launchpad allows for auto-approval, the launchpad
-admin might have to call <code>approve_slot</code> in order to validate the slot.</p>
+<div class="description"><p>Initialises a standalone <code>Listing</code> object.</p>
 </div><span class="name-container">
+    <h4 class="name" id="init_inventory"><pre>public fun init_inventory(
+    listing: &amp;mut listing::Listing,
+    ctx: &amp;mut tx_context::TxContext,
+)</pre></h4>
+</span>
+<div class="description"><p>Initializes an empty <code>Inventory</code> on <code>Listing</code></p>
+</div><span class="name-container">
+    <h4 class="name" id="create_inventory"><pre>public fun create_inventory(
+    listing: &amp;mut listing::Listing,
+    ctx: &amp;mut tx_context::TxContext,
+): object::ID</pre></h4>
+</span>
+<div class="description"></div><span class="name-container">
     <h4 class="name" id="pay"><pre>public fun pay&lt;FT&gt;(
-    slot: &amp;mut slot::Slot,
+    listing: &amp;mut listing::Listing,
     balance: balance::Balance&lt;FT&gt;,
     qty_sold: u64,
 )</pre></h4>
 </span>
-<div class="description"><p>=== Public functions ===</p>
-</div><span class="name-container">
-    <h4 class="name" id="redeem_nft"><pre>public fun redeem_nft&lt;C&gt;(
-    certificate: slot::NftCertificate,
-    slot: &amp;mut slot::Slot,
-): nft::Nft&lt;C&gt;</pre></h4>
-</span>
-<div class="description"><p>Adds NFT as a dynamic child object with its ID as key</p>
-</div><span class="name-container">
-    <h4 class="name" id="transfer_nft"><pre>public fun transfer_nft&lt;C&gt;(
-    certificate: slot::NftCertificate,
-    slot: &amp;mut slot::Slot,
-    recipient: address,
+<div class="description"></div><span class="name-container">
+    <h4 class="name" id="request_to_join_marketplace"><pre>public fun request_to_join_marketplace(
+    marketplace: &amp;marketplace::Marketplace,
+    listing: &amp;mut listing::Listing,
+    ctx: &amp;mut tx_context::TxContext,
 )</pre></h4>
 </span>
-<div class="description"></div><span class="name-container">
-    <h4 class="name" id="add_fee"><pre>public fun add_fee&lt;FeeType: store + key&gt;(
-    launchpad: &amp;launchpad::Launchpad,
-    slot: &amp;mut slot::Slot,
+<div class="description"><p>To be called by the <code>Listing</code> administrator, to declare the intention
+of joining a Marketplace. This is the first step to join a marketplace.
+Joining a <code>Marketplace</code> is a two step process in which both the
+<code>Listing</code> admin and the <code>Marketplace</code> admin need to declare their
+intention to partner up.</p>
+</div><span class="name-container">
+    <h4 class="name" id="accept_listing_request"><pre>public fun accept_listing_request(
+    marketplace: &amp;marketplace::Marketplace,
+    listing: &amp;mut listing::Listing,
+    ctx: &amp;mut tx_context::TxContext,
+)</pre></h4>
+</span>
+<div class="description"><p>To be called by the <code>Marketpalce</code> administrator, to accept the <code>Listing</code>
+request to join. This is the second step to join a marketplace.
+Joining a <code>Marketplace</code> is a two step process in which both the
+<code>Listing</code> admin and the <code>Marketplace</code> admin need to declare their
+intention to partner up.</p>
+</div><span class="name-container">
+    <h4 class="name" id="add_fee"><pre>public fun add_fee&lt;FeeType: <span class="ability">store</span> + <span class="ability">key</span>&gt;(
+    marketplace: &amp;marketplace::Marketplace,
+    listing: &amp;mut listing::Listing,
     fee: FeeType,
     ctx: &amp;mut tx_context::TxContext,
 )</pre></h4>
 </span>
-<div class="description"><p>=== Admin functions ===
-Adds a fee object to the Slot's <code>custom_fee</code></p>
-<p>Can only be called by the <code>Launchpad</code> admin</p>
+<div class="description"><p>Adds a fee object to the Listing's <code>custom_fee</code></p>
+<p>Can only be called by the <code>Marketplace</code> admin</p>
 </div><span class="name-container">
-    <h4 class="name" id="add_market"><pre>public fun add_market&lt;Market: store + key&gt;(
-    slot: &amp;mut slot::Slot,
-    market: Market,
+    <h4 class="name" id="add_inventory"><pre>public fun add_inventory(
+    listing: &amp;mut listing::Listing,
     inventory: inventory::Inventory,
+    ctx: &amp;mut tx_context::TxContext,
+)</pre></h4>
+</span>
+<div class="description"></div><span class="name-container">
+    <h4 class="name" id="add_market"><pre>public fun add_market&lt;Market: <span class="ability">store</span> + <span class="ability">key</span>&gt;(
+    listing: &amp;mut listing::Listing,
+    inventory_id: object::ID,
+    is_whitelisted: bool,
+    market: Market,
     ctx: &amp;mut tx_context::TxContext,
 )</pre></h4>
 </span>
 <div class="description"><p>Adds a new Market to <code>markets</code> and Inventory to <code>inventories</code> tables</p>
 </div><span class="name-container">
     <h4 class="name" id="add_nft"><pre>public fun add_nft&lt;C&gt;(
-    slot: &amp;mut slot::Slot,
-    market_id: object::ID,
+    listing: &amp;mut listing::Listing,
+    inventory_id: object::ID,
     nft: nft::Nft&lt;C&gt;,
     ctx: &amp;mut tx_context::TxContext,
 )</pre></h4>
@@ -684,156 +614,133 @@ Adds a fee object to the Slot's <code>custom_fee</code></p>
 <div class="description"><p>Adds NFT as a dynamic child object with its ID as key</p>
 </div><span class="name-container">
     <h4 class="name" id="sale_on"><pre>public fun sale_on(
-    slot: &amp;mut slot::Slot,
+    listing: &amp;mut listing::Listing,
+    inventory_id: object::ID,
+    market_id: object::ID,
     ctx: &amp;mut tx_context::TxContext,
 )</pre></h4>
 </span>
-<div class="description"><p>Toggle the Slot's <code>live</code> to <code>true</code> therefore making the NFT sale live</p>
+<div class="description"><p>Set market's live status to <code>true</code> therefore making the NFT sale live.
+To be called by the <code>Listing</code> admin.</p>
 </div><span class="name-container">
     <h4 class="name" id="sale_off"><pre>public fun sale_off(
-    launchpad: &amp;launchpad::Launchpad,
-    slot: &amp;mut slot::Slot,
+    listing: &amp;mut listing::Listing,
+    inventory_id: object::ID,
+    market_id: object::ID,
     ctx: &amp;mut tx_context::TxContext,
 )</pre></h4>
 </span>
-<div class="description"><p>Toggle the Slot's <code>live</code> to <code>false</code> therefore pausing or stopping the
-NFT sale</p>
-<p>Can also be turned off by the Launchpad admin</p>
+<div class="description"><p>Set market's live status to <code>false</code> therefore pausing or stopping the
+NFT sale. To be called by the <code>Listing</code> admin.</p>
 </div><span class="name-container">
-    <h4 class="name" id="is_live"><pre>public fun is_live(slot: &amp;slot::Slot): bool</pre></h4>
-</span>
-<div class="description"><p>Get the Slot's <code>live</code></p>
-</div><span class="name-container">
-    <h4 class="name" id="receiver"><pre>public fun receiver(slot: &amp;slot::Slot): address</pre></h4>
-</span>
-<div class="description"><p>Get the Slot's <code>receiver</code> address</p>
-</div><span class="name-container">
-    <h4 class="name" id="admin"><pre>public fun admin(slot: &amp;slot::Slot): address</pre></h4>
-</span>
-<div class="description"><p>Get the Slot's <code>admin</code> address</p>
-</div><span class="name-container">
-    <h4 class="name" id="contains_custom_fee"><pre>public fun contains_custom_fee(slot: &amp;slot::Slot): bool</pre></h4>
-</span>
-<div class="description"></div><span class="name-container">
-    <h4 class="name" id="custom_fee"><pre>public fun custom_fee(slot: &amp;slot::Slot): 
-    &amp;object_box::ObjectBox</pre></h4>
-</span>
-<div class="description"></div><span class="name-container">
-    <h4 class="name" id="proceeds"><pre>public fun proceeds(slot: &amp;slot::Slot): 
-    &amp;proceeds::Proceeds</pre></h4>
-</span>
-<div class="description"></div><span class="name-container">
-    <h4 class="name" id="proceeds_mut"><pre>public fun proceeds_mut(slot: &amp;mut slot::Slot): 
-    &amp;mut proceeds::Proceeds</pre></h4>
-</span>
-<div class="description"></div><span class="name-container">
-    <h4 class="name" id="markets"><pre>public fun markets(slot: &amp;slot::Slot): 
-    &amp;object_bag::ObjectBag</pre></h4>
-</span>
-<div class="description"><p>Get the Slot's sale <code>market</code> table</p>
-</div><span class="name-container">
-    <h4 class="name" id="market"><pre>public fun market&lt;Market: store + key&gt;(
-    slot: &amp;slot::Slot,
-    market_id: object::ID,
-): &amp;Market</pre></h4>
-</span>
-<div class="description"><p>Get the Slot's <code>market</code></p>
-</div><span class="name-container">
-    <h4 class="name" id="market_mut"><pre>public fun market_mut&lt;Market: store + key&gt;(
-    slot: &amp;mut slot::Slot,
+    <h4 class="name" id="sale_on_delegated"><pre>public fun sale_on_delegated(
+    marketplace: &amp;marketplace::Marketplace,
+    listing: &amp;mut listing::Listing,
+    inventory_id: object::ID,
     market_id: object::ID,
     ctx: &amp;mut tx_context::TxContext,
-): &amp;mut Market</pre></h4>
+)</pre></h4>
 </span>
-<div class="description"><p>Get the Slot's <code>market</code> mutably</p>
-<p>This will require that sender is a <code>Slot</code> admin, for non admin mutable
-access use <code>market_internal_mut</code>.</p>
+<div class="description"><p>Set market's live status to <code>true</code> therefore making the NFT sale live.
+To be called by the <code>Marketplace</code> admin.</p>
 </div><span class="name-container">
-    <h4 class="name" id="market_internal_mut"><pre>public fun market_internal_mut&lt;
-    Market: store + key,
-    Witness: drop,
+    <h4 class="name" id="sale_off_delegated"><pre>public fun sale_off_delegated(
+    marketplace: &amp;marketplace::Marketplace,
+    listing: &amp;mut listing::Listing,
+    inventory_id: object::ID,
+    market_id: object::ID,
+    ctx: &amp;mut tx_context::TxContext,
+)</pre></h4>
+</span>
+<div class="description"><p>Set market's live status to <code>false</code> therefore pausing or stopping the
+NFT sale. To be called by the <code>Marketplace</code> admin.</p>
+</div><span class="name-container">
+    <h4 class="name" id="collect_proceeds"><pre>public fun collect_proceeds&lt;FT&gt;(
+    listing: &amp;mut listing::Listing,
+    ctx: &amp;mut tx_context::TxContext,
+)</pre></h4>
+</span>
+<div class="description"><p>To be called by <code>Listing</code> admins for standalone <code>Listings</code>.
+Standalone Listings do not envolve marketplace fees, and therefore
+the listing admin can freely call this entrypoint.</p>
+</div><span class="name-container">
+    <h4 class="name" id="receiver"><pre>public fun receiver(listing: &amp;listing::Listing): address</pre></h4>
+</span>
+<div class="description"><p>Get the Listing's <code>receiver</code> address</p>
+</div><span class="name-container">
+    <h4 class="name" id="admin"><pre>public fun admin(listing: &amp;listing::Listing): address</pre></h4>
+</span>
+<div class="description"><p>Get the Listing's <code>admin</code> address</p>
+</div><span class="name-container">
+    <h4 class="name" id="contains_custom_fee"><pre>public fun contains_custom_fee(listing: &amp;listing::Listing): 
+    bool</pre></h4>
+</span>
+<div class="description"></div><span class="name-container">
+    <h4 class="name" id="custom_fee"><pre>public fun custom_fee(listing: &amp;listing::Listing): 
+    &object_box::ObjectBox</pre></h4>
+</span>
+<div class="description"></div><span class="name-container">
+    <h4 class="name" id="proceeds"><pre>public fun proceeds(listing: &amp;listing::Listing): 
+    &proceeds::Proceeds</pre></h4>
+</span>
+<div class="description"></div><span class="name-container">
+    <h4 class="name" id="proceeds_mut"><pre>public fun proceeds_mut(listing: &amp;mut listing::Listing): 
+    &mut proceeds::Proceeds</pre></h4>
+</span>
+<div class="description"></div><span class="name-container">
+    <h4 class="name" id="inventory"><pre>public fun inventory(
+    listing: &amp;listing::Listing,
+    inventory_id: object::ID,
+): &inventory::Inventory</pre></h4>
+</span>
+<div class="description"><p>Get the Listing's <code>Inventory</code></p>
+</div><span class="name-container">
+    <h4 class="name" id="inventory_internal_mut"><pre>public fun inventory_internal_mut&lt;
+    Market: <span class="ability">store</span> + <span class="ability">key</span>,
+    Witness: <span class="ability">drop</span>,
 &gt;(
     _witness: Witness,
-    slot: &amp;mut slot::Slot,
+    listing: &amp;mut listing::Listing,
+    inventory_id: object::ID,
     market_id: object::ID,
 ): 
-    &amp;mut Market</pre></h4>
+    &mut inventory::Inventory</pre></h4>
 </span>
-<div class="description"><p>Get the Slot's <code>market</code> mutably</p>
-<p>Does not require that sender is a <code>Slot</code> admin, limited for use only in
-the module that defined the market type.</p>
+<div class="description"><p>Get the Listing's <code>Inventory</code> mutably</p>
+<p><code>Inventory</code> is unprotected therefore only market modules registered
+on an <code>Inventory</code> can gain mutable access to it.</p>
 </div><span class="name-container">
-    <h4 class="name" id="inventory"><pre>public fun inventory(
-    slot: &amp;slot::Slot,
-    market_id: object::ID,
-): &amp;inventory::Inventory</pre></h4>
-</span>
-<div class="description"><p>Get the Slot's <code>Inventory</code></p>
-</div><span class="name-container">
-    <h4 class="name" id="assert_slot_launchpad_match"><pre>public fun assert_slot_launchpad_match(
-    launchpad: &amp;launchpad::Launchpad,
-    slot: &amp;slot::Slot,
+    <h4 class="name" id="assert_listing_marketplace_match"><pre>public fun assert_listing_marketplace_match(
+    marketplace: &amp;marketplace::Marketplace,
+    listing: &amp;listing::Listing,
 )</pre></h4>
 </span>
 <div class="description"></div><span class="name-container">
-    <h4 class="name" id="assert_slot_admin"><pre>public fun assert_slot_admin(
-    slot: &amp;slot::Slot,
+    <h4 class="name" id="assert_listing_admin"><pre>public fun assert_listing_admin(
+    listing: &amp;listing::Listing,
     ctx: &amp;mut tx_context::TxContext,
 )</pre></h4>
 </span>
 <div class="description"></div><span class="name-container">
     <h4 class="name" id="assert_correct_admin"><pre>public fun assert_correct_admin(
-    launchpad: &amp;launchpad::Launchpad,
-    slot: &amp;slot::Slot,
+    marketplace: &amp;marketplace::Marketplace,
+    listing: &amp;listing::Listing,
     ctx: &amp;mut tx_context::TxContext,
 )</pre></h4>
 </span>
 <div class="description"></div><span class="name-container">
-    <h4 class="name" id="assert_is_live"><pre>public fun assert_is_live(slot: &amp;slot::Slot)</pre></h4>
-</span>
-<div class="description"></div><span class="name-container">
-    <h4 class="name" id="assert_default_fee"><pre>public fun assert_default_fee(slot: &amp;slot::Slot)</pre></h4>
+    <h4 class="name" id="assert_default_fee"><pre>public fun assert_default_fee(listing: &amp;listing::Listing)</pre></h4>
 </span>
 <div class="description"></div><span class="name-container">
     <h4 class="name" id="assert_inventory"><pre>public fun assert_inventory(
-    slot: &amp;slot::Slot,
-    market_id: object::ID,
-)</pre></h4>
-</span>
-<div class="description"></div><span class="name-container">
-    <h4 class="name" id="assert_market"><pre>public fun assert_market&lt;M: store + key&gt;(
-    slot: &amp;slot::Slot,
-    market_id: object::ID,
-)</pre></h4>
-</span>
-<div class="description"></div><span class="name-container">
-    <h4 class="name" id="assert_market_is_whitelisted"><pre>public fun assert_market_is_whitelisted(
-    slot: &amp;slot::Slot,
-    market_id: object::ID,
-)</pre></h4>
-</span>
-<div class="description"></div><span class="name-container">
-    <h4 class="name" id="assert_market_is_not_whitelisted"><pre>public fun assert_market_is_not_whitelisted(
-    slot: &amp;slot::Slot,
-    market_id: object::ID,
-)</pre></h4>
-</span>
-<div class="description"></div><span class="name-container">
-    <h4 class="name" id="assert_contains_nft"><pre>public fun assert_contains_nft&lt;C&gt;(
-    slot: &amp;slot::Slot,
-    nft_id: object::ID,
-)</pre></h4>
-</span>
-<div class="description"></div><span class="name-container">
-    <h4 class="name" id="assert_nft_certificate_slot"><pre>public fun assert_nft_certificate_slot(
-    slot_id: object::ID,
-    certificate: &amp;slot::NftCertificate,
+    listing: &amp;listing::Listing,
+    inventory_id: object::ID,
 )</pre></h4>
 </span>
 <div class="description"></div><span class="name-container">
     <h4 class="name" id="assert_whitelist_certificate_market"><pre>public fun assert_whitelist_certificate_market(
     market_id: object::ID,
-    certificate: &amp;slot::WhitelistCertificate,
+    certificate: &amp;listing::WhitelistCertificate,
 )</pre></h4>
 </span>
 <div class="description"></div>

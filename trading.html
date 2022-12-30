@@ -22,14 +22,6 @@
 <ul class="methods"><li data-type="struct">
     <a href="./utils.html#Marker">Marker</a>       
 </li></ul></li><li>
-<a href="./supply.html">supply</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./supply.html#Supply">Supply</a>       
-</li></ul></li><li>
-<a href="./supply_policy.html">supply_policy</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./supply_policy.html#SupplyPolicy">SupplyPolicy</a>       
-</li></ul></li><li>
 <a href="./collection.html">collection</a>
 <ul class="methods"><li data-type="struct">
     <a href="./collection.html#BurnEvent">BurnEvent</a>       
@@ -48,11 +40,11 @@
 </li><li data-type="struct">
     <a href="./attribution.html#Creator">Creator</a>       
 </li></ul></li><li>
-<a href="./transfer_whitelist.html">transfer_whitelist</a>
+<a href="./transfer_allowlist.html">transfer_allowlist</a>
 <ul class="methods"><li data-type="struct">
-    <a href="./transfer_whitelist.html#CollectionControlCap">CollectionControlCap</a>       
+    <a href="./transfer_allowlist.html#Allowlist">Allowlist</a>       
 </li><li data-type="struct">
-    <a href="./transfer_whitelist.html#Whitelist">Whitelist</a>       
+    <a href="./transfer_allowlist.html#CollectionControlCap">CollectionControlCap</a>       
 </li></ul></li><li>
 <a href="./royalties.html">royalties</a>
 <ul class="methods"><li data-type="struct">
@@ -122,25 +114,25 @@
 <ul class="methods"><li data-type="struct">
     <a href="./object_box.html#ObjectBox">ObjectBox</a>       
 </li></ul></li><li>
-<a href="./launchpad.html">launchpad</a>
+<a href="./marketplace.html">marketplace</a>
 <ul class="methods"><li data-type="struct">
-    <a href="./launchpad.html#Launchpad">Launchpad</a>       
+    <a href="./marketplace.html#Marketplace">Marketplace</a>       
 </li></ul></li><li>
 <a href="./inventory.html">inventory</a>
 <ul class="methods"><li data-type="struct">
     <a href="./inventory.html#Inventory">Inventory</a>       
 </li></ul></li><li>
-<a href="./slot.html">slot</a>
+<a href="./listing.html">listing</a>
 <ul class="methods"><li data-type="struct">
-    <a href="./slot.html#CreateSlotEvent">CreateSlotEvent</a>       
+    <a href="./listing.html#CreateListingEvent">CreateListingEvent</a>       
 </li><li data-type="struct">
-    <a href="./slot.html#DeleteSlotEvent">DeleteSlotEvent</a>       
+    <a href="./listing.html#DeleteListingEvent">DeleteListingEvent</a>       
 </li><li data-type="struct">
-    <a href="./slot.html#NftCertificate">NftCertificate</a>       
+    <a href="./listing.html#Listing">Listing</a>       
 </li><li data-type="struct">
-    <a href="./slot.html#Slot">Slot</a>       
+    <a href="./listing.html#RequestToJoin">RequestToJoin</a>       
 </li><li data-type="struct">
-    <a href="./slot.html#WhitelistCertificate">WhitelistCertificate</a>       
+    <a href="./listing.html#WhitelistCertificate">WhitelistCertificate</a>       
 </li></ul></li><li>
 <a href="./dutch_auction.html">dutch_auction</a>
 <ul class="methods"><li data-type="struct">
@@ -159,6 +151,10 @@
 <a href="./flat_fee.html">flat_fee</a>
 <ul class="methods"><li data-type="struct">
     <a href="./flat_fee.html#FlatFee">FlatFee</a>       
+</li></ul></li><li>
+<a href="./supply.html">supply</a>
+<ul class="methods"><li data-type="struct">
+    <a href="./supply.html#Supply">Supply</a>       
 </li></ul></li><li>
 <a href="./flyweight.html">flyweight</a>
 <ul class="methods"><li data-type="struct">
@@ -210,6 +206,10 @@
 </li><li data-type="struct">
     <a href="./royalty.html#RoyaltyDomain">RoyaltyDomain</a>       
 </li></ul></li><li>
+<a href="./supply_policy.html">supply_policy</a>
+<ul class="methods"><li data-type="struct">
+    <a href="./supply_policy.html#SupplyPolicy">SupplyPolicy</a>       
+</li></ul></li><li>
 <a href="./tags.html">tags</a>
 <ul class="methods"><li data-type="struct">
     <a href="./tags.html#Witness">Witness</a>       
@@ -250,7 +250,7 @@
         <div class="container-overview">
     <h2>BidCommission</h2>
     <span class="name-container">
-        <h4 class="name" id="BidCommission">0x0::trading::BidCommission</h4>
+        <h4 class="name" id="BidCommission"><pre>0x0::trading::<a href="./0x0::trading.html#BidCommission"><span class="struct">BidCommission</span></a>&lt;FT&gt; has <span class="ability">store</span><pre></h4>
     </span>
     <div class="description"><p>Enables collection of wallet/marketplace collection for buying NFTs.</p>
 <ol>
@@ -292,7 +292,7 @@
 </div><div class="container-overview">
     <h2>AskCommission</h2>
     <span class="name-container">
-        <h4 class="name" id="AskCommission">0x0::trading::AskCommission</h4>
+        <h4 class="name" id="AskCommission"><pre>0x0::trading::<a href="./0x0::trading.html#AskCommission"><span class="struct">AskCommission</span></a>&lt;&gt; has <span class="ability">drop</span>, <span class="ability">store</span><pre></h4>
     </span>
     <div class="description"><p>Enables collection of wallet/marketplace collection for listing an NFT.</p>
 <ol>
@@ -343,12 +343,12 @@ which holds the private key of <code>beneficiary</code> address.</p>
     <h4 class="name" id="new_bid_commission"><pre>public fun new_bid_commission&lt;FT&gt;(
     beneficiary: address,
     cut: balance::Balance&lt;FT&gt;,
-): trading::BidCommission&lt;FT&gt;</pre></h4>
+): trading::BidCommission<FT></pre></h4>
 </span>
 <div class="description"></div><span class="name-container">
     <h4 class="name" id="destroy_bid_commission"><pre>public fun destroy_bid_commission&lt;FT&gt;(
     commission: trading::BidCommission&lt;FT&gt;,
-): balance::Balance&lt;FT&gt;, address</pre></h4>
+): balance::Balance<FT>, address</pre></h4>
 </span>
 <div class="description"></div><span class="name-container">
     <h4 class="name" id="transfer_bid_commission"><pre>public fun transfer_bid_commission&lt;

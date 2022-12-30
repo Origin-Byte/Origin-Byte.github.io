@@ -22,14 +22,6 @@
 <ul class="methods"><li data-type="struct">
     <a href="./utils.html#Marker">Marker</a>       
 </li></ul></li><li>
-<a href="./supply.html">supply</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./supply.html#Supply">Supply</a>       
-</li></ul></li><li>
-<a href="./supply_policy.html">supply_policy</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./supply_policy.html#SupplyPolicy">SupplyPolicy</a>       
-</li></ul></li><li>
 <a href="./collection.html">collection</a>
 <ul class="methods"><li data-type="struct">
     <a href="./collection.html#BurnEvent">BurnEvent</a>       
@@ -48,11 +40,11 @@
 </li><li data-type="struct">
     <a href="./attribution.html#Creator">Creator</a>       
 </li></ul></li><li>
-<a href="./transfer_whitelist.html">transfer_whitelist</a>
+<a href="./transfer_allowlist.html">transfer_allowlist</a>
 <ul class="methods"><li data-type="struct">
-    <a href="./transfer_whitelist.html#CollectionControlCap">CollectionControlCap</a>       
+    <a href="./transfer_allowlist.html#Allowlist">Allowlist</a>       
 </li><li data-type="struct">
-    <a href="./transfer_whitelist.html#Whitelist">Whitelist</a>       
+    <a href="./transfer_allowlist.html#CollectionControlCap">CollectionControlCap</a>       
 </li></ul></li><li>
 <a href="./royalties.html">royalties</a>
 <ul class="methods"><li data-type="struct">
@@ -122,25 +114,25 @@
 <ul class="methods"><li data-type="struct">
     <a href="./object_box.html#ObjectBox">ObjectBox</a>       
 </li></ul></li><li>
-<a href="./launchpad.html">launchpad</a>
+<a href="./marketplace.html">marketplace</a>
 <ul class="methods"><li data-type="struct">
-    <a href="./launchpad.html#Launchpad">Launchpad</a>       
+    <a href="./marketplace.html#Marketplace">Marketplace</a>       
 </li></ul></li><li>
 <a href="./inventory.html">inventory</a>
 <ul class="methods"><li data-type="struct">
     <a href="./inventory.html#Inventory">Inventory</a>       
 </li></ul></li><li>
-<a href="./slot.html">slot</a>
+<a href="./listing.html">listing</a>
 <ul class="methods"><li data-type="struct">
-    <a href="./slot.html#CreateSlotEvent">CreateSlotEvent</a>       
+    <a href="./listing.html#CreateListingEvent">CreateListingEvent</a>       
 </li><li data-type="struct">
-    <a href="./slot.html#DeleteSlotEvent">DeleteSlotEvent</a>       
+    <a href="./listing.html#DeleteListingEvent">DeleteListingEvent</a>       
 </li><li data-type="struct">
-    <a href="./slot.html#NftCertificate">NftCertificate</a>       
+    <a href="./listing.html#Listing">Listing</a>       
 </li><li data-type="struct">
-    <a href="./slot.html#Slot">Slot</a>       
+    <a href="./listing.html#RequestToJoin">RequestToJoin</a>       
 </li><li data-type="struct">
-    <a href="./slot.html#WhitelistCertificate">WhitelistCertificate</a>       
+    <a href="./listing.html#WhitelistCertificate">WhitelistCertificate</a>       
 </li></ul></li><li>
 <a href="./dutch_auction.html">dutch_auction</a>
 <ul class="methods"><li data-type="struct">
@@ -159,6 +151,10 @@
 <a href="./flat_fee.html">flat_fee</a>
 <ul class="methods"><li data-type="struct">
     <a href="./flat_fee.html#FlatFee">FlatFee</a>       
+</li></ul></li><li>
+<a href="./supply.html">supply</a>
+<ul class="methods"><li data-type="struct">
+    <a href="./supply.html#Supply">Supply</a>       
 </li></ul></li><li>
 <a href="./flyweight.html">flyweight</a>
 <ul class="methods"><li data-type="struct">
@@ -210,6 +206,10 @@
 </li><li data-type="struct">
     <a href="./royalty.html#RoyaltyDomain">RoyaltyDomain</a>       
 </li></ul></li><li>
+<a href="./supply_policy.html">supply_policy</a>
+<ul class="methods"><li data-type="struct">
+    <a href="./supply_policy.html#SupplyPolicy">SupplyPolicy</a>       
+</li></ul></li><li>
 <a href="./tags.html">tags</a>
 <ul class="methods"><li data-type="struct">
     <a href="./tags.html#Witness">Witness</a>       
@@ -238,39 +238,35 @@
 </li><li data-type="struct">
     <a href="./tags.html#Video">Video</a>       
 </li></ul></li></ul></nav>
-<div id="main"><h1 class="page-title">launchpad</h1>
+<div id="main"><h1 class="page-title">marketplace</h1>
 <section class="readme">
     <header>
-        <h2>0x0::launchpad</h2>
+        <h2>0x0::marketplace</h2>
     </header>
     <article>
-        <p>Module of a <code>Launchpad</code> type.</p>
-<p>Launchpads are platforms that facilitate the release of NFT collections
-to the public, via primary market. Whilst NFT creators can emit NFTs
-directly and thus bypass the <code>Launchpad</code>, the <code>Launchpad</code> offers a myriad
-of bespoke emission strategies.</p>
-<p>Launchapds can either be Permissioned or Permissionless. Marketplaces and
-dApps that want to offer a launchpad service can create a Permissioned
-Launchpad. In a permissioned model, the Marketplace or dApp is responsible
-for making and signing all the RPC calls to configure and implement the
-release strategy. If the launchpad is permissionless, then the creators
-are the ones responsible for configuring and implementing it themselves.
-In other words, permissioned launchpads allow for the creation of
-fully manager services, whilst permissionless launchpads always require
-the creator's signature.</p>
-<p>After the creation of the <code>Launchpad</code> a <code>Slot</code> for the NFT release needs
-to be created. Whilst the <code>Launchpad</code> stipulates a default fee policy,
-the launchpad admin can decide to create a custom fee policy for each
-release <code>Slot</code>.</p>
-<p>The slot acts as the object that configures the primary NFT release
+        <p>Module of a <code>Marketplace</code> type.</p>
+<p>Marketplaces are platforms that facilitate the listing of NFT collections
+to the public, by facilitating a primary market UI. NFT Creators can create
+Listings to sell their NFTs to the public and can decide to partner with
+a Marketplace such that these are sold through the Marketplace UI. In order
+for the Marketplace to be remunerated, the <code>Listing</code> must be attached to
+a <code>Marketplace</code>.</p>
+<p>Marketplaces and dApps that want to offer a launchpad service should create
+a <code>Marketplace</code> object.</p>
+<p>After the creation of the <code>Marketplace</code> a <code>Listing</code> for the NFT listing needs
+to be created by the creator of the NFT Collection. Then, the <code>Listing</code> admin
+should request to join the marketplace launchpad, pending acceptance.</p>
+<p>Whilst the <code>Marketplace</code> stipulates a default fee policy, the marketplace
+admin can decide to create a custom fee policy for each <code>Listing</code>.</p>
+<p>The <code>Listing</code> acts as the object that configures the primary NFT listing
 strategy, that is the primary market sale. Primary market sales can take
 many shapes, depending on the business level requirements.</p>
 
         <h3 class="subsection-title">Structs</h3>
         <div class="container-overview">
-    <h2>Launchpad</h2>
+    <h2>Marketplace</h2>
     <span class="name-container">
-        <h4 class="name" id="Launchpad">0x0::launchpad::Launchpad</h4>
+        <h4 class="name" id="Marketplace"><pre>0x0::marketplace::<a href="./0x0::marketplace.html#Marketplace"><span class="struct">Marketplace</span></a>&lt;&gt; has <span class="ability">store</span>, <span class="ability">key</span><pre></h4>
     </span>
     <div class="description"></div>
     <h5>Fields:</h5>
@@ -298,7 +294,7 @@ many shapes, depending on the business level requirements.</p>
     <td class="type">
         <code>address</code>  
     </td>
-    <td class="description last"><p>The address of the launchpad administrator</p>
+    <td class="description last"><p>The address of the marketplace administrator</p>
 </td>
 </tr><tr>
     <td class="name">
@@ -307,17 +303,7 @@ many shapes, depending on the business level requirements.</p>
     <td class="type">
         <code>address</code>  
     </td>
-    <td class="description last"><p>Receiver of launchpad fees</p>
-</td>
-</tr><tr>
-    <td class="name">
-        <code>is_permissioned</code>            
-    </td>
-    <td class="type">
-        <code>bool</code>  
-    </td>
-    <td class="description last"><p>Permissionless launchpads allow for anyone to create their
-slots, therefore being immediately approved.</p>
+    <td class="description last"><p>Receiver of marketplace fees</p>
 </td>
 </tr><tr>
     <td class="name">
@@ -333,46 +319,43 @@ slots, therefore being immediately approved.</p>
 </div>
         <h3 class="subsection-title">Methods</h3>
         <span class="name-container">
-    <h4 class="name" id="new"><pre>public fun new&lt;F: store + key&gt;(
+    <h4 class="name" id="new"><pre>public fun new&lt;F: <span class="ability">store</span> + <span class="ability">key</span>&gt;(
     admin: address,
     receiver: address,
-    is_permissioned: bool,
     default_fee: F,
     ctx: &amp;mut tx_context::TxContext,
-): launchpad::Launchpad</pre></h4>
+): marketplace::Marketplace</pre></h4>
 </span>
-<div class="description"><p>Initialises a <code>Launchpad</code> object and returns it</p>
+<div class="description"><p>Initialises a <code>Marketplace</code> object and returns it</p>
 </div><span class="name-container">
-    <h4 class="name" id="init_launchpad"><pre>public fun init_launchpad&lt;F: store + key&gt;(
+    <h4 class="name" id="init_marketplace"><pre>public fun init_marketplace&lt;F: <span class="ability">store</span> + <span class="ability">key</span>&gt;(
     admin: address,
     receiver: address,
-    auto_approval: bool,
     default_fee: F,
     ctx: &amp;mut tx_context::TxContext,
 )</pre></h4>
 </span>
-<div class="description"><p>Initialises a <code>Launchpad</code> object and shares it</p>
+<div class="description"><p>Initialises a <code>Marketplace</code> object and shares it</p>
 </div><span class="name-container">
-    <h4 class="name" id="receiver"><pre>public fun receiver(launchpad: &amp;launchpad::Launchpad): 
+    <h4 class="name" id="receiver"><pre>public fun receiver(
+    marketplace: &amp;marketplace::Marketplace,
+): address</pre></h4>
+</span>
+<div class="description"><p>Get the Marketplace's <code>receiver</code> address</p>
+</div><span class="name-container">
+    <h4 class="name" id="admin"><pre>public fun admin(marketplace: &amp;marketplace::Marketplace): 
     address</pre></h4>
 </span>
-<div class="description"><p>Get the Slot's <code>receiver</code> address</p>
+<div class="description"><p>Get the Marketplace's <code>admin</code> address</p>
 </div><span class="name-container">
-    <h4 class="name" id="admin"><pre>public fun admin(launchpad: &amp;launchpad::Launchpad): address</pre></h4>
+    <h4 class="name" id="default_fee"><pre>public fun default_fee(
+    marketplace: &amp;marketplace::Marketplace,
+): &object_box::ObjectBox</pre></h4>
 </span>
-<div class="description"><p>Get the Slot's <code>admin</code> address</p>
+<div class="description"><p>Get the Marketplace's <code>default_fee</code></p>
 </div><span class="name-container">
-    <h4 class="name" id="default_fee"><pre>public fun default_fee(launchpad: &amp;launchpad::Launchpad): 
-    &amp;object_box::ObjectBox</pre></h4>
-</span>
-<div class="description"></div><span class="name-container">
-    <h4 class="name" id="is_permissioned"><pre>public fun is_permissioned(
-    launchpad: &amp;launchpad::Launchpad,
-): bool</pre></h4>
-</span>
-<div class="description"></div><span class="name-container">
-    <h4 class="name" id="assert_launchpad_admin"><pre>public fun assert_launchpad_admin(
-    launchpad: &amp;launchpad::Launchpad,
+    <h4 class="name" id="assert_marketplace_admin"><pre>public fun assert_marketplace_admin(
+    marketplace: &amp;marketplace::Marketplace,
     ctx: &amp;mut tx_context::TxContext,
 )</pre></h4>
 </span>

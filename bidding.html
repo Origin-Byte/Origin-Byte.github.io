@@ -22,14 +22,6 @@
 <ul class="methods"><li data-type="struct">
     <a href="./utils.html#Marker">Marker</a>       
 </li></ul></li><li>
-<a href="./supply.html">supply</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./supply.html#Supply">Supply</a>       
-</li></ul></li><li>
-<a href="./supply_policy.html">supply_policy</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./supply_policy.html#SupplyPolicy">SupplyPolicy</a>       
-</li></ul></li><li>
 <a href="./collection.html">collection</a>
 <ul class="methods"><li data-type="struct">
     <a href="./collection.html#BurnEvent">BurnEvent</a>       
@@ -48,11 +40,11 @@
 </li><li data-type="struct">
     <a href="./attribution.html#Creator">Creator</a>       
 </li></ul></li><li>
-<a href="./transfer_whitelist.html">transfer_whitelist</a>
+<a href="./transfer_allowlist.html">transfer_allowlist</a>
 <ul class="methods"><li data-type="struct">
-    <a href="./transfer_whitelist.html#CollectionControlCap">CollectionControlCap</a>       
+    <a href="./transfer_allowlist.html#Allowlist">Allowlist</a>       
 </li><li data-type="struct">
-    <a href="./transfer_whitelist.html#Whitelist">Whitelist</a>       
+    <a href="./transfer_allowlist.html#CollectionControlCap">CollectionControlCap</a>       
 </li></ul></li><li>
 <a href="./royalties.html">royalties</a>
 <ul class="methods"><li data-type="struct">
@@ -122,25 +114,25 @@
 <ul class="methods"><li data-type="struct">
     <a href="./object_box.html#ObjectBox">ObjectBox</a>       
 </li></ul></li><li>
-<a href="./launchpad.html">launchpad</a>
+<a href="./marketplace.html">marketplace</a>
 <ul class="methods"><li data-type="struct">
-    <a href="./launchpad.html#Launchpad">Launchpad</a>       
+    <a href="./marketplace.html#Marketplace">Marketplace</a>       
 </li></ul></li><li>
 <a href="./inventory.html">inventory</a>
 <ul class="methods"><li data-type="struct">
     <a href="./inventory.html#Inventory">Inventory</a>       
 </li></ul></li><li>
-<a href="./slot.html">slot</a>
+<a href="./listing.html">listing</a>
 <ul class="methods"><li data-type="struct">
-    <a href="./slot.html#CreateSlotEvent">CreateSlotEvent</a>       
+    <a href="./listing.html#CreateListingEvent">CreateListingEvent</a>       
 </li><li data-type="struct">
-    <a href="./slot.html#DeleteSlotEvent">DeleteSlotEvent</a>       
+    <a href="./listing.html#DeleteListingEvent">DeleteListingEvent</a>       
 </li><li data-type="struct">
-    <a href="./slot.html#NftCertificate">NftCertificate</a>       
+    <a href="./listing.html#Listing">Listing</a>       
 </li><li data-type="struct">
-    <a href="./slot.html#Slot">Slot</a>       
+    <a href="./listing.html#RequestToJoin">RequestToJoin</a>       
 </li><li data-type="struct">
-    <a href="./slot.html#WhitelistCertificate">WhitelistCertificate</a>       
+    <a href="./listing.html#WhitelistCertificate">WhitelistCertificate</a>       
 </li></ul></li><li>
 <a href="./dutch_auction.html">dutch_auction</a>
 <ul class="methods"><li data-type="struct">
@@ -159,6 +151,10 @@
 <a href="./flat_fee.html">flat_fee</a>
 <ul class="methods"><li data-type="struct">
     <a href="./flat_fee.html#FlatFee">FlatFee</a>       
+</li></ul></li><li>
+<a href="./supply.html">supply</a>
+<ul class="methods"><li data-type="struct">
+    <a href="./supply.html#Supply">Supply</a>       
 </li></ul></li><li>
 <a href="./flyweight.html">flyweight</a>
 <ul class="methods"><li data-type="struct">
@@ -210,6 +206,10 @@
 </li><li data-type="struct">
     <a href="./royalty.html#RoyaltyDomain">RoyaltyDomain</a>       
 </li></ul></li><li>
+<a href="./supply_policy.html">supply_policy</a>
+<ul class="methods"><li data-type="struct">
+    <a href="./supply_policy.html#SupplyPolicy">SupplyPolicy</a>       
+</li></ul></li><li>
 <a href="./tags.html">tags</a>
 <ul class="methods"><li data-type="struct">
     <a href="./tags.html#Witness">Witness</a>       
@@ -251,7 +251,7 @@ giving NFT owners a platform to sell their NFTs to any available bid.</p>
         <div class="container-overview">
     <h2>Witness</h2>
     <span class="name-container">
-        <h4 class="name" id="Witness">0x0::bidding::Witness</h4>
+        <h4 class="name" id="Witness"><pre>0x0::bidding::<a href="./0x0::bidding.html#Witness"><span class="struct">Witness</span></a>&lt;&gt; has <span class="ability">drop</span><pre></h4>
     </span>
     <div class="description"></div>
     <h5>Fields:</h5>
@@ -278,7 +278,7 @@ giving NFT owners a platform to sell their NFTs to any available bid.</p>
 </div><div class="container-overview">
     <h2>Bid</h2>
     <span class="name-container">
-        <h4 class="name" id="Bid">0x0::bidding::Bid</h4>
+        <h4 class="name" id="Bid"><pre>0x0::bidding::<a href="./0x0::bidding.html#Bid"><span class="struct">Bid</span></a>&lt;FT&gt; has <span class="ability">key</span><pre></h4>
     </span>
     <div class="description"></div>
     <h5>Fields:</h5>
@@ -345,7 +345,7 @@ giving NFT owners a platform to sell their NFTs to any available bid.</p>
 </div><div class="container-overview">
     <h2>BidCreated</h2>
     <span class="name-container">
-        <h4 class="name" id="BidCreated">0x0::bidding::BidCreated</h4>
+        <h4 class="name" id="BidCreated"><pre>0x0::bidding::<a href="./0x0::bidding.html#BidCreated"><span class="struct">BidCreated</span></a>&lt;FT&gt; has <span class="ability">copy</span>, <span class="ability">drop</span><pre></h4>
     </span>
     <div class="description"></div>
     <h5>Fields:</h5>
@@ -388,7 +388,7 @@ giving NFT owners a platform to sell their NFTs to any available bid.</p>
 </div><div class="container-overview">
     <h2>BidClosed</h2>
     <span class="name-container">
-        <h4 class="name" id="BidClosed">0x0::bidding::BidClosed</h4>
+        <h4 class="name" id="BidClosed"><pre>0x0::bidding::<a href="./0x0::bidding.html#BidClosed"><span class="struct">BidClosed</span></a>&lt;FT&gt; has <span class="ability">copy</span>, <span class="ability">drop</span><pre></h4>
     </span>
     <div class="description"></div>
     <h5>Fields:</h5>
@@ -463,7 +463,7 @@ of securing a commission for intermediating the process.</p>
     transfer_cap: safe::TransferCap,
     sellers_safe: &amp;mut safe::Safe,
     buyers_safe: &amp;mut safe::Safe,
-    whitelist: &amp;transfer_whitelist::Whitelist,
+    allowlist: &amp;transfer_allowlist::Allowlist,
     ctx: &amp;mut tx_context::TxContext,
 )</pre></h4>
 </span>
@@ -488,7 +488,7 @@ burns <code>TransferCap</code></li>
     commission_ft: u64,
     sellers_safe: &amp;mut safe::Safe,
     buyers_safe: &amp;mut safe::Safe,
-    whitelist: &amp;transfer_whitelist::Whitelist,
+    allowlist: &amp;transfer_allowlist::Allowlist,
     ctx: &amp;mut tx_context::TxContext,
 )</pre></h4>
 </span>

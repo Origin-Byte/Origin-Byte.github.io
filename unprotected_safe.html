@@ -22,14 +22,6 @@
 <ul class="methods"><li data-type="struct">
     <a href="./utils.html#Marker">Marker</a>       
 </li></ul></li><li>
-<a href="./supply.html">supply</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./supply.html#Supply">Supply</a>       
-</li></ul></li><li>
-<a href="./supply_policy.html">supply_policy</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./supply_policy.html#SupplyPolicy">SupplyPolicy</a>       
-</li></ul></li><li>
 <a href="./collection.html">collection</a>
 <ul class="methods"><li data-type="struct">
     <a href="./collection.html#BurnEvent">BurnEvent</a>       
@@ -48,11 +40,11 @@
 </li><li data-type="struct">
     <a href="./attribution.html#Creator">Creator</a>       
 </li></ul></li><li>
-<a href="./transfer_whitelist.html">transfer_whitelist</a>
+<a href="./transfer_allowlist.html">transfer_allowlist</a>
 <ul class="methods"><li data-type="struct">
-    <a href="./transfer_whitelist.html#CollectionControlCap">CollectionControlCap</a>       
+    <a href="./transfer_allowlist.html#Allowlist">Allowlist</a>       
 </li><li data-type="struct">
-    <a href="./transfer_whitelist.html#Whitelist">Whitelist</a>       
+    <a href="./transfer_allowlist.html#CollectionControlCap">CollectionControlCap</a>       
 </li></ul></li><li>
 <a href="./royalties.html">royalties</a>
 <ul class="methods"><li data-type="struct">
@@ -122,25 +114,25 @@
 <ul class="methods"><li data-type="struct">
     <a href="./object_box.html#ObjectBox">ObjectBox</a>       
 </li></ul></li><li>
-<a href="./launchpad.html">launchpad</a>
+<a href="./marketplace.html">marketplace</a>
 <ul class="methods"><li data-type="struct">
-    <a href="./launchpad.html#Launchpad">Launchpad</a>       
+    <a href="./marketplace.html#Marketplace">Marketplace</a>       
 </li></ul></li><li>
 <a href="./inventory.html">inventory</a>
 <ul class="methods"><li data-type="struct">
     <a href="./inventory.html#Inventory">Inventory</a>       
 </li></ul></li><li>
-<a href="./slot.html">slot</a>
+<a href="./listing.html">listing</a>
 <ul class="methods"><li data-type="struct">
-    <a href="./slot.html#CreateSlotEvent">CreateSlotEvent</a>       
+    <a href="./listing.html#CreateListingEvent">CreateListingEvent</a>       
 </li><li data-type="struct">
-    <a href="./slot.html#DeleteSlotEvent">DeleteSlotEvent</a>       
+    <a href="./listing.html#DeleteListingEvent">DeleteListingEvent</a>       
 </li><li data-type="struct">
-    <a href="./slot.html#NftCertificate">NftCertificate</a>       
+    <a href="./listing.html#Listing">Listing</a>       
 </li><li data-type="struct">
-    <a href="./slot.html#Slot">Slot</a>       
+    <a href="./listing.html#RequestToJoin">RequestToJoin</a>       
 </li><li data-type="struct">
-    <a href="./slot.html#WhitelistCertificate">WhitelistCertificate</a>       
+    <a href="./listing.html#WhitelistCertificate">WhitelistCertificate</a>       
 </li></ul></li><li>
 <a href="./dutch_auction.html">dutch_auction</a>
 <ul class="methods"><li data-type="struct">
@@ -159,6 +151,10 @@
 <a href="./flat_fee.html">flat_fee</a>
 <ul class="methods"><li data-type="struct">
     <a href="./flat_fee.html#FlatFee">FlatFee</a>       
+</li></ul></li><li>
+<a href="./supply.html">supply</a>
+<ul class="methods"><li data-type="struct">
+    <a href="./supply.html#Supply">Supply</a>       
 </li></ul></li><li>
 <a href="./flyweight.html">flyweight</a>
 <ul class="methods"><li data-type="struct">
@@ -209,6 +205,10 @@
     <a href="./royalty.html#Witness">Witness</a>       
 </li><li data-type="struct">
     <a href="./royalty.html#RoyaltyDomain">RoyaltyDomain</a>       
+</li></ul></li><li>
+<a href="./supply_policy.html">supply_policy</a>
+<ul class="methods"><li data-type="struct">
+    <a href="./supply_policy.html#SupplyPolicy">SupplyPolicy</a>       
 </li></ul></li><li>
 <a href="./tags.html">tags</a>
 <ul class="methods"><li data-type="struct">
@@ -263,11 +263,11 @@ the assets within it.</p>
 <h1>Two NFT kinds</h1>
 <p>We support two kinds of NFTs in this safe implementation.</p>
 <ol>
-<li>Our protocol <code>nft_protocol::nft::Nft</code> which is guarded with whitelist.
+<li>Our protocol <code>nft_protocol::nft::Nft</code> which is guarded with allowlist.
 This enables creators to have certain guarantees around royalty
 enforcement.</li>
 <li>Arbitrary type of NFTs.
-Those are not guarded with whitelist.
+Those are not guarded with allowlist.
 They can be freely transferred between users and safes.</li>
 </ol>
 
@@ -275,7 +275,7 @@ They can be freely transferred between users and safes.</li>
         <div class="container-overview">
     <h2>UnprotectedSafe</h2>
     <span class="name-container">
-        <h4 class="name" id="UnprotectedSafe">0x0::unprotected_safe::UnprotectedSafe</h4>
+        <h4 class="name" id="UnprotectedSafe"><pre>0x0::unprotected_safe::<a href="./0x0::unprotected_safe.html#UnprotectedSafe"><span class="struct">UnprotectedSafe</span></a>&lt;&gt; has <span class="ability">store</span>, <span class="ability">key</span><pre></h4>
     </span>
     <div class="description"></div>
     <h5>Fields:</h5>
@@ -312,7 +312,7 @@ represented in this map.</p>
 </div><div class="container-overview">
     <h2>NftRef</h2>
     <span class="name-container">
-        <h4 class="name" id="NftRef">0x0::unprotected_safe::NftRef</h4>
+        <h4 class="name" id="NftRef"><pre>0x0::unprotected_safe::<a href="./0x0::unprotected_safe.html#NftRef"><span class="struct">NftRef</span></a>&lt;&gt; has <span class="ability">copy</span>, <span class="ability">drop</span>, <span class="ability">store</span><pre></h4>
     </span>
     <div class="description"><p>Keeps info about an NFT which enables us to issue transfer caps etc.</p>
 </div>
@@ -363,7 +363,7 @@ An exclusively listed NFT cannot have its <code>TransferCap</code> revoked.</p>
 </div><div class="container-overview">
     <h2>OwnerCap</h2>
     <span class="name-container">
-        <h4 class="name" id="OwnerCap">0x0::unprotected_safe::OwnerCap</h4>
+        <h4 class="name" id="OwnerCap"><pre>0x0::unprotected_safe::<a href="./0x0::unprotected_safe.html#OwnerCap"><span class="struct">OwnerCap</span></a>&lt;&gt; has <span class="ability">store</span>, <span class="ability">key</span><pre></h4>
     </span>
     <div class="description"><p>Whoever owns this object can perform some admin actions against the
 <code>Safe</code> shared object with the corresponding id.</p>
@@ -400,7 +400,7 @@ An exclusively listed NFT cannot have its <code>TransferCap</code> revoked.</p>
 </div><div class="container-overview">
     <h2>TransferCap</h2>
     <span class="name-container">
-        <h4 class="name" id="TransferCap">0x0::unprotected_safe::TransferCap</h4>
+        <h4 class="name" id="TransferCap"><pre>0x0::unprotected_safe::<a href="./0x0::unprotected_safe.html#TransferCap"><span class="struct">TransferCap</span></a>&lt;&gt; has <span class="ability">store</span>, <span class="ability">key</span><pre></h4>
     </span>
     <div class="description"><p>Enables the owner to transfer given NFT out of the <code>Safe</code>.</p>
 </div>
@@ -466,7 +466,7 @@ burning the <code>TransferCap</code> first.</p>
 </div><div class="container-overview">
     <h2>DepositEvent</h2>
     <span class="name-container">
-        <h4 class="name" id="DepositEvent">0x0::unprotected_safe::DepositEvent</h4>
+        <h4 class="name" id="DepositEvent"><pre>0x0::unprotected_safe::<a href="./0x0::unprotected_safe.html#DepositEvent"><span class="struct">DepositEvent</span></a>&lt;&gt; has <span class="ability">copy</span>, <span class="ability">drop</span><pre></h4>
     </span>
     <div class="description"></div>
     <h5>Fields:</h5>
@@ -501,7 +501,7 @@ burning the <code>TransferCap</code> first.</p>
 </div><div class="container-overview">
     <h2>TransferEvent</h2>
     <span class="name-container">
-        <h4 class="name" id="TransferEvent">0x0::unprotected_safe::TransferEvent</h4>
+        <h4 class="name" id="TransferEvent"><pre>0x0::unprotected_safe::<a href="./0x0::unprotected_safe.html#TransferEvent"><span class="struct">TransferEvent</span></a>&lt;&gt; has <span class="ability">copy</span>, <span class="ability">drop</span><pre></h4>
     </span>
     <div class="description"></div>
     <h5>Fields:</h5>
@@ -583,7 +583,7 @@ transfer caps can be created.</p>
 </span>
 <div class="description"><p>Transfer an NFT into the <code>Safe</code>.</p>
 </div><span class="name-container">
-    <h4 class="name" id="deposit_generic_nft"><pre>public fun deposit_generic_nft&lt;T: store + key&gt;(
+    <h4 class="name" id="deposit_generic_nft"><pre>public fun deposit_generic_nft&lt;T: <span class="ability">store</span> + <span class="ability">key</span>&gt;(
     nft: T,
     safe: &amp;mut unprotected_safe::UnprotectedSafe,
     ctx: &amp;mut tx_context::TxContext,
@@ -593,11 +593,11 @@ transfer caps can be created.</p>
 <p>The type T here can refer to any object, not just the NFT protocol's
 exported NFT type.</p>
 </div><span class="name-container">
-    <h4 class="name" id="transfer_nft_to_recipient"><pre>public fun transfer_nft_to_recipient&lt;T, Auth: drop&gt;(
+    <h4 class="name" id="transfer_nft_to_recipient"><pre>public fun transfer_nft_to_recipient&lt;T, Auth: <span class="ability">drop</span>&gt;(
     transfer_cap: unprotected_safe::TransferCap,
     recipient: address,
     authority: Auth,
-    whitelist: &amp;transfer_whitelist::Whitelist,
+    allowlist: &amp;transfer_allowlist::Allowlist,
     safe: &amp;mut unprotected_safe::UnprotectedSafe,
 )</pre></h4>
 </span>
@@ -607,7 +607,7 @@ cap is no longer valid. The NFT could've been traded or the trading cap
 revoked.</p>
 </div><span class="name-container">
     <h4 class="name" id="transfer_generic_nft_to_recipient"><pre>public fun transfer_generic_nft_to_recipient&lt;
-    T: store + key,
+    T: <span class="ability">store</span> + <span class="ability">key</span>,
 &gt;(
     transfer_cap: unprotected_safe::TransferCap,
     recipient: address,
@@ -615,11 +615,11 @@ revoked.</p>
 )</pre></h4>
 </span>
 <div class="description"></div><span class="name-container">
-    <h4 class="name" id="transfer_nft_to_safe"><pre>public fun transfer_nft_to_safe&lt;T, Auth: drop&gt;(
+    <h4 class="name" id="transfer_nft_to_safe"><pre>public fun transfer_nft_to_safe&lt;T, Auth: <span class="ability">drop</span>&gt;(
     transfer_cap: unprotected_safe::TransferCap,
     recipient: address,
     authority: Auth,
-    whitelist: &amp;transfer_whitelist::Whitelist,
+    allowlist: &amp;transfer_allowlist::Allowlist,
     source: &amp;mut unprotected_safe::UnprotectedSafe,
     target: &amp;mut unprotected_safe::UnprotectedSafe,
     ctx: &amp;mut tx_context::TxContext,
@@ -632,7 +632,7 @@ the target <code>Safe</code>.</p>
 cap is no longer valid. The NFT could've been traded or the trading cap
 revoked.</p>
 </div><span class="name-container">
-    <h4 class="name" id="transfer_generic_nft_to_safe"><pre>public fun transfer_generic_nft_to_safe&lt;T: store + key&gt;(
+    <h4 class="name" id="transfer_generic_nft_to_safe"><pre>public fun transfer_generic_nft_to_safe&lt;T: <span class="ability">store</span> + <span class="ability">key</span>&gt;(
     transfer_cap: unprotected_safe::TransferCap,
     source: &amp;mut unprotected_safe::UnprotectedSafe,
     target: &amp;mut unprotected_safe::UnprotectedSafe,
@@ -665,7 +665,7 @@ NFTs.</p>
 ): bool</pre></h4>
 </span>
 <div class="description"></div><span class="name-container">
-    <h4 class="name" id="has_generic_nft"><pre>public fun has_generic_nft&lt;T: store + key&gt;(
+    <h4 class="name" id="has_generic_nft"><pre>public fun has_generic_nft&lt;T: <span class="ability">store</span> + <span class="ability">key</span>&gt;(
     nft: object::ID,
     safe: &amp;unprotected_safe::UnprotectedSafe,
 ): bool</pre></h4>
