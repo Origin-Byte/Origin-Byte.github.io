@@ -1,250 +1,278 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>OriginByte</title>
+    <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OriginByte</title>
 
-<link type="text/css" rel="stylesheet" href="./assets/style.css">
+    <link type="text/css" rel="stylesheet" href="./assets/style.css">
 
-</head>
-<body>
-<nav>
-<a href="./index.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet">
+
+    </head>
+    <body>
+        <div id="container-movedoc">
+            <nav class="sidebar"><a href="./index.html">
     <img src="./assets/accent.svg" style="position: absolute">
     <img src="./assets/ob.svg" class="logo">
 </a>
 <h3>Modules</h3>
 <ul><li>
-<a href="./err.html">err</a>
-<ul class="methods"></ul></li><li>
-<a href="./utils.html">utils</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./utils.html#Marker">Marker</a>       
-</li></ul></li><li>
-<a href="./collection.html">collection</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./collection.html#BurnEvent">BurnEvent</a>       
-</li><li data-type="struct">
-    <a href="./collection.html#Collection">Collection</a>       
-</li><li data-type="struct">
-    <a href="./collection.html#MintCap">MintCap</a>       
-</li><li data-type="struct">
-    <a href="./collection.html#MintEvent">MintEvent</a>       
-</li></ul></li><li>
-<a href="./attribution.html">attribution</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./attribution.html#Witness">Witness</a>       
-</li><li data-type="struct">
-    <a href="./attribution.html#AttributionDomain">AttributionDomain</a>       
-</li><li data-type="struct">
-    <a href="./attribution.html#Creator">Creator</a>       
-</li></ul></li><li>
-<a href="./transfer_allowlist.html">transfer_allowlist</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./transfer_allowlist.html#Allowlist">Allowlist</a>       
-</li><li data-type="struct">
-    <a href="./transfer_allowlist.html#CollectionControlCap">CollectionControlCap</a>       
-</li></ul></li><li>
-<a href="./royalties.html">royalties</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./royalties.html#TradePayment">TradePayment</a>       
-</li></ul></li><li>
-<a href="./trading.html">trading</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./trading.html#AskCommission">AskCommission</a>       
-</li><li data-type="struct">
-    <a href="./trading.html#BidCommission">BidCommission</a>       
-</li></ul></li><li>
-<a href="./nft.html">nft</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./nft.html#Nft">Nft</a>       
-</li></ul></li><li>
-<a href="./unprotected_safe.html">unprotected_safe</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./unprotected_safe.html#DepositEvent">DepositEvent</a>       
-</li><li data-type="struct">
-    <a href="./unprotected_safe.html#NftRef">NftRef</a>       
-</li><li data-type="struct">
-    <a href="./unprotected_safe.html#OwnerCap">OwnerCap</a>       
-</li><li data-type="struct">
-    <a href="./unprotected_safe.html#TransferCap">TransferCap</a>       
-</li><li data-type="struct">
-    <a href="./unprotected_safe.html#TransferEvent">TransferEvent</a>       
-</li><li data-type="struct">
-    <a href="./unprotected_safe.html#UnprotectedSafe">UnprotectedSafe</a>       
-</li></ul></li><li>
-<a href="./safe.html">safe</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./safe.html#OwnerCap">OwnerCap</a>       
-</li><li data-type="struct">
-    <a href="./safe.html#TransferCap">TransferCap</a>       
-</li><li data-type="struct">
-    <a href="./safe.html#Safe">Safe</a>       
-</li></ul></li><li>
-<a href="./bidding.html">bidding</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./bidding.html#Witness">Witness</a>       
-</li><li data-type="struct">
-    <a href="./bidding.html#Bid">Bid</a>       
-</li><li data-type="struct">
-    <a href="./bidding.html#BidClosed">BidClosed</a>       
-</li><li data-type="struct">
-    <a href="./bidding.html#BidCreated">BidCreated</a>       
-</li></ul></li><li>
-<a href="./display.html">display</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./display.html#Witness">Witness</a>       
-</li><li data-type="struct">
-    <a href="./display.html#AttributesDomain">AttributesDomain</a>       
-</li><li data-type="struct">
-    <a href="./display.html#DisplayDomain">DisplayDomain</a>       
-</li><li data-type="struct">
-    <a href="./display.html#SymbolDomain">SymbolDomain</a>       
-</li><li data-type="struct">
-    <a href="./display.html#UrlDomain">UrlDomain</a>       
-</li></ul></li><li>
-<a href="./proceeds.html">proceeds</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./proceeds.html#Proceeds">Proceeds</a>       
-</li><li data-type="struct">
-    <a href="./proceeds.html#QtSold">QtSold</a>       
-</li></ul></li><li>
-<a href="./object_box.html">object_box</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./object_box.html#ObjectBox">ObjectBox</a>       
-</li></ul></li><li>
-<a href="./marketplace.html">marketplace</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./marketplace.html#Marketplace">Marketplace</a>       
-</li></ul></li><li>
-<a href="./inventory.html">inventory</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./inventory.html#Inventory">Inventory</a>       
-</li></ul></li><li>
-<a href="./listing.html">listing</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./listing.html#CreateListingEvent">CreateListingEvent</a>       
-</li><li data-type="struct">
-    <a href="./listing.html#DeleteListingEvent">DeleteListingEvent</a>       
-</li><li data-type="struct">
-    <a href="./listing.html#Listing">Listing</a>       
-</li><li data-type="struct">
-    <a href="./listing.html#RequestToJoin">RequestToJoin</a>       
-</li><li data-type="struct">
-    <a href="./listing.html#WhitelistCertificate">WhitelistCertificate</a>       
-</li></ul></li><li>
-<a href="./dutch_auction.html">dutch_auction</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./dutch_auction.html#Witness">Witness</a>       
-</li><li data-type="struct">
-    <a href="./dutch_auction.html#Bid">Bid</a>       
-</li><li data-type="struct">
-    <a href="./dutch_auction.html#DutchAuctionMarket">DutchAuctionMarket</a>       
-</li></ul></li><li>
-<a href="./fixed_price.html">fixed_price</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./fixed_price.html#Witness">Witness</a>       
-</li><li data-type="struct">
-    <a href="./fixed_price.html#FixedPriceMarket">FixedPriceMarket</a>       
-</li></ul></li><li>
-<a href="./flat_fee.html">flat_fee</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./flat_fee.html#FlatFee">FlatFee</a>       
-</li></ul></li><li>
-<a href="./supply.html">supply</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./supply.html#Supply">Supply</a>       
-</li></ul></li><li>
-<a href="./flyweight.html">flyweight</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./flyweight.html#BurnEvent">BurnEvent</a>       
-</li><li data-type="struct">
-    <a href="./flyweight.html#MintEvent">MintEvent</a>       
-</li><li data-type="struct">
-    <a href="./flyweight.html#Archetype">Archetype</a>       
-</li><li data-type="struct">
-    <a href="./flyweight.html#Pointer">Pointer</a>       
-</li><li data-type="struct">
-    <a href="./flyweight.html#Registry">Registry</a>       
-</li></ul></li><li>
-<a href="./ob.html">ob</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./ob.html#Witness">Witness</a>       
-</li><li data-type="struct">
-    <a href="./ob.html#Bid">Bid</a>       
-</li><li data-type="struct">
-    <a href="./ob.html#BidClosed">BidClosed</a>       
-</li><li data-type="struct">
-    <a href="./ob.html#BidCreated">BidCreated</a>       
-</li><li data-type="struct">
-    <a href="./ob.html#Ask">Ask</a>       
-</li><li data-type="struct">
-    <a href="./ob.html#AskClosed">AskClosed</a>       
-</li><li data-type="struct">
-    <a href="./ob.html#AskCreated">AskCreated</a>       
-</li><li data-type="struct">
-    <a href="./ob.html#Orderbook">Orderbook</a>       
-</li><li data-type="struct">
-    <a href="./ob.html#TradeExecuted">TradeExecuted</a>       
-</li><li data-type="struct">
-    <a href="./ob.html#TradeIntermediate">TradeIntermediate</a>       
-</li><li data-type="struct">
-    <a href="./ob.html#WitnessProtectedActions">WitnessProtectedActions</a>       
-</li></ul></li><li>
-<a href="./royalty_strategy_constant.html">royalty_strategy_constant</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./royalty_strategy_constant.html#ConstantRoyaltyStrategy">ConstantRoyaltyStrategy</a>       
-</li></ul></li><li>
-<a href="./royalty_strategy_bps.html">royalty_strategy_bps</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./royalty_strategy_bps.html#BpsRoyaltyStrategy">BpsRoyaltyStrategy</a>       
-</li></ul></li><li>
-<a href="./royalty.html">royalty</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./royalty.html#Witness">Witness</a>       
-</li><li data-type="struct">
-    <a href="./royalty.html#RoyaltyDomain">RoyaltyDomain</a>       
-</li></ul></li><li>
-<a href="./supply_policy.html">supply_policy</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./supply_policy.html#SupplyPolicy">SupplyPolicy</a>       
-</li></ul></li><li>
-<a href="./tags.html">tags</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./tags.html#Witness">Witness</a>       
-</li><li data-type="struct">
-    <a href="./tags.html#Art">Art</a>       
-</li><li data-type="struct">
-    <a href="./tags.html#Collectible">Collectible</a>       
-</li><li data-type="struct">
-    <a href="./tags.html#DomainName">DomainName</a>       
-</li><li data-type="struct">
-    <a href="./tags.html#GameAsset">GameAsset</a>       
-</li><li data-type="struct">
-    <a href="./tags.html#License">License</a>       
-</li><li data-type="struct">
-    <a href="./tags.html#Music">Music</a>       
-</li><li data-type="struct">
-    <a href="./tags.html#ProfilePicture">ProfilePicture</a>       
-</li><li data-type="struct">
-    <a href="./tags.html#TagDomain">TagDomain</a>       
-</li><li data-type="struct">
-    <a href="./tags.html#Ticker">Ticker</a>       
-</li><li data-type="struct">
-    <a href="./tags.html#Ticket">Ticket</a>       
-</li><li data-type="struct">
-    <a href="./tags.html#TokenisedAsset">TokenisedAsset</a>       
-</li><li data-type="struct">
-    <a href="./tags.html#Video">Video</a>       
-</li></ul></li></ul></nav>
-<div id="main"><h1 class="page-title">ob</h1>
-<section class="readme">
-    <header>
-        <h2>0x0::ob</h2>
-    </header>
-    <article>
-        <p>Orderbook where bids are fungible tokens and asks are NFTs.
+    <a href="./err.html">err</a>
+    <ul class="methods"></ul>
+</li><li>
+    <a href="./utils.html">utils</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./utils.html#Marker">Marker</a>
+</li></ul>
+</li><li>
+    <a href="./transfer_allowlist.html">transfer_allowlist</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./transfer_allowlist.html#Allowlist">Allowlist</a>
+</li><li data-type="type">
+    <a href="./transfer_allowlist.html#CollectionControlCap">CollectionControlCap</a>
+</li></ul>
+</li><li>
+    <a href="./royalties.html">royalties</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./royalties.html#TradePayment">TradePayment</a>
+</li></ul>
+</li><li>
+    <a href="./trading.html">trading</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./trading.html#AskCommission">AskCommission</a>
+</li><li data-type="type">
+    <a href="./trading.html#BidCommission">BidCommission</a>
+</li></ul>
+</li><li>
+    <a href="./nft.html">nft</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./nft.html#MintNftEvent">MintNftEvent</a>
+</li><li data-type="type">
+    <a href="./nft.html#Nft">Nft</a>
+</li></ul>
+</li><li>
+    <a href="./unprotected_safe.html">unprotected_safe</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./unprotected_safe.html#DepositEvent">DepositEvent</a>
+</li><li data-type="type">
+    <a href="./unprotected_safe.html#NftRef">NftRef</a>
+</li><li data-type="type">
+    <a href="./unprotected_safe.html#OwnerCap">OwnerCap</a>
+</li><li data-type="type">
+    <a href="./unprotected_safe.html#TransferCap">TransferCap</a>
+</li><li data-type="type">
+    <a href="./unprotected_safe.html#TransferEvent">TransferEvent</a>
+</li><li data-type="type">
+    <a href="./unprotected_safe.html#UnprotectedSafe">UnprotectedSafe</a>
+</li></ul>
+</li><li>
+    <a href="./safe.html">safe</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./safe.html#OwnerCap">OwnerCap</a>
+</li><li data-type="type">
+    <a href="./safe.html#TransferCap">TransferCap</a>
+</li><li data-type="type">
+    <a href="./safe.html#Safe">Safe</a>
+</li></ul>
+</li><li>
+    <a href="./bidding.html">bidding</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./bidding.html#Witness">Witness</a>
+</li><li data-type="type">
+    <a href="./bidding.html#Bid">Bid</a>
+</li><li data-type="type">
+    <a href="./bidding.html#BidClosed">BidClosed</a>
+</li><li data-type="type">
+    <a href="./bidding.html#BidCreated">BidCreated</a>
+</li></ul>
+</li><li>
+    <a href="./collection.html">collection</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./collection.html#Collection">Collection</a>
+</li><li data-type="type">
+    <a href="./collection.html#CollectionMintEvent">CollectionMintEvent</a>
+</li><li data-type="type">
+    <a href="./collection.html#MintCap">MintCap</a>
+</li></ul>
+</li><li>
+    <a href="./creators.html">creators</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./creators.html#Witness">Witness</a>
+</li><li data-type="type">
+    <a href="./creators.html#Creator">Creator</a>
+</li><li data-type="type">
+    <a href="./creators.html#CreatorsDomain">CreatorsDomain</a>
+</li></ul>
+</li><li>
+    <a href="./display.html">display</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./display.html#Witness">Witness</a>
+</li><li data-type="type">
+    <a href="./display.html#AttributesDomain">AttributesDomain</a>
+</li><li data-type="type">
+    <a href="./display.html#DisplayDomain">DisplayDomain</a>
+</li><li data-type="type">
+    <a href="./display.html#SymbolDomain">SymbolDomain</a>
+</li><li data-type="type">
+    <a href="./display.html#UrlDomain">UrlDomain</a>
+</li></ul>
+</li><li>
+    <a href="./proceeds.html">proceeds</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./proceeds.html#Proceeds">Proceeds</a>
+</li><li data-type="type">
+    <a href="./proceeds.html#QtSold">QtSold</a>
+</li></ul>
+</li><li>
+    <a href="./object_box.html">object_box</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./object_box.html#ObjectBox">ObjectBox</a>
+</li></ul>
+</li><li>
+    <a href="./marketplace.html">marketplace</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./marketplace.html#Marketplace">Marketplace</a>
+</li></ul>
+</li><li>
+    <a href="./inventory.html">inventory</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./inventory.html#Inventory">Inventory</a>
+</li></ul>
+</li><li>
+    <a href="./listing.html">listing</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./listing.html#CreateListingEvent">CreateListingEvent</a>
+</li><li data-type="type">
+    <a href="./listing.html#DeleteListingEvent">DeleteListingEvent</a>
+</li><li data-type="type">
+    <a href="./listing.html#Listing">Listing</a>
+</li><li data-type="type">
+    <a href="./listing.html#RequestToJoin">RequestToJoin</a>
+</li><li data-type="type">
+    <a href="./listing.html#WhitelistCertificate">WhitelistCertificate</a>
+</li></ul>
+</li><li>
+    <a href="./dutch_auction.html">dutch_auction</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./dutch_auction.html#Witness">Witness</a>
+</li><li data-type="type">
+    <a href="./dutch_auction.html#Bid">Bid</a>
+</li><li data-type="type">
+    <a href="./dutch_auction.html#DutchAuctionMarket">DutchAuctionMarket</a>
+</li></ul>
+</li><li>
+    <a href="./fixed_price.html">fixed_price</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./fixed_price.html#Witness">Witness</a>
+</li><li data-type="type">
+    <a href="./fixed_price.html#FixedPriceMarket">FixedPriceMarket</a>
+</li></ul>
+</li><li>
+    <a href="./flat_fee.html">flat_fee</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./flat_fee.html#FlatFee">FlatFee</a>
+</li></ul>
+</li><li>
+    <a href="./supply.html">supply</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./supply.html#Supply">Supply</a>
+</li></ul>
+</li><li>
+    <a href="./flyweight.html">flyweight</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./flyweight.html#Archetype">Archetype</a>
+</li><li data-type="type">
+    <a href="./flyweight.html#BurnEvent">BurnEvent</a>
+</li><li data-type="type">
+    <a href="./flyweight.html#MintEvent">MintEvent</a>
+</li><li data-type="type">
+    <a href="./flyweight.html#Pointer">Pointer</a>
+</li><li data-type="type">
+    <a href="./flyweight.html#Registry">Registry</a>
+</li></ul>
+</li><li>
+    <a href="./ob.html">ob</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./ob.html#Witness">Witness</a>
+</li><li data-type="type">
+    <a href="./ob.html#Bid">Bid</a>
+</li><li data-type="type">
+    <a href="./ob.html#BidClosed">BidClosed</a>
+</li><li data-type="type">
+    <a href="./ob.html#BidCreated">BidCreated</a>
+</li><li data-type="type">
+    <a href="./ob.html#Ask">Ask</a>
+</li><li data-type="type">
+    <a href="./ob.html#AskClosed">AskClosed</a>
+</li><li data-type="type">
+    <a href="./ob.html#AskCreated">AskCreated</a>
+</li><li data-type="type">
+    <a href="./ob.html#Orderbook">Orderbook</a>
+</li><li data-type="type">
+    <a href="./ob.html#TradeExecuted">TradeExecuted</a>
+</li><li data-type="type">
+    <a href="./ob.html#TradeIntermediate">TradeIntermediate</a>
+</li><li data-type="type">
+    <a href="./ob.html#WitnessProtectedActions">WitnessProtectedActions</a>
+</li></ul>
+</li><li>
+    <a href="./royalty_strategy_constant.html">royalty_strategy_constant</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./royalty_strategy_constant.html#ConstantRoyaltyStrategy">ConstantRoyaltyStrategy</a>
+</li></ul>
+</li><li>
+    <a href="./royalty_strategy_bps.html">royalty_strategy_bps</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./royalty_strategy_bps.html#BpsRoyaltyStrategy">BpsRoyaltyStrategy</a>
+</li></ul>
+</li><li>
+    <a href="./royalty.html">royalty</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./royalty.html#Witness">Witness</a>
+</li><li data-type="type">
+    <a href="./royalty.html#RoyaltyDomain">RoyaltyDomain</a>
+</li></ul>
+</li><li>
+    <a href="./supply_policy.html">supply_policy</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./supply_policy.html#SupplyPolicy">SupplyPolicy</a>
+</li></ul>
+</li><li>
+    <a href="./tags.html">tags</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./tags.html#Witness">Witness</a>
+</li><li data-type="type">
+    <a href="./tags.html#Art">Art</a>
+</li><li data-type="type">
+    <a href="./tags.html#Collectible">Collectible</a>
+</li><li data-type="type">
+    <a href="./tags.html#DomainName">DomainName</a>
+</li><li data-type="type">
+    <a href="./tags.html#GameAsset">GameAsset</a>
+</li><li data-type="type">
+    <a href="./tags.html#License">License</a>
+</li><li data-type="type">
+    <a href="./tags.html#Music">Music</a>
+</li><li data-type="type">
+    <a href="./tags.html#ProfilePicture">ProfilePicture</a>
+</li><li data-type="type">
+    <a href="./tags.html#TagDomain">TagDomain</a>
+</li><li data-type="type">
+    <a href="./tags.html#Ticker">Ticker</a>
+</li><li data-type="type">
+    <a href="./tags.html#Ticket">Ticket</a>
+</li><li data-type="type">
+    <a href="./tags.html#TokenisedAsset">TokenisedAsset</a>
+</li><li data-type="type">
+    <a href="./tags.html#Video">Video</a>
+</li></ul>
+</li></ul></nav>
+            <main><h1 class="page-title">0x0::ob</h1>
+<article>
+    <p>Orderbook where bids are fungible tokens and asks are NFTs.
 A bid is a request to buy one NFT from a specific collection.
 An ask is one NFT with a min price condition.</p>
 <p>One can</p>
@@ -259,61 +287,59 @@ An ask is one NFT with a min price condition.</p>
 <li>open bids and asks with a commission on behalf of a user.</li>
 </ul>
 
-        <h3 class="subsection-title">Structs</h3>
-        <div class="container-overview">
-    <h2>Witness</h2>
-    <span class="name-container">
-        <h4 class="name" id="Witness"><pre>0x0::ob::<a href="./0x0::ob.html#Witness"><span class="struct">Witness</span></a>&lt;&gt; has <span class="ability">drop</span><pre></h4>
-    </span>
-    <div class="description"></div>
-    <h5>Fields:</h5>
-    <table class="params">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Type</th>
-                <th class="last">Description</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
+    <h3 class="subsection-title">Structs</h3>
+    <details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="Witness"><pre><a href="./ob.html">ob</a>::<a href="./ob.html#Witness" class="type">Witness</a> has <span class="ability">drop</span><pre></h4>
+    </summary>
+    <div class="description">
+        
+        <h5>Fields:</h5>
+        <table class="params">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th class="last">Description</th>
+                </tr>
+            </thead>
+            <tbody><tr>
     <td class="name">
         <code>dummy_field</code>            
     </td>
     <td class="type">
-        <code>bool</code>  
+        <code><span class="type">bool</span></code>  
     </td>
     <td class="description last"></td>
-</tr>
-        </tbody>
-    </table>
-</div><div class="container-overview">
-    <h2>Orderbook</h2>
-    <span class="name-container">
-        <h4 class="name" id="Orderbook"><pre>0x0::ob::<a href="./0x0::ob.html#Orderbook"><span class="struct">Orderbook</span></a>&lt;C, FT&gt; has <span class="ability">key</span><pre></h4>
-    </span>
-    <div class="description"><p>A critbit order book implementation. Contains two ordered trees:</p>
+</tr></tbody>
+        </table>
+    </div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="Orderbook"><pre><a href="./ob.html">ob</a>::<a href="./ob.html#Orderbook" class="type">Orderbook</a>&lt;C, FT&gt; has <span class="ability">key</span><pre></h4>
+    </summary>
+    <div class="description">
+        <p>A critbit order book implementation. Contains two ordered trees:</p>
 <ol>
 <li>bids ASC</li>
 <li>asks DESC</li>
 </ol>
-</div>
-    <h5>Fields:</h5>
-    <table class="params">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Type</th>
-                <th class="last">Description</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
+
+        <h5>Fields:</h5>
+        <table class="params">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th class="last">Description</th>
+                </tr>
+            </thead>
+            <tbody><tr>
     <td class="name">
         <code>id</code>            
     </td>
     <td class="type">
-        <code>object::UID</code>  
+        <code>object::<span class="type">UID</span></code>  
     </td>
     <td class="description last"></td>
 </tr><tr>
@@ -321,7 +347,7 @@ An ask is one NFT with a min price condition.</p>
         <code>protected_actions</code>            
     </td>
     <td class="type">
-        <code>ob::WitnessProtectedActions</code>  
+        <code><a href="./ob.html">ob</a>::<a href="./ob.html#WitnessProtectedActions" class="type">WitnessProtectedActions</a></code>  
     </td>
     <td class="description last"><p>Actions which have a flag set to true can only be called via a
 witness protected implementation.</p>
@@ -331,7 +357,7 @@ witness protected implementation.</p>
         <code>asks</code>            
     </td>
     <td class="type">
-        <code>crit_bit_u64::CB<vector<ob::Ask>></code>  
+        <code>crit_bit_u64::<span class="type">CB</span>&lt;<span class="type">vector<span>&lt;<a href="./ob.html">ob</a>::<a href="./ob.html#Ask" class="type">Ask</a>&gt;&gt;</code>  
     </td>
     <td class="description last"><p>An ask order stores an NFT to be traded. The price associated with
 such an order is saying:</p>
@@ -344,7 +370,7 @@ such an order is saying:</p>
         <code>bids</code>            
     </td>
     <td class="type">
-        <code>crit_bit_u64::CB<vector<ob::Bid<#1>>></code>  
+        <code>crit_bit_u64::<span class="type">CB</span>&lt;<span class="type">vector<span>&lt;<a href="./ob.html">ob</a>::<a href="./ob.html#Bid" class="type">Bid</a>&lt;FT&gt;&gt;&gt;</code>  
     </td>
     <td class="description last"><p>A bid order stores amount of tokens of type &quot;B&quot;(id) to trade. A bid
 order is saying:</p>
@@ -352,15 +378,15 @@ order is saying:</p>
 <p>for any NFT in this collection, I will spare this many tokens</p>
 </blockquote>
 </td>
-</tr>
-        </tbody>
-    </table>
-</div><div class="container-overview">
-    <h2>WitnessProtectedActions</h2>
-    <span class="name-container">
-        <h4 class="name" id="WitnessProtectedActions"><pre>0x0::ob::<a href="./0x0::ob.html#WitnessProtectedActions"><span class="struct">WitnessProtectedActions</span></a>&lt;&gt; has <span class="ability">store</span><pre></h4>
-    </span>
-    <div class="description"><p>The contract which creates the orderbook can restrict specific actions
+</tr></tbody>
+        </table>
+    </div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="WitnessProtectedActions"><pre><a href="./ob.html">ob</a>::<a href="./ob.html#WitnessProtectedActions" class="type">WitnessProtectedActions</a> has <span class="ability">store</span><pre></h4>
+    </summary>
+    <div class="description">
+        <p>The contract which creates the orderbook can restrict specific actions
 to be only callable with a witness pattern and not via the entry point
 function.</p>
 <p>This means contracts can build on top of this orderbook their custom
@@ -374,23 +400,22 @@ smart contract.</p>
 If I see that an action is protected, I can decide to either call
 the downstream implementation in the collection smart contract, or just
 not enable to perform that specific action at all.</p>
-</div>
-    <h5>Fields:</h5>
-    <table class="params">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Type</th>
-                <th class="last">Description</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
+
+        <h5>Fields:</h5>
+        <table class="params">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th class="last">Description</th>
+                </tr>
+            </thead>
+            <tbody><tr>
     <td class="name">
         <code>buy_nft</code>            
     </td>
     <td class="type">
-        <code>bool</code>  
+        <code><span class="type">bool</span></code>  
     </td>
     <td class="description last"></td>
 </tr><tr>
@@ -398,7 +423,7 @@ not enable to perform that specific action at all.</p>
         <code>cancel_ask</code>            
     </td>
     <td class="type">
-        <code>bool</code>  
+        <code><span class="type">bool</span></code>  
     </td>
     <td class="description last"></td>
 </tr><tr>
@@ -406,7 +431,7 @@ not enable to perform that specific action at all.</p>
         <code>cancel_bid</code>            
     </td>
     <td class="type">
-        <code>bool</code>  
+        <code><span class="type">bool</span></code>  
     </td>
     <td class="description last"></td>
 </tr><tr>
@@ -414,7 +439,7 @@ not enable to perform that specific action at all.</p>
         <code>create_ask</code>            
     </td>
     <td class="type">
-        <code>bool</code>  
+        <code><span class="type">bool</span></code>  
     </td>
     <td class="description last"></td>
 </tr><tr>
@@ -422,35 +447,34 @@ not enable to perform that specific action at all.</p>
         <code>create_bid</code>            
     </td>
     <td class="type">
-        <code>bool</code>  
+        <code><span class="type">bool</span></code>  
     </td>
     <td class="description last"></td>
-</tr>
-        </tbody>
-    </table>
-</div><div class="container-overview">
-    <h2>Bid</h2>
-    <span class="name-container">
-        <h4 class="name" id="Bid"><pre>0x0::ob::<a href="./0x0::ob.html#Bid"><span class="struct">Bid</span></a>&lt;FT&gt; has <span class="ability">store</span><pre></h4>
-    </span>
-    <div class="description"><p>An offer for a single NFT in a collection.</p>
-</div>
-    <h5>Fields:</h5>
-    <table class="params">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Type</th>
-                <th class="last">Description</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
+</tr></tbody>
+        </table>
+    </div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="Bid"><pre><a href="./ob.html">ob</a>::<a href="./ob.html#Bid" class="type">Bid</a>&lt;FT&gt; has <span class="ability">store</span><pre></h4>
+    </summary>
+    <div class="description">
+        <p>An offer for a single NFT in a collection.</p>
+
+        <h5>Fields:</h5>
+        <table class="params">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th class="last">Description</th>
+                </tr>
+            </thead>
+            <tbody><tr>
     <td class="name">
         <code>offer</code>            
     </td>
     <td class="type">
-        <code>balance::Balance<#0></code>  
+        <code>balance::<span class="type">Balance</span>&lt;FT&gt;</code>  
     </td>
     <td class="description last"><p>How many &quot;T&quot;okens are being offered by the order issuer for one NFT.</p>
 </td>
@@ -459,7 +483,7 @@ not enable to perform that specific action at all.</p>
         <code>owner</code>            
     </td>
     <td class="type">
-        <code>address</code>  
+        <code><span class="type">address</span></code>  
     </td>
     <td class="description last"><p>The address of the user who created this bid and who will receive an
 NFT in exchange for their tokens.</p>
@@ -469,7 +493,7 @@ NFT in exchange for their tokens.</p>
         <code>safe</code>            
     </td>
     <td class="type">
-        <code>object::ID</code>  
+        <code>object::<span class="type">ID</span></code>  
     </td>
     <td class="description last"><p>Points to <code>Safe</code> shared object into which to deposit NFT.</p>
 </td>
@@ -478,43 +502,42 @@ NFT in exchange for their tokens.</p>
         <code>commission</code>            
     </td>
     <td class="type">
-        <code>option::Option<trading::BidCommission<#0>></code>  
+        <code>option::<span class="type">Option</span>&lt;<a href="./trading.html">trading</a>::<a href="./trading.html#BidCommission" class="type">BidCommission</a>&lt;FT&gt;&gt;</code>  
     </td>
     <td class="description last"><p>If the NFT is offered via a marketplace or a wallet, the
 facilitator can optionally set how many tokens they want to claim
 on top of the offer.</p>
 </td>
-</tr>
-        </tbody>
-    </table>
-</div><div class="container-overview">
-    <h2>Ask</h2>
-    <span class="name-container">
-        <h4 class="name" id="Ask"><pre>0x0::ob::<a href="./0x0::ob.html#Ask"><span class="struct">Ask</span></a>&lt;&gt; has <span class="ability">store</span>, <span class="ability">key</span><pre></h4>
-    </span>
-    <div class="description"><p>Object which is associated with a single NFT.</p>
+</tr></tbody>
+        </table>
+    </div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="Ask"><pre><a href="./ob.html">ob</a>::<a href="./ob.html#Ask" class="type">Ask</a> has <span class="ability">store</span>, <span class="ability">key</span><pre></h4>
+    </summary>
+    <div class="description">
+        <p>Object which is associated with a single NFT.</p>
 <p>When [<code>Ask</code>] is created, we transfer the ownership of the NFT to this
 new object.
 When an ask is matched with a bid, we transfer the ownership of the
 [<code>Ask</code>] object to the bid owner (buyer).
 The buyer can then claim the NFT via [<code>claim_nft</code>] endpoint.</p>
-</div>
-    <h5>Fields:</h5>
-    <table class="params">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Type</th>
-                <th class="last">Description</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
+
+        <h5>Fields:</h5>
+        <table class="params">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th class="last">Description</th>
+                </tr>
+            </thead>
+            <tbody><tr>
     <td class="name">
         <code>id</code>            
     </td>
     <td class="type">
-        <code>object::UID</code>  
+        <code>object::<span class="type">UID</span></code>  
     </td>
     <td class="description last"></td>
 </tr><tr>
@@ -522,7 +545,7 @@ The buyer can then claim the NFT via [<code>claim_nft</code>] endpoint.</p>
         <code>price</code>            
     </td>
     <td class="type">
-        <code>u64</code>  
+        <code><span class="type">u64</span></code>  
     </td>
     <td class="description last"><p>How many tokens does the seller want for their NFT in exchange.</p>
 </td>
@@ -531,7 +554,7 @@ The buyer can then claim the NFT via [<code>claim_nft</code>] endpoint.</p>
         <code>transfer_cap</code>            
     </td>
     <td class="type">
-        <code>safe::TransferCap</code>  
+        <code><a href="./safe.html">safe</a>::<a href="./safe.html#TransferCap" class="type">TransferCap</a></code>  
     </td>
     <td class="description last"><p>Capability to get an NFT from a safe.</p>
 </td>
@@ -540,7 +563,7 @@ The buyer can then claim the NFT via [<code>claim_nft</code>] endpoint.</p>
         <code>owner</code>            
     </td>
     <td class="type">
-        <code>address</code>  
+        <code><span class="type">address</span></code>  
     </td>
     <td class="description last"><p>Who owns the NFT.</p>
 </td>
@@ -549,39 +572,38 @@ The buyer can then claim the NFT via [<code>claim_nft</code>] endpoint.</p>
         <code>commission</code>            
     </td>
     <td class="type">
-        <code>option::Option<trading::AskCommission></code>  
+        <code>option::<span class="type">Option</span>&lt;<a href="./trading.html">trading</a>::<a href="./trading.html#AskCommission" class="type">AskCommission</a>&gt;</code>  
     </td>
     <td class="description last"><p>If the NFT is offered via a marketplace or a wallet, the
 faciliatator can optionally set how many tokens they want to claim
 from the price of the NFT for themselves as a commission.</p>
 </td>
-</tr>
-        </tbody>
-    </table>
-</div><div class="container-overview">
-    <h2>TradeIntermediate</h2>
-    <span class="name-container">
-        <h4 class="name" id="TradeIntermediate"><pre>0x0::ob::<a href="./0x0::ob.html#TradeIntermediate"><span class="struct">TradeIntermediate</span></a>&lt;C, FT&gt; has <span class="ability">key</span><pre></h4>
-    </span>
-    <div class="description"><p><code>TradeIntermediate</code> is made a shared object and can be called
+</tr></tbody>
+        </table>
+    </div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="TradeIntermediate"><pre><a href="./ob.html">ob</a>::<a href="./ob.html#TradeIntermediate" class="type">TradeIntermediate</a>&lt;C, FT&gt; has <span class="ability">key</span><pre></h4>
+    </summary>
+    <div class="description">
+        <p><code>TradeIntermediate</code> is made a shared object and can be called
 permissionlessly.</p>
-</div>
-    <h5>Fields:</h5>
-    <table class="params">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Type</th>
-                <th class="last">Description</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
+
+        <h5>Fields:</h5>
+        <table class="params">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th class="last">Description</th>
+                </tr>
+            </thead>
+            <tbody><tr>
     <td class="name">
         <code>id</code>            
     </td>
     <td class="type">
-        <code>object::UID</code>  
+        <code>object::<span class="type">UID</span></code>  
     </td>
     <td class="description last"></td>
 </tr><tr>
@@ -589,7 +611,7 @@ permissionlessly.</p>
         <code>transfer_cap</code>            
     </td>
     <td class="type">
-        <code>option::Option<safe::TransferCap></code>  
+        <code>option::<span class="type">Option</span>&lt;<a href="./safe.html">safe</a>::<a href="./safe.html#TransferCap" class="type">TransferCap</a>&gt;</code>  
     </td>
     <td class="description last"><p>in option bcs we want to extract it but cannot destroy shared obj
 in Sui yet</p>
@@ -600,7 +622,7 @@ in Sui yet</p>
         <code>buyer</code>            
     </td>
     <td class="type">
-        <code>address</code>  
+        <code><span class="type">address</span></code>  
     </td>
     <td class="description last"></td>
 </tr><tr>
@@ -608,7 +630,7 @@ in Sui yet</p>
         <code>buyer_safe</code>            
     </td>
     <td class="type">
-        <code>object::ID</code>  
+        <code>object::<span class="type">ID</span></code>  
     </td>
     <td class="description last"></td>
 </tr><tr>
@@ -616,7 +638,7 @@ in Sui yet</p>
         <code>paid</code>            
     </td>
     <td class="type">
-        <code>balance::Balance<#1></code>  
+        <code>balance::<span class="type">Balance</span>&lt;FT&gt;</code>  
     </td>
     <td class="description last"></td>
 </tr><tr>
@@ -624,34 +646,33 @@ in Sui yet</p>
         <code>commission</code>            
     </td>
     <td class="type">
-        <code>option::Option<trading::AskCommission></code>  
+        <code>option::<span class="type">Option</span>&lt;<a href="./trading.html">trading</a>::<a href="./trading.html#AskCommission" class="type">AskCommission</a>&gt;</code>  
     </td>
     <td class="description last"></td>
-</tr>
-        </tbody>
-    </table>
-</div><div class="container-overview">
-    <h2>AskCreated</h2>
-    <span class="name-container">
-        <h4 class="name" id="AskCreated"><pre>0x0::ob::<a href="./0x0::ob.html#AskCreated"><span class="struct">AskCreated</span></a>&lt;FT&gt; has <span class="ability">copy</span>, <span class="ability">drop</span><pre></h4>
-    </span>
-    <div class="description"></div>
-    <h5>Fields:</h5>
-    <table class="params">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Type</th>
-                <th class="last">Description</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
+</tr></tbody>
+        </table>
+    </div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="AskCreated"><pre><a href="./ob.html">ob</a>::<a href="./ob.html#AskCreated" class="type">AskCreated</a>&lt;FT&gt; has <span class="ability">copy</span>, <span class="ability">drop</span><pre></h4>
+    </summary>
+    <div class="description">
+        
+        <h5>Fields:</h5>
+        <table class="params">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th class="last">Description</th>
+                </tr>
+            </thead>
+            <tbody><tr>
     <td class="name">
         <code>id</code>            
     </td>
     <td class="type">
-        <code>object::ID</code>  
+        <code>object::<span class="type">ID</span></code>  
     </td>
     <td class="description last"></td>
 </tr><tr>
@@ -659,7 +680,7 @@ in Sui yet</p>
         <code>nft</code>            
     </td>
     <td class="type">
-        <code>object::ID</code>  
+        <code>object::<span class="type">ID</span></code>  
     </td>
     <td class="description last"></td>
 </tr><tr>
@@ -667,7 +688,7 @@ in Sui yet</p>
         <code>seller</code>            
     </td>
     <td class="type">
-        <code>address</code>  
+        <code><span class="type">address</span></code>  
     </td>
     <td class="description last"></td>
 </tr><tr>
@@ -675,35 +696,34 @@ in Sui yet</p>
         <code>price</code>            
     </td>
     <td class="type">
-        <code>u64</code>  
+        <code><span class="type">u64</span></code>  
     </td>
     <td class="description last"></td>
-</tr>
-        </tbody>
-    </table>
-</div><div class="container-overview">
-    <h2>AskClosed</h2>
-    <span class="name-container">
-        <h4 class="name" id="AskClosed"><pre>0x0::ob::<a href="./0x0::ob.html#AskClosed"><span class="struct">AskClosed</span></a>&lt;FT&gt; has <span class="ability">copy</span>, <span class="ability">drop</span><pre></h4>
-    </span>
-    <div class="description"><p>When de-listed, not when sold!</p>
-</div>
-    <h5>Fields:</h5>
-    <table class="params">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Type</th>
-                <th class="last">Description</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
+</tr></tbody>
+        </table>
+    </div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="AskClosed"><pre><a href="./ob.html">ob</a>::<a href="./ob.html#AskClosed" class="type">AskClosed</a>&lt;FT&gt; has <span class="ability">copy</span>, <span class="ability">drop</span><pre></h4>
+    </summary>
+    <div class="description">
+        <p>When de-listed, not when sold!</p>
+
+        <h5>Fields:</h5>
+        <table class="params">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th class="last">Description</th>
+                </tr>
+            </thead>
+            <tbody><tr>
     <td class="name">
         <code>id</code>            
     </td>
     <td class="type">
-        <code>object::ID</code>  
+        <code>object::<span class="type">ID</span></code>  
     </td>
     <td class="description last"></td>
 </tr><tr>
@@ -711,7 +731,7 @@ in Sui yet</p>
         <code>nft</code>            
     </td>
     <td class="type">
-        <code>object::ID</code>  
+        <code>object::<span class="type">ID</span></code>  
     </td>
     <td class="description last"></td>
 </tr><tr>
@@ -719,34 +739,33 @@ in Sui yet</p>
         <code>seller</code>            
     </td>
     <td class="type">
-        <code>address</code>  
+        <code><span class="type">address</span></code>  
     </td>
     <td class="description last"></td>
-</tr>
-        </tbody>
-    </table>
-</div><div class="container-overview">
-    <h2>BidCreated</h2>
-    <span class="name-container">
-        <h4 class="name" id="BidCreated"><pre>0x0::ob::<a href="./0x0::ob.html#BidCreated"><span class="struct">BidCreated</span></a>&lt;FT&gt; has <span class="ability">copy</span>, <span class="ability">drop</span><pre></h4>
-    </span>
-    <div class="description"></div>
-    <h5>Fields:</h5>
-    <table class="params">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Type</th>
-                <th class="last">Description</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
+</tr></tbody>
+        </table>
+    </div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="BidCreated"><pre><a href="./ob.html">ob</a>::<a href="./ob.html#BidCreated" class="type">BidCreated</a>&lt;FT&gt; has <span class="ability">copy</span>, <span class="ability">drop</span><pre></h4>
+    </summary>
+    <div class="description">
+        
+        <h5>Fields:</h5>
+        <table class="params">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th class="last">Description</th>
+                </tr>
+            </thead>
+            <tbody><tr>
     <td class="name">
         <code>id</code>            
     </td>
     <td class="type">
-        <code>object::ID</code>  
+        <code>object::<span class="type">ID</span></code>  
     </td>
     <td class="description last"></td>
 </tr><tr>
@@ -754,7 +773,7 @@ in Sui yet</p>
         <code>price</code>            
     </td>
     <td class="type">
-        <code>u64</code>  
+        <code><span class="type">u64</span></code>  
     </td>
     <td class="description last"></td>
 </tr><tr>
@@ -762,35 +781,34 @@ in Sui yet</p>
         <code>buyer</code>            
     </td>
     <td class="type">
-        <code>address</code>  
+        <code><span class="type">address</span></code>  
     </td>
     <td class="description last"></td>
-</tr>
-        </tbody>
-    </table>
-</div><div class="container-overview">
-    <h2>BidClosed</h2>
-    <span class="name-container">
-        <h4 class="name" id="BidClosed"><pre>0x0::ob::<a href="./0x0::ob.html#BidClosed"><span class="struct">BidClosed</span></a>&lt;FT&gt; has <span class="ability">copy</span>, <span class="ability">drop</span><pre></h4>
-    </span>
-    <div class="description"><p>When de-listed, not when bought!</p>
-</div>
-    <h5>Fields:</h5>
-    <table class="params">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Type</th>
-                <th class="last">Description</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
+</tr></tbody>
+        </table>
+    </div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="BidClosed"><pre><a href="./ob.html">ob</a>::<a href="./ob.html#BidClosed" class="type">BidClosed</a>&lt;FT&gt; has <span class="ability">copy</span>, <span class="ability">drop</span><pre></h4>
+    </summary>
+    <div class="description">
+        <p>When de-listed, not when bought!</p>
+
+        <h5>Fields:</h5>
+        <table class="params">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th class="last">Description</th>
+                </tr>
+            </thead>
+            <tbody><tr>
     <td class="name">
         <code>id</code>            
     </td>
     <td class="type">
-        <code>object::ID</code>  
+        <code>object::<span class="type">ID</span></code>  
     </td>
     <td class="description last"></td>
 </tr><tr>
@@ -798,34 +816,33 @@ in Sui yet</p>
         <code>bid</code>            
     </td>
     <td class="type">
-        <code>object::ID</code>  
+        <code>object::<span class="type">ID</span></code>  
     </td>
     <td class="description last"></td>
-</tr>
-        </tbody>
-    </table>
-</div><div class="container-overview">
-    <h2>TradeExecuted</h2>
-    <span class="name-container">
-        <h4 class="name" id="TradeExecuted"><pre>0x0::ob::<a href="./0x0::ob.html#TradeExecuted"><span class="struct">TradeExecuted</span></a>&lt;FT&gt; has <span class="ability">copy</span>, <span class="ability">drop</span><pre></h4>
-    </span>
-    <div class="description"></div>
-    <h5>Fields:</h5>
-    <table class="params">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Type</th>
-                <th class="last">Description</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
+</tr></tbody>
+        </table>
+    </div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="TradeExecuted"><pre><a href="./ob.html">ob</a>::<a href="./ob.html#TradeExecuted" class="type">TradeExecuted</a>&lt;FT&gt; has <span class="ability">copy</span>, <span class="ability">drop</span><pre></h4>
+    </summary>
+    <div class="description">
+        
+        <h5>Fields:</h5>
+        <table class="params">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th class="last">Description</th>
+                </tr>
+            </thead>
+            <tbody><tr>
     <td class="name">
         <code>id</code>            
     </td>
     <td class="type">
-        <code>object::ID</code>  
+        <code>object::<span class="type">ID</span></code>  
     </td>
     <td class="description last"></td>
 </tr><tr>
@@ -833,7 +850,7 @@ in Sui yet</p>
         <code>nft</code>            
     </td>
     <td class="type">
-        <code>object::ID</code>  
+        <code>object::<span class="type">ID</span></code>  
     </td>
     <td class="description last"></td>
 </tr><tr>
@@ -841,7 +858,7 @@ in Sui yet</p>
         <code>price</code>            
     </td>
     <td class="type">
-        <code>u64</code>  
+        <code><span class="type">u64</span></code>  
     </td>
     <td class="description last"></td>
 </tr><tr>
@@ -849,7 +866,7 @@ in Sui yet</p>
         <code>seller</code>            
     </td>
     <td class="type">
-        <code>address</code>  
+        <code><span class="type">address</span></code>  
     </td>
     <td class="description last"></td>
 </tr><tr>
@@ -857,313 +874,374 @@ in Sui yet</p>
         <code>buyer</code>            
     </td>
     <td class="type">
-        <code>address</code>  
+        <code><span class="type">address</span></code>  
     </td>
     <td class="description last"></td>
-</tr>
-        </tbody>
-    </table>
-</div>
-        <h3 class="subsection-title">Methods</h3>
-        <span class="name-container">
-    <h4 class="name" id="create_bid"><pre>public fun create_bid&lt;C, FT&gt;(
-    book: &amp;mut ob::Orderbook&lt;C, FT&gt;,
-    buyer_safe: &amp;mut safe::Safe,
-    price: u64,
-    wallet: &amp;mut coin::Coin&lt;FT&gt;,
-    ctx: &amp;mut tx_context::TxContext,
+</tr></tbody>
+        </table>
+    </div>
+</details>
+    <h3 class="subsection-title">Methods</h3>
+    <details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="create_bid"><pre>public fun <a href="./ob.html#create_bid" class="function">create_bid</a>&lt;C, FT&gt;(
+    book: &mut <a href="./ob.html">ob</a>::<a href="./ob.html#Orderbook" class="type">Orderbook</a>&lt;C, FT&gt;,
+    buyer_safe: &mut <a href="./safe.html">safe</a>::<a href="./safe.html#Safe" class="type">Safe</a>,
+    price: <span class="type">u64</span>,
+    wallet: &mut coin::<span class="type">Coin</span>&lt;FT&gt;,
+    ctx: &mut tx_context::<span class="type">TxContext</span>,
 )</pre></h4>
-</span>
-<div class="description"><p>How many (<code>price</code>) fungible tokens should be taken from sender's wallet
+    </summary>
+    <div class="description"><p>How many (<code>price</code>) fungible tokens should be taken from sender's wallet
 and put into the orderbook with the intention of exchanging them for
 1 NFT.</p>
 <p>If the <code>price</code> is higher than the lowest ask requested price, then we
 execute a trade straight away. Otherwise we add the bid to the
 orderbook's state.</p>
-</div><span class="name-container">
-    <h4 class="name" id="create_bid_protected"><pre>public fun create_bid_protected&lt;W: <span class="ability">drop</span>, C, FT&gt;(
+</div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="create_bid_protected"><pre>public fun <a href="./ob.html#create_bid_protected" class="function">create_bid_protected</a>&lt;W: <span class="ability">drop</span>, C, FT&gt;(
     _witness: W,
-    book: &amp;mut ob::Orderbook&lt;C, FT&gt;,
-    buyer_safe: &amp;mut safe::Safe,
-    price: u64,
-    wallet: &amp;mut coin::Coin&lt;FT&gt;,
-    ctx: &amp;mut tx_context::TxContext,
+    book: &mut <a href="./ob.html">ob</a>::<a href="./ob.html#Orderbook" class="type">Orderbook</a>&lt;C, FT&gt;,
+    buyer_safe: &mut <a href="./safe.html">safe</a>::<a href="./safe.html#Safe" class="type">Safe</a>,
+    price: <span class="type">u64</span>,
+    wallet: &mut coin::<span class="type">Coin</span>&lt;FT&gt;,
+    ctx: &mut tx_context::<span class="type">TxContext</span>,
 )</pre></h4>
-</span>
-<div class="description"></div><span class="name-container">
-    <h4 class="name" id="create_bid_with_commission"><pre>public fun create_bid_with_commission&lt;C, FT&gt;(
-    book: &amp;mut ob::Orderbook&lt;C, FT&gt;,
-    buyer_safe: &amp;mut safe::Safe,
-    price: u64,
-    beneficiary: address,
-    commission_ft: u64,
-    wallet: &amp;mut coin::Coin&lt;FT&gt;,
-    ctx: &amp;mut tx_context::TxContext,
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="create_bid_with_commission"><pre>public fun <a href="./ob.html#create_bid_with_commission" class="function">create_bid_with_commission</a>&lt;C, FT&gt;(
+    book: &mut <a href="./ob.html">ob</a>::<a href="./ob.html#Orderbook" class="type">Orderbook</a>&lt;C, FT&gt;,
+    buyer_safe: &mut <a href="./safe.html">safe</a>::<a href="./safe.html#Safe" class="type">Safe</a>,
+    price: <span class="type">u64</span>,
+    beneficiary: <span class="type">address</span>,
+    commission_ft: <span class="type">u64</span>,
+    wallet: &mut coin::<span class="type">Coin</span>&lt;FT&gt;,
+    ctx: &mut tx_context::<span class="type">TxContext</span>,
 )</pre></h4>
-</span>
-<div class="description"></div><span class="name-container">
-    <h4 class="name" id="create_bid_with_commission_protected"><pre>public fun create_bid_with_commission_protected&lt;
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="create_bid_with_commission_protected"><pre>public fun <a href="./ob.html#create_bid_with_commission_protected" class="function">create_bid_with_commission_protected</a>&lt;
     W: <span class="ability">drop</span>,
     C,
     FT,
 &gt;(
     _witness: W,
-    book: &amp;mut ob::Orderbook&lt;C, FT&gt;,
-    buyer_safe: &amp;mut safe::Safe,
-    price: u64,
-    beneficiary: address,
-    commission_ft: u64,
-    wallet: &amp;mut coin::Coin&lt;FT&gt;,
-    ctx: &amp;mut tx_context::TxContext,
+    book: &mut <a href="./ob.html">ob</a>::<a href="./ob.html#Orderbook" class="type">Orderbook</a>&lt;C, FT&gt;,
+    buyer_safe: &mut <a href="./safe.html">safe</a>::<a href="./safe.html#Safe" class="type">Safe</a>,
+    price: <span class="type">u64</span>,
+    beneficiary: <span class="type">address</span>,
+    commission_ft: <span class="type">u64</span>,
+    wallet: &mut coin::<span class="type">Coin</span>&lt;FT&gt;,
+    ctx: &mut tx_context::<span class="type">TxContext</span>,
 )</pre></h4>
-</span>
-<div class="description"></div><span class="name-container">
-    <h4 class="name" id="cancel_bid"><pre>public fun cancel_bid&lt;C, FT&gt;(
-    book: &amp;mut ob::Orderbook&lt;C, FT&gt;,
-    bid_price_level: u64,
-    wallet: &amp;mut coin::Coin&lt;FT&gt;,
-    ctx: &amp;mut tx_context::TxContext,
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="cancel_bid"><pre>public fun <a href="./ob.html#cancel_bid" class="function">cancel_bid</a>&lt;C, FT&gt;(
+    book: &mut <a href="./ob.html">ob</a>::<a href="./ob.html#Orderbook" class="type">Orderbook</a>&lt;C, FT&gt;,
+    bid_price_level: <span class="type">u64</span>,
+    wallet: &mut coin::<span class="type">Coin</span>&lt;FT&gt;,
+    ctx: &mut tx_context::<span class="type">TxContext</span>,
 )</pre></h4>
-</span>
-<div class="description"><p>Cancel a bid owned by the sender at given price. If there are two bids
+    </summary>
+    <div class="description"><p>Cancel a bid owned by the sender at given price. If there are two bids
 with the same price, the one created later is cancelled.</p>
-</div><span class="name-container">
-    <h4 class="name" id="cancel_bid_protected"><pre>public fun cancel_bid_protected&lt;W: <span class="ability">drop</span>, C, FT&gt;(
+</div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="cancel_bid_protected"><pre>public fun <a href="./ob.html#cancel_bid_protected" class="function">cancel_bid_protected</a>&lt;W: <span class="ability">drop</span>, C, FT&gt;(
     _witness: W,
-    book: &amp;mut ob::Orderbook&lt;C, FT&gt;,
-    bid_price_level: u64,
-    wallet: &amp;mut coin::Coin&lt;FT&gt;,
-    ctx: &amp;mut tx_context::TxContext,
+    book: &mut <a href="./ob.html">ob</a>::<a href="./ob.html#Orderbook" class="type">Orderbook</a>&lt;C, FT&gt;,
+    bid_price_level: <span class="type">u64</span>,
+    wallet: &mut coin::<span class="type">Coin</span>&lt;FT&gt;,
+    ctx: &mut tx_context::<span class="type">TxContext</span>,
 )</pre></h4>
-</span>
-<div class="description"></div><span class="name-container">
-    <h4 class="name" id="create_ask"><pre>public fun create_ask&lt;C, FT&gt;(
-    book: &amp;mut ob::Orderbook&lt;C, FT&gt;,
-    requested_tokens: u64,
-    transfer_cap: safe::TransferCap,
-    seller_safe: &amp;mut safe::Safe,
-    ctx: &amp;mut tx_context::TxContext,
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="create_ask"><pre>public fun <a href="./ob.html#create_ask" class="function">create_ask</a>&lt;C, FT&gt;(
+    book: &mut <a href="./ob.html">ob</a>::<a href="./ob.html#Orderbook" class="type">Orderbook</a>&lt;C, FT&gt;,
+    requested_tokens: <span class="type">u64</span>,
+    transfer_cap: <a href="./safe.html">safe</a>::<a href="./safe.html#TransferCap" class="type">TransferCap</a>,
+    seller_safe: &mut <a href="./safe.html">safe</a>::<a href="./safe.html#Safe" class="type">Safe</a>,
+    ctx: &mut tx_context::<span class="type">TxContext</span>,
 )</pre></h4>
-</span>
-<div class="description"><p>Offer given NFT to be traded for given (<code>requested_tokens</code>) tokens. If
+    </summary>
+    <div class="description"><p>Offer given NFT to be traded for given (<code>requested_tokens</code>) tokens. If
 there exists a bid with higher offer than <code>requested_tokens</code>, then trade
 is immediately executed. Otherwise the NFT is transferred to a newly
 created ask object and the object is inserted to the orderbook.</p>
-</div><span class="name-container">
-    <h4 class="name" id="create_ask_protected"><pre>public fun create_ask_protected&lt;W: <span class="ability">drop</span>, C, FT&gt;(
+</div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="create_ask_protected"><pre>public fun <a href="./ob.html#create_ask_protected" class="function">create_ask_protected</a>&lt;W: <span class="ability">drop</span>, C, FT&gt;(
     _witness: W,
-    book: &amp;mut ob::Orderbook&lt;C, FT&gt;,
-    requested_tokens: u64,
-    transfer_cap: safe::TransferCap,
-    seller_safe: &amp;mut safe::Safe,
-    ctx: &amp;mut tx_context::TxContext,
+    book: &mut <a href="./ob.html">ob</a>::<a href="./ob.html#Orderbook" class="type">Orderbook</a>&lt;C, FT&gt;,
+    requested_tokens: <span class="type">u64</span>,
+    transfer_cap: <a href="./safe.html">safe</a>::<a href="./safe.html#TransferCap" class="type">TransferCap</a>,
+    seller_safe: &mut <a href="./safe.html">safe</a>::<a href="./safe.html#Safe" class="type">Safe</a>,
+    ctx: &mut tx_context::<span class="type">TxContext</span>,
 )</pre></h4>
-</span>
-<div class="description"></div><span class="name-container">
-    <h4 class="name" id="create_ask_with_commission"><pre>public fun create_ask_with_commission&lt;C, FT&gt;(
-    book: &amp;mut ob::Orderbook&lt;C, FT&gt;,
-    requested_tokens: u64,
-    transfer_cap: safe::TransferCap,
-    beneficiary: address,
-    commission: u64,
-    seller_safe: &amp;mut safe::Safe,
-    ctx: &amp;mut tx_context::TxContext,
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="create_ask_with_commission"><pre>public fun <a href="./ob.html#create_ask_with_commission" class="function">create_ask_with_commission</a>&lt;C, FT&gt;(
+    book: &mut <a href="./ob.html">ob</a>::<a href="./ob.html#Orderbook" class="type">Orderbook</a>&lt;C, FT&gt;,
+    requested_tokens: <span class="type">u64</span>,
+    transfer_cap: <a href="./safe.html">safe</a>::<a href="./safe.html#TransferCap" class="type">TransferCap</a>,
+    beneficiary: <span class="type">address</span>,
+    commission: <span class="type">u64</span>,
+    seller_safe: &mut <a href="./safe.html">safe</a>::<a href="./safe.html#Safe" class="type">Safe</a>,
+    ctx: &mut tx_context::<span class="type">TxContext</span>,
 )</pre></h4>
-</span>
-<div class="description"></div><span class="name-container">
-    <h4 class="name" id="create_ask_with_commission_protected"><pre>public fun create_ask_with_commission_protected&lt;
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="create_ask_with_commission_protected"><pre>public fun <a href="./ob.html#create_ask_with_commission_protected" class="function">create_ask_with_commission_protected</a>&lt;
     W: <span class="ability">drop</span>,
     C,
     FT,
 &gt;(
     _witness: W,
-    book: &amp;mut ob::Orderbook&lt;C, FT&gt;,
-    requested_tokens: u64,
-    transfer_cap: safe::TransferCap,
-    beneficiary: address,
-    commission: u64,
-    seller_safe: &amp;mut safe::Safe,
-    ctx: &amp;mut tx_context::TxContext,
+    book: &mut <a href="./ob.html">ob</a>::<a href="./ob.html#Orderbook" class="type">Orderbook</a>&lt;C, FT&gt;,
+    requested_tokens: <span class="type">u64</span>,
+    transfer_cap: <a href="./safe.html">safe</a>::<a href="./safe.html#TransferCap" class="type">TransferCap</a>,
+    beneficiary: <span class="type">address</span>,
+    commission: <span class="type">u64</span>,
+    seller_safe: &mut <a href="./safe.html">safe</a>::<a href="./safe.html#Safe" class="type">Safe</a>,
+    ctx: &mut tx_context::<span class="type">TxContext</span>,
 )</pre></h4>
-</span>
-<div class="description"></div><span class="name-container">
-    <h4 class="name" id="cancel_ask"><pre>public fun cancel_ask&lt;C, FT&gt;(
-    book: &amp;mut ob::Orderbook&lt;C, FT&gt;,
-    nft_price_level: u64,
-    nft_id: object::ID,
-    ctx: &amp;mut tx_context::TxContext,
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="cancel_ask"><pre>public fun <a href="./ob.html#cancel_ask" class="function">cancel_ask</a>&lt;C, FT&gt;(
+    book: &mut <a href="./ob.html">ob</a>::<a href="./ob.html#Orderbook" class="type">Orderbook</a>&lt;C, FT&gt;,
+    nft_price_level: <span class="type">u64</span>,
+    nft_id: object::<span class="type">ID</span>,
+    ctx: &mut tx_context::<span class="type">TxContext</span>,
 )</pre></h4>
-</span>
-<div class="description"><p>We could remove the NFT requested price from the argument, but then the
+    </summary>
+    <div class="description"><p>We could remove the NFT requested price from the argument, but then the
 search for the ask would be O(n) instead of O(log n).</p>
 <p>This API might be improved in future as we use a different data
 structure for the orderbook.</p>
-</div><span class="name-container">
-    <h4 class="name" id="cancel_ask_protected"><pre>public fun cancel_ask_protected&lt;W: <span class="ability">drop</span>, C, FT&gt;(
+</div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="cancel_ask_protected"><pre>public fun <a href="./ob.html#cancel_ask_protected" class="function">cancel_ask_protected</a>&lt;W: <span class="ability">drop</span>, C, FT&gt;(
     _witness: W,
-    book: &amp;mut ob::Orderbook&lt;C, FT&gt;,
-    nft_price_level: u64,
-    nft_id: object::ID,
-    ctx: &amp;mut tx_context::TxContext,
+    book: &mut <a href="./ob.html">ob</a>::<a href="./ob.html#Orderbook" class="type">Orderbook</a>&lt;C, FT&gt;,
+    nft_price_level: <span class="type">u64</span>,
+    nft_id: object::<span class="type">ID</span>,
+    ctx: &mut tx_context::<span class="type">TxContext</span>,
 )</pre></h4>
-</span>
-<div class="description"></div><span class="name-container">
-    <h4 class="name" id="buy_nft"><pre>public fun buy_nft&lt;C, FT&gt;(
-    book: &amp;mut ob::Orderbook&lt;C, FT&gt;,
-    nft_id: object::ID,
-    price: u64,
-    wallet: &amp;mut coin::Coin&lt;FT&gt;,
-    seller_safe: &amp;mut safe::Safe,
-    buyer_safe: &amp;mut safe::Safe,
-    allowlist: &amp;transfer_allowlist::Allowlist,
-    ctx: &amp;mut tx_context::TxContext,
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="buy_nft"><pre>public fun <a href="./ob.html#buy_nft" class="function">buy_nft</a>&lt;C, FT&gt;(
+    book: &mut <a href="./ob.html">ob</a>::<a href="./ob.html#Orderbook" class="type">Orderbook</a>&lt;C, FT&gt;,
+    nft_id: object::<span class="type">ID</span>,
+    price: <span class="type">u64</span>,
+    wallet: &mut coin::<span class="type">Coin</span>&lt;FT&gt;,
+    seller_safe: &mut <a href="./safe.html">safe</a>::<a href="./safe.html#Safe" class="type">Safe</a>,
+    buyer_safe: &mut <a href="./safe.html">safe</a>::<a href="./safe.html#Safe" class="type">Safe</a>,
+    allowlist: &<a href="./transfer_allowlist.html">transfer_allowlist</a>::<a href="./transfer_allowlist.html#Allowlist" class="type">Allowlist</a>,
+    ctx: &mut tx_context::<span class="type">TxContext</span>,
 )</pre></h4>
-</span>
-<div class="description"><p>Buys a specific NFT from the orderbook. This is an atypical OB API as
+    </summary>
+    <div class="description"><p>Buys a specific NFT from the orderbook. This is an atypical OB API as
 with fungible tokens, you just want to get the cheapest ask.
 However, with NFTs, you might want to get a specific one.</p>
-</div><span class="name-container">
-    <h4 class="name" id="buy_nft_protected"><pre>public fun buy_nft_protected&lt;W: <span class="ability">drop</span>, C, FT&gt;(
+</div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="buy_nft_protected"><pre>public fun <a href="./ob.html#buy_nft_protected" class="function">buy_nft_protected</a>&lt;W: <span class="ability">drop</span>, C, FT&gt;(
     _witness: W,
-    book: &amp;mut ob::Orderbook&lt;C, FT&gt;,
-    nft_id: object::ID,
-    price: u64,
-    wallet: &amp;mut coin::Coin&lt;FT&gt;,
-    seller_safe: &amp;mut safe::Safe,
-    buyer_safe: &amp;mut safe::Safe,
-    allowlist: &amp;transfer_allowlist::Allowlist,
-    ctx: &amp;mut tx_context::TxContext,
+    book: &mut <a href="./ob.html">ob</a>::<a href="./ob.html#Orderbook" class="type">Orderbook</a>&lt;C, FT&gt;,
+    nft_id: object::<span class="type">ID</span>,
+    price: <span class="type">u64</span>,
+    wallet: &mut coin::<span class="type">Coin</span>&lt;FT&gt;,
+    seller_safe: &mut <a href="./safe.html">safe</a>::<a href="./safe.html#Safe" class="type">Safe</a>,
+    buyer_safe: &mut <a href="./safe.html">safe</a>::<a href="./safe.html#Safe" class="type">Safe</a>,
+    allowlist: &<a href="./transfer_allowlist.html">transfer_allowlist</a>::<a href="./transfer_allowlist.html#Allowlist" class="type">Allowlist</a>,
+    ctx: &mut tx_context::<span class="type">TxContext</span>,
 )</pre></h4>
-</span>
-<div class="description"></div><span class="name-container">
-    <h4 class="name" id="finish_trade"><pre>public fun finish_trade&lt;C, FT&gt;(
-    trade: &amp;mut ob::TradeIntermediate&lt;C, FT&gt;,
-    seller_safe: &amp;mut safe::Safe,
-    buyer_safe: &amp;mut safe::Safe,
-    allowlist: &amp;transfer_allowlist::Allowlist,
-    ctx: &amp;mut tx_context::TxContext,
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="finish_trade"><pre>public fun <a href="./ob.html#finish_trade" class="function">finish_trade</a>&lt;C, FT&gt;(
+    trade: &mut <a href="./ob.html">ob</a>::<a href="./ob.html#TradeIntermediate" class="type">TradeIntermediate</a>&lt;C, FT&gt;,
+    seller_safe: &mut <a href="./safe.html">safe</a>::<a href="./safe.html#Safe" class="type">Safe</a>,
+    buyer_safe: &mut <a href="./safe.html">safe</a>::<a href="./safe.html#Safe" class="type">Safe</a>,
+    allowlist: &<a href="./transfer_allowlist.html">transfer_allowlist</a>::<a href="./transfer_allowlist.html#Allowlist" class="type">Allowlist</a>,
+    ctx: &mut tx_context::<span class="type">TxContext</span>,
 )</pre></h4>
-</span>
-<div class="description"><p>When a bid is created and there's an ask with a lower price, then the
+    </summary>
+    <div class="description"><p>When a bid is created and there's an ask with a lower price, then the
 trade cannot be resolved immediately.
 That's because we don't know the <code>Safe</code> ID up front in OB.
 Therefore, the tx creates <code>TradeIntermediate</code> which then has to be
 permission-lessly resolved via this endpoint.</p>
-</div><span class="name-container">
-    <h4 class="name" id="new"><pre>public fun new&lt;C, FT&gt;(
-    protected_actions: ob::WitnessProtectedActions,
-    ctx: &amp;mut tx_context::TxContext,
-): ob::Orderbook<C, FT></pre></h4>
-</span>
-<div class="description"><p><code>C</code>ollection kind of NFTs to be traded, and <code>F</code>ungible <code>T</code>oken to be
+</div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="new"><pre>public fun <a href="./ob.html#new" class="function">new</a>&lt;C, FT&gt;(
+    protected_actions: <a href="./ob.html">ob</a>::<a href="./ob.html#WitnessProtectedActions" class="type">WitnessProtectedActions</a>,
+    ctx: &mut tx_context::<span class="type">TxContext</span>,
+): <a href="./ob.html">ob</a>::<a href="./ob.html#Orderbook" class="type">Orderbook</a>&lt;C, FT&gt;</pre></h4>
+    </summary>
+    <div class="description"><p><code>C</code>ollection kind of NFTs to be traded, and <code>F</code>ungible <code>T</code>oken to be
 quoted for an NFT in such a collection.</p>
 <p>By default, an orderbook has no restriction on actions, ie. all can be
 called with public entry functions.</p>
 <p>To implement specific logic in your smart contract, you can toggle the
 protection on specific actions. That will make them only accessible via
 witness protected methods.</p>
-</div><span class="name-container">
-    <h4 class="name" id="new_unprotected"><pre>public fun new_unprotected&lt;C, FT&gt;(
-    ctx: &amp;mut tx_context::TxContext,
-): ob::Orderbook<C, FT></pre></h4>
-</span>
-<div class="description"></div><span class="name-container">
-    <h4 class="name" id="create"><pre>public fun create&lt;C, FT&gt;(
-    ctx: &amp;mut tx_context::TxContext,
-)</pre></h4>
-</span>
-<div class="description"></div><span class="name-container">
-    <h4 class="name" id="share"><pre>public fun share&lt;C, FT&gt;(ob: ob::Orderbook&lt;C, FT&gt;)</pre></h4>
-</span>
-<div class="description"></div><span class="name-container">
-    <h4 class="name" id="no_protection"><pre>public fun no_protection(): ob::WitnessProtectedActions</pre></h4>
-</span>
-<div class="description"></div><span class="name-container">
-    <h4 class="name" id="custom_protection"><pre>public fun custom_protection(
-    buy_nft: bool,
-    cancel_ask: bool,
-    cancel_bid: bool,
-    create_ask: bool,
-    create_bid: bool,
-): ob::WitnessProtectedActions</pre></h4>
-</span>
-<div class="description"></div><span class="name-container">
-    <h4 class="name" id="toggle_protection_on_buy_nft"><pre>public fun toggle_protection_on_buy_nft&lt;W: <span class="ability">drop</span>, C, FT&gt;(
-    _witness: W,
-    book: &amp;mut ob::Orderbook&lt;C, FT&gt;,
-)</pre></h4>
-</span>
-<div class="description"></div><span class="name-container">
-    <h4 class="name" id="toggle_protection_on_cancel_ask"><pre>public fun toggle_protection_on_cancel_ask&lt;
-    W: <span class="ability">drop</span>,
-    C,
-    FT,
-&gt;(
-    _witness: W,
-    book: &amp;mut ob::Orderbook&lt;C, FT&gt;,
-)</pre></h4>
-</span>
-<div class="description"></div><span class="name-container">
-    <h4 class="name" id="toggle_protection_on_cancel_bid"><pre>public fun toggle_protection_on_cancel_bid&lt;
-    W: <span class="ability">drop</span>,
-    C,
-    FT,
-&gt;(
-    _witness: W,
-    book: &amp;mut ob::Orderbook&lt;C, FT&gt;,
-)</pre></h4>
-</span>
-<div class="description"></div><span class="name-container">
-    <h4 class="name" id="toggle_protection_on_create_ask"><pre>public fun toggle_protection_on_create_ask&lt;
-    W: <span class="ability">drop</span>,
-    C,
-    FT,
-&gt;(
-    _witness: W,
-    book: &amp;mut ob::Orderbook&lt;C, FT&gt;,
-)</pre></h4>
-</span>
-<div class="description"></div><span class="name-container">
-    <h4 class="name" id="toggle_protection_on_create_bid"><pre>public fun toggle_protection_on_create_bid&lt;
-    W: <span class="ability">drop</span>,
-    C,
-    FT,
-&gt;(
-    _witness: W,
-    book: &amp;mut ob::Orderbook&lt;C, FT&gt;,
-)</pre></h4>
-</span>
-<div class="description"></div><span class="name-container">
-    <h4 class="name" id="borrow_bids"><pre>public fun borrow_bids&lt;C, FT&gt;(
-    book: &amp;ob::Orderbook&lt;C, FT&gt;,
-): &crit_bit_u64::CB<vector<ob::Bid<FT>>></pre></h4>
-</span>
-<div class="description"></div><span class="name-container">
-    <h4 class="name" id="bid_offer"><pre>public fun bid_offer&lt;FT&gt;(bid: &amp;ob::Bid&lt;FT&gt;): 
-    &balance::Balance<FT></pre></h4>
-</span>
-<div class="description"></div><span class="name-container">
-    <h4 class="name" id="bid_owner"><pre>public fun bid_owner&lt;FT&gt;(bid: &amp;ob::Bid&lt;FT&gt;): 
-    address</pre></h4>
-</span>
-<div class="description"></div><span class="name-container">
-    <h4 class="name" id="borrow_asks"><pre>public fun borrow_asks&lt;C, FT&gt;(
-    book: &amp;ob::Orderbook&lt;C, FT&gt;,
-): &crit_bit_u64::CB<vector<ob::Ask>></pre></h4>
-</span>
-<div class="description"></div><span class="name-container">
-    <h4 class="name" id="ask_price"><pre>public fun ask_price(ask: &amp;ob::Ask): u64</pre></h4>
-</span>
-<div class="description"></div><span class="name-container">
-    <h4 class="name" id="ask_nft"><pre>public fun ask_nft(ask: &amp;ob::Ask): &safe::TransferCap</pre></h4>
-</span>
-<div class="description"></div><span class="name-container">
-    <h4 class="name" id="ask_owner"><pre>public fun ask_owner(ask: &amp;ob::Ask): address</pre></h4>
-</span>
-<div class="description"></div>
-    </article>
-</section><br class="clear">
-<!--<footer>OriginByte.io</footer>-->
 </div>
-</body>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="new_unprotected"><pre>public fun <a href="./ob.html#new_unprotected" class="function">new_unprotected</a>&lt;C, FT&gt;(
+    ctx: &mut tx_context::<span class="type">TxContext</span>,
+): <a href="./ob.html">ob</a>::<a href="./ob.html#Orderbook" class="type">Orderbook</a>&lt;C, FT&gt;</pre></h4>
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="create"><pre>public fun <a href="./ob.html#create" class="function">create</a>&lt;C, FT&gt;(ctx: &mut tx_context::<span class="type">TxContext</span>)</pre></h4>
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="share"><pre>public fun <a href="./ob.html#share" class="function">share</a>&lt;C, FT&gt;(ob: <a href="./ob.html">ob</a>::<a href="./ob.html#Orderbook" class="type">Orderbook</a>&lt;C, FT&gt;)</pre></h4>
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="no_protection"><pre>public fun <a href="./ob.html#no_protection" class="function">no_protection</a>(): <a href="./ob.html">ob</a>::<a href="./ob.html#WitnessProtectedActions" class="type">WitnessProtectedActions</a></pre></h4>
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="custom_protection"><pre>public fun <a href="./ob.html#custom_protection" class="function">custom_protection</a>(
+    buy_nft: <span class="type">bool</span>,
+    cancel_ask: <span class="type">bool</span>,
+    cancel_bid: <span class="type">bool</span>,
+    create_ask: <span class="type">bool</span>,
+    create_bid: <span class="type">bool</span>,
+): <a href="./ob.html">ob</a>::<a href="./ob.html#WitnessProtectedActions" class="type">WitnessProtectedActions</a></pre></h4>
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="toggle_protection_on_buy_nft"><pre>public fun <a href="./ob.html#toggle_protection_on_buy_nft" class="function">toggle_protection_on_buy_nft</a>&lt;W: <span class="ability">drop</span>, C, FT&gt;(
+    _witness: W,
+    book: &mut <a href="./ob.html">ob</a>::<a href="./ob.html#Orderbook" class="type">Orderbook</a>&lt;C, FT&gt;,
+)</pre></h4>
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="toggle_protection_on_cancel_ask"><pre>public fun <a href="./ob.html#toggle_protection_on_cancel_ask" class="function">toggle_protection_on_cancel_ask</a>&lt;
+    W: <span class="ability">drop</span>,
+    C,
+    FT,
+&gt;(
+    _witness: W,
+    book: &mut <a href="./ob.html">ob</a>::<a href="./ob.html#Orderbook" class="type">Orderbook</a>&lt;C, FT&gt;,
+)</pre></h4>
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="toggle_protection_on_cancel_bid"><pre>public fun <a href="./ob.html#toggle_protection_on_cancel_bid" class="function">toggle_protection_on_cancel_bid</a>&lt;
+    W: <span class="ability">drop</span>,
+    C,
+    FT,
+&gt;(
+    _witness: W,
+    book: &mut <a href="./ob.html">ob</a>::<a href="./ob.html#Orderbook" class="type">Orderbook</a>&lt;C, FT&gt;,
+)</pre></h4>
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="toggle_protection_on_create_ask"><pre>public fun <a href="./ob.html#toggle_protection_on_create_ask" class="function">toggle_protection_on_create_ask</a>&lt;
+    W: <span class="ability">drop</span>,
+    C,
+    FT,
+&gt;(
+    _witness: W,
+    book: &mut <a href="./ob.html">ob</a>::<a href="./ob.html#Orderbook" class="type">Orderbook</a>&lt;C, FT&gt;,
+)</pre></h4>
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="toggle_protection_on_create_bid"><pre>public fun <a href="./ob.html#toggle_protection_on_create_bid" class="function">toggle_protection_on_create_bid</a>&lt;
+    W: <span class="ability">drop</span>,
+    C,
+    FT,
+&gt;(
+    _witness: W,
+    book: &mut <a href="./ob.html">ob</a>::<a href="./ob.html#Orderbook" class="type">Orderbook</a>&lt;C, FT&gt;,
+)</pre></h4>
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="borrow_bids"><pre>public fun <a href="./ob.html#borrow_bids" class="function">borrow_bids</a>&lt;C, FT&gt;(
+    book: &<a href="./ob.html">ob</a>::<a href="./ob.html#Orderbook" class="type">Orderbook</a>&lt;C, FT&gt;,
+): &crit_bit_u64::<span class="type">CB</span>&lt;<span class="type">vector<span>&lt;<a href="./ob.html">ob</a>::<a href="./ob.html#Bid" class="type">Bid</a>&lt;FT&gt;&gt;&gt;</pre></h4>
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="bid_offer"><pre>public fun <a href="./ob.html#bid_offer" class="function">bid_offer</a>&lt;FT&gt;(bid: &<a href="./ob.html">ob</a>::<a href="./ob.html#Bid" class="type">Bid</a>&lt;FT&gt;): 
+    &balance::<span class="type">Balance</span>&lt;FT&gt;</pre></h4>
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="bid_owner"><pre>public fun <a href="./ob.html#bid_owner" class="function">bid_owner</a>&lt;FT&gt;(bid: &<a href="./ob.html">ob</a>::<a href="./ob.html#Bid" class="type">Bid</a>&lt;FT&gt;): <span class="type">address</span></pre></h4>
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="borrow_asks"><pre>public fun <a href="./ob.html#borrow_asks" class="function">borrow_asks</a>&lt;C, FT&gt;(
+    book: &<a href="./ob.html">ob</a>::<a href="./ob.html#Orderbook" class="type">Orderbook</a>&lt;C, FT&gt;,
+): &crit_bit_u64::<span class="type">CB</span>&lt;<span class="type">vector<span>&lt;<a href="./ob.html">ob</a>::<a href="./ob.html#Ask" class="type">Ask</a>&gt;&gt;</pre></h4>
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="ask_price"><pre>public fun <a href="./ob.html#ask_price" class="function">ask_price</a>(ask: &<a href="./ob.html">ob</a>::<a href="./ob.html#Ask" class="type">Ask</a>): <span class="type">u64</span></pre></h4>
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="ask_nft"><pre>public fun <a href="./ob.html#ask_nft" class="function">ask_nft</a>(ask: &<a href="./ob.html">ob</a>::<a href="./ob.html#Ask" class="type">Ask</a>): &<a href="./safe.html">safe</a>::<a href="./safe.html#TransferCap" class="type">TransferCap</a></pre></h4>
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="ask_owner"><pre>public fun <a href="./ob.html#ask_owner" class="function">ask_owner</a>(ask: &<a href="./ob.html">ob</a>::<a href="./ob.html#Ask" class="type">Ask</a>): <span class="type">address</span></pre></h4>
+    </summary>
+    <div class="description"></div>
+</details>
+</article></main>
+        </div>
+    </body>
 </html>

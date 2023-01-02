@@ -1,250 +1,278 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>OriginByte</title>
+    <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OriginByte</title>
 
-<link type="text/css" rel="stylesheet" href="./assets/style.css">
+    <link type="text/css" rel="stylesheet" href="./assets/style.css">
 
-</head>
-<body>
-<nav>
-<a href="./index.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet">
+
+    </head>
+    <body>
+        <div id="container-movedoc">
+            <nav class="sidebar"><a href="./index.html">
     <img src="./assets/accent.svg" style="position: absolute">
     <img src="./assets/ob.svg" class="logo">
 </a>
 <h3>Modules</h3>
 <ul><li>
-<a href="./err.html">err</a>
-<ul class="methods"></ul></li><li>
-<a href="./utils.html">utils</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./utils.html#Marker">Marker</a>       
-</li></ul></li><li>
-<a href="./collection.html">collection</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./collection.html#BurnEvent">BurnEvent</a>       
-</li><li data-type="struct">
-    <a href="./collection.html#Collection">Collection</a>       
-</li><li data-type="struct">
-    <a href="./collection.html#MintCap">MintCap</a>       
-</li><li data-type="struct">
-    <a href="./collection.html#MintEvent">MintEvent</a>       
-</li></ul></li><li>
-<a href="./attribution.html">attribution</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./attribution.html#Witness">Witness</a>       
-</li><li data-type="struct">
-    <a href="./attribution.html#AttributionDomain">AttributionDomain</a>       
-</li><li data-type="struct">
-    <a href="./attribution.html#Creator">Creator</a>       
-</li></ul></li><li>
-<a href="./transfer_allowlist.html">transfer_allowlist</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./transfer_allowlist.html#Allowlist">Allowlist</a>       
-</li><li data-type="struct">
-    <a href="./transfer_allowlist.html#CollectionControlCap">CollectionControlCap</a>       
-</li></ul></li><li>
-<a href="./royalties.html">royalties</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./royalties.html#TradePayment">TradePayment</a>       
-</li></ul></li><li>
-<a href="./trading.html">trading</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./trading.html#AskCommission">AskCommission</a>       
-</li><li data-type="struct">
-    <a href="./trading.html#BidCommission">BidCommission</a>       
-</li></ul></li><li>
-<a href="./nft.html">nft</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./nft.html#Nft">Nft</a>       
-</li></ul></li><li>
-<a href="./unprotected_safe.html">unprotected_safe</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./unprotected_safe.html#DepositEvent">DepositEvent</a>       
-</li><li data-type="struct">
-    <a href="./unprotected_safe.html#NftRef">NftRef</a>       
-</li><li data-type="struct">
-    <a href="./unprotected_safe.html#OwnerCap">OwnerCap</a>       
-</li><li data-type="struct">
-    <a href="./unprotected_safe.html#TransferCap">TransferCap</a>       
-</li><li data-type="struct">
-    <a href="./unprotected_safe.html#TransferEvent">TransferEvent</a>       
-</li><li data-type="struct">
-    <a href="./unprotected_safe.html#UnprotectedSafe">UnprotectedSafe</a>       
-</li></ul></li><li>
-<a href="./safe.html">safe</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./safe.html#OwnerCap">OwnerCap</a>       
-</li><li data-type="struct">
-    <a href="./safe.html#TransferCap">TransferCap</a>       
-</li><li data-type="struct">
-    <a href="./safe.html#Safe">Safe</a>       
-</li></ul></li><li>
-<a href="./bidding.html">bidding</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./bidding.html#Witness">Witness</a>       
-</li><li data-type="struct">
-    <a href="./bidding.html#Bid">Bid</a>       
-</li><li data-type="struct">
-    <a href="./bidding.html#BidClosed">BidClosed</a>       
-</li><li data-type="struct">
-    <a href="./bidding.html#BidCreated">BidCreated</a>       
-</li></ul></li><li>
-<a href="./display.html">display</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./display.html#Witness">Witness</a>       
-</li><li data-type="struct">
-    <a href="./display.html#AttributesDomain">AttributesDomain</a>       
-</li><li data-type="struct">
-    <a href="./display.html#DisplayDomain">DisplayDomain</a>       
-</li><li data-type="struct">
-    <a href="./display.html#SymbolDomain">SymbolDomain</a>       
-</li><li data-type="struct">
-    <a href="./display.html#UrlDomain">UrlDomain</a>       
-</li></ul></li><li>
-<a href="./proceeds.html">proceeds</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./proceeds.html#Proceeds">Proceeds</a>       
-</li><li data-type="struct">
-    <a href="./proceeds.html#QtSold">QtSold</a>       
-</li></ul></li><li>
-<a href="./object_box.html">object_box</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./object_box.html#ObjectBox">ObjectBox</a>       
-</li></ul></li><li>
-<a href="./marketplace.html">marketplace</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./marketplace.html#Marketplace">Marketplace</a>       
-</li></ul></li><li>
-<a href="./inventory.html">inventory</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./inventory.html#Inventory">Inventory</a>       
-</li></ul></li><li>
-<a href="./listing.html">listing</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./listing.html#CreateListingEvent">CreateListingEvent</a>       
-</li><li data-type="struct">
-    <a href="./listing.html#DeleteListingEvent">DeleteListingEvent</a>       
-</li><li data-type="struct">
-    <a href="./listing.html#Listing">Listing</a>       
-</li><li data-type="struct">
-    <a href="./listing.html#RequestToJoin">RequestToJoin</a>       
-</li><li data-type="struct">
-    <a href="./listing.html#WhitelistCertificate">WhitelistCertificate</a>       
-</li></ul></li><li>
-<a href="./dutch_auction.html">dutch_auction</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./dutch_auction.html#Witness">Witness</a>       
-</li><li data-type="struct">
-    <a href="./dutch_auction.html#Bid">Bid</a>       
-</li><li data-type="struct">
-    <a href="./dutch_auction.html#DutchAuctionMarket">DutchAuctionMarket</a>       
-</li></ul></li><li>
-<a href="./fixed_price.html">fixed_price</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./fixed_price.html#Witness">Witness</a>       
-</li><li data-type="struct">
-    <a href="./fixed_price.html#FixedPriceMarket">FixedPriceMarket</a>       
-</li></ul></li><li>
-<a href="./flat_fee.html">flat_fee</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./flat_fee.html#FlatFee">FlatFee</a>       
-</li></ul></li><li>
-<a href="./supply.html">supply</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./supply.html#Supply">Supply</a>       
-</li></ul></li><li>
-<a href="./flyweight.html">flyweight</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./flyweight.html#BurnEvent">BurnEvent</a>       
-</li><li data-type="struct">
-    <a href="./flyweight.html#MintEvent">MintEvent</a>       
-</li><li data-type="struct">
-    <a href="./flyweight.html#Archetype">Archetype</a>       
-</li><li data-type="struct">
-    <a href="./flyweight.html#Pointer">Pointer</a>       
-</li><li data-type="struct">
-    <a href="./flyweight.html#Registry">Registry</a>       
-</li></ul></li><li>
-<a href="./ob.html">ob</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./ob.html#Witness">Witness</a>       
-</li><li data-type="struct">
-    <a href="./ob.html#Bid">Bid</a>       
-</li><li data-type="struct">
-    <a href="./ob.html#BidClosed">BidClosed</a>       
-</li><li data-type="struct">
-    <a href="./ob.html#BidCreated">BidCreated</a>       
-</li><li data-type="struct">
-    <a href="./ob.html#Ask">Ask</a>       
-</li><li data-type="struct">
-    <a href="./ob.html#AskClosed">AskClosed</a>       
-</li><li data-type="struct">
-    <a href="./ob.html#AskCreated">AskCreated</a>       
-</li><li data-type="struct">
-    <a href="./ob.html#Orderbook">Orderbook</a>       
-</li><li data-type="struct">
-    <a href="./ob.html#TradeExecuted">TradeExecuted</a>       
-</li><li data-type="struct">
-    <a href="./ob.html#TradeIntermediate">TradeIntermediate</a>       
-</li><li data-type="struct">
-    <a href="./ob.html#WitnessProtectedActions">WitnessProtectedActions</a>       
-</li></ul></li><li>
-<a href="./royalty_strategy_constant.html">royalty_strategy_constant</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./royalty_strategy_constant.html#ConstantRoyaltyStrategy">ConstantRoyaltyStrategy</a>       
-</li></ul></li><li>
-<a href="./royalty_strategy_bps.html">royalty_strategy_bps</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./royalty_strategy_bps.html#BpsRoyaltyStrategy">BpsRoyaltyStrategy</a>       
-</li></ul></li><li>
-<a href="./royalty.html">royalty</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./royalty.html#Witness">Witness</a>       
-</li><li data-type="struct">
-    <a href="./royalty.html#RoyaltyDomain">RoyaltyDomain</a>       
-</li></ul></li><li>
-<a href="./supply_policy.html">supply_policy</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./supply_policy.html#SupplyPolicy">SupplyPolicy</a>       
-</li></ul></li><li>
-<a href="./tags.html">tags</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./tags.html#Witness">Witness</a>       
-</li><li data-type="struct">
-    <a href="./tags.html#Art">Art</a>       
-</li><li data-type="struct">
-    <a href="./tags.html#Collectible">Collectible</a>       
-</li><li data-type="struct">
-    <a href="./tags.html#DomainName">DomainName</a>       
-</li><li data-type="struct">
-    <a href="./tags.html#GameAsset">GameAsset</a>       
-</li><li data-type="struct">
-    <a href="./tags.html#License">License</a>       
-</li><li data-type="struct">
-    <a href="./tags.html#Music">Music</a>       
-</li><li data-type="struct">
-    <a href="./tags.html#ProfilePicture">ProfilePicture</a>       
-</li><li data-type="struct">
-    <a href="./tags.html#TagDomain">TagDomain</a>       
-</li><li data-type="struct">
-    <a href="./tags.html#Ticker">Ticker</a>       
-</li><li data-type="struct">
-    <a href="./tags.html#Ticket">Ticket</a>       
-</li><li data-type="struct">
-    <a href="./tags.html#TokenisedAsset">TokenisedAsset</a>       
-</li><li data-type="struct">
-    <a href="./tags.html#Video">Video</a>       
-</li></ul></li></ul></nav>
-<div id="main"><h1 class="page-title">marketplace</h1>
-<section class="readme">
-    <header>
-        <h2>0x0::marketplace</h2>
-    </header>
-    <article>
-        <p>Module of a <code>Marketplace</code> type.</p>
+    <a href="./err.html">err</a>
+    <ul class="methods"></ul>
+</li><li>
+    <a href="./utils.html">utils</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./utils.html#Marker">Marker</a>
+</li></ul>
+</li><li>
+    <a href="./transfer_allowlist.html">transfer_allowlist</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./transfer_allowlist.html#Allowlist">Allowlist</a>
+</li><li data-type="type">
+    <a href="./transfer_allowlist.html#CollectionControlCap">CollectionControlCap</a>
+</li></ul>
+</li><li>
+    <a href="./royalties.html">royalties</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./royalties.html#TradePayment">TradePayment</a>
+</li></ul>
+</li><li>
+    <a href="./trading.html">trading</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./trading.html#AskCommission">AskCommission</a>
+</li><li data-type="type">
+    <a href="./trading.html#BidCommission">BidCommission</a>
+</li></ul>
+</li><li>
+    <a href="./nft.html">nft</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./nft.html#MintNftEvent">MintNftEvent</a>
+</li><li data-type="type">
+    <a href="./nft.html#Nft">Nft</a>
+</li></ul>
+</li><li>
+    <a href="./unprotected_safe.html">unprotected_safe</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./unprotected_safe.html#DepositEvent">DepositEvent</a>
+</li><li data-type="type">
+    <a href="./unprotected_safe.html#NftRef">NftRef</a>
+</li><li data-type="type">
+    <a href="./unprotected_safe.html#OwnerCap">OwnerCap</a>
+</li><li data-type="type">
+    <a href="./unprotected_safe.html#TransferCap">TransferCap</a>
+</li><li data-type="type">
+    <a href="./unprotected_safe.html#TransferEvent">TransferEvent</a>
+</li><li data-type="type">
+    <a href="./unprotected_safe.html#UnprotectedSafe">UnprotectedSafe</a>
+</li></ul>
+</li><li>
+    <a href="./safe.html">safe</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./safe.html#OwnerCap">OwnerCap</a>
+</li><li data-type="type">
+    <a href="./safe.html#TransferCap">TransferCap</a>
+</li><li data-type="type">
+    <a href="./safe.html#Safe">Safe</a>
+</li></ul>
+</li><li>
+    <a href="./bidding.html">bidding</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./bidding.html#Witness">Witness</a>
+</li><li data-type="type">
+    <a href="./bidding.html#Bid">Bid</a>
+</li><li data-type="type">
+    <a href="./bidding.html#BidClosed">BidClosed</a>
+</li><li data-type="type">
+    <a href="./bidding.html#BidCreated">BidCreated</a>
+</li></ul>
+</li><li>
+    <a href="./collection.html">collection</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./collection.html#Collection">Collection</a>
+</li><li data-type="type">
+    <a href="./collection.html#CollectionMintEvent">CollectionMintEvent</a>
+</li><li data-type="type">
+    <a href="./collection.html#MintCap">MintCap</a>
+</li></ul>
+</li><li>
+    <a href="./creators.html">creators</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./creators.html#Witness">Witness</a>
+</li><li data-type="type">
+    <a href="./creators.html#Creator">Creator</a>
+</li><li data-type="type">
+    <a href="./creators.html#CreatorsDomain">CreatorsDomain</a>
+</li></ul>
+</li><li>
+    <a href="./display.html">display</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./display.html#Witness">Witness</a>
+</li><li data-type="type">
+    <a href="./display.html#AttributesDomain">AttributesDomain</a>
+</li><li data-type="type">
+    <a href="./display.html#DisplayDomain">DisplayDomain</a>
+</li><li data-type="type">
+    <a href="./display.html#SymbolDomain">SymbolDomain</a>
+</li><li data-type="type">
+    <a href="./display.html#UrlDomain">UrlDomain</a>
+</li></ul>
+</li><li>
+    <a href="./proceeds.html">proceeds</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./proceeds.html#Proceeds">Proceeds</a>
+</li><li data-type="type">
+    <a href="./proceeds.html#QtSold">QtSold</a>
+</li></ul>
+</li><li>
+    <a href="./object_box.html">object_box</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./object_box.html#ObjectBox">ObjectBox</a>
+</li></ul>
+</li><li>
+    <a href="./marketplace.html">marketplace</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./marketplace.html#Marketplace">Marketplace</a>
+</li></ul>
+</li><li>
+    <a href="./inventory.html">inventory</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./inventory.html#Inventory">Inventory</a>
+</li></ul>
+</li><li>
+    <a href="./listing.html">listing</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./listing.html#CreateListingEvent">CreateListingEvent</a>
+</li><li data-type="type">
+    <a href="./listing.html#DeleteListingEvent">DeleteListingEvent</a>
+</li><li data-type="type">
+    <a href="./listing.html#Listing">Listing</a>
+</li><li data-type="type">
+    <a href="./listing.html#RequestToJoin">RequestToJoin</a>
+</li><li data-type="type">
+    <a href="./listing.html#WhitelistCertificate">WhitelistCertificate</a>
+</li></ul>
+</li><li>
+    <a href="./dutch_auction.html">dutch_auction</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./dutch_auction.html#Witness">Witness</a>
+</li><li data-type="type">
+    <a href="./dutch_auction.html#Bid">Bid</a>
+</li><li data-type="type">
+    <a href="./dutch_auction.html#DutchAuctionMarket">DutchAuctionMarket</a>
+</li></ul>
+</li><li>
+    <a href="./fixed_price.html">fixed_price</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./fixed_price.html#Witness">Witness</a>
+</li><li data-type="type">
+    <a href="./fixed_price.html#FixedPriceMarket">FixedPriceMarket</a>
+</li></ul>
+</li><li>
+    <a href="./flat_fee.html">flat_fee</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./flat_fee.html#FlatFee">FlatFee</a>
+</li></ul>
+</li><li>
+    <a href="./supply.html">supply</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./supply.html#Supply">Supply</a>
+</li></ul>
+</li><li>
+    <a href="./flyweight.html">flyweight</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./flyweight.html#Archetype">Archetype</a>
+</li><li data-type="type">
+    <a href="./flyweight.html#BurnEvent">BurnEvent</a>
+</li><li data-type="type">
+    <a href="./flyweight.html#MintEvent">MintEvent</a>
+</li><li data-type="type">
+    <a href="./flyweight.html#Pointer">Pointer</a>
+</li><li data-type="type">
+    <a href="./flyweight.html#Registry">Registry</a>
+</li></ul>
+</li><li>
+    <a href="./ob.html">ob</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./ob.html#Witness">Witness</a>
+</li><li data-type="type">
+    <a href="./ob.html#Bid">Bid</a>
+</li><li data-type="type">
+    <a href="./ob.html#BidClosed">BidClosed</a>
+</li><li data-type="type">
+    <a href="./ob.html#BidCreated">BidCreated</a>
+</li><li data-type="type">
+    <a href="./ob.html#Ask">Ask</a>
+</li><li data-type="type">
+    <a href="./ob.html#AskClosed">AskClosed</a>
+</li><li data-type="type">
+    <a href="./ob.html#AskCreated">AskCreated</a>
+</li><li data-type="type">
+    <a href="./ob.html#Orderbook">Orderbook</a>
+</li><li data-type="type">
+    <a href="./ob.html#TradeExecuted">TradeExecuted</a>
+</li><li data-type="type">
+    <a href="./ob.html#TradeIntermediate">TradeIntermediate</a>
+</li><li data-type="type">
+    <a href="./ob.html#WitnessProtectedActions">WitnessProtectedActions</a>
+</li></ul>
+</li><li>
+    <a href="./royalty_strategy_constant.html">royalty_strategy_constant</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./royalty_strategy_constant.html#ConstantRoyaltyStrategy">ConstantRoyaltyStrategy</a>
+</li></ul>
+</li><li>
+    <a href="./royalty_strategy_bps.html">royalty_strategy_bps</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./royalty_strategy_bps.html#BpsRoyaltyStrategy">BpsRoyaltyStrategy</a>
+</li></ul>
+</li><li>
+    <a href="./royalty.html">royalty</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./royalty.html#Witness">Witness</a>
+</li><li data-type="type">
+    <a href="./royalty.html#RoyaltyDomain">RoyaltyDomain</a>
+</li></ul>
+</li><li>
+    <a href="./supply_policy.html">supply_policy</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./supply_policy.html#SupplyPolicy">SupplyPolicy</a>
+</li></ul>
+</li><li>
+    <a href="./tags.html">tags</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./tags.html#Witness">Witness</a>
+</li><li data-type="type">
+    <a href="./tags.html#Art">Art</a>
+</li><li data-type="type">
+    <a href="./tags.html#Collectible">Collectible</a>
+</li><li data-type="type">
+    <a href="./tags.html#DomainName">DomainName</a>
+</li><li data-type="type">
+    <a href="./tags.html#GameAsset">GameAsset</a>
+</li><li data-type="type">
+    <a href="./tags.html#License">License</a>
+</li><li data-type="type">
+    <a href="./tags.html#Music">Music</a>
+</li><li data-type="type">
+    <a href="./tags.html#ProfilePicture">ProfilePicture</a>
+</li><li data-type="type">
+    <a href="./tags.html#TagDomain">TagDomain</a>
+</li><li data-type="type">
+    <a href="./tags.html#Ticker">Ticker</a>
+</li><li data-type="type">
+    <a href="./tags.html#Ticket">Ticket</a>
+</li><li data-type="type">
+    <a href="./tags.html#TokenisedAsset">TokenisedAsset</a>
+</li><li data-type="type">
+    <a href="./tags.html#Video">Video</a>
+</li></ul>
+</li></ul></nav>
+            <main><h1 class="page-title">0x0::marketplace</h1>
+<article>
+    <p>Module of a <code>Marketplace</code> type.</p>
 <p>Marketplaces are platforms that facilitate the listing of NFT collections
 to the public, by facilitating a primary market UI. NFT Creators can create
 Listings to sell their NFTs to the public and can decide to partner with
@@ -262,29 +290,28 @@ admin can decide to create a custom fee policy for each <code>Listing</code>.</p
 strategy, that is the primary market sale. Primary market sales can take
 many shapes, depending on the business level requirements.</p>
 
-        <h3 class="subsection-title">Structs</h3>
-        <div class="container-overview">
-    <h2>Marketplace</h2>
-    <span class="name-container">
-        <h4 class="name" id="Marketplace"><pre>0x0::marketplace::<a href="./0x0::marketplace.html#Marketplace"><span class="struct">Marketplace</span></a>&lt;&gt; has <span class="ability">store</span>, <span class="ability">key</span><pre></h4>
-    </span>
-    <div class="description"></div>
-    <h5>Fields:</h5>
-    <table class="params">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Type</th>
-                <th class="last">Description</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
+    <h3 class="subsection-title">Structs</h3>
+    <details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="Marketplace"><pre><a href="./marketplace.html">marketplace</a>::<a href="./marketplace.html#Marketplace" class="type">Marketplace</a> has <span class="ability">store</span>, <span class="ability">key</span><pre></h4>
+    </summary>
+    <div class="description">
+        
+        <h5>Fields:</h5>
+        <table class="params">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th class="last">Description</th>
+                </tr>
+            </thead>
+            <tbody><tr>
     <td class="name">
         <code>id</code>            
     </td>
     <td class="type">
-        <code>object::UID</code>  
+        <code>object::<span class="type">UID</span></code>  
     </td>
     <td class="description last"></td>
 </tr><tr>
@@ -292,7 +319,7 @@ many shapes, depending on the business level requirements.</p>
         <code>admin</code>            
     </td>
     <td class="type">
-        <code>address</code>  
+        <code><span class="type">address</span></code>  
     </td>
     <td class="description last"><p>The address of the marketplace administrator</p>
 </td>
@@ -301,7 +328,7 @@ many shapes, depending on the business level requirements.</p>
         <code>receiver</code>            
     </td>
     <td class="type">
-        <code>address</code>  
+        <code><span class="type">address</span></code>  
     </td>
     <td class="description last"><p>Receiver of marketplace fees</p>
 </td>
@@ -310,59 +337,67 @@ many shapes, depending on the business level requirements.</p>
         <code>default_fee</code>            
     </td>
     <td class="type">
-        <code>object_box::ObjectBox</code>  
+        <code><a href="./object_box.html">object_box</a>::<a href="./object_box.html#ObjectBox" class="type">ObjectBox</a></code>  
     </td>
     <td class="description last"></td>
-</tr>
-        </tbody>
-    </table>
-</div>
-        <h3 class="subsection-title">Methods</h3>
-        <span class="name-container">
-    <h4 class="name" id="new"><pre>public fun new&lt;F: <span class="ability">store</span> + <span class="ability">key</span>&gt;(
-    admin: address,
-    receiver: address,
+</tr></tbody>
+        </table>
+    </div>
+</details>
+    <h3 class="subsection-title">Methods</h3>
+    <details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="new"><pre>public fun <a href="./marketplace.html#new" class="function">new</a>&lt;F: <span class="ability">store</span> + <span class="ability">key</span>&gt;(
+    admin: <span class="type">address</span>,
+    receiver: <span class="type">address</span>,
     default_fee: F,
-    ctx: &amp;mut tx_context::TxContext,
-): marketplace::Marketplace</pre></h4>
-</span>
-<div class="description"><p>Initialises a <code>Marketplace</code> object and returns it</p>
-</div><span class="name-container">
-    <h4 class="name" id="init_marketplace"><pre>public fun init_marketplace&lt;F: <span class="ability">store</span> + <span class="ability">key</span>&gt;(
-    admin: address,
-    receiver: address,
-    default_fee: F,
-    ctx: &amp;mut tx_context::TxContext,
-)</pre></h4>
-</span>
-<div class="description"><p>Initialises a <code>Marketplace</code> object and shares it</p>
-</div><span class="name-container">
-    <h4 class="name" id="receiver"><pre>public fun receiver(
-    marketplace: &amp;marketplace::Marketplace,
-): address</pre></h4>
-</span>
-<div class="description"><p>Get the Marketplace's <code>receiver</code> address</p>
-</div><span class="name-container">
-    <h4 class="name" id="admin"><pre>public fun admin(marketplace: &amp;marketplace::Marketplace): 
-    address</pre></h4>
-</span>
-<div class="description"><p>Get the Marketplace's <code>admin</code> address</p>
-</div><span class="name-container">
-    <h4 class="name" id="default_fee"><pre>public fun default_fee(
-    marketplace: &amp;marketplace::Marketplace,
-): &object_box::ObjectBox</pre></h4>
-</span>
-<div class="description"><p>Get the Marketplace's <code>default_fee</code></p>
-</div><span class="name-container">
-    <h4 class="name" id="assert_marketplace_admin"><pre>public fun assert_marketplace_admin(
-    marketplace: &amp;marketplace::Marketplace,
-    ctx: &amp;mut tx_context::TxContext,
-)</pre></h4>
-</span>
-<div class="description"></div>
-    </article>
-</section><br class="clear">
-<!--<footer>OriginByte.io</footer>-->
+    ctx: &mut tx_context::<span class="type">TxContext</span>,
+): <a href="./marketplace.html">marketplace</a>::<a href="./marketplace.html#Marketplace" class="type">Marketplace</a></pre></h4>
+    </summary>
+    <div class="description"><p>Initialises a <code>Marketplace</code> object and returns it</p>
 </div>
-</body>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="init_marketplace"><pre>public fun <a href="./marketplace.html#init_marketplace" class="function">init_marketplace</a>&lt;F: <span class="ability">store</span> + <span class="ability">key</span>&gt;(
+    admin: <span class="type">address</span>,
+    receiver: <span class="type">address</span>,
+    default_fee: F,
+    ctx: &mut tx_context::<span class="type">TxContext</span>,
+)</pre></h4>
+    </summary>
+    <div class="description"><p>Initialises a <code>Marketplace</code> object and shares it</p>
+</div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="receiver"><pre>public fun <a href="./marketplace.html#receiver" class="function">receiver</a>(marketplace: &<a href="./marketplace.html">marketplace</a>::<a href="./marketplace.html#Marketplace" class="type">Marketplace</a>): 
+    <span class="type">address</span></pre></h4>
+    </summary>
+    <div class="description"><p>Get the Marketplace's <code>receiver</code> address</p>
+</div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="admin"><pre>public fun <a href="./marketplace.html#admin" class="function">admin</a>(marketplace: &<a href="./marketplace.html">marketplace</a>::<a href="./marketplace.html#Marketplace" class="type">Marketplace</a>): 
+    <span class="type">address</span></pre></h4>
+    </summary>
+    <div class="description"><p>Get the Marketplace's <code>admin</code> address</p>
+</div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="default_fee"><pre>public fun <a href="./marketplace.html#default_fee" class="function">default_fee</a>(marketplace: &<a href="./marketplace.html">marketplace</a>::<a href="./marketplace.html#Marketplace" class="type">Marketplace</a>): 
+    &<a href="./object_box.html">object_box</a>::<a href="./object_box.html#ObjectBox" class="type">ObjectBox</a></pre></h4>
+    </summary>
+    <div class="description"><p>Get the Marketplace's <code>default_fee</code></p>
+</div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="assert_marketplace_admin"><pre>public fun <a href="./marketplace.html#assert_marketplace_admin" class="function">assert_marketplace_admin</a>(
+    marketplace: &<a href="./marketplace.html">marketplace</a>::<a href="./marketplace.html#Marketplace" class="type">Marketplace</a>,
+    ctx: &mut tx_context::<span class="type">TxContext</span>,
+)</pre></h4>
+    </summary>
+    <div class="description"></div>
+</details>
+</article></main>
+        </div>
+    </body>
 </html>

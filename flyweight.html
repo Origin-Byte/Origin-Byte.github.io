@@ -1,250 +1,278 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>OriginByte</title>
+    <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OriginByte</title>
 
-<link type="text/css" rel="stylesheet" href="./assets/style.css">
+    <link type="text/css" rel="stylesheet" href="./assets/style.css">
 
-</head>
-<body>
-<nav>
-<a href="./index.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet">
+
+    </head>
+    <body>
+        <div id="container-movedoc">
+            <nav class="sidebar"><a href="./index.html">
     <img src="./assets/accent.svg" style="position: absolute">
     <img src="./assets/ob.svg" class="logo">
 </a>
 <h3>Modules</h3>
 <ul><li>
-<a href="./err.html">err</a>
-<ul class="methods"></ul></li><li>
-<a href="./utils.html">utils</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./utils.html#Marker">Marker</a>       
-</li></ul></li><li>
-<a href="./collection.html">collection</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./collection.html#BurnEvent">BurnEvent</a>       
-</li><li data-type="struct">
-    <a href="./collection.html#Collection">Collection</a>       
-</li><li data-type="struct">
-    <a href="./collection.html#MintCap">MintCap</a>       
-</li><li data-type="struct">
-    <a href="./collection.html#MintEvent">MintEvent</a>       
-</li></ul></li><li>
-<a href="./attribution.html">attribution</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./attribution.html#Witness">Witness</a>       
-</li><li data-type="struct">
-    <a href="./attribution.html#AttributionDomain">AttributionDomain</a>       
-</li><li data-type="struct">
-    <a href="./attribution.html#Creator">Creator</a>       
-</li></ul></li><li>
-<a href="./transfer_allowlist.html">transfer_allowlist</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./transfer_allowlist.html#Allowlist">Allowlist</a>       
-</li><li data-type="struct">
-    <a href="./transfer_allowlist.html#CollectionControlCap">CollectionControlCap</a>       
-</li></ul></li><li>
-<a href="./royalties.html">royalties</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./royalties.html#TradePayment">TradePayment</a>       
-</li></ul></li><li>
-<a href="./trading.html">trading</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./trading.html#AskCommission">AskCommission</a>       
-</li><li data-type="struct">
-    <a href="./trading.html#BidCommission">BidCommission</a>       
-</li></ul></li><li>
-<a href="./nft.html">nft</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./nft.html#Nft">Nft</a>       
-</li></ul></li><li>
-<a href="./unprotected_safe.html">unprotected_safe</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./unprotected_safe.html#DepositEvent">DepositEvent</a>       
-</li><li data-type="struct">
-    <a href="./unprotected_safe.html#NftRef">NftRef</a>       
-</li><li data-type="struct">
-    <a href="./unprotected_safe.html#OwnerCap">OwnerCap</a>       
-</li><li data-type="struct">
-    <a href="./unprotected_safe.html#TransferCap">TransferCap</a>       
-</li><li data-type="struct">
-    <a href="./unprotected_safe.html#TransferEvent">TransferEvent</a>       
-</li><li data-type="struct">
-    <a href="./unprotected_safe.html#UnprotectedSafe">UnprotectedSafe</a>       
-</li></ul></li><li>
-<a href="./safe.html">safe</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./safe.html#OwnerCap">OwnerCap</a>       
-</li><li data-type="struct">
-    <a href="./safe.html#TransferCap">TransferCap</a>       
-</li><li data-type="struct">
-    <a href="./safe.html#Safe">Safe</a>       
-</li></ul></li><li>
-<a href="./bidding.html">bidding</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./bidding.html#Witness">Witness</a>       
-</li><li data-type="struct">
-    <a href="./bidding.html#Bid">Bid</a>       
-</li><li data-type="struct">
-    <a href="./bidding.html#BidClosed">BidClosed</a>       
-</li><li data-type="struct">
-    <a href="./bidding.html#BidCreated">BidCreated</a>       
-</li></ul></li><li>
-<a href="./display.html">display</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./display.html#Witness">Witness</a>       
-</li><li data-type="struct">
-    <a href="./display.html#AttributesDomain">AttributesDomain</a>       
-</li><li data-type="struct">
-    <a href="./display.html#DisplayDomain">DisplayDomain</a>       
-</li><li data-type="struct">
-    <a href="./display.html#SymbolDomain">SymbolDomain</a>       
-</li><li data-type="struct">
-    <a href="./display.html#UrlDomain">UrlDomain</a>       
-</li></ul></li><li>
-<a href="./proceeds.html">proceeds</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./proceeds.html#Proceeds">Proceeds</a>       
-</li><li data-type="struct">
-    <a href="./proceeds.html#QtSold">QtSold</a>       
-</li></ul></li><li>
-<a href="./object_box.html">object_box</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./object_box.html#ObjectBox">ObjectBox</a>       
-</li></ul></li><li>
-<a href="./marketplace.html">marketplace</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./marketplace.html#Marketplace">Marketplace</a>       
-</li></ul></li><li>
-<a href="./inventory.html">inventory</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./inventory.html#Inventory">Inventory</a>       
-</li></ul></li><li>
-<a href="./listing.html">listing</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./listing.html#CreateListingEvent">CreateListingEvent</a>       
-</li><li data-type="struct">
-    <a href="./listing.html#DeleteListingEvent">DeleteListingEvent</a>       
-</li><li data-type="struct">
-    <a href="./listing.html#Listing">Listing</a>       
-</li><li data-type="struct">
-    <a href="./listing.html#RequestToJoin">RequestToJoin</a>       
-</li><li data-type="struct">
-    <a href="./listing.html#WhitelistCertificate">WhitelistCertificate</a>       
-</li></ul></li><li>
-<a href="./dutch_auction.html">dutch_auction</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./dutch_auction.html#Witness">Witness</a>       
-</li><li data-type="struct">
-    <a href="./dutch_auction.html#Bid">Bid</a>       
-</li><li data-type="struct">
-    <a href="./dutch_auction.html#DutchAuctionMarket">DutchAuctionMarket</a>       
-</li></ul></li><li>
-<a href="./fixed_price.html">fixed_price</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./fixed_price.html#Witness">Witness</a>       
-</li><li data-type="struct">
-    <a href="./fixed_price.html#FixedPriceMarket">FixedPriceMarket</a>       
-</li></ul></li><li>
-<a href="./flat_fee.html">flat_fee</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./flat_fee.html#FlatFee">FlatFee</a>       
-</li></ul></li><li>
-<a href="./supply.html">supply</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./supply.html#Supply">Supply</a>       
-</li></ul></li><li>
-<a href="./flyweight.html">flyweight</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./flyweight.html#BurnEvent">BurnEvent</a>       
-</li><li data-type="struct">
-    <a href="./flyweight.html#MintEvent">MintEvent</a>       
-</li><li data-type="struct">
-    <a href="./flyweight.html#Archetype">Archetype</a>       
-</li><li data-type="struct">
-    <a href="./flyweight.html#Pointer">Pointer</a>       
-</li><li data-type="struct">
-    <a href="./flyweight.html#Registry">Registry</a>       
-</li></ul></li><li>
-<a href="./ob.html">ob</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./ob.html#Witness">Witness</a>       
-</li><li data-type="struct">
-    <a href="./ob.html#Bid">Bid</a>       
-</li><li data-type="struct">
-    <a href="./ob.html#BidClosed">BidClosed</a>       
-</li><li data-type="struct">
-    <a href="./ob.html#BidCreated">BidCreated</a>       
-</li><li data-type="struct">
-    <a href="./ob.html#Ask">Ask</a>       
-</li><li data-type="struct">
-    <a href="./ob.html#AskClosed">AskClosed</a>       
-</li><li data-type="struct">
-    <a href="./ob.html#AskCreated">AskCreated</a>       
-</li><li data-type="struct">
-    <a href="./ob.html#Orderbook">Orderbook</a>       
-</li><li data-type="struct">
-    <a href="./ob.html#TradeExecuted">TradeExecuted</a>       
-</li><li data-type="struct">
-    <a href="./ob.html#TradeIntermediate">TradeIntermediate</a>       
-</li><li data-type="struct">
-    <a href="./ob.html#WitnessProtectedActions">WitnessProtectedActions</a>       
-</li></ul></li><li>
-<a href="./royalty_strategy_constant.html">royalty_strategy_constant</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./royalty_strategy_constant.html#ConstantRoyaltyStrategy">ConstantRoyaltyStrategy</a>       
-</li></ul></li><li>
-<a href="./royalty_strategy_bps.html">royalty_strategy_bps</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./royalty_strategy_bps.html#BpsRoyaltyStrategy">BpsRoyaltyStrategy</a>       
-</li></ul></li><li>
-<a href="./royalty.html">royalty</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./royalty.html#Witness">Witness</a>       
-</li><li data-type="struct">
-    <a href="./royalty.html#RoyaltyDomain">RoyaltyDomain</a>       
-</li></ul></li><li>
-<a href="./supply_policy.html">supply_policy</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./supply_policy.html#SupplyPolicy">SupplyPolicy</a>       
-</li></ul></li><li>
-<a href="./tags.html">tags</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./tags.html#Witness">Witness</a>       
-</li><li data-type="struct">
-    <a href="./tags.html#Art">Art</a>       
-</li><li data-type="struct">
-    <a href="./tags.html#Collectible">Collectible</a>       
-</li><li data-type="struct">
-    <a href="./tags.html#DomainName">DomainName</a>       
-</li><li data-type="struct">
-    <a href="./tags.html#GameAsset">GameAsset</a>       
-</li><li data-type="struct">
-    <a href="./tags.html#License">License</a>       
-</li><li data-type="struct">
-    <a href="./tags.html#Music">Music</a>       
-</li><li data-type="struct">
-    <a href="./tags.html#ProfilePicture">ProfilePicture</a>       
-</li><li data-type="struct">
-    <a href="./tags.html#TagDomain">TagDomain</a>       
-</li><li data-type="struct">
-    <a href="./tags.html#Ticker">Ticker</a>       
-</li><li data-type="struct">
-    <a href="./tags.html#Ticket">Ticket</a>       
-</li><li data-type="struct">
-    <a href="./tags.html#TokenisedAsset">TokenisedAsset</a>       
-</li><li data-type="struct">
-    <a href="./tags.html#Video">Video</a>       
-</li></ul></li></ul></nav>
-<div id="main"><h1 class="page-title">flyweight</h1>
-<section class="readme">
-    <header>
-        <h2>0x0::flyweight</h2>
-    </header>
-    <article>
-        <p>Module of Nft Flyweight domain.</p>
+    <a href="./err.html">err</a>
+    <ul class="methods"></ul>
+</li><li>
+    <a href="./utils.html">utils</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./utils.html#Marker">Marker</a>
+</li></ul>
+</li><li>
+    <a href="./transfer_allowlist.html">transfer_allowlist</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./transfer_allowlist.html#Allowlist">Allowlist</a>
+</li><li data-type="type">
+    <a href="./transfer_allowlist.html#CollectionControlCap">CollectionControlCap</a>
+</li></ul>
+</li><li>
+    <a href="./royalties.html">royalties</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./royalties.html#TradePayment">TradePayment</a>
+</li></ul>
+</li><li>
+    <a href="./trading.html">trading</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./trading.html#AskCommission">AskCommission</a>
+</li><li data-type="type">
+    <a href="./trading.html#BidCommission">BidCommission</a>
+</li></ul>
+</li><li>
+    <a href="./nft.html">nft</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./nft.html#MintNftEvent">MintNftEvent</a>
+</li><li data-type="type">
+    <a href="./nft.html#Nft">Nft</a>
+</li></ul>
+</li><li>
+    <a href="./unprotected_safe.html">unprotected_safe</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./unprotected_safe.html#DepositEvent">DepositEvent</a>
+</li><li data-type="type">
+    <a href="./unprotected_safe.html#NftRef">NftRef</a>
+</li><li data-type="type">
+    <a href="./unprotected_safe.html#OwnerCap">OwnerCap</a>
+</li><li data-type="type">
+    <a href="./unprotected_safe.html#TransferCap">TransferCap</a>
+</li><li data-type="type">
+    <a href="./unprotected_safe.html#TransferEvent">TransferEvent</a>
+</li><li data-type="type">
+    <a href="./unprotected_safe.html#UnprotectedSafe">UnprotectedSafe</a>
+</li></ul>
+</li><li>
+    <a href="./safe.html">safe</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./safe.html#OwnerCap">OwnerCap</a>
+</li><li data-type="type">
+    <a href="./safe.html#TransferCap">TransferCap</a>
+</li><li data-type="type">
+    <a href="./safe.html#Safe">Safe</a>
+</li></ul>
+</li><li>
+    <a href="./bidding.html">bidding</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./bidding.html#Witness">Witness</a>
+</li><li data-type="type">
+    <a href="./bidding.html#Bid">Bid</a>
+</li><li data-type="type">
+    <a href="./bidding.html#BidClosed">BidClosed</a>
+</li><li data-type="type">
+    <a href="./bidding.html#BidCreated">BidCreated</a>
+</li></ul>
+</li><li>
+    <a href="./collection.html">collection</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./collection.html#Collection">Collection</a>
+</li><li data-type="type">
+    <a href="./collection.html#CollectionMintEvent">CollectionMintEvent</a>
+</li><li data-type="type">
+    <a href="./collection.html#MintCap">MintCap</a>
+</li></ul>
+</li><li>
+    <a href="./creators.html">creators</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./creators.html#Witness">Witness</a>
+</li><li data-type="type">
+    <a href="./creators.html#Creator">Creator</a>
+</li><li data-type="type">
+    <a href="./creators.html#CreatorsDomain">CreatorsDomain</a>
+</li></ul>
+</li><li>
+    <a href="./display.html">display</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./display.html#Witness">Witness</a>
+</li><li data-type="type">
+    <a href="./display.html#AttributesDomain">AttributesDomain</a>
+</li><li data-type="type">
+    <a href="./display.html#DisplayDomain">DisplayDomain</a>
+</li><li data-type="type">
+    <a href="./display.html#SymbolDomain">SymbolDomain</a>
+</li><li data-type="type">
+    <a href="./display.html#UrlDomain">UrlDomain</a>
+</li></ul>
+</li><li>
+    <a href="./proceeds.html">proceeds</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./proceeds.html#Proceeds">Proceeds</a>
+</li><li data-type="type">
+    <a href="./proceeds.html#QtSold">QtSold</a>
+</li></ul>
+</li><li>
+    <a href="./object_box.html">object_box</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./object_box.html#ObjectBox">ObjectBox</a>
+</li></ul>
+</li><li>
+    <a href="./marketplace.html">marketplace</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./marketplace.html#Marketplace">Marketplace</a>
+</li></ul>
+</li><li>
+    <a href="./inventory.html">inventory</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./inventory.html#Inventory">Inventory</a>
+</li></ul>
+</li><li>
+    <a href="./listing.html">listing</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./listing.html#CreateListingEvent">CreateListingEvent</a>
+</li><li data-type="type">
+    <a href="./listing.html#DeleteListingEvent">DeleteListingEvent</a>
+</li><li data-type="type">
+    <a href="./listing.html#Listing">Listing</a>
+</li><li data-type="type">
+    <a href="./listing.html#RequestToJoin">RequestToJoin</a>
+</li><li data-type="type">
+    <a href="./listing.html#WhitelistCertificate">WhitelistCertificate</a>
+</li></ul>
+</li><li>
+    <a href="./dutch_auction.html">dutch_auction</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./dutch_auction.html#Witness">Witness</a>
+</li><li data-type="type">
+    <a href="./dutch_auction.html#Bid">Bid</a>
+</li><li data-type="type">
+    <a href="./dutch_auction.html#DutchAuctionMarket">DutchAuctionMarket</a>
+</li></ul>
+</li><li>
+    <a href="./fixed_price.html">fixed_price</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./fixed_price.html#Witness">Witness</a>
+</li><li data-type="type">
+    <a href="./fixed_price.html#FixedPriceMarket">FixedPriceMarket</a>
+</li></ul>
+</li><li>
+    <a href="./flat_fee.html">flat_fee</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./flat_fee.html#FlatFee">FlatFee</a>
+</li></ul>
+</li><li>
+    <a href="./supply.html">supply</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./supply.html#Supply">Supply</a>
+</li></ul>
+</li><li>
+    <a href="./flyweight.html">flyweight</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./flyweight.html#Archetype">Archetype</a>
+</li><li data-type="type">
+    <a href="./flyweight.html#BurnEvent">BurnEvent</a>
+</li><li data-type="type">
+    <a href="./flyweight.html#MintEvent">MintEvent</a>
+</li><li data-type="type">
+    <a href="./flyweight.html#Pointer">Pointer</a>
+</li><li data-type="type">
+    <a href="./flyweight.html#Registry">Registry</a>
+</li></ul>
+</li><li>
+    <a href="./ob.html">ob</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./ob.html#Witness">Witness</a>
+</li><li data-type="type">
+    <a href="./ob.html#Bid">Bid</a>
+</li><li data-type="type">
+    <a href="./ob.html#BidClosed">BidClosed</a>
+</li><li data-type="type">
+    <a href="./ob.html#BidCreated">BidCreated</a>
+</li><li data-type="type">
+    <a href="./ob.html#Ask">Ask</a>
+</li><li data-type="type">
+    <a href="./ob.html#AskClosed">AskClosed</a>
+</li><li data-type="type">
+    <a href="./ob.html#AskCreated">AskCreated</a>
+</li><li data-type="type">
+    <a href="./ob.html#Orderbook">Orderbook</a>
+</li><li data-type="type">
+    <a href="./ob.html#TradeExecuted">TradeExecuted</a>
+</li><li data-type="type">
+    <a href="./ob.html#TradeIntermediate">TradeIntermediate</a>
+</li><li data-type="type">
+    <a href="./ob.html#WitnessProtectedActions">WitnessProtectedActions</a>
+</li></ul>
+</li><li>
+    <a href="./royalty_strategy_constant.html">royalty_strategy_constant</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./royalty_strategy_constant.html#ConstantRoyaltyStrategy">ConstantRoyaltyStrategy</a>
+</li></ul>
+</li><li>
+    <a href="./royalty_strategy_bps.html">royalty_strategy_bps</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./royalty_strategy_bps.html#BpsRoyaltyStrategy">BpsRoyaltyStrategy</a>
+</li></ul>
+</li><li>
+    <a href="./royalty.html">royalty</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./royalty.html#Witness">Witness</a>
+</li><li data-type="type">
+    <a href="./royalty.html#RoyaltyDomain">RoyaltyDomain</a>
+</li></ul>
+</li><li>
+    <a href="./supply_policy.html">supply_policy</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./supply_policy.html#SupplyPolicy">SupplyPolicy</a>
+</li></ul>
+</li><li>
+    <a href="./tags.html">tags</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./tags.html#Witness">Witness</a>
+</li><li data-type="type">
+    <a href="./tags.html#Art">Art</a>
+</li><li data-type="type">
+    <a href="./tags.html#Collectible">Collectible</a>
+</li><li data-type="type">
+    <a href="./tags.html#DomainName">DomainName</a>
+</li><li data-type="type">
+    <a href="./tags.html#GameAsset">GameAsset</a>
+</li><li data-type="type">
+    <a href="./tags.html#License">License</a>
+</li><li data-type="type">
+    <a href="./tags.html#Music">Music</a>
+</li><li data-type="type">
+    <a href="./tags.html#ProfilePicture">ProfilePicture</a>
+</li><li data-type="type">
+    <a href="./tags.html#TagDomain">TagDomain</a>
+</li><li data-type="type">
+    <a href="./tags.html#Ticker">Ticker</a>
+</li><li data-type="type">
+    <a href="./tags.html#Ticket">Ticket</a>
+</li><li data-type="type">
+    <a href="./tags.html#TokenisedAsset">TokenisedAsset</a>
+</li><li data-type="type">
+    <a href="./tags.html#Video">Video</a>
+</li></ul>
+</li></ul></nav>
+            <main><h1 class="page-title">0x0::flyweight</h1>
+<article>
+    <p>Module of Nft Flyweight domain.</p>
 <p>The flyweight domain is responsible for the implementation of the
 loose NFT pattern. Where NFT data live in the <code>Archetype</code> object and
 <code>Nft</code>s have a <code>Pointer</code> to it.</p>
@@ -263,29 +291,28 @@ between the NFT object and the data. In contrast, loose NFTs can
 represent 1-to-many relationships. Essentially this allows us to build
 NFTs which effectively have a supply.</p>
 
-        <h3 class="subsection-title">Structs</h3>
-        <div class="container-overview">
-    <h2>Pointer</h2>
-    <span class="name-container">
-        <h4 class="name" id="Pointer"><pre>0x0::flyweight::<a href="./0x0::flyweight.html#Pointer"><span class="struct">Pointer</span></a>&lt;&gt; has <span class="ability">store</span>, <span class="ability">key</span><pre></h4>
-    </span>
-    <div class="description"></div>
-    <h5>Fields:</h5>
-    <table class="params">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Type</th>
-                <th class="last">Description</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
+    <h3 class="subsection-title">Structs</h3>
+    <details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="Pointer"><pre><a href="./flyweight.html">flyweight</a>::<a href="./flyweight.html#Pointer" class="type">Pointer</a> has <span class="ability">store</span>, <span class="ability">key</span><pre></h4>
+    </summary>
+    <div class="description">
+        
+        <h5>Fields:</h5>
+        <table class="params">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th class="last">Description</th>
+                </tr>
+            </thead>
+            <tbody><tr>
     <td class="name">
         <code>id</code>            
     </td>
     <td class="type">
-        <code>object::UID</code>  
+        <code>object::<span class="type">UID</span></code>  
     </td>
     <td class="description last"></td>
 </tr><tr>
@@ -293,34 +320,33 @@ NFTs which effectively have a supply.</p>
         <code>data</code>            
     </td>
     <td class="type">
-        <code>object::ID</code>  
+        <code>object::<span class="type">ID</span></code>  
     </td>
     <td class="description last"></td>
-</tr>
-        </tbody>
-    </table>
-</div><div class="container-overview">
-    <h2>Archetype</h2>
-    <span class="name-container">
-        <h4 class="name" id="Archetype"><pre>0x0::flyweight::<a href="./0x0::flyweight.html#Archetype"><span class="struct">Archetype</span></a>&lt;C&gt; has <span class="ability">store</span>, <span class="ability">key</span><pre></h4>
-    </span>
-    <div class="description"></div>
-    <h5>Fields:</h5>
-    <table class="params">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Type</th>
-                <th class="last">Description</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
+</tr></tbody>
+        </table>
+    </div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="Archetype"><pre><a href="./flyweight.html">flyweight</a>::<a href="./flyweight.html#Archetype" class="type">Archetype</a>&lt;C&gt; has <span class="ability">store</span>, <span class="ability">key</span><pre></h4>
+    </summary>
+    <div class="description">
+        
+        <h5>Fields:</h5>
+        <table class="params">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th class="last">Description</th>
+                </tr>
+            </thead>
+            <tbody><tr>
     <td class="name">
         <code>id</code>            
     </td>
     <td class="type">
-        <code>object::UID</code>  
+        <code>object::<span class="type">UID</span></code>  
     </td>
     <td class="description last"></td>
 </tr><tr>
@@ -328,7 +354,7 @@ NFTs which effectively have a supply.</p>
         <code>nft</code>            
     </td>
     <td class="type">
-        <code>nft::Nft<#0></code>  
+        <code><a href="./nft.html">nft</a>::<a href="./nft.html#Nft" class="type">Nft</a>&lt;C&gt;</code>  
     </td>
     <td class="description last"></td>
 </tr><tr>
@@ -336,7 +362,7 @@ NFTs which effectively have a supply.</p>
         <code>supply</code>            
     </td>
     <td class="type">
-        <code>supply::Supply</code>  
+        <code><a href="./supply.html">supply</a>::<a href="./supply.html#Supply" class="type">Supply</a></code>  
     </td>
     <td class="description last"></td>
 </tr><tr>
@@ -344,34 +370,33 @@ NFTs which effectively have a supply.</p>
         <code>mint_authority</code>            
     </td>
     <td class="type">
-        <code>object::ID</code>  
+        <code>object::<span class="type">ID</span></code>  
     </td>
     <td class="description last"></td>
-</tr>
-        </tbody>
-    </table>
-</div><div class="container-overview">
-    <h2>Registry</h2>
-    <span class="name-container">
-        <h4 class="name" id="Registry"><pre>0x0::flyweight::<a href="./0x0::flyweight.html#Registry"><span class="struct">Registry</span></a>&lt;C&gt; has <span class="ability">store</span>, <span class="ability">key</span><pre></h4>
-    </span>
-    <div class="description"></div>
-    <h5>Fields:</h5>
-    <table class="params">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Type</th>
-                <th class="last">Description</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
+</tr></tbody>
+        </table>
+    </div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="Registry"><pre><a href="./flyweight.html">flyweight</a>::<a href="./flyweight.html#Registry" class="type">Registry</a>&lt;C&gt; has <span class="ability">store</span>, <span class="ability">key</span><pre></h4>
+    </summary>
+    <div class="description">
+        
+        <h5>Fields:</h5>
+        <table class="params">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th class="last">Description</th>
+                </tr>
+            </thead>
+            <tbody><tr>
     <td class="name">
         <code>id</code>            
     </td>
     <td class="type">
-        <code>object::UID</code>  
+        <code>object::<span class="type">UID</span></code>  
     </td>
     <td class="description last"></td>
 </tr><tr>
@@ -379,121 +404,131 @@ NFTs which effectively have a supply.</p>
         <code>table</code>            
     </td>
     <td class="type">
-        <code>object_table::ObjectTable<object::ID, flyweight::Archetype<#0>></code>  
+        <code>object_table::<span class="type">ObjectTable</span>&lt;object::<span class="type">ID</span>, <a href="./flyweight.html">flyweight</a>::<a href="./flyweight.html#Archetype" class="type">Archetype</a>&lt;C&gt;&gt;</code>  
     </td>
     <td class="description last"></td>
-</tr>
-        </tbody>
-    </table>
-</div><div class="container-overview">
-    <h2>MintEvent</h2>
-    <span class="name-container">
-        <h4 class="name" id="MintEvent"><pre>0x0::flyweight::<a href="./0x0::flyweight.html#MintEvent"><span class="struct">MintEvent</span></a>&lt;&gt; has <span class="ability">copy</span>, <span class="ability">drop</span><pre></h4>
-    </span>
-    <div class="description"></div>
-    <h5>Fields:</h5>
-    <table class="params">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Type</th>
-                <th class="last">Description</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
+</tr></tbody>
+        </table>
+    </div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="MintEvent"><pre><a href="./flyweight.html">flyweight</a>::<a href="./flyweight.html#MintEvent" class="type">MintEvent</a> has <span class="ability">copy</span>, <span class="ability">drop</span><pre></h4>
+    </summary>
+    <div class="description">
+        
+        <h5>Fields:</h5>
+        <table class="params">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th class="last">Description</th>
+                </tr>
+            </thead>
+            <tbody><tr>
     <td class="name">
         <code>id</code>            
     </td>
     <td class="type">
-        <code>object::ID</code>  
+        <code>object::<span class="type">ID</span></code>  
     </td>
     <td class="description last"></td>
-</tr>
-        </tbody>
-    </table>
-</div><div class="container-overview">
-    <h2>BurnEvent</h2>
-    <span class="name-container">
-        <h4 class="name" id="BurnEvent"><pre>0x0::flyweight::<a href="./0x0::flyweight.html#BurnEvent"><span class="struct">BurnEvent</span></a>&lt;&gt; has <span class="ability">copy</span>, <span class="ability">drop</span><pre></h4>
-    </span>
-    <div class="description"></div>
-    <h5>Fields:</h5>
-    <table class="params">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Type</th>
-                <th class="last">Description</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
+</tr></tbody>
+        </table>
+    </div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="BurnEvent"><pre><a href="./flyweight.html">flyweight</a>::<a href="./flyweight.html#BurnEvent" class="type">BurnEvent</a> has <span class="ability">copy</span>, <span class="ability">drop</span><pre></h4>
+    </summary>
+    <div class="description">
+        
+        <h5>Fields:</h5>
+        <table class="params">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th class="last">Description</th>
+                </tr>
+            </thead>
+            <tbody><tr>
     <td class="name">
         <code>id</code>            
     </td>
     <td class="type">
-        <code>object::ID</code>  
+        <code>object::<span class="type">ID</span></code>  
     </td>
     <td class="description last"></td>
-</tr>
-        </tbody>
-    </table>
+</tr></tbody>
+        </table>
+    </div>
+</details>
+    <h3 class="subsection-title">Methods</h3>
+    <details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="new"><pre>public fun <a href="./flyweight.html#new" class="function">new</a>&lt;C&gt;(
+    supply: <span class="type">u64</span>,
+    mint: &<a href="./collection.html">collection</a>::<a href="./collection.html#MintCap" class="type">MintCap</a>&lt;C&gt;,
+    ctx: &mut tx_context::<span class="type">TxContext</span>,
+): <a href="./flyweight.html">flyweight</a>::<a href="./flyweight.html#Archetype" class="type">Archetype</a>&lt;C&gt;</pre></h4>
+    </summary>
+    <div class="description"><p>Create a <code>Archetype</code> object and shares it.</p>
 </div>
-        <h3 class="subsection-title">Methods</h3>
-        <span class="name-container">
-    <h4 class="name" id="new"><pre>public fun new&lt;C&gt;(
-    supply: u64,
-    mint: &amp;collection::MintCap&lt;C&gt;,
-    ctx: &amp;mut tx_context::TxContext,
-): flyweight::Archetype<C></pre></h4>
-</span>
-<div class="description"><p>Create a <code>Archetype</code> object and shares it.</p>
-</div><span class="name-container">
-    <h4 class="name" id="init_registry"><pre>public fun init_registry&lt;C&gt;(
-    ctx: &amp;mut tx_context::TxContext,
-    _mint: &amp;collection::MintCap&lt;C&gt;,
-): flyweight::Registry<C></pre></h4>
-</span>
-<div class="description"><p>Create a <code>Registry</code> object</p>
-</div><span class="name-container">
-    <h4 class="name" id="add_archetype"><pre>public fun add_archetype&lt;C&gt;(
-    state: flyweight::Archetype&lt;C&gt;,
-    registry: &amp;mut flyweight::Registry&lt;C&gt;,
-    _mint: &amp;collection::MintCap&lt;C&gt;,
-)</pre></h4>
-</span>
-<div class="description"></div><span class="name-container">
-    <h4 class="name" id="set_archetype"><pre>public fun set_archetype&lt;C&gt;(
-    ctx: &amp;mut tx_context::TxContext,
-    nft: &amp;mut nft::Nft&lt;C&gt;,
-    state: &amp;mut flyweight::Archetype&lt;C&gt;,
-    _mint: &amp;collection::MintCap&lt;C&gt;,
-)</pre></h4>
-</span>
-<div class="description"><p>Create a <code>Pointer</code> object and adds it to NFT.</p>
-</div><span class="name-container">
-    <h4 class="name" id="add_archetypes_domain"><pre>public fun add_archetypes_domain&lt;C&gt;(
-    collection: &amp;mut collection::Collection&lt;C&gt;,
-    mint_cap: &amp;collection::MintCap&lt;C&gt;,
-    registry: flyweight::Registry&lt;C&gt;,
-)</pre></h4>
-</span>
-<div class="description"></div><span class="name-container">
-    <h4 class="name" id="borrow_nft"><pre>public fun borrow_nft&lt;C&gt;(
-    state: &amp;flyweight::Archetype&lt;C&gt;,
-): &nft::Nft<C></pre></h4>
-</span>
-<div class="description"></div><span class="name-container">
-    <h4 class="name" id="borrow_nft_mut"><pre>public fun borrow_nft_mut&lt;C&gt;(
-    state: &amp;mut flyweight::Archetype&lt;C&gt;,
-    _mint: &amp;collection::MintCap&lt;C&gt;,
-): &mut nft::Nft<C></pre></h4>
-</span>
-<div class="description"></div>
-    </article>
-</section><br class="clear">
-<!--<footer>OriginByte.io</footer>-->
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="init_registry"><pre>public fun <a href="./flyweight.html#init_registry" class="function">init_registry</a>&lt;C&gt;(
+    ctx: &mut tx_context::<span class="type">TxContext</span>,
+    _mint: &<a href="./collection.html">collection</a>::<a href="./collection.html#MintCap" class="type">MintCap</a>&lt;C&gt;,
+): <a href="./flyweight.html">flyweight</a>::<a href="./flyweight.html#Registry" class="type">Registry</a>&lt;C&gt;</pre></h4>
+    </summary>
+    <div class="description"><p>Create a <code>Registry</code> object</p>
 </div>
-</body>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="add_archetype"><pre>public fun <a href="./flyweight.html#add_archetype" class="function">add_archetype</a>&lt;C&gt;(
+    state: <a href="./flyweight.html">flyweight</a>::<a href="./flyweight.html#Archetype" class="type">Archetype</a>&lt;C&gt;,
+    registry: &mut <a href="./flyweight.html">flyweight</a>::<a href="./flyweight.html#Registry" class="type">Registry</a>&lt;C&gt;,
+    _mint: &<a href="./collection.html">collection</a>::<a href="./collection.html#MintCap" class="type">MintCap</a>&lt;C&gt;,
+)</pre></h4>
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="set_archetype"><pre>public fun <a href="./flyweight.html#set_archetype" class="function">set_archetype</a>&lt;C&gt;(
+    ctx: &mut tx_context::<span class="type">TxContext</span>,
+    nft: &mut <a href="./nft.html">nft</a>::<a href="./nft.html#Nft" class="type">Nft</a>&lt;C&gt;,
+    state: &mut <a href="./flyweight.html">flyweight</a>::<a href="./flyweight.html#Archetype" class="type">Archetype</a>&lt;C&gt;,
+    _mint: &<a href="./collection.html">collection</a>::<a href="./collection.html#MintCap" class="type">MintCap</a>&lt;C&gt;,
+)</pre></h4>
+    </summary>
+    <div class="description"><p>Create a <code>Pointer</code> object and adds it to NFT.</p>
+</div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="add_archetypes_domain"><pre>public fun <a href="./flyweight.html#add_archetypes_domain" class="function">add_archetypes_domain</a>&lt;C&gt;(
+    collection: &mut <a href="./collection.html">collection</a>::<a href="./collection.html#Collection" class="type">Collection</a>&lt;C&gt;,
+    mint_cap: &<a href="./collection.html">collection</a>::<a href="./collection.html#MintCap" class="type">MintCap</a>&lt;C&gt;,
+    registry: <a href="./flyweight.html">flyweight</a>::<a href="./flyweight.html#Registry" class="type">Registry</a>&lt;C&gt;,
+)</pre></h4>
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="borrow_nft"><pre>public fun <a href="./flyweight.html#borrow_nft" class="function">borrow_nft</a>&lt;C&gt;(
+    state: &<a href="./flyweight.html">flyweight</a>::<a href="./flyweight.html#Archetype" class="type">Archetype</a>&lt;C&gt;,
+): &<a href="./nft.html">nft</a>::<a href="./nft.html#Nft" class="type">Nft</a>&lt;C&gt;</pre></h4>
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="borrow_nft_mut"><pre>public fun <a href="./flyweight.html#borrow_nft_mut" class="function">borrow_nft_mut</a>&lt;C&gt;(
+    state: &mut <a href="./flyweight.html">flyweight</a>::<a href="./flyweight.html#Archetype" class="type">Archetype</a>&lt;C&gt;,
+    _mint: &<a href="./collection.html">collection</a>::<a href="./collection.html#MintCap" class="type">MintCap</a>&lt;C&gt;,
+): &mut <a href="./nft.html">nft</a>::<a href="./nft.html#Nft" class="type">Nft</a>&lt;C&gt;</pre></h4>
+    </summary>
+    <div class="description"></div>
+</details>
+</article></main>
+        </div>
+    </body>
 </html>

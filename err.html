@@ -1,430 +1,570 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>OriginByte</title>
+    <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OriginByte</title>
 
-<link type="text/css" rel="stylesheet" href="./assets/style.css">
+    <link type="text/css" rel="stylesheet" href="./assets/style.css">
 
-</head>
-<body>
-<nav>
-<a href="./index.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet">
+
+    </head>
+    <body>
+        <div id="container-movedoc">
+            <nav class="sidebar"><a href="./index.html">
     <img src="./assets/accent.svg" style="position: absolute">
     <img src="./assets/ob.svg" class="logo">
 </a>
 <h3>Modules</h3>
 <ul><li>
-<a href="./err.html">err</a>
-<ul class="methods"></ul></li><li>
-<a href="./utils.html">utils</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./utils.html#Marker">Marker</a>       
-</li></ul></li><li>
-<a href="./collection.html">collection</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./collection.html#BurnEvent">BurnEvent</a>       
-</li><li data-type="struct">
-    <a href="./collection.html#Collection">Collection</a>       
-</li><li data-type="struct">
-    <a href="./collection.html#MintCap">MintCap</a>       
-</li><li data-type="struct">
-    <a href="./collection.html#MintEvent">MintEvent</a>       
-</li></ul></li><li>
-<a href="./attribution.html">attribution</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./attribution.html#Witness">Witness</a>       
-</li><li data-type="struct">
-    <a href="./attribution.html#AttributionDomain">AttributionDomain</a>       
-</li><li data-type="struct">
-    <a href="./attribution.html#Creator">Creator</a>       
-</li></ul></li><li>
-<a href="./transfer_allowlist.html">transfer_allowlist</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./transfer_allowlist.html#Allowlist">Allowlist</a>       
-</li><li data-type="struct">
-    <a href="./transfer_allowlist.html#CollectionControlCap">CollectionControlCap</a>       
-</li></ul></li><li>
-<a href="./royalties.html">royalties</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./royalties.html#TradePayment">TradePayment</a>       
-</li></ul></li><li>
-<a href="./trading.html">trading</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./trading.html#AskCommission">AskCommission</a>       
-</li><li data-type="struct">
-    <a href="./trading.html#BidCommission">BidCommission</a>       
-</li></ul></li><li>
-<a href="./nft.html">nft</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./nft.html#Nft">Nft</a>       
-</li></ul></li><li>
-<a href="./unprotected_safe.html">unprotected_safe</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./unprotected_safe.html#DepositEvent">DepositEvent</a>       
-</li><li data-type="struct">
-    <a href="./unprotected_safe.html#NftRef">NftRef</a>       
-</li><li data-type="struct">
-    <a href="./unprotected_safe.html#OwnerCap">OwnerCap</a>       
-</li><li data-type="struct">
-    <a href="./unprotected_safe.html#TransferCap">TransferCap</a>       
-</li><li data-type="struct">
-    <a href="./unprotected_safe.html#TransferEvent">TransferEvent</a>       
-</li><li data-type="struct">
-    <a href="./unprotected_safe.html#UnprotectedSafe">UnprotectedSafe</a>       
-</li></ul></li><li>
-<a href="./safe.html">safe</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./safe.html#OwnerCap">OwnerCap</a>       
-</li><li data-type="struct">
-    <a href="./safe.html#TransferCap">TransferCap</a>       
-</li><li data-type="struct">
-    <a href="./safe.html#Safe">Safe</a>       
-</li></ul></li><li>
-<a href="./bidding.html">bidding</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./bidding.html#Witness">Witness</a>       
-</li><li data-type="struct">
-    <a href="./bidding.html#Bid">Bid</a>       
-</li><li data-type="struct">
-    <a href="./bidding.html#BidClosed">BidClosed</a>       
-</li><li data-type="struct">
-    <a href="./bidding.html#BidCreated">BidCreated</a>       
-</li></ul></li><li>
-<a href="./display.html">display</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./display.html#Witness">Witness</a>       
-</li><li data-type="struct">
-    <a href="./display.html#AttributesDomain">AttributesDomain</a>       
-</li><li data-type="struct">
-    <a href="./display.html#DisplayDomain">DisplayDomain</a>       
-</li><li data-type="struct">
-    <a href="./display.html#SymbolDomain">SymbolDomain</a>       
-</li><li data-type="struct">
-    <a href="./display.html#UrlDomain">UrlDomain</a>       
-</li></ul></li><li>
-<a href="./proceeds.html">proceeds</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./proceeds.html#Proceeds">Proceeds</a>       
-</li><li data-type="struct">
-    <a href="./proceeds.html#QtSold">QtSold</a>       
-</li></ul></li><li>
-<a href="./object_box.html">object_box</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./object_box.html#ObjectBox">ObjectBox</a>       
-</li></ul></li><li>
-<a href="./marketplace.html">marketplace</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./marketplace.html#Marketplace">Marketplace</a>       
-</li></ul></li><li>
-<a href="./inventory.html">inventory</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./inventory.html#Inventory">Inventory</a>       
-</li></ul></li><li>
-<a href="./listing.html">listing</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./listing.html#CreateListingEvent">CreateListingEvent</a>       
-</li><li data-type="struct">
-    <a href="./listing.html#DeleteListingEvent">DeleteListingEvent</a>       
-</li><li data-type="struct">
-    <a href="./listing.html#Listing">Listing</a>       
-</li><li data-type="struct">
-    <a href="./listing.html#RequestToJoin">RequestToJoin</a>       
-</li><li data-type="struct">
-    <a href="./listing.html#WhitelistCertificate">WhitelistCertificate</a>       
-</li></ul></li><li>
-<a href="./dutch_auction.html">dutch_auction</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./dutch_auction.html#Witness">Witness</a>       
-</li><li data-type="struct">
-    <a href="./dutch_auction.html#Bid">Bid</a>       
-</li><li data-type="struct">
-    <a href="./dutch_auction.html#DutchAuctionMarket">DutchAuctionMarket</a>       
-</li></ul></li><li>
-<a href="./fixed_price.html">fixed_price</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./fixed_price.html#Witness">Witness</a>       
-</li><li data-type="struct">
-    <a href="./fixed_price.html#FixedPriceMarket">FixedPriceMarket</a>       
-</li></ul></li><li>
-<a href="./flat_fee.html">flat_fee</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./flat_fee.html#FlatFee">FlatFee</a>       
-</li></ul></li><li>
-<a href="./supply.html">supply</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./supply.html#Supply">Supply</a>       
-</li></ul></li><li>
-<a href="./flyweight.html">flyweight</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./flyweight.html#BurnEvent">BurnEvent</a>       
-</li><li data-type="struct">
-    <a href="./flyweight.html#MintEvent">MintEvent</a>       
-</li><li data-type="struct">
-    <a href="./flyweight.html#Archetype">Archetype</a>       
-</li><li data-type="struct">
-    <a href="./flyweight.html#Pointer">Pointer</a>       
-</li><li data-type="struct">
-    <a href="./flyweight.html#Registry">Registry</a>       
-</li></ul></li><li>
-<a href="./ob.html">ob</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./ob.html#Witness">Witness</a>       
-</li><li data-type="struct">
-    <a href="./ob.html#Bid">Bid</a>       
-</li><li data-type="struct">
-    <a href="./ob.html#BidClosed">BidClosed</a>       
-</li><li data-type="struct">
-    <a href="./ob.html#BidCreated">BidCreated</a>       
-</li><li data-type="struct">
-    <a href="./ob.html#Ask">Ask</a>       
-</li><li data-type="struct">
-    <a href="./ob.html#AskClosed">AskClosed</a>       
-</li><li data-type="struct">
-    <a href="./ob.html#AskCreated">AskCreated</a>       
-</li><li data-type="struct">
-    <a href="./ob.html#Orderbook">Orderbook</a>       
-</li><li data-type="struct">
-    <a href="./ob.html#TradeExecuted">TradeExecuted</a>       
-</li><li data-type="struct">
-    <a href="./ob.html#TradeIntermediate">TradeIntermediate</a>       
-</li><li data-type="struct">
-    <a href="./ob.html#WitnessProtectedActions">WitnessProtectedActions</a>       
-</li></ul></li><li>
-<a href="./royalty_strategy_constant.html">royalty_strategy_constant</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./royalty_strategy_constant.html#ConstantRoyaltyStrategy">ConstantRoyaltyStrategy</a>       
-</li></ul></li><li>
-<a href="./royalty_strategy_bps.html">royalty_strategy_bps</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./royalty_strategy_bps.html#BpsRoyaltyStrategy">BpsRoyaltyStrategy</a>       
-</li></ul></li><li>
-<a href="./royalty.html">royalty</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./royalty.html#Witness">Witness</a>       
-</li><li data-type="struct">
-    <a href="./royalty.html#RoyaltyDomain">RoyaltyDomain</a>       
-</li></ul></li><li>
-<a href="./supply_policy.html">supply_policy</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./supply_policy.html#SupplyPolicy">SupplyPolicy</a>       
-</li></ul></li><li>
-<a href="./tags.html">tags</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./tags.html#Witness">Witness</a>       
-</li><li data-type="struct">
-    <a href="./tags.html#Art">Art</a>       
-</li><li data-type="struct">
-    <a href="./tags.html#Collectible">Collectible</a>       
-</li><li data-type="struct">
-    <a href="./tags.html#DomainName">DomainName</a>       
-</li><li data-type="struct">
-    <a href="./tags.html#GameAsset">GameAsset</a>       
-</li><li data-type="struct">
-    <a href="./tags.html#License">License</a>       
-</li><li data-type="struct">
-    <a href="./tags.html#Music">Music</a>       
-</li><li data-type="struct">
-    <a href="./tags.html#ProfilePicture">ProfilePicture</a>       
-</li><li data-type="struct">
-    <a href="./tags.html#TagDomain">TagDomain</a>       
-</li><li data-type="struct">
-    <a href="./tags.html#Ticker">Ticker</a>       
-</li><li data-type="struct">
-    <a href="./tags.html#Ticket">Ticket</a>       
-</li><li data-type="struct">
-    <a href="./tags.html#TokenisedAsset">TokenisedAsset</a>       
-</li><li data-type="struct">
-    <a href="./tags.html#Video">Video</a>       
-</li></ul></li></ul></nav>
-<div id="main"><h1 class="page-title">err</h1>
-<section class="readme">
-    <header>
-        <h2>0x0::err</h2>
-    </header>
-    <article>
-        <p>Exports error functions. All errors in this smart contract have a prefix
+    <a href="./err.html">err</a>
+    <ul class="methods"></ul>
+</li><li>
+    <a href="./utils.html">utils</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./utils.html#Marker">Marker</a>
+</li></ul>
+</li><li>
+    <a href="./transfer_allowlist.html">transfer_allowlist</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./transfer_allowlist.html#Allowlist">Allowlist</a>
+</li><li data-type="type">
+    <a href="./transfer_allowlist.html#CollectionControlCap">CollectionControlCap</a>
+</li></ul>
+</li><li>
+    <a href="./royalties.html">royalties</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./royalties.html#TradePayment">TradePayment</a>
+</li></ul>
+</li><li>
+    <a href="./trading.html">trading</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./trading.html#AskCommission">AskCommission</a>
+</li><li data-type="type">
+    <a href="./trading.html#BidCommission">BidCommission</a>
+</li></ul>
+</li><li>
+    <a href="./nft.html">nft</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./nft.html#MintNftEvent">MintNftEvent</a>
+</li><li data-type="type">
+    <a href="./nft.html#Nft">Nft</a>
+</li></ul>
+</li><li>
+    <a href="./unprotected_safe.html">unprotected_safe</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./unprotected_safe.html#DepositEvent">DepositEvent</a>
+</li><li data-type="type">
+    <a href="./unprotected_safe.html#NftRef">NftRef</a>
+</li><li data-type="type">
+    <a href="./unprotected_safe.html#OwnerCap">OwnerCap</a>
+</li><li data-type="type">
+    <a href="./unprotected_safe.html#TransferCap">TransferCap</a>
+</li><li data-type="type">
+    <a href="./unprotected_safe.html#TransferEvent">TransferEvent</a>
+</li><li data-type="type">
+    <a href="./unprotected_safe.html#UnprotectedSafe">UnprotectedSafe</a>
+</li></ul>
+</li><li>
+    <a href="./safe.html">safe</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./safe.html#OwnerCap">OwnerCap</a>
+</li><li data-type="type">
+    <a href="./safe.html#TransferCap">TransferCap</a>
+</li><li data-type="type">
+    <a href="./safe.html#Safe">Safe</a>
+</li></ul>
+</li><li>
+    <a href="./bidding.html">bidding</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./bidding.html#Witness">Witness</a>
+</li><li data-type="type">
+    <a href="./bidding.html#Bid">Bid</a>
+</li><li data-type="type">
+    <a href="./bidding.html#BidClosed">BidClosed</a>
+</li><li data-type="type">
+    <a href="./bidding.html#BidCreated">BidCreated</a>
+</li></ul>
+</li><li>
+    <a href="./collection.html">collection</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./collection.html#Collection">Collection</a>
+</li><li data-type="type">
+    <a href="./collection.html#CollectionMintEvent">CollectionMintEvent</a>
+</li><li data-type="type">
+    <a href="./collection.html#MintCap">MintCap</a>
+</li></ul>
+</li><li>
+    <a href="./creators.html">creators</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./creators.html#Witness">Witness</a>
+</li><li data-type="type">
+    <a href="./creators.html#Creator">Creator</a>
+</li><li data-type="type">
+    <a href="./creators.html#CreatorsDomain">CreatorsDomain</a>
+</li></ul>
+</li><li>
+    <a href="./display.html">display</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./display.html#Witness">Witness</a>
+</li><li data-type="type">
+    <a href="./display.html#AttributesDomain">AttributesDomain</a>
+</li><li data-type="type">
+    <a href="./display.html#DisplayDomain">DisplayDomain</a>
+</li><li data-type="type">
+    <a href="./display.html#SymbolDomain">SymbolDomain</a>
+</li><li data-type="type">
+    <a href="./display.html#UrlDomain">UrlDomain</a>
+</li></ul>
+</li><li>
+    <a href="./proceeds.html">proceeds</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./proceeds.html#Proceeds">Proceeds</a>
+</li><li data-type="type">
+    <a href="./proceeds.html#QtSold">QtSold</a>
+</li></ul>
+</li><li>
+    <a href="./object_box.html">object_box</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./object_box.html#ObjectBox">ObjectBox</a>
+</li></ul>
+</li><li>
+    <a href="./marketplace.html">marketplace</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./marketplace.html#Marketplace">Marketplace</a>
+</li></ul>
+</li><li>
+    <a href="./inventory.html">inventory</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./inventory.html#Inventory">Inventory</a>
+</li></ul>
+</li><li>
+    <a href="./listing.html">listing</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./listing.html#CreateListingEvent">CreateListingEvent</a>
+</li><li data-type="type">
+    <a href="./listing.html#DeleteListingEvent">DeleteListingEvent</a>
+</li><li data-type="type">
+    <a href="./listing.html#Listing">Listing</a>
+</li><li data-type="type">
+    <a href="./listing.html#RequestToJoin">RequestToJoin</a>
+</li><li data-type="type">
+    <a href="./listing.html#WhitelistCertificate">WhitelistCertificate</a>
+</li></ul>
+</li><li>
+    <a href="./dutch_auction.html">dutch_auction</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./dutch_auction.html#Witness">Witness</a>
+</li><li data-type="type">
+    <a href="./dutch_auction.html#Bid">Bid</a>
+</li><li data-type="type">
+    <a href="./dutch_auction.html#DutchAuctionMarket">DutchAuctionMarket</a>
+</li></ul>
+</li><li>
+    <a href="./fixed_price.html">fixed_price</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./fixed_price.html#Witness">Witness</a>
+</li><li data-type="type">
+    <a href="./fixed_price.html#FixedPriceMarket">FixedPriceMarket</a>
+</li></ul>
+</li><li>
+    <a href="./flat_fee.html">flat_fee</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./flat_fee.html#FlatFee">FlatFee</a>
+</li></ul>
+</li><li>
+    <a href="./supply.html">supply</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./supply.html#Supply">Supply</a>
+</li></ul>
+</li><li>
+    <a href="./flyweight.html">flyweight</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./flyweight.html#Archetype">Archetype</a>
+</li><li data-type="type">
+    <a href="./flyweight.html#BurnEvent">BurnEvent</a>
+</li><li data-type="type">
+    <a href="./flyweight.html#MintEvent">MintEvent</a>
+</li><li data-type="type">
+    <a href="./flyweight.html#Pointer">Pointer</a>
+</li><li data-type="type">
+    <a href="./flyweight.html#Registry">Registry</a>
+</li></ul>
+</li><li>
+    <a href="./ob.html">ob</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./ob.html#Witness">Witness</a>
+</li><li data-type="type">
+    <a href="./ob.html#Bid">Bid</a>
+</li><li data-type="type">
+    <a href="./ob.html#BidClosed">BidClosed</a>
+</li><li data-type="type">
+    <a href="./ob.html#BidCreated">BidCreated</a>
+</li><li data-type="type">
+    <a href="./ob.html#Ask">Ask</a>
+</li><li data-type="type">
+    <a href="./ob.html#AskClosed">AskClosed</a>
+</li><li data-type="type">
+    <a href="./ob.html#AskCreated">AskCreated</a>
+</li><li data-type="type">
+    <a href="./ob.html#Orderbook">Orderbook</a>
+</li><li data-type="type">
+    <a href="./ob.html#TradeExecuted">TradeExecuted</a>
+</li><li data-type="type">
+    <a href="./ob.html#TradeIntermediate">TradeIntermediate</a>
+</li><li data-type="type">
+    <a href="./ob.html#WitnessProtectedActions">WitnessProtectedActions</a>
+</li></ul>
+</li><li>
+    <a href="./royalty_strategy_constant.html">royalty_strategy_constant</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./royalty_strategy_constant.html#ConstantRoyaltyStrategy">ConstantRoyaltyStrategy</a>
+</li></ul>
+</li><li>
+    <a href="./royalty_strategy_bps.html">royalty_strategy_bps</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./royalty_strategy_bps.html#BpsRoyaltyStrategy">BpsRoyaltyStrategy</a>
+</li></ul>
+</li><li>
+    <a href="./royalty.html">royalty</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./royalty.html#Witness">Witness</a>
+</li><li data-type="type">
+    <a href="./royalty.html#RoyaltyDomain">RoyaltyDomain</a>
+</li></ul>
+</li><li>
+    <a href="./supply_policy.html">supply_policy</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./supply_policy.html#SupplyPolicy">SupplyPolicy</a>
+</li></ul>
+</li><li>
+    <a href="./tags.html">tags</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./tags.html#Witness">Witness</a>
+</li><li data-type="type">
+    <a href="./tags.html#Art">Art</a>
+</li><li data-type="type">
+    <a href="./tags.html#Collectible">Collectible</a>
+</li><li data-type="type">
+    <a href="./tags.html#DomainName">DomainName</a>
+</li><li data-type="type">
+    <a href="./tags.html#GameAsset">GameAsset</a>
+</li><li data-type="type">
+    <a href="./tags.html#License">License</a>
+</li><li data-type="type">
+    <a href="./tags.html#Music">Music</a>
+</li><li data-type="type">
+    <a href="./tags.html#ProfilePicture">ProfilePicture</a>
+</li><li data-type="type">
+    <a href="./tags.html#TagDomain">TagDomain</a>
+</li><li data-type="type">
+    <a href="./tags.html#Ticker">Ticker</a>
+</li><li data-type="type">
+    <a href="./tags.html#Ticket">Ticket</a>
+</li><li data-type="type">
+    <a href="./tags.html#TokenisedAsset">TokenisedAsset</a>
+</li><li data-type="type">
+    <a href="./tags.html#Video">Video</a>
+</li></ul>
+</li></ul></nav>
+            <main><h1 class="page-title">0x0::err</h1>
+<article>
+    <p>Exports error functions. All errors in this smart contract have a prefix
 which distinguishes them from errors in other packages.</p>
 
-        <h3 class="subsection-title">Structs</h3>
-        
-        <h3 class="subsection-title">Methods</h3>
-        <span class="name-container">
-    <h4 class="name" id="not_nft_owner"><pre>public fun not_nft_owner(): u64</pre></h4>
-</span>
-<div class="description"></div><span class="name-container">
-    <h4 class="name" id="mint_authority_mismatch"><pre>public fun mint_authority_mismatch(): u64</pre></h4>
-</span>
-<div class="description"></div><span class="name-container">
-    <h4 class="name" id="supply_policy_mismatch"><pre>public fun supply_policy_mismatch(): u64</pre></h4>
-</span>
-<div class="description"></div><span class="name-container">
-    <h4 class="name" id="supply_is_not_zero"><pre>public fun supply_is_not_zero(): u64</pre></h4>
-</span>
-<div class="description"></div><span class="name-container">
-    <h4 class="name" id="supply_is_limited"><pre>public fun supply_is_limited(): u64</pre></h4>
-</span>
-<div class="description"></div><span class="name-container">
-    <h4 class="name" id="supply_is_unlimited"><pre>public fun supply_is_unlimited(): u64</pre></h4>
-</span>
-<div class="description"></div><span class="name-container">
-    <h4 class="name" id="frozen_supply"><pre>public fun frozen_supply(): u64</pre></h4>
-</span>
-<div class="description"></div><span class="name-container">
-    <h4 class="name" id="max_supply_cannot_be_below_current_supply"><pre>public fun max_supply_cannot_be_below_current_supply(): u64</pre></h4>
-</span>
-<div class="description"></div><span class="name-container">
-    <h4 class="name" id="current_supply_cannot_be_negative"><pre>public fun current_supply_cannot_be_negative(): u64</pre></h4>
-</span>
-<div class="description"></div><span class="name-container">
-    <h4 class="name" id="supply_maxed_out"><pre>public fun supply_maxed_out(): u64</pre></h4>
-</span>
-<div class="description"></div><span class="name-container">
-    <h4 class="name" id="wrong_marketplace_admin"><pre>public fun wrong_marketplace_admin(): u64</pre></h4>
-</span>
-<div class="description"></div><span class="name-container">
-    <h4 class="name" id="listing_not_live"><pre>public fun listing_not_live(): u64</pre></h4>
-</span>
-<div class="description"></div><span class="name-container">
-    <h4 class="name" id="nft_sale_incompleted"><pre>public fun nft_sale_incompleted(): u64</pre></h4>
-</span>
-<div class="description"></div><span class="name-container">
-    <h4 class="name" id="nft_redemption_incompleted"><pre>public fun nft_redemption_incompleted(): u64</pre></h4>
-</span>
-<div class="description"></div><span class="name-container">
-    <h4 class="name" id="sale_is_not_whitelisted"><pre>public fun sale_is_not_whitelisted(): u64</pre></h4>
-</span>
-<div class="description"></div><span class="name-container">
-    <h4 class="name" id="sale_is_whitelisted"><pre>public fun sale_is_whitelisted(): u64</pre></h4>
-</span>
-<div class="description"></div><span class="name-container">
-    <h4 class="name" id="incorrect_whitelist_certificate"><pre>public fun incorrect_whitelist_certificate(): u64</pre></h4>
-</span>
-<div class="description"></div><span class="name-container">
-    <h4 class="name" id="undefined_nft_id"><pre>public fun undefined_nft_id(): u64</pre></h4>
-</span>
-<div class="description"></div><span class="name-container">
-    <h4 class="name" id="no_nfts_left"><pre>public fun no_nfts_left(): u64</pre></h4>
-</span>
-<div class="description"></div><span class="name-container">
-    <h4 class="name" id="marketplace_listing_mismatch"><pre>public fun marketplace_listing_mismatch(): u64</pre></h4>
-</span>
-<div class="description"></div><span class="name-container">
-    <h4 class="name" id="wrong_marketplace_or_listing_admin"><pre>public fun wrong_marketplace_or_listing_admin(): u64</pre></h4>
-</span>
-<div class="description"></div><span class="name-container">
-    <h4 class="name" id="wrong_listing_admin"><pre>public fun wrong_listing_admin(): u64</pre></h4>
-</span>
-<div class="description"></div><span class="name-container">
-    <h4 class="name" id="wrong_fee_policy_type"><pre>public fun wrong_fee_policy_type(): u64</pre></h4>
-</span>
-<div class="description"></div><span class="name-container">
-    <h4 class="name" id="has_custom_fee_policy"><pre>public fun has_custom_fee_policy(): u64</pre></h4>
-</span>
-<div class="description"></div><span class="name-container">
-    <h4 class="name" id="listing_not_approved"><pre>public fun listing_not_approved(): u64</pre></h4>
-</span>
-<div class="description"></div><span class="name-container">
-    <h4 class="name" id="undefined_inventory"><pre>public fun undefined_inventory(): u64</pre></h4>
-</span>
-<div class="description"></div><span class="name-container">
-    <h4 class="name" id="undefined_market"><pre>public fun undefined_market(): u64</pre></h4>
-</span>
-<div class="description"></div><span class="name-container">
-    <h4 class="name" id="incorrect_nft_certificate"><pre>public fun incorrect_nft_certificate(): u64</pre></h4>
-</span>
-<div class="description"></div><span class="name-container">
-    <h4 class="name" id="listing_already_attached_to_marketplace"><pre>public fun listing_already_attached_to_marketplace(): u64</pre></h4>
-</span>
-<div class="description"></div><span class="name-container">
-    <h4 class="name" id="listing_has_not_applied_to_this_marketplace"><pre>public fun listing_has_not_applied_to_this_marketplace(): u64</pre></h4>
-</span>
-<div class="description"></div><span class="name-container">
-    <h4 class="name" id="action_exclusive_to_standalone_listings"><pre>public fun action_exclusive_to_standalone_listings(): u64</pre></h4>
-</span>
-<div class="description"></div><span class="name-container">
-    <h4 class="name" id="order_does_not_exist"><pre>public fun order_does_not_exist(): u64</pre></h4>
-</span>
-<div class="description"></div><span class="name-container">
-    <h4 class="name" id="order_owner_must_be_sender"><pre>public fun order_owner_must_be_sender(): u64</pre></h4>
-</span>
-<div class="description"></div><span class="name-container">
-    <h4 class="name" id="order_price_below_reserve"><pre>public fun order_price_below_reserve(): u64</pre></h4>
-</span>
-<div class="description"></div><span class="name-container">
-    <h4 class="name" id="action_not_public"><pre>public fun action_not_public(): u64</pre></h4>
-</span>
-<div class="description"></div><span class="name-container">
-    <h4 class="name" id="safe_cap_mismatch"><pre>public fun safe_cap_mismatch(): u64</pre></h4>
-</span>
-<div class="description"></div><span class="name-container">
-    <h4 class="name" id="safe_does_not_contain_nft"><pre>public fun safe_does_not_contain_nft(): u64</pre></h4>
-</span>
-<div class="description"></div><span class="name-container">
-    <h4 class="name" id="nft_exclusively_listed"><pre>public fun nft_exclusively_listed(): u64</pre></h4>
-</span>
-<div class="description"></div><span class="name-container">
-    <h4 class="name" id="transfer_cap_nft_mismatch"><pre>public fun transfer_cap_nft_mismatch(): u64</pre></h4>
-</span>
-<div class="description"></div><span class="name-container">
-    <h4 class="name" id="transfer_cap_expired"><pre>public fun transfer_cap_expired(): u64</pre></h4>
-</span>
-<div class="description"></div><span class="name-container">
-    <h4 class="name" id="safe_does_not_accept_deposits"><pre>public fun safe_does_not_accept_deposits(): u64</pre></h4>
-</span>
-<div class="description"></div><span class="name-container">
-    <h4 class="name" id="nft_not_exlusively_listed"><pre>public fun nft_not_exlusively_listed(): u64</pre></h4>
-</span>
-<div class="description"></div><span class="name-container">
-    <h4 class="name" id="safe_id_mismatch"><pre>public fun safe_id_mismatch(): u64</pre></h4>
-</span>
-<div class="description"></div><span class="name-container">
-    <h4 class="name" id="generic_nft_must_not_be_protocol_type"><pre>public fun generic_nft_must_not_be_protocol_type(): u64</pre></h4>
-</span>
-<div class="description"></div><span class="name-container">
-    <h4 class="name" id="authority_not_allowlisted"><pre>public fun authority_not_allowlisted(): u64</pre></h4>
-</span>
-<div class="description"></div><span class="name-container">
-    <h4 class="name" id="sender_not_allowlist_admin"><pre>public fun sender_not_allowlist_admin(): u64</pre></h4>
-</span>
-<div class="description"></div><span class="name-container">
-    <h4 class="name" id="witness_source_mismatch"><pre>public fun witness_source_mismatch(): u64</pre></h4>
-</span>
-<div class="description"></div><span class="name-container">
-    <h4 class="name" id="must_be_witness"><pre>public fun must_be_witness(): u64</pre></h4>
-</span>
-<div class="description"></div><span class="name-container">
-    <h4 class="name" id="sender_not_owner"><pre>public fun sender_not_owner(): u64</pre></h4>
-</span>
-<div class="description"></div><span class="name-container">
-    <h4 class="name" id="commission_too_high"><pre>public fun commission_too_high(): u64</pre></h4>
-</span>
-<div class="description"></div><span class="name-container">
-    <h4 class="name" id="address_not_attributed"><pre>public fun address_not_attributed(): u64</pre></h4>
-</span>
-<div class="description"></div><span class="name-container">
-    <h4 class="name" id="address_does_not_have_enough_shares"><pre>public fun address_does_not_have_enough_shares(): u64</pre></h4>
-</span>
-<div class="description"></div><span class="name-container">
-    <h4 class="name" id="invalid_total_share_of_royalties"><pre>public fun invalid_total_share_of_royalties(): u64</pre></h4>
-</span>
-<div class="description"></div><span class="name-container">
-    <h4 class="name" id="generic_bag_full"><pre>public fun generic_bag_full(): u64</pre></h4>
-</span>
-<div class="description"></div><span class="name-container">
-    <h4 class="name" id="generic_box_full"><pre>public fun generic_box_full(): u64</pre></h4>
-</span>
-<div class="description"></div><span class="name-container">
-    <h4 class="name" id="missing_dynamic_field"><pre>public fun missing_dynamic_field(): u64</pre></h4>
-</span>
-<div class="description"></div><span class="name-container">
-    <h4 class="name" id="mint_cap_mismatch"><pre>public fun mint_cap_mismatch(): u64</pre></h4>
-</span>
-<div class="description"></div>
-    </article>
-</section><br class="clear">
-<!--<footer>OriginByte.io</footer>-->
-</div>
-</body>
+    <h3 class="subsection-title">Structs</h3>
+    
+    <h3 class="subsection-title">Methods</h3>
+    <details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="not_nft_owner"><pre>public fun <a href="./err.html#not_nft_owner" class="function">not_nft_owner</a>(): <span class="type">u64</span></pre></h4>
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="mint_authority_mismatch"><pre>public fun <a href="./err.html#mint_authority_mismatch" class="function">mint_authority_mismatch</a>(): <span class="type">u64</span></pre></h4>
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="supply_policy_mismatch"><pre>public fun <a href="./err.html#supply_policy_mismatch" class="function">supply_policy_mismatch</a>(): <span class="type">u64</span></pre></h4>
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="supply_is_not_zero"><pre>public fun <a href="./err.html#supply_is_not_zero" class="function">supply_is_not_zero</a>(): <span class="type">u64</span></pre></h4>
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="supply_is_limited"><pre>public fun <a href="./err.html#supply_is_limited" class="function">supply_is_limited</a>(): <span class="type">u64</span></pre></h4>
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="supply_is_unlimited"><pre>public fun <a href="./err.html#supply_is_unlimited" class="function">supply_is_unlimited</a>(): <span class="type">u64</span></pre></h4>
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="frozen_supply"><pre>public fun <a href="./err.html#frozen_supply" class="function">frozen_supply</a>(): <span class="type">u64</span></pre></h4>
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="max_supply_cannot_be_below_current_supply"><pre>public fun <a href="./err.html#max_supply_cannot_be_below_current_supply" class="function">max_supply_cannot_be_below_current_supply</a>(): <span class="type">u64</span></pre></h4>
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="current_supply_cannot_be_negative"><pre>public fun <a href="./err.html#current_supply_cannot_be_negative" class="function">current_supply_cannot_be_negative</a>(): <span class="type">u64</span></pre></h4>
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="supply_maxed_out"><pre>public fun <a href="./err.html#supply_maxed_out" class="function">supply_maxed_out</a>(): <span class="type">u64</span></pre></h4>
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="wrong_marketplace_admin"><pre>public fun <a href="./err.html#wrong_marketplace_admin" class="function">wrong_marketplace_admin</a>(): <span class="type">u64</span></pre></h4>
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="listing_not_live"><pre>public fun <a href="./err.html#listing_not_live" class="function">listing_not_live</a>(): <span class="type">u64</span></pre></h4>
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="nft_sale_incompleted"><pre>public fun <a href="./err.html#nft_sale_incompleted" class="function">nft_sale_incompleted</a>(): <span class="type">u64</span></pre></h4>
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="nft_redemption_incompleted"><pre>public fun <a href="./err.html#nft_redemption_incompleted" class="function">nft_redemption_incompleted</a>(): <span class="type">u64</span></pre></h4>
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="sale_is_not_whitelisted"><pre>public fun <a href="./err.html#sale_is_not_whitelisted" class="function">sale_is_not_whitelisted</a>(): <span class="type">u64</span></pre></h4>
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="sale_is_whitelisted"><pre>public fun <a href="./err.html#sale_is_whitelisted" class="function">sale_is_whitelisted</a>(): <span class="type">u64</span></pre></h4>
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="incorrect_whitelist_certificate"><pre>public fun <a href="./err.html#incorrect_whitelist_certificate" class="function">incorrect_whitelist_certificate</a>(): <span class="type">u64</span></pre></h4>
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="undefined_nft_id"><pre>public fun <a href="./err.html#undefined_nft_id" class="function">undefined_nft_id</a>(): <span class="type">u64</span></pre></h4>
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="no_nfts_left"><pre>public fun <a href="./err.html#no_nfts_left" class="function">no_nfts_left</a>(): <span class="type">u64</span></pre></h4>
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="marketplace_listing_mismatch"><pre>public fun <a href="./err.html#marketplace_listing_mismatch" class="function">marketplace_listing_mismatch</a>(): <span class="type">u64</span></pre></h4>
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="wrong_marketplace_or_listing_admin"><pre>public fun <a href="./err.html#wrong_marketplace_or_listing_admin" class="function">wrong_marketplace_or_listing_admin</a>(): <span class="type">u64</span></pre></h4>
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="wrong_listing_admin"><pre>public fun <a href="./err.html#wrong_listing_admin" class="function">wrong_listing_admin</a>(): <span class="type">u64</span></pre></h4>
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="wrong_fee_policy_type"><pre>public fun <a href="./err.html#wrong_fee_policy_type" class="function">wrong_fee_policy_type</a>(): <span class="type">u64</span></pre></h4>
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="has_custom_fee_policy"><pre>public fun <a href="./err.html#has_custom_fee_policy" class="function">has_custom_fee_policy</a>(): <span class="type">u64</span></pre></h4>
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="listing_not_approved"><pre>public fun <a href="./err.html#listing_not_approved" class="function">listing_not_approved</a>(): <span class="type">u64</span></pre></h4>
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="undefined_inventory"><pre>public fun <a href="./err.html#undefined_inventory" class="function">undefined_inventory</a>(): <span class="type">u64</span></pre></h4>
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="undefined_market"><pre>public fun <a href="./err.html#undefined_market" class="function">undefined_market</a>(): <span class="type">u64</span></pre></h4>
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="incorrect_nft_certificate"><pre>public fun <a href="./err.html#incorrect_nft_certificate" class="function">incorrect_nft_certificate</a>(): <span class="type">u64</span></pre></h4>
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="listing_already_attached_to_marketplace"><pre>public fun <a href="./err.html#listing_already_attached_to_marketplace" class="function">listing_already_attached_to_marketplace</a>(): <span class="type">u64</span></pre></h4>
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="listing_has_not_applied_to_this_marketplace"><pre>public fun <a href="./err.html#listing_has_not_applied_to_this_marketplace" class="function">listing_has_not_applied_to_this_marketplace</a>(): <span class="type">u64</span></pre></h4>
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="action_exclusive_to_standalone_listings"><pre>public fun <a href="./err.html#action_exclusive_to_standalone_listings" class="function">action_exclusive_to_standalone_listings</a>(): <span class="type">u64</span></pre></h4>
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="order_does_not_exist"><pre>public fun <a href="./err.html#order_does_not_exist" class="function">order_does_not_exist</a>(): <span class="type">u64</span></pre></h4>
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="order_owner_must_be_sender"><pre>public fun <a href="./err.html#order_owner_must_be_sender" class="function">order_owner_must_be_sender</a>(): <span class="type">u64</span></pre></h4>
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="order_price_below_reserve"><pre>public fun <a href="./err.html#order_price_below_reserve" class="function">order_price_below_reserve</a>(): <span class="type">u64</span></pre></h4>
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="action_not_public"><pre>public fun <a href="./err.html#action_not_public" class="function">action_not_public</a>(): <span class="type">u64</span></pre></h4>
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="safe_cap_mismatch"><pre>public fun <a href="./err.html#safe_cap_mismatch" class="function">safe_cap_mismatch</a>(): <span class="type">u64</span></pre></h4>
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="safe_does_not_contain_nft"><pre>public fun <a href="./err.html#safe_does_not_contain_nft" class="function">safe_does_not_contain_nft</a>(): <span class="type">u64</span></pre></h4>
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="nft_exclusively_listed"><pre>public fun <a href="./err.html#nft_exclusively_listed" class="function">nft_exclusively_listed</a>(): <span class="type">u64</span></pre></h4>
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="transfer_cap_nft_mismatch"><pre>public fun <a href="./err.html#transfer_cap_nft_mismatch" class="function">transfer_cap_nft_mismatch</a>(): <span class="type">u64</span></pre></h4>
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="transfer_cap_expired"><pre>public fun <a href="./err.html#transfer_cap_expired" class="function">transfer_cap_expired</a>(): <span class="type">u64</span></pre></h4>
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="safe_does_not_accept_deposits"><pre>public fun <a href="./err.html#safe_does_not_accept_deposits" class="function">safe_does_not_accept_deposits</a>(): <span class="type">u64</span></pre></h4>
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="nft_not_exlusively_listed"><pre>public fun <a href="./err.html#nft_not_exlusively_listed" class="function">nft_not_exlusively_listed</a>(): <span class="type">u64</span></pre></h4>
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="safe_id_mismatch"><pre>public fun <a href="./err.html#safe_id_mismatch" class="function">safe_id_mismatch</a>(): <span class="type">u64</span></pre></h4>
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="generic_nft_must_not_be_protocol_type"><pre>public fun <a href="./err.html#generic_nft_must_not_be_protocol_type" class="function">generic_nft_must_not_be_protocol_type</a>(): <span class="type">u64</span></pre></h4>
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="authority_not_allowlisted"><pre>public fun <a href="./err.html#authority_not_allowlisted" class="function">authority_not_allowlisted</a>(): <span class="type">u64</span></pre></h4>
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="sender_not_allowlist_admin"><pre>public fun <a href="./err.html#sender_not_allowlist_admin" class="function">sender_not_allowlist_admin</a>(): <span class="type">u64</span></pre></h4>
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="witness_source_mismatch"><pre>public fun <a href="./err.html#witness_source_mismatch" class="function">witness_source_mismatch</a>(): <span class="type">u64</span></pre></h4>
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="must_be_witness"><pre>public fun <a href="./err.html#must_be_witness" class="function">must_be_witness</a>(): <span class="type">u64</span></pre></h4>
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="sender_not_owner"><pre>public fun <a href="./err.html#sender_not_owner" class="function">sender_not_owner</a>(): <span class="type">u64</span></pre></h4>
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="commission_too_high"><pre>public fun <a href="./err.html#commission_too_high" class="function">commission_too_high</a>(): <span class="type">u64</span></pre></h4>
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="address_not_attributed"><pre>public fun <a href="./err.html#address_not_attributed" class="function">address_not_attributed</a>(): <span class="type">u64</span></pre></h4>
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="address_does_not_have_enough_shares"><pre>public fun <a href="./err.html#address_does_not_have_enough_shares" class="function">address_does_not_have_enough_shares</a>(): <span class="type">u64</span></pre></h4>
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="invalid_total_share_of_royalties"><pre>public fun <a href="./err.html#invalid_total_share_of_royalties" class="function">invalid_total_share_of_royalties</a>(): <span class="type">u64</span></pre></h4>
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="generic_bag_full"><pre>public fun <a href="./err.html#generic_bag_full" class="function">generic_bag_full</a>(): <span class="type">u64</span></pre></h4>
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="generic_box_full"><pre>public fun <a href="./err.html#generic_box_full" class="function">generic_box_full</a>(): <span class="type">u64</span></pre></h4>
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="missing_dynamic_field"><pre>public fun <a href="./err.html#missing_dynamic_field" class="function">missing_dynamic_field</a>(): <span class="type">u64</span></pre></h4>
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="mint_cap_mismatch"><pre>public fun <a href="./err.html#mint_cap_mismatch" class="function">mint_cap_mismatch</a>(): <span class="type">u64</span></pre></h4>
+    </summary>
+    <div class="description"></div>
+</details>
+</article></main>
+        </div>
+    </body>
 </html>

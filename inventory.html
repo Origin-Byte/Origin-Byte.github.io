@@ -1,250 +1,278 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>OriginByte</title>
+    <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OriginByte</title>
 
-<link type="text/css" rel="stylesheet" href="./assets/style.css">
+    <link type="text/css" rel="stylesheet" href="./assets/style.css">
 
-</head>
-<body>
-<nav>
-<a href="./index.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet">
+
+    </head>
+    <body>
+        <div id="container-movedoc">
+            <nav class="sidebar"><a href="./index.html">
     <img src="./assets/accent.svg" style="position: absolute">
     <img src="./assets/ob.svg" class="logo">
 </a>
 <h3>Modules</h3>
 <ul><li>
-<a href="./err.html">err</a>
-<ul class="methods"></ul></li><li>
-<a href="./utils.html">utils</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./utils.html#Marker">Marker</a>       
-</li></ul></li><li>
-<a href="./collection.html">collection</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./collection.html#BurnEvent">BurnEvent</a>       
-</li><li data-type="struct">
-    <a href="./collection.html#Collection">Collection</a>       
-</li><li data-type="struct">
-    <a href="./collection.html#MintCap">MintCap</a>       
-</li><li data-type="struct">
-    <a href="./collection.html#MintEvent">MintEvent</a>       
-</li></ul></li><li>
-<a href="./attribution.html">attribution</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./attribution.html#Witness">Witness</a>       
-</li><li data-type="struct">
-    <a href="./attribution.html#AttributionDomain">AttributionDomain</a>       
-</li><li data-type="struct">
-    <a href="./attribution.html#Creator">Creator</a>       
-</li></ul></li><li>
-<a href="./transfer_allowlist.html">transfer_allowlist</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./transfer_allowlist.html#Allowlist">Allowlist</a>       
-</li><li data-type="struct">
-    <a href="./transfer_allowlist.html#CollectionControlCap">CollectionControlCap</a>       
-</li></ul></li><li>
-<a href="./royalties.html">royalties</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./royalties.html#TradePayment">TradePayment</a>       
-</li></ul></li><li>
-<a href="./trading.html">trading</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./trading.html#AskCommission">AskCommission</a>       
-</li><li data-type="struct">
-    <a href="./trading.html#BidCommission">BidCommission</a>       
-</li></ul></li><li>
-<a href="./nft.html">nft</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./nft.html#Nft">Nft</a>       
-</li></ul></li><li>
-<a href="./unprotected_safe.html">unprotected_safe</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./unprotected_safe.html#DepositEvent">DepositEvent</a>       
-</li><li data-type="struct">
-    <a href="./unprotected_safe.html#NftRef">NftRef</a>       
-</li><li data-type="struct">
-    <a href="./unprotected_safe.html#OwnerCap">OwnerCap</a>       
-</li><li data-type="struct">
-    <a href="./unprotected_safe.html#TransferCap">TransferCap</a>       
-</li><li data-type="struct">
-    <a href="./unprotected_safe.html#TransferEvent">TransferEvent</a>       
-</li><li data-type="struct">
-    <a href="./unprotected_safe.html#UnprotectedSafe">UnprotectedSafe</a>       
-</li></ul></li><li>
-<a href="./safe.html">safe</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./safe.html#OwnerCap">OwnerCap</a>       
-</li><li data-type="struct">
-    <a href="./safe.html#TransferCap">TransferCap</a>       
-</li><li data-type="struct">
-    <a href="./safe.html#Safe">Safe</a>       
-</li></ul></li><li>
-<a href="./bidding.html">bidding</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./bidding.html#Witness">Witness</a>       
-</li><li data-type="struct">
-    <a href="./bidding.html#Bid">Bid</a>       
-</li><li data-type="struct">
-    <a href="./bidding.html#BidClosed">BidClosed</a>       
-</li><li data-type="struct">
-    <a href="./bidding.html#BidCreated">BidCreated</a>       
-</li></ul></li><li>
-<a href="./display.html">display</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./display.html#Witness">Witness</a>       
-</li><li data-type="struct">
-    <a href="./display.html#AttributesDomain">AttributesDomain</a>       
-</li><li data-type="struct">
-    <a href="./display.html#DisplayDomain">DisplayDomain</a>       
-</li><li data-type="struct">
-    <a href="./display.html#SymbolDomain">SymbolDomain</a>       
-</li><li data-type="struct">
-    <a href="./display.html#UrlDomain">UrlDomain</a>       
-</li></ul></li><li>
-<a href="./proceeds.html">proceeds</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./proceeds.html#Proceeds">Proceeds</a>       
-</li><li data-type="struct">
-    <a href="./proceeds.html#QtSold">QtSold</a>       
-</li></ul></li><li>
-<a href="./object_box.html">object_box</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./object_box.html#ObjectBox">ObjectBox</a>       
-</li></ul></li><li>
-<a href="./marketplace.html">marketplace</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./marketplace.html#Marketplace">Marketplace</a>       
-</li></ul></li><li>
-<a href="./inventory.html">inventory</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./inventory.html#Inventory">Inventory</a>       
-</li></ul></li><li>
-<a href="./listing.html">listing</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./listing.html#CreateListingEvent">CreateListingEvent</a>       
-</li><li data-type="struct">
-    <a href="./listing.html#DeleteListingEvent">DeleteListingEvent</a>       
-</li><li data-type="struct">
-    <a href="./listing.html#Listing">Listing</a>       
-</li><li data-type="struct">
-    <a href="./listing.html#RequestToJoin">RequestToJoin</a>       
-</li><li data-type="struct">
-    <a href="./listing.html#WhitelistCertificate">WhitelistCertificate</a>       
-</li></ul></li><li>
-<a href="./dutch_auction.html">dutch_auction</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./dutch_auction.html#Witness">Witness</a>       
-</li><li data-type="struct">
-    <a href="./dutch_auction.html#Bid">Bid</a>       
-</li><li data-type="struct">
-    <a href="./dutch_auction.html#DutchAuctionMarket">DutchAuctionMarket</a>       
-</li></ul></li><li>
-<a href="./fixed_price.html">fixed_price</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./fixed_price.html#Witness">Witness</a>       
-</li><li data-type="struct">
-    <a href="./fixed_price.html#FixedPriceMarket">FixedPriceMarket</a>       
-</li></ul></li><li>
-<a href="./flat_fee.html">flat_fee</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./flat_fee.html#FlatFee">FlatFee</a>       
-</li></ul></li><li>
-<a href="./supply.html">supply</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./supply.html#Supply">Supply</a>       
-</li></ul></li><li>
-<a href="./flyweight.html">flyweight</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./flyweight.html#BurnEvent">BurnEvent</a>       
-</li><li data-type="struct">
-    <a href="./flyweight.html#MintEvent">MintEvent</a>       
-</li><li data-type="struct">
-    <a href="./flyweight.html#Archetype">Archetype</a>       
-</li><li data-type="struct">
-    <a href="./flyweight.html#Pointer">Pointer</a>       
-</li><li data-type="struct">
-    <a href="./flyweight.html#Registry">Registry</a>       
-</li></ul></li><li>
-<a href="./ob.html">ob</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./ob.html#Witness">Witness</a>       
-</li><li data-type="struct">
-    <a href="./ob.html#Bid">Bid</a>       
-</li><li data-type="struct">
-    <a href="./ob.html#BidClosed">BidClosed</a>       
-</li><li data-type="struct">
-    <a href="./ob.html#BidCreated">BidCreated</a>       
-</li><li data-type="struct">
-    <a href="./ob.html#Ask">Ask</a>       
-</li><li data-type="struct">
-    <a href="./ob.html#AskClosed">AskClosed</a>       
-</li><li data-type="struct">
-    <a href="./ob.html#AskCreated">AskCreated</a>       
-</li><li data-type="struct">
-    <a href="./ob.html#Orderbook">Orderbook</a>       
-</li><li data-type="struct">
-    <a href="./ob.html#TradeExecuted">TradeExecuted</a>       
-</li><li data-type="struct">
-    <a href="./ob.html#TradeIntermediate">TradeIntermediate</a>       
-</li><li data-type="struct">
-    <a href="./ob.html#WitnessProtectedActions">WitnessProtectedActions</a>       
-</li></ul></li><li>
-<a href="./royalty_strategy_constant.html">royalty_strategy_constant</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./royalty_strategy_constant.html#ConstantRoyaltyStrategy">ConstantRoyaltyStrategy</a>       
-</li></ul></li><li>
-<a href="./royalty_strategy_bps.html">royalty_strategy_bps</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./royalty_strategy_bps.html#BpsRoyaltyStrategy">BpsRoyaltyStrategy</a>       
-</li></ul></li><li>
-<a href="./royalty.html">royalty</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./royalty.html#Witness">Witness</a>       
-</li><li data-type="struct">
-    <a href="./royalty.html#RoyaltyDomain">RoyaltyDomain</a>       
-</li></ul></li><li>
-<a href="./supply_policy.html">supply_policy</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./supply_policy.html#SupplyPolicy">SupplyPolicy</a>       
-</li></ul></li><li>
-<a href="./tags.html">tags</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./tags.html#Witness">Witness</a>       
-</li><li data-type="struct">
-    <a href="./tags.html#Art">Art</a>       
-</li><li data-type="struct">
-    <a href="./tags.html#Collectible">Collectible</a>       
-</li><li data-type="struct">
-    <a href="./tags.html#DomainName">DomainName</a>       
-</li><li data-type="struct">
-    <a href="./tags.html#GameAsset">GameAsset</a>       
-</li><li data-type="struct">
-    <a href="./tags.html#License">License</a>       
-</li><li data-type="struct">
-    <a href="./tags.html#Music">Music</a>       
-</li><li data-type="struct">
-    <a href="./tags.html#ProfilePicture">ProfilePicture</a>       
-</li><li data-type="struct">
-    <a href="./tags.html#TagDomain">TagDomain</a>       
-</li><li data-type="struct">
-    <a href="./tags.html#Ticker">Ticker</a>       
-</li><li data-type="struct">
-    <a href="./tags.html#Ticket">Ticket</a>       
-</li><li data-type="struct">
-    <a href="./tags.html#TokenisedAsset">TokenisedAsset</a>       
-</li><li data-type="struct">
-    <a href="./tags.html#Video">Video</a>       
-</li></ul></li></ul></nav>
-<div id="main"><h1 class="page-title">inventory</h1>
-<section class="readme">
-    <header>
-        <h2>0x0::inventory</h2>
-    </header>
-    <article>
-        <p>Module representing the Nft bookeeping Inventories of <code>Slot</code>s.</p>
+    <a href="./err.html">err</a>
+    <ul class="methods"></ul>
+</li><li>
+    <a href="./utils.html">utils</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./utils.html#Marker">Marker</a>
+</li></ul>
+</li><li>
+    <a href="./transfer_allowlist.html">transfer_allowlist</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./transfer_allowlist.html#Allowlist">Allowlist</a>
+</li><li data-type="type">
+    <a href="./transfer_allowlist.html#CollectionControlCap">CollectionControlCap</a>
+</li></ul>
+</li><li>
+    <a href="./royalties.html">royalties</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./royalties.html#TradePayment">TradePayment</a>
+</li></ul>
+</li><li>
+    <a href="./trading.html">trading</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./trading.html#AskCommission">AskCommission</a>
+</li><li data-type="type">
+    <a href="./trading.html#BidCommission">BidCommission</a>
+</li></ul>
+</li><li>
+    <a href="./nft.html">nft</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./nft.html#MintNftEvent">MintNftEvent</a>
+</li><li data-type="type">
+    <a href="./nft.html#Nft">Nft</a>
+</li></ul>
+</li><li>
+    <a href="./unprotected_safe.html">unprotected_safe</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./unprotected_safe.html#DepositEvent">DepositEvent</a>
+</li><li data-type="type">
+    <a href="./unprotected_safe.html#NftRef">NftRef</a>
+</li><li data-type="type">
+    <a href="./unprotected_safe.html#OwnerCap">OwnerCap</a>
+</li><li data-type="type">
+    <a href="./unprotected_safe.html#TransferCap">TransferCap</a>
+</li><li data-type="type">
+    <a href="./unprotected_safe.html#TransferEvent">TransferEvent</a>
+</li><li data-type="type">
+    <a href="./unprotected_safe.html#UnprotectedSafe">UnprotectedSafe</a>
+</li></ul>
+</li><li>
+    <a href="./safe.html">safe</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./safe.html#OwnerCap">OwnerCap</a>
+</li><li data-type="type">
+    <a href="./safe.html#TransferCap">TransferCap</a>
+</li><li data-type="type">
+    <a href="./safe.html#Safe">Safe</a>
+</li></ul>
+</li><li>
+    <a href="./bidding.html">bidding</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./bidding.html#Witness">Witness</a>
+</li><li data-type="type">
+    <a href="./bidding.html#Bid">Bid</a>
+</li><li data-type="type">
+    <a href="./bidding.html#BidClosed">BidClosed</a>
+</li><li data-type="type">
+    <a href="./bidding.html#BidCreated">BidCreated</a>
+</li></ul>
+</li><li>
+    <a href="./collection.html">collection</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./collection.html#Collection">Collection</a>
+</li><li data-type="type">
+    <a href="./collection.html#CollectionMintEvent">CollectionMintEvent</a>
+</li><li data-type="type">
+    <a href="./collection.html#MintCap">MintCap</a>
+</li></ul>
+</li><li>
+    <a href="./creators.html">creators</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./creators.html#Witness">Witness</a>
+</li><li data-type="type">
+    <a href="./creators.html#Creator">Creator</a>
+</li><li data-type="type">
+    <a href="./creators.html#CreatorsDomain">CreatorsDomain</a>
+</li></ul>
+</li><li>
+    <a href="./display.html">display</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./display.html#Witness">Witness</a>
+</li><li data-type="type">
+    <a href="./display.html#AttributesDomain">AttributesDomain</a>
+</li><li data-type="type">
+    <a href="./display.html#DisplayDomain">DisplayDomain</a>
+</li><li data-type="type">
+    <a href="./display.html#SymbolDomain">SymbolDomain</a>
+</li><li data-type="type">
+    <a href="./display.html#UrlDomain">UrlDomain</a>
+</li></ul>
+</li><li>
+    <a href="./proceeds.html">proceeds</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./proceeds.html#Proceeds">Proceeds</a>
+</li><li data-type="type">
+    <a href="./proceeds.html#QtSold">QtSold</a>
+</li></ul>
+</li><li>
+    <a href="./object_box.html">object_box</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./object_box.html#ObjectBox">ObjectBox</a>
+</li></ul>
+</li><li>
+    <a href="./marketplace.html">marketplace</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./marketplace.html#Marketplace">Marketplace</a>
+</li></ul>
+</li><li>
+    <a href="./inventory.html">inventory</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./inventory.html#Inventory">Inventory</a>
+</li></ul>
+</li><li>
+    <a href="./listing.html">listing</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./listing.html#CreateListingEvent">CreateListingEvent</a>
+</li><li data-type="type">
+    <a href="./listing.html#DeleteListingEvent">DeleteListingEvent</a>
+</li><li data-type="type">
+    <a href="./listing.html#Listing">Listing</a>
+</li><li data-type="type">
+    <a href="./listing.html#RequestToJoin">RequestToJoin</a>
+</li><li data-type="type">
+    <a href="./listing.html#WhitelistCertificate">WhitelistCertificate</a>
+</li></ul>
+</li><li>
+    <a href="./dutch_auction.html">dutch_auction</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./dutch_auction.html#Witness">Witness</a>
+</li><li data-type="type">
+    <a href="./dutch_auction.html#Bid">Bid</a>
+</li><li data-type="type">
+    <a href="./dutch_auction.html#DutchAuctionMarket">DutchAuctionMarket</a>
+</li></ul>
+</li><li>
+    <a href="./fixed_price.html">fixed_price</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./fixed_price.html#Witness">Witness</a>
+</li><li data-type="type">
+    <a href="./fixed_price.html#FixedPriceMarket">FixedPriceMarket</a>
+</li></ul>
+</li><li>
+    <a href="./flat_fee.html">flat_fee</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./flat_fee.html#FlatFee">FlatFee</a>
+</li></ul>
+</li><li>
+    <a href="./supply.html">supply</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./supply.html#Supply">Supply</a>
+</li></ul>
+</li><li>
+    <a href="./flyweight.html">flyweight</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./flyweight.html#Archetype">Archetype</a>
+</li><li data-type="type">
+    <a href="./flyweight.html#BurnEvent">BurnEvent</a>
+</li><li data-type="type">
+    <a href="./flyweight.html#MintEvent">MintEvent</a>
+</li><li data-type="type">
+    <a href="./flyweight.html#Pointer">Pointer</a>
+</li><li data-type="type">
+    <a href="./flyweight.html#Registry">Registry</a>
+</li></ul>
+</li><li>
+    <a href="./ob.html">ob</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./ob.html#Witness">Witness</a>
+</li><li data-type="type">
+    <a href="./ob.html#Bid">Bid</a>
+</li><li data-type="type">
+    <a href="./ob.html#BidClosed">BidClosed</a>
+</li><li data-type="type">
+    <a href="./ob.html#BidCreated">BidCreated</a>
+</li><li data-type="type">
+    <a href="./ob.html#Ask">Ask</a>
+</li><li data-type="type">
+    <a href="./ob.html#AskClosed">AskClosed</a>
+</li><li data-type="type">
+    <a href="./ob.html#AskCreated">AskCreated</a>
+</li><li data-type="type">
+    <a href="./ob.html#Orderbook">Orderbook</a>
+</li><li data-type="type">
+    <a href="./ob.html#TradeExecuted">TradeExecuted</a>
+</li><li data-type="type">
+    <a href="./ob.html#TradeIntermediate">TradeIntermediate</a>
+</li><li data-type="type">
+    <a href="./ob.html#WitnessProtectedActions">WitnessProtectedActions</a>
+</li></ul>
+</li><li>
+    <a href="./royalty_strategy_constant.html">royalty_strategy_constant</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./royalty_strategy_constant.html#ConstantRoyaltyStrategy">ConstantRoyaltyStrategy</a>
+</li></ul>
+</li><li>
+    <a href="./royalty_strategy_bps.html">royalty_strategy_bps</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./royalty_strategy_bps.html#BpsRoyaltyStrategy">BpsRoyaltyStrategy</a>
+</li></ul>
+</li><li>
+    <a href="./royalty.html">royalty</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./royalty.html#Witness">Witness</a>
+</li><li data-type="type">
+    <a href="./royalty.html#RoyaltyDomain">RoyaltyDomain</a>
+</li></ul>
+</li><li>
+    <a href="./supply_policy.html">supply_policy</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./supply_policy.html#SupplyPolicy">SupplyPolicy</a>
+</li></ul>
+</li><li>
+    <a href="./tags.html">tags</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./tags.html#Witness">Witness</a>
+</li><li data-type="type">
+    <a href="./tags.html#Art">Art</a>
+</li><li data-type="type">
+    <a href="./tags.html#Collectible">Collectible</a>
+</li><li data-type="type">
+    <a href="./tags.html#DomainName">DomainName</a>
+</li><li data-type="type">
+    <a href="./tags.html#GameAsset">GameAsset</a>
+</li><li data-type="type">
+    <a href="./tags.html#License">License</a>
+</li><li data-type="type">
+    <a href="./tags.html#Music">Music</a>
+</li><li data-type="type">
+    <a href="./tags.html#ProfilePicture">ProfilePicture</a>
+</li><li data-type="type">
+    <a href="./tags.html#TagDomain">TagDomain</a>
+</li><li data-type="type">
+    <a href="./tags.html#Ticker">Ticker</a>
+</li><li data-type="type">
+    <a href="./tags.html#Ticket">Ticket</a>
+</li><li data-type="type">
+    <a href="./tags.html#TokenisedAsset">TokenisedAsset</a>
+</li><li data-type="type">
+    <a href="./tags.html#Video">Video</a>
+</li></ul>
+</li></ul></nav>
+            <main><h1 class="page-title">0x0::inventory</h1>
+<article>
+    <p>Module representing the Nft bookeeping Inventories of <code>Slot</code>s.</p>
 <p>Listings can have multiple concurrent markets, repsented
 through <code>markets: ObjectBag</code>, allowing NFT creators to perform tiered sales.
 An example of this would be an Gaming NFT creator separating the sale
@@ -258,29 +286,28 @@ are Dutch Auctions, Sealed-Bid Auctions, etc.</p>
 the shelves still to be sold, and which NFTs have been sold via Certificates
 but are still waiting to be redeemed.</p>
 
-        <h3 class="subsection-title">Structs</h3>
-        <div class="container-overview">
-    <h2>Inventory</h2>
-    <span class="name-container">
-        <h4 class="name" id="Inventory"><pre>0x0::inventory::<a href="./0x0::inventory.html#Inventory"><span class="struct">Inventory</span></a>&lt;&gt; has <span class="ability">store</span>, <span class="ability">key</span><pre></h4>
-    </span>
-    <div class="description"></div>
-    <h5>Fields:</h5>
-    <table class="params">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Type</th>
-                <th class="last">Description</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
+    <h3 class="subsection-title">Structs</h3>
+    <details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="Inventory"><pre><a href="./inventory.html">inventory</a>::<a href="./inventory.html#Inventory" class="type">Inventory</a> has <span class="ability">store</span>, <span class="ability">key</span><pre></h4>
+    </summary>
+    <div class="description">
+        
+        <h5>Fields:</h5>
+        <table class="params">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th class="last">Description</th>
+                </tr>
+            </thead>
+            <tbody><tr>
     <td class="name">
         <code>id</code>            
     </td>
     <td class="type">
-        <code>object::UID</code>  
+        <code>object::<span class="type">UID</span></code>  
     </td>
     <td class="description last"></td>
 </tr><tr>
@@ -288,7 +315,7 @@ but are still waiting to be redeemed.</p>
         <code>live</code>            
     </td>
     <td class="type">
-        <code>vec_map::VecMap<object::ID, bool></code>  
+        <code>vec_map::<span class="type">VecMap</span>&lt;object::<span class="type">ID</span>, <span class="type">bool</span>&gt;</code>  
     </td>
     <td class="description last"><p>Track which markets are live</p>
 </td>
@@ -297,7 +324,7 @@ but are still waiting to be redeemed.</p>
         <code>whitelisted</code>            
     </td>
     <td class="type">
-        <code>vec_map::VecMap<object::ID, bool></code>  
+        <code>vec_map::<span class="type">VecMap</span>&lt;object::<span class="type">ID</span>, <span class="type">bool</span>&gt;</code>  
     </td>
     <td class="description last"><p>Track which markets are whitelisted</p>
 </td>
@@ -306,7 +333,7 @@ but are still waiting to be redeemed.</p>
         <code>markets</code>            
     </td>
     <td class="type">
-        <code>object_bag::ObjectBag</code>  
+        <code>object_bag::<span class="type">ObjectBag</span></code>  
     </td>
     <td class="description last"><p>Vector of all markets outlets that, each outles holding IDs
 owned by the inventory</p>
@@ -316,40 +343,47 @@ owned by the inventory</p>
         <code>nfts_on_sale</code>            
     </td>
     <td class="type">
-        <code>vector<object::ID></code>  
+        <code><span class="type">vector<span>&lt;object::<span class="type">ID</span>&gt;</code>  
     </td>
     <td class="description last"></td>
-</tr>
-        </tbody>
-    </table>
+</tr></tbody>
+        </table>
+    </div>
+</details>
+    <h3 class="subsection-title">Methods</h3>
+    <details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="new"><pre>public fun <a href="./inventory.html#new" class="function">new</a>(ctx: &mut tx_context::<span class="type">TxContext</span>): 
+    <a href="./inventory.html">inventory</a>::<a href="./inventory.html#Inventory" class="type">Inventory</a></pre></h4>
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="init_inventory"><pre>public fun <a href="./inventory.html#init_inventory" class="function">init_inventory</a>(ctx: &mut tx_context::<span class="type">TxContext</span>)</pre></h4>
+    </summary>
+    <div class="description"><p>Creates a <code>Inventory</code> and transfers to transaction sender</p>
 </div>
-        <h3 class="subsection-title">Methods</h3>
-        <span class="name-container">
-    <h4 class="name" id="new"><pre>public fun new(ctx: &amp;mut tx_context::TxContext): 
-    inventory::Inventory</pre></h4>
-</span>
-<div class="description"></div><span class="name-container">
-    <h4 class="name" id="init_inventory"><pre>public fun init_inventory(ctx: &amp;mut tx_context::TxContext)</pre></h4>
-</span>
-<div class="description"><p>Creates a <code>Inventory</code> and transfers to transaction sender</p>
-</div><span class="name-container">
-    <h4 class="name" id="add_market"><pre>public fun add_market&lt;Market: <span class="ability">store</span> + <span class="ability">key</span>&gt;(
-    inventory: &amp;mut inventory::Inventory,
-    is_whitelisted: bool,
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="add_market"><pre>public fun <a href="./inventory.html#add_market" class="function">add_market</a>&lt;Market: <span class="ability">store</span> + <span class="ability">key</span>&gt;(
+    inventory: &mut <a href="./inventory.html">inventory</a>::<a href="./inventory.html#Inventory" class="type">Inventory</a>,
+    is_whitelisted: <span class="type">bool</span>,
     market: Market,
 )</pre></h4>
-</span>
-<div class="description"><p>Adds a new market to <code>Inventory</code> allowing NFTs deposited to the
+    </summary>
+    <div class="description"><p>Adds a new market to <code>Inventory</code> allowing NFTs deposited to the
 inventory to be sold.</p>
 <p>Endpoint is unprotected and relies on safely obtaining a mutable
 reference to <code>Inventory</code>.</p>
-</div><span class="name-container">
-    <h4 class="name" id="deposit_nft"><pre>public fun deposit_nft&lt;C&gt;(
-    inventory: &amp;mut inventory::Inventory,
-    nft: nft::Nft&lt;C&gt;,
+</div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="deposit_nft"><pre>public fun <a href="./inventory.html#deposit_nft" class="function">deposit_nft</a>&lt;C&gt;(
+    inventory: &mut <a href="./inventory.html">inventory</a>::<a href="./inventory.html#Inventory" class="type">Inventory</a>,
+    nft: <a href="./nft.html">nft</a>::<a href="./nft.html#Nft" class="type">Nft</a>&lt;C&gt;,
 )</pre></h4>
-</span>
-<div class="description"><p>Adds NFT as a dynamic child object with its ID as key and
+    </summary>
+    <div class="description"><p>Adds NFT as a dynamic child object with its ID as key and
 adds an NFT's ID to the <code>nfts</code> field in <code>Inventory</code> object.</p>
 <p>This should only be callable when Inventory is private and not
 owned by the Slot. The function call will fail otherwise, because
@@ -357,99 +391,126 @@ one would have to refer to the Slot, the parent shared object, in order
 for the bytecode verifier not to fail.</p>
 <p>Endpoint is unprotected and relies on safely obtaining a mutable
 reference to <code>Inventory</code>.</p>
-</div><span class="name-container">
-    <h4 class="name" id="redeem_nft"><pre>public fun redeem_nft&lt;C&gt;(
-    inventory: &amp;mut inventory::Inventory,
-): nft::Nft<C></pre></h4>
-</span>
-<div class="description"><p>Redeems NFT from <code>Inventory</code></p>
-<p>Endpoint is unprotected and relies on safely obtaining a mutable
-reference to <code>Inventory</code>.</p>
-</div><span class="name-container">
-    <h4 class="name" id="set_live"><pre>public fun set_live(
-    inventory: &amp;mut inventory::Inventory,
-    market_id: object::ID,
-    is_live: bool,
-)</pre></h4>
-</span>
-<div class="description"><p>Set market's live status</p>
-</div><span class="name-container">
-    <h4 class="name" id="set_whitelisted"><pre>public fun set_whitelisted(
-    inventory: &amp;mut inventory::Inventory,
-    market_id: object::ID,
-    is_whitelisted: bool,
-)</pre></h4>
-</span>
-<div class="description"><p>Set market's whitelist status</p>
-</div><span class="name-container">
-    <h4 class="name" id="length"><pre>public fun length(inventory: &amp;inventory::Inventory): u64</pre></h4>
-</span>
-<div class="description"><p>Check how many <code>nfts</code> there are to sell</p>
-</div><span class="name-container">
-    <h4 class="name" id="is_live"><pre>public fun is_live(
-    inventory: &amp;inventory::Inventory,
-    market_id: &amp;object::ID,
-): bool</pre></h4>
-</span>
-<div class="description"><p>Get the market's <code>live</code> status</p>
-</div><span class="name-container">
-    <h4 class="name" id="is_empty"><pre>public fun is_empty(inventory: &amp;inventory::Inventory): bool</pre></h4>
-</span>
-<div class="description"></div><span class="name-container">
-    <h4 class="name" id="is_whitelisted"><pre>public fun is_whitelisted(
-    inventory: &amp;inventory::Inventory,
-    market_id: &amp;object::ID,
-): bool</pre></h4>
-</span>
-<div class="description"></div><span class="name-container">
-    <h4 class="name" id="markets"><pre>public fun markets(inventory: &amp;inventory::Inventory): 
-    &object_bag::ObjectBag</pre></h4>
-</span>
-<div class="description"><p>Get the <code>Inventory</code> markets</p>
-</div><span class="name-container">
-    <h4 class="name" id="market"><pre>public fun market&lt;Market: <span class="ability">store</span> + <span class="ability">key</span>&gt;(
-    inventory: &amp;inventory::Inventory,
-    market_id: object::ID,
-): &Market</pre></h4>
-</span>
-<div class="description"><p>Get specific <code>Inventory</code> market</p>
-</div><span class="name-container">
-    <h4 class="name" id="market_mut"><pre>public fun market_mut&lt;Market: <span class="ability">store</span> + <span class="ability">key</span>&gt;(
-    inventory: &amp;mut inventory::Inventory,
-    market_id: object::ID,
-): &mut Market</pre></h4>
-</span>
-<div class="description"><p>Get specific <code>Inventory</code> market mutably</p>
-<p>Endpoint is unprotected and relies on safely obtaining a mutable
-reference to <code>Inventory</code>.</p>
-</div><span class="name-container">
-    <h4 class="name" id="assert_is_live"><pre>public fun assert_is_live(
-    inventory: &amp;inventory::Inventory,
-    market_id: &amp;object::ID,
-)</pre></h4>
-</span>
-<div class="description"></div><span class="name-container">
-    <h4 class="name" id="assert_is_whitelisted"><pre>public fun assert_is_whitelisted(
-    inventory: &amp;inventory::Inventory,
-    market_id: &amp;object::ID,
-)</pre></h4>
-</span>
-<div class="description"></div><span class="name-container">
-    <h4 class="name" id="assert_is_not_whitelisted"><pre>public fun assert_is_not_whitelisted(
-    inventory: &amp;inventory::Inventory,
-    market_id: &amp;object::ID,
-)</pre></h4>
-</span>
-<div class="description"></div><span class="name-container">
-    <h4 class="name" id="assert_market"><pre>public fun assert_market&lt;Market: <span class="ability">store</span> + <span class="ability">key</span>&gt;(
-    inventory: &amp;inventory::Inventory,
-    market_id: object::ID,
-)</pre></h4>
-</span>
-<div class="description"></div>
-    </article>
-</section><br class="clear">
-<!--<footer>OriginByte.io</footer>-->
 </div>
-</body>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="redeem_nft"><pre>public fun <a href="./inventory.html#redeem_nft" class="function">redeem_nft</a>&lt;C&gt;(
+    inventory: &mut <a href="./inventory.html">inventory</a>::<a href="./inventory.html#Inventory" class="type">Inventory</a>,
+): <a href="./nft.html">nft</a>::<a href="./nft.html#Nft" class="type">Nft</a>&lt;C&gt;</pre></h4>
+    </summary>
+    <div class="description"><p>Redeems NFT from <code>Inventory</code></p>
+<p>Endpoint is unprotected and relies on safely obtaining a mutable
+reference to <code>Inventory</code>.</p>
+</div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="set_live"><pre>public fun <a href="./inventory.html#set_live" class="function">set_live</a>(
+    inventory: &mut <a href="./inventory.html">inventory</a>::<a href="./inventory.html#Inventory" class="type">Inventory</a>,
+    market_id: object::<span class="type">ID</span>,
+    is_live: <span class="type">bool</span>,
+)</pre></h4>
+    </summary>
+    <div class="description"><p>Set market's live status</p>
+</div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="set_whitelisted"><pre>public fun <a href="./inventory.html#set_whitelisted" class="function">set_whitelisted</a>(
+    inventory: &mut <a href="./inventory.html">inventory</a>::<a href="./inventory.html#Inventory" class="type">Inventory</a>,
+    market_id: object::<span class="type">ID</span>,
+    is_whitelisted: <span class="type">bool</span>,
+)</pre></h4>
+    </summary>
+    <div class="description"><p>Set market's whitelist status</p>
+</div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="length"><pre>public fun <a href="./inventory.html#length" class="function">length</a>(inventory: &<a href="./inventory.html">inventory</a>::<a href="./inventory.html#Inventory" class="type">Inventory</a>): <span class="type">u64</span></pre></h4>
+    </summary>
+    <div class="description"><p>Check how many <code>nfts</code> there are to sell</p>
+</div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="is_live"><pre>public fun <a href="./inventory.html#is_live" class="function">is_live</a>(
+    inventory: &<a href="./inventory.html">inventory</a>::<a href="./inventory.html#Inventory" class="type">Inventory</a>,
+    market_id: &object::<span class="type">ID</span>,
+): <span class="type">bool</span></pre></h4>
+    </summary>
+    <div class="description"><p>Get the market's <code>live</code> status</p>
+</div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="is_empty"><pre>public fun <a href="./inventory.html#is_empty" class="function">is_empty</a>(inventory: &<a href="./inventory.html">inventory</a>::<a href="./inventory.html#Inventory" class="type">Inventory</a>): <span class="type">bool</span></pre></h4>
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="is_whitelisted"><pre>public fun <a href="./inventory.html#is_whitelisted" class="function">is_whitelisted</a>(
+    inventory: &<a href="./inventory.html">inventory</a>::<a href="./inventory.html#Inventory" class="type">Inventory</a>,
+    market_id: &object::<span class="type">ID</span>,
+): <span class="type">bool</span></pre></h4>
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="markets"><pre>public fun <a href="./inventory.html#markets" class="function">markets</a>(inventory: &<a href="./inventory.html">inventory</a>::<a href="./inventory.html#Inventory" class="type">Inventory</a>): 
+    &object_bag::<span class="type">ObjectBag</span></pre></h4>
+    </summary>
+    <div class="description"><p>Get the <code>Inventory</code> markets</p>
+</div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="market"><pre>public fun <a href="./inventory.html#market" class="function">market</a>&lt;Market: <span class="ability">store</span> + <span class="ability">key</span>&gt;(
+    inventory: &<a href="./inventory.html">inventory</a>::<a href="./inventory.html#Inventory" class="type">Inventory</a>,
+    market_id: object::<span class="type">ID</span>,
+): &Market</pre></h4>
+    </summary>
+    <div class="description"><p>Get specific <code>Inventory</code> market</p>
+</div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="market_mut"><pre>public fun <a href="./inventory.html#market_mut" class="function">market_mut</a>&lt;Market: <span class="ability">store</span> + <span class="ability">key</span>&gt;(
+    inventory: &mut <a href="./inventory.html">inventory</a>::<a href="./inventory.html#Inventory" class="type">Inventory</a>,
+    market_id: object::<span class="type">ID</span>,
+): &mut Market</pre></h4>
+    </summary>
+    <div class="description"><p>Get specific <code>Inventory</code> market mutably</p>
+<p>Endpoint is unprotected and relies on safely obtaining a mutable
+reference to <code>Inventory</code>.</p>
+</div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="assert_is_live"><pre>public fun <a href="./inventory.html#assert_is_live" class="function">assert_is_live</a>(
+    inventory: &<a href="./inventory.html">inventory</a>::<a href="./inventory.html#Inventory" class="type">Inventory</a>,
+    market_id: &object::<span class="type">ID</span>,
+)</pre></h4>
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="assert_is_whitelisted"><pre>public fun <a href="./inventory.html#assert_is_whitelisted" class="function">assert_is_whitelisted</a>(
+    inventory: &<a href="./inventory.html">inventory</a>::<a href="./inventory.html#Inventory" class="type">Inventory</a>,
+    market_id: &object::<span class="type">ID</span>,
+)</pre></h4>
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="assert_is_not_whitelisted"><pre>public fun <a href="./inventory.html#assert_is_not_whitelisted" class="function">assert_is_not_whitelisted</a>(
+    inventory: &<a href="./inventory.html">inventory</a>::<a href="./inventory.html#Inventory" class="type">Inventory</a>,
+    market_id: &object::<span class="type">ID</span>,
+)</pre></h4>
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="assert_market"><pre>public fun <a href="./inventory.html#assert_market" class="function">assert_market</a>&lt;Market: <span class="ability">store</span> + <span class="ability">key</span>&gt;(
+    inventory: &<a href="./inventory.html">inventory</a>::<a href="./inventory.html#Inventory" class="type">Inventory</a>,
+    market_id: object::<span class="type">ID</span>,
+)</pre></h4>
+    </summary>
+    <div class="description"></div>
+</details>
+</article></main>
+        </div>
+    </body>
 </html>

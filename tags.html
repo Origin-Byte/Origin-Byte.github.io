@@ -1,697 +1,750 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>OriginByte</title>
+    <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OriginByte</title>
 
-<link type="text/css" rel="stylesheet" href="./assets/style.css">
+    <link type="text/css" rel="stylesheet" href="./assets/style.css">
 
-</head>
-<body>
-<nav>
-<a href="./index.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet">
+
+    </head>
+    <body>
+        <div id="container-movedoc">
+            <nav class="sidebar"><a href="./index.html">
     <img src="./assets/accent.svg" style="position: absolute">
     <img src="./assets/ob.svg" class="logo">
 </a>
 <h3>Modules</h3>
 <ul><li>
-<a href="./err.html">err</a>
-<ul class="methods"></ul></li><li>
-<a href="./utils.html">utils</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./utils.html#Marker">Marker</a>       
-</li></ul></li><li>
-<a href="./collection.html">collection</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./collection.html#BurnEvent">BurnEvent</a>       
-</li><li data-type="struct">
-    <a href="./collection.html#Collection">Collection</a>       
-</li><li data-type="struct">
-    <a href="./collection.html#MintCap">MintCap</a>       
-</li><li data-type="struct">
-    <a href="./collection.html#MintEvent">MintEvent</a>       
-</li></ul></li><li>
-<a href="./attribution.html">attribution</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./attribution.html#Witness">Witness</a>       
-</li><li data-type="struct">
-    <a href="./attribution.html#AttributionDomain">AttributionDomain</a>       
-</li><li data-type="struct">
-    <a href="./attribution.html#Creator">Creator</a>       
-</li></ul></li><li>
-<a href="./transfer_allowlist.html">transfer_allowlist</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./transfer_allowlist.html#Allowlist">Allowlist</a>       
-</li><li data-type="struct">
-    <a href="./transfer_allowlist.html#CollectionControlCap">CollectionControlCap</a>       
-</li></ul></li><li>
-<a href="./royalties.html">royalties</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./royalties.html#TradePayment">TradePayment</a>       
-</li></ul></li><li>
-<a href="./trading.html">trading</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./trading.html#AskCommission">AskCommission</a>       
-</li><li data-type="struct">
-    <a href="./trading.html#BidCommission">BidCommission</a>       
-</li></ul></li><li>
-<a href="./nft.html">nft</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./nft.html#Nft">Nft</a>       
-</li></ul></li><li>
-<a href="./unprotected_safe.html">unprotected_safe</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./unprotected_safe.html#DepositEvent">DepositEvent</a>       
-</li><li data-type="struct">
-    <a href="./unprotected_safe.html#NftRef">NftRef</a>       
-</li><li data-type="struct">
-    <a href="./unprotected_safe.html#OwnerCap">OwnerCap</a>       
-</li><li data-type="struct">
-    <a href="./unprotected_safe.html#TransferCap">TransferCap</a>       
-</li><li data-type="struct">
-    <a href="./unprotected_safe.html#TransferEvent">TransferEvent</a>       
-</li><li data-type="struct">
-    <a href="./unprotected_safe.html#UnprotectedSafe">UnprotectedSafe</a>       
-</li></ul></li><li>
-<a href="./safe.html">safe</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./safe.html#OwnerCap">OwnerCap</a>       
-</li><li data-type="struct">
-    <a href="./safe.html#TransferCap">TransferCap</a>       
-</li><li data-type="struct">
-    <a href="./safe.html#Safe">Safe</a>       
-</li></ul></li><li>
-<a href="./bidding.html">bidding</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./bidding.html#Witness">Witness</a>       
-</li><li data-type="struct">
-    <a href="./bidding.html#Bid">Bid</a>       
-</li><li data-type="struct">
-    <a href="./bidding.html#BidClosed">BidClosed</a>       
-</li><li data-type="struct">
-    <a href="./bidding.html#BidCreated">BidCreated</a>       
-</li></ul></li><li>
-<a href="./display.html">display</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./display.html#Witness">Witness</a>       
-</li><li data-type="struct">
-    <a href="./display.html#AttributesDomain">AttributesDomain</a>       
-</li><li data-type="struct">
-    <a href="./display.html#DisplayDomain">DisplayDomain</a>       
-</li><li data-type="struct">
-    <a href="./display.html#SymbolDomain">SymbolDomain</a>       
-</li><li data-type="struct">
-    <a href="./display.html#UrlDomain">UrlDomain</a>       
-</li></ul></li><li>
-<a href="./proceeds.html">proceeds</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./proceeds.html#Proceeds">Proceeds</a>       
-</li><li data-type="struct">
-    <a href="./proceeds.html#QtSold">QtSold</a>       
-</li></ul></li><li>
-<a href="./object_box.html">object_box</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./object_box.html#ObjectBox">ObjectBox</a>       
-</li></ul></li><li>
-<a href="./marketplace.html">marketplace</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./marketplace.html#Marketplace">Marketplace</a>       
-</li></ul></li><li>
-<a href="./inventory.html">inventory</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./inventory.html#Inventory">Inventory</a>       
-</li></ul></li><li>
-<a href="./listing.html">listing</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./listing.html#CreateListingEvent">CreateListingEvent</a>       
-</li><li data-type="struct">
-    <a href="./listing.html#DeleteListingEvent">DeleteListingEvent</a>       
-</li><li data-type="struct">
-    <a href="./listing.html#Listing">Listing</a>       
-</li><li data-type="struct">
-    <a href="./listing.html#RequestToJoin">RequestToJoin</a>       
-</li><li data-type="struct">
-    <a href="./listing.html#WhitelistCertificate">WhitelistCertificate</a>       
-</li></ul></li><li>
-<a href="./dutch_auction.html">dutch_auction</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./dutch_auction.html#Witness">Witness</a>       
-</li><li data-type="struct">
-    <a href="./dutch_auction.html#Bid">Bid</a>       
-</li><li data-type="struct">
-    <a href="./dutch_auction.html#DutchAuctionMarket">DutchAuctionMarket</a>       
-</li></ul></li><li>
-<a href="./fixed_price.html">fixed_price</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./fixed_price.html#Witness">Witness</a>       
-</li><li data-type="struct">
-    <a href="./fixed_price.html#FixedPriceMarket">FixedPriceMarket</a>       
-</li></ul></li><li>
-<a href="./flat_fee.html">flat_fee</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./flat_fee.html#FlatFee">FlatFee</a>       
-</li></ul></li><li>
-<a href="./supply.html">supply</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./supply.html#Supply">Supply</a>       
-</li></ul></li><li>
-<a href="./flyweight.html">flyweight</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./flyweight.html#BurnEvent">BurnEvent</a>       
-</li><li data-type="struct">
-    <a href="./flyweight.html#MintEvent">MintEvent</a>       
-</li><li data-type="struct">
-    <a href="./flyweight.html#Archetype">Archetype</a>       
-</li><li data-type="struct">
-    <a href="./flyweight.html#Pointer">Pointer</a>       
-</li><li data-type="struct">
-    <a href="./flyweight.html#Registry">Registry</a>       
-</li></ul></li><li>
-<a href="./ob.html">ob</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./ob.html#Witness">Witness</a>       
-</li><li data-type="struct">
-    <a href="./ob.html#Bid">Bid</a>       
-</li><li data-type="struct">
-    <a href="./ob.html#BidClosed">BidClosed</a>       
-</li><li data-type="struct">
-    <a href="./ob.html#BidCreated">BidCreated</a>       
-</li><li data-type="struct">
-    <a href="./ob.html#Ask">Ask</a>       
-</li><li data-type="struct">
-    <a href="./ob.html#AskClosed">AskClosed</a>       
-</li><li data-type="struct">
-    <a href="./ob.html#AskCreated">AskCreated</a>       
-</li><li data-type="struct">
-    <a href="./ob.html#Orderbook">Orderbook</a>       
-</li><li data-type="struct">
-    <a href="./ob.html#TradeExecuted">TradeExecuted</a>       
-</li><li data-type="struct">
-    <a href="./ob.html#TradeIntermediate">TradeIntermediate</a>       
-</li><li data-type="struct">
-    <a href="./ob.html#WitnessProtectedActions">WitnessProtectedActions</a>       
-</li></ul></li><li>
-<a href="./royalty_strategy_constant.html">royalty_strategy_constant</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./royalty_strategy_constant.html#ConstantRoyaltyStrategy">ConstantRoyaltyStrategy</a>       
-</li></ul></li><li>
-<a href="./royalty_strategy_bps.html">royalty_strategy_bps</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./royalty_strategy_bps.html#BpsRoyaltyStrategy">BpsRoyaltyStrategy</a>       
-</li></ul></li><li>
-<a href="./royalty.html">royalty</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./royalty.html#Witness">Witness</a>       
-</li><li data-type="struct">
-    <a href="./royalty.html#RoyaltyDomain">RoyaltyDomain</a>       
-</li></ul></li><li>
-<a href="./supply_policy.html">supply_policy</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./supply_policy.html#SupplyPolicy">SupplyPolicy</a>       
-</li></ul></li><li>
-<a href="./tags.html">tags</a>
-<ul class="methods"><li data-type="struct">
-    <a href="./tags.html#Witness">Witness</a>       
-</li><li data-type="struct">
-    <a href="./tags.html#Art">Art</a>       
-</li><li data-type="struct">
-    <a href="./tags.html#Collectible">Collectible</a>       
-</li><li data-type="struct">
-    <a href="./tags.html#DomainName">DomainName</a>       
-</li><li data-type="struct">
-    <a href="./tags.html#GameAsset">GameAsset</a>       
-</li><li data-type="struct">
-    <a href="./tags.html#License">License</a>       
-</li><li data-type="struct">
-    <a href="./tags.html#Music">Music</a>       
-</li><li data-type="struct">
-    <a href="./tags.html#ProfilePicture">ProfilePicture</a>       
-</li><li data-type="struct">
-    <a href="./tags.html#TagDomain">TagDomain</a>       
-</li><li data-type="struct">
-    <a href="./tags.html#Ticker">Ticker</a>       
-</li><li data-type="struct">
-    <a href="./tags.html#Ticket">Ticket</a>       
-</li><li data-type="struct">
-    <a href="./tags.html#TokenisedAsset">TokenisedAsset</a>       
-</li><li data-type="struct">
-    <a href="./tags.html#Video">Video</a>       
-</li></ul></li></ul></nav>
-<div id="main"><h1 class="page-title">tags</h1>
-<section class="readme">
-    <header>
-        <h2>0x0::tags</h2>
-    </header>
-    <article>
-        <p>Module of NFT and Collection <code>Tags</code> domain</p>
+    <a href="./err.html">err</a>
+    <ul class="methods"></ul>
+</li><li>
+    <a href="./utils.html">utils</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./utils.html#Marker">Marker</a>
+</li></ul>
+</li><li>
+    <a href="./transfer_allowlist.html">transfer_allowlist</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./transfer_allowlist.html#Allowlist">Allowlist</a>
+</li><li data-type="type">
+    <a href="./transfer_allowlist.html#CollectionControlCap">CollectionControlCap</a>
+</li></ul>
+</li><li>
+    <a href="./royalties.html">royalties</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./royalties.html#TradePayment">TradePayment</a>
+</li></ul>
+</li><li>
+    <a href="./trading.html">trading</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./trading.html#AskCommission">AskCommission</a>
+</li><li data-type="type">
+    <a href="./trading.html#BidCommission">BidCommission</a>
+</li></ul>
+</li><li>
+    <a href="./nft.html">nft</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./nft.html#MintNftEvent">MintNftEvent</a>
+</li><li data-type="type">
+    <a href="./nft.html#Nft">Nft</a>
+</li></ul>
+</li><li>
+    <a href="./unprotected_safe.html">unprotected_safe</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./unprotected_safe.html#DepositEvent">DepositEvent</a>
+</li><li data-type="type">
+    <a href="./unprotected_safe.html#NftRef">NftRef</a>
+</li><li data-type="type">
+    <a href="./unprotected_safe.html#OwnerCap">OwnerCap</a>
+</li><li data-type="type">
+    <a href="./unprotected_safe.html#TransferCap">TransferCap</a>
+</li><li data-type="type">
+    <a href="./unprotected_safe.html#TransferEvent">TransferEvent</a>
+</li><li data-type="type">
+    <a href="./unprotected_safe.html#UnprotectedSafe">UnprotectedSafe</a>
+</li></ul>
+</li><li>
+    <a href="./safe.html">safe</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./safe.html#OwnerCap">OwnerCap</a>
+</li><li data-type="type">
+    <a href="./safe.html#TransferCap">TransferCap</a>
+</li><li data-type="type">
+    <a href="./safe.html#Safe">Safe</a>
+</li></ul>
+</li><li>
+    <a href="./bidding.html">bidding</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./bidding.html#Witness">Witness</a>
+</li><li data-type="type">
+    <a href="./bidding.html#Bid">Bid</a>
+</li><li data-type="type">
+    <a href="./bidding.html#BidClosed">BidClosed</a>
+</li><li data-type="type">
+    <a href="./bidding.html#BidCreated">BidCreated</a>
+</li></ul>
+</li><li>
+    <a href="./collection.html">collection</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./collection.html#Collection">Collection</a>
+</li><li data-type="type">
+    <a href="./collection.html#CollectionMintEvent">CollectionMintEvent</a>
+</li><li data-type="type">
+    <a href="./collection.html#MintCap">MintCap</a>
+</li></ul>
+</li><li>
+    <a href="./creators.html">creators</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./creators.html#Witness">Witness</a>
+</li><li data-type="type">
+    <a href="./creators.html#Creator">Creator</a>
+</li><li data-type="type">
+    <a href="./creators.html#CreatorsDomain">CreatorsDomain</a>
+</li></ul>
+</li><li>
+    <a href="./display.html">display</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./display.html#Witness">Witness</a>
+</li><li data-type="type">
+    <a href="./display.html#AttributesDomain">AttributesDomain</a>
+</li><li data-type="type">
+    <a href="./display.html#DisplayDomain">DisplayDomain</a>
+</li><li data-type="type">
+    <a href="./display.html#SymbolDomain">SymbolDomain</a>
+</li><li data-type="type">
+    <a href="./display.html#UrlDomain">UrlDomain</a>
+</li></ul>
+</li><li>
+    <a href="./proceeds.html">proceeds</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./proceeds.html#Proceeds">Proceeds</a>
+</li><li data-type="type">
+    <a href="./proceeds.html#QtSold">QtSold</a>
+</li></ul>
+</li><li>
+    <a href="./object_box.html">object_box</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./object_box.html#ObjectBox">ObjectBox</a>
+</li></ul>
+</li><li>
+    <a href="./marketplace.html">marketplace</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./marketplace.html#Marketplace">Marketplace</a>
+</li></ul>
+</li><li>
+    <a href="./inventory.html">inventory</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./inventory.html#Inventory">Inventory</a>
+</li></ul>
+</li><li>
+    <a href="./listing.html">listing</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./listing.html#CreateListingEvent">CreateListingEvent</a>
+</li><li data-type="type">
+    <a href="./listing.html#DeleteListingEvent">DeleteListingEvent</a>
+</li><li data-type="type">
+    <a href="./listing.html#Listing">Listing</a>
+</li><li data-type="type">
+    <a href="./listing.html#RequestToJoin">RequestToJoin</a>
+</li><li data-type="type">
+    <a href="./listing.html#WhitelistCertificate">WhitelistCertificate</a>
+</li></ul>
+</li><li>
+    <a href="./dutch_auction.html">dutch_auction</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./dutch_auction.html#Witness">Witness</a>
+</li><li data-type="type">
+    <a href="./dutch_auction.html#Bid">Bid</a>
+</li><li data-type="type">
+    <a href="./dutch_auction.html#DutchAuctionMarket">DutchAuctionMarket</a>
+</li></ul>
+</li><li>
+    <a href="./fixed_price.html">fixed_price</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./fixed_price.html#Witness">Witness</a>
+</li><li data-type="type">
+    <a href="./fixed_price.html#FixedPriceMarket">FixedPriceMarket</a>
+</li></ul>
+</li><li>
+    <a href="./flat_fee.html">flat_fee</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./flat_fee.html#FlatFee">FlatFee</a>
+</li></ul>
+</li><li>
+    <a href="./supply.html">supply</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./supply.html#Supply">Supply</a>
+</li></ul>
+</li><li>
+    <a href="./flyweight.html">flyweight</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./flyweight.html#Archetype">Archetype</a>
+</li><li data-type="type">
+    <a href="./flyweight.html#BurnEvent">BurnEvent</a>
+</li><li data-type="type">
+    <a href="./flyweight.html#MintEvent">MintEvent</a>
+</li><li data-type="type">
+    <a href="./flyweight.html#Pointer">Pointer</a>
+</li><li data-type="type">
+    <a href="./flyweight.html#Registry">Registry</a>
+</li></ul>
+</li><li>
+    <a href="./ob.html">ob</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./ob.html#Witness">Witness</a>
+</li><li data-type="type">
+    <a href="./ob.html#Bid">Bid</a>
+</li><li data-type="type">
+    <a href="./ob.html#BidClosed">BidClosed</a>
+</li><li data-type="type">
+    <a href="./ob.html#BidCreated">BidCreated</a>
+</li><li data-type="type">
+    <a href="./ob.html#Ask">Ask</a>
+</li><li data-type="type">
+    <a href="./ob.html#AskClosed">AskClosed</a>
+</li><li data-type="type">
+    <a href="./ob.html#AskCreated">AskCreated</a>
+</li><li data-type="type">
+    <a href="./ob.html#Orderbook">Orderbook</a>
+</li><li data-type="type">
+    <a href="./ob.html#TradeExecuted">TradeExecuted</a>
+</li><li data-type="type">
+    <a href="./ob.html#TradeIntermediate">TradeIntermediate</a>
+</li><li data-type="type">
+    <a href="./ob.html#WitnessProtectedActions">WitnessProtectedActions</a>
+</li></ul>
+</li><li>
+    <a href="./royalty_strategy_constant.html">royalty_strategy_constant</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./royalty_strategy_constant.html#ConstantRoyaltyStrategy">ConstantRoyaltyStrategy</a>
+</li></ul>
+</li><li>
+    <a href="./royalty_strategy_bps.html">royalty_strategy_bps</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./royalty_strategy_bps.html#BpsRoyaltyStrategy">BpsRoyaltyStrategy</a>
+</li></ul>
+</li><li>
+    <a href="./royalty.html">royalty</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./royalty.html#Witness">Witness</a>
+</li><li data-type="type">
+    <a href="./royalty.html#RoyaltyDomain">RoyaltyDomain</a>
+</li></ul>
+</li><li>
+    <a href="./supply_policy.html">supply_policy</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./supply_policy.html#SupplyPolicy">SupplyPolicy</a>
+</li></ul>
+</li><li>
+    <a href="./tags.html">tags</a>
+    <ul class="methods"><li data-type="type">
+    <a href="./tags.html#Witness">Witness</a>
+</li><li data-type="type">
+    <a href="./tags.html#Art">Art</a>
+</li><li data-type="type">
+    <a href="./tags.html#Collectible">Collectible</a>
+</li><li data-type="type">
+    <a href="./tags.html#DomainName">DomainName</a>
+</li><li data-type="type">
+    <a href="./tags.html#GameAsset">GameAsset</a>
+</li><li data-type="type">
+    <a href="./tags.html#License">License</a>
+</li><li data-type="type">
+    <a href="./tags.html#Music">Music</a>
+</li><li data-type="type">
+    <a href="./tags.html#ProfilePicture">ProfilePicture</a>
+</li><li data-type="type">
+    <a href="./tags.html#TagDomain">TagDomain</a>
+</li><li data-type="type">
+    <a href="./tags.html#Ticker">Ticker</a>
+</li><li data-type="type">
+    <a href="./tags.html#Ticket">Ticket</a>
+</li><li data-type="type">
+    <a href="./tags.html#TokenisedAsset">TokenisedAsset</a>
+</li><li data-type="type">
+    <a href="./tags.html#Video">Video</a>
+</li></ul>
+</li></ul></nav>
+            <main><h1 class="page-title">0x0::tags</h1>
+<article>
+    <p>Module of NFT and Collection <code>Tags</code> domain</p>
 <p>This domain allows wallets to organize the NFT display based on categories,
 such as Art, Profile Picture, Collectibles, etc.</p>
 
-        <h3 class="subsection-title">Structs</h3>
-        <div class="container-overview">
-    <h2>Art</h2>
-    <span class="name-container">
-        <h4 class="name" id="Art"><pre>0x0::tags::<a href="./0x0::tags.html#Art"><span class="struct">Art</span></a>&lt;&gt; has <span class="ability">drop</span>, <span class="ability">store</span><pre></h4>
-    </span>
-    <div class="description"></div>
-    <h5>Fields:</h5>
-    <table class="params">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Type</th>
-                <th class="last">Description</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
+    <h3 class="subsection-title">Structs</h3>
+    <details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="Art"><pre><a href="./tags.html">tags</a>::<a href="./tags.html#Art" class="type">Art</a> has <span class="ability">drop</span>, <span class="ability">store</span><pre></h4>
+    </summary>
+    <div class="description">
+        
+        <h5>Fields:</h5>
+        <table class="params">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th class="last">Description</th>
+                </tr>
+            </thead>
+            <tbody><tr>
     <td class="name">
         <code>dummy_field</code>            
     </td>
     <td class="type">
-        <code>bool</code>  
+        <code><span class="type">bool</span></code>  
     </td>
     <td class="description last"></td>
-</tr>
-        </tbody>
-    </table>
-</div><div class="container-overview">
-    <h2>ProfilePicture</h2>
-    <span class="name-container">
-        <h4 class="name" id="ProfilePicture"><pre>0x0::tags::<a href="./0x0::tags.html#ProfilePicture"><span class="struct">ProfilePicture</span></a>&lt;&gt; has <span class="ability">drop</span>, <span class="ability">store</span><pre></h4>
-    </span>
-    <div class="description"></div>
-    <h5>Fields:</h5>
-    <table class="params">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Type</th>
-                <th class="last">Description</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
+</tr></tbody>
+        </table>
+    </div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="ProfilePicture"><pre><a href="./tags.html">tags</a>::<a href="./tags.html#ProfilePicture" class="type">ProfilePicture</a> has <span class="ability">drop</span>, <span class="ability">store</span><pre></h4>
+    </summary>
+    <div class="description">
+        
+        <h5>Fields:</h5>
+        <table class="params">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th class="last">Description</th>
+                </tr>
+            </thead>
+            <tbody><tr>
     <td class="name">
         <code>dummy_field</code>            
     </td>
     <td class="type">
-        <code>bool</code>  
+        <code><span class="type">bool</span></code>  
     </td>
     <td class="description last"></td>
-</tr>
-        </tbody>
-    </table>
-</div><div class="container-overview">
-    <h2>Collectible</h2>
-    <span class="name-container">
-        <h4 class="name" id="Collectible"><pre>0x0::tags::<a href="./0x0::tags.html#Collectible"><span class="struct">Collectible</span></a>&lt;&gt; has <span class="ability">drop</span>, <span class="ability">store</span><pre></h4>
-    </span>
-    <div class="description"></div>
-    <h5>Fields:</h5>
-    <table class="params">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Type</th>
-                <th class="last">Description</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
+</tr></tbody>
+        </table>
+    </div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="Collectible"><pre><a href="./tags.html">tags</a>::<a href="./tags.html#Collectible" class="type">Collectible</a> has <span class="ability">drop</span>, <span class="ability">store</span><pre></h4>
+    </summary>
+    <div class="description">
+        
+        <h5>Fields:</h5>
+        <table class="params">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th class="last">Description</th>
+                </tr>
+            </thead>
+            <tbody><tr>
     <td class="name">
         <code>dummy_field</code>            
     </td>
     <td class="type">
-        <code>bool</code>  
+        <code><span class="type">bool</span></code>  
     </td>
     <td class="description last"></td>
-</tr>
-        </tbody>
-    </table>
-</div><div class="container-overview">
-    <h2>GameAsset</h2>
-    <span class="name-container">
-        <h4 class="name" id="GameAsset"><pre>0x0::tags::<a href="./0x0::tags.html#GameAsset"><span class="struct">GameAsset</span></a>&lt;&gt; has <span class="ability">drop</span>, <span class="ability">store</span><pre></h4>
-    </span>
-    <div class="description"></div>
-    <h5>Fields:</h5>
-    <table class="params">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Type</th>
-                <th class="last">Description</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
+</tr></tbody>
+        </table>
+    </div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="GameAsset"><pre><a href="./tags.html">tags</a>::<a href="./tags.html#GameAsset" class="type">GameAsset</a> has <span class="ability">drop</span>, <span class="ability">store</span><pre></h4>
+    </summary>
+    <div class="description">
+        
+        <h5>Fields:</h5>
+        <table class="params">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th class="last">Description</th>
+                </tr>
+            </thead>
+            <tbody><tr>
     <td class="name">
         <code>dummy_field</code>            
     </td>
     <td class="type">
-        <code>bool</code>  
+        <code><span class="type">bool</span></code>  
     </td>
     <td class="description last"></td>
-</tr>
-        </tbody>
-    </table>
-</div><div class="container-overview">
-    <h2>TokenisedAsset</h2>
-    <span class="name-container">
-        <h4 class="name" id="TokenisedAsset"><pre>0x0::tags::<a href="./0x0::tags.html#TokenisedAsset"><span class="struct">TokenisedAsset</span></a>&lt;&gt; has <span class="ability">drop</span>, <span class="ability">store</span><pre></h4>
-    </span>
-    <div class="description"></div>
-    <h5>Fields:</h5>
-    <table class="params">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Type</th>
-                <th class="last">Description</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
+</tr></tbody>
+        </table>
+    </div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="TokenisedAsset"><pre><a href="./tags.html">tags</a>::<a href="./tags.html#TokenisedAsset" class="type">TokenisedAsset</a> has <span class="ability">drop</span>, <span class="ability">store</span><pre></h4>
+    </summary>
+    <div class="description">
+        
+        <h5>Fields:</h5>
+        <table class="params">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th class="last">Description</th>
+                </tr>
+            </thead>
+            <tbody><tr>
     <td class="name">
         <code>dummy_field</code>            
     </td>
     <td class="type">
-        <code>bool</code>  
+        <code><span class="type">bool</span></code>  
     </td>
     <td class="description last"></td>
-</tr>
-        </tbody>
-    </table>
-</div><div class="container-overview">
-    <h2>Ticker</h2>
-    <span class="name-container">
-        <h4 class="name" id="Ticker"><pre>0x0::tags::<a href="./0x0::tags.html#Ticker"><span class="struct">Ticker</span></a>&lt;&gt; has <span class="ability">drop</span>, <span class="ability">store</span><pre></h4>
-    </span>
-    <div class="description"></div>
-    <h5>Fields:</h5>
-    <table class="params">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Type</th>
-                <th class="last">Description</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
+</tr></tbody>
+        </table>
+    </div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="Ticker"><pre><a href="./tags.html">tags</a>::<a href="./tags.html#Ticker" class="type">Ticker</a> has <span class="ability">drop</span>, <span class="ability">store</span><pre></h4>
+    </summary>
+    <div class="description">
+        
+        <h5>Fields:</h5>
+        <table class="params">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th class="last">Description</th>
+                </tr>
+            </thead>
+            <tbody><tr>
     <td class="name">
         <code>dummy_field</code>            
     </td>
     <td class="type">
-        <code>bool</code>  
+        <code><span class="type">bool</span></code>  
     </td>
     <td class="description last"></td>
-</tr>
-        </tbody>
-    </table>
-</div><div class="container-overview">
-    <h2>DomainName</h2>
-    <span class="name-container">
-        <h4 class="name" id="DomainName"><pre>0x0::tags::<a href="./0x0::tags.html#DomainName"><span class="struct">DomainName</span></a>&lt;&gt; has <span class="ability">drop</span>, <span class="ability">store</span><pre></h4>
-    </span>
-    <div class="description"></div>
-    <h5>Fields:</h5>
-    <table class="params">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Type</th>
-                <th class="last">Description</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
+</tr></tbody>
+        </table>
+    </div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="DomainName"><pre><a href="./tags.html">tags</a>::<a href="./tags.html#DomainName" class="type">DomainName</a> has <span class="ability">drop</span>, <span class="ability">store</span><pre></h4>
+    </summary>
+    <div class="description">
+        
+        <h5>Fields:</h5>
+        <table class="params">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th class="last">Description</th>
+                </tr>
+            </thead>
+            <tbody><tr>
     <td class="name">
         <code>dummy_field</code>            
     </td>
     <td class="type">
-        <code>bool</code>  
+        <code><span class="type">bool</span></code>  
     </td>
     <td class="description last"></td>
-</tr>
-        </tbody>
-    </table>
-</div><div class="container-overview">
-    <h2>Music</h2>
-    <span class="name-container">
-        <h4 class="name" id="Music"><pre>0x0::tags::<a href="./0x0::tags.html#Music"><span class="struct">Music</span></a>&lt;&gt; has <span class="ability">drop</span>, <span class="ability">store</span><pre></h4>
-    </span>
-    <div class="description"></div>
-    <h5>Fields:</h5>
-    <table class="params">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Type</th>
-                <th class="last">Description</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
+</tr></tbody>
+        </table>
+    </div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="Music"><pre><a href="./tags.html">tags</a>::<a href="./tags.html#Music" class="type">Music</a> has <span class="ability">drop</span>, <span class="ability">store</span><pre></h4>
+    </summary>
+    <div class="description">
+        
+        <h5>Fields:</h5>
+        <table class="params">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th class="last">Description</th>
+                </tr>
+            </thead>
+            <tbody><tr>
     <td class="name">
         <code>dummy_field</code>            
     </td>
     <td class="type">
-        <code>bool</code>  
+        <code><span class="type">bool</span></code>  
     </td>
     <td class="description last"></td>
-</tr>
-        </tbody>
-    </table>
-</div><div class="container-overview">
-    <h2>Video</h2>
-    <span class="name-container">
-        <h4 class="name" id="Video"><pre>0x0::tags::<a href="./0x0::tags.html#Video"><span class="struct">Video</span></a>&lt;&gt; has <span class="ability">drop</span>, <span class="ability">store</span><pre></h4>
-    </span>
-    <div class="description"></div>
-    <h5>Fields:</h5>
-    <table class="params">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Type</th>
-                <th class="last">Description</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
+</tr></tbody>
+        </table>
+    </div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="Video"><pre><a href="./tags.html">tags</a>::<a href="./tags.html#Video" class="type">Video</a> has <span class="ability">drop</span>, <span class="ability">store</span><pre></h4>
+    </summary>
+    <div class="description">
+        
+        <h5>Fields:</h5>
+        <table class="params">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th class="last">Description</th>
+                </tr>
+            </thead>
+            <tbody><tr>
     <td class="name">
         <code>dummy_field</code>            
     </td>
     <td class="type">
-        <code>bool</code>  
+        <code><span class="type">bool</span></code>  
     </td>
     <td class="description last"></td>
-</tr>
-        </tbody>
-    </table>
-</div><div class="container-overview">
-    <h2>Ticket</h2>
-    <span class="name-container">
-        <h4 class="name" id="Ticket"><pre>0x0::tags::<a href="./0x0::tags.html#Ticket"><span class="struct">Ticket</span></a>&lt;&gt; has <span class="ability">drop</span>, <span class="ability">store</span><pre></h4>
-    </span>
-    <div class="description"></div>
-    <h5>Fields:</h5>
-    <table class="params">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Type</th>
-                <th class="last">Description</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
+</tr></tbody>
+        </table>
+    </div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="Ticket"><pre><a href="./tags.html">tags</a>::<a href="./tags.html#Ticket" class="type">Ticket</a> has <span class="ability">drop</span>, <span class="ability">store</span><pre></h4>
+    </summary>
+    <div class="description">
+        
+        <h5>Fields:</h5>
+        <table class="params">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th class="last">Description</th>
+                </tr>
+            </thead>
+            <tbody><tr>
     <td class="name">
         <code>dummy_field</code>            
     </td>
     <td class="type">
-        <code>bool</code>  
+        <code><span class="type">bool</span></code>  
     </td>
     <td class="description last"></td>
-</tr>
-        </tbody>
-    </table>
-</div><div class="container-overview">
-    <h2>License</h2>
-    <span class="name-container">
-        <h4 class="name" id="License"><pre>0x0::tags::<a href="./0x0::tags.html#License"><span class="struct">License</span></a>&lt;&gt; has <span class="ability">drop</span>, <span class="ability">store</span><pre></h4>
-    </span>
-    <div class="description"></div>
-    <h5>Fields:</h5>
-    <table class="params">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Type</th>
-                <th class="last">Description</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
+</tr></tbody>
+        </table>
+    </div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="License"><pre><a href="./tags.html">tags</a>::<a href="./tags.html#License" class="type">License</a> has <span class="ability">drop</span>, <span class="ability">store</span><pre></h4>
+    </summary>
+    <div class="description">
+        
+        <h5>Fields:</h5>
+        <table class="params">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th class="last">Description</th>
+                </tr>
+            </thead>
+            <tbody><tr>
     <td class="name">
         <code>dummy_field</code>            
     </td>
     <td class="type">
-        <code>bool</code>  
+        <code><span class="type">bool</span></code>  
     </td>
     <td class="description last"></td>
-</tr>
-        </tbody>
-    </table>
-</div><div class="container-overview">
-    <h2>TagDomain</h2>
-    <span class="name-container">
-        <h4 class="name" id="TagDomain"><pre>0x0::tags::<a href="./0x0::tags.html#TagDomain"><span class="struct">TagDomain</span></a>&lt;&gt; has <span class="ability">store</span><pre></h4>
-    </span>
-    <div class="description"></div>
-    <h5>Fields:</h5>
-    <table class="params">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Type</th>
-                <th class="last">Description</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
+</tr></tbody>
+        </table>
+    </div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="TagDomain"><pre><a href="./tags.html">tags</a>::<a href="./tags.html#TagDomain" class="type">TagDomain</a> has <span class="ability">store</span><pre></h4>
+    </summary>
+    <div class="description">
+        
+        <h5>Fields:</h5>
+        <table class="params">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th class="last">Description</th>
+                </tr>
+            </thead>
+            <tbody><tr>
     <td class="name">
         <code>bag</code>            
     </td>
     <td class="type">
-        <code>bag::Bag</code>  
+        <code>bag::<span class="type">Bag</span></code>  
     </td>
     <td class="description last"></td>
-</tr>
-        </tbody>
-    </table>
-</div><div class="container-overview">
-    <h2>Witness</h2>
-    <span class="name-container">
-        <h4 class="name" id="Witness"><pre>0x0::tags::<a href="./0x0::tags.html#Witness"><span class="struct">Witness</span></a>&lt;&gt; has <span class="ability">drop</span><pre></h4>
-    </span>
-    <div class="description"></div>
-    <h5>Fields:</h5>
-    <table class="params">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Type</th>
-                <th class="last">Description</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
+</tr></tbody>
+        </table>
+    </div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="Witness"><pre><a href="./tags.html">tags</a>::<a href="./tags.html#Witness" class="type">Witness</a> has <span class="ability">drop</span><pre></h4>
+    </summary>
+    <div class="description">
+        
+        <h5>Fields:</h5>
+        <table class="params">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th class="last">Description</th>
+                </tr>
+            </thead>
+            <tbody><tr>
     <td class="name">
         <code>dummy_field</code>            
     </td>
     <td class="type">
-        <code>bool</code>  
+        <code><span class="type">bool</span></code>  
     </td>
     <td class="description last"></td>
-</tr>
-        </tbody>
-    </table>
-</div>
-        <h3 class="subsection-title">Methods</h3>
-        <span class="name-container">
-    <h4 class="name" id="art"><pre>public fun art(): tags::Art</pre></h4>
-</span>
-<div class="description"></div><span class="name-container">
-    <h4 class="name" id="profile_picture"><pre>public fun profile_picture(): tags::ProfilePicture</pre></h4>
-</span>
-<div class="description"></div><span class="name-container">
-    <h4 class="name" id="collectible"><pre>public fun collectible(): tags::Collectible</pre></h4>
-</span>
-<div class="description"></div><span class="name-container">
-    <h4 class="name" id="game_asset"><pre>public fun game_asset(): tags::GameAsset</pre></h4>
-</span>
-<div class="description"></div><span class="name-container">
-    <h4 class="name" id="tokenised_asset"><pre>public fun tokenised_asset(): tags::TokenisedAsset</pre></h4>
-</span>
-<div class="description"></div><span class="name-container">
-    <h4 class="name" id="ticker"><pre>public fun ticker(): tags::Ticker</pre></h4>
-</span>
-<div class="description"></div><span class="name-container">
-    <h4 class="name" id="domain_name"><pre>public fun domain_name(): tags::DomainName</pre></h4>
-</span>
-<div class="description"></div><span class="name-container">
-    <h4 class="name" id="music"><pre>public fun music(): tags::Music</pre></h4>
-</span>
-<div class="description"></div><span class="name-container">
-    <h4 class="name" id="video"><pre>public fun video(): tags::Video</pre></h4>
-</span>
-<div class="description"></div><span class="name-container">
-    <h4 class="name" id="ticket"><pre>public fun ticket(): tags::Ticket</pre></h4>
-</span>
-<div class="description"></div><span class="name-container">
-    <h4 class="name" id="license"><pre>public fun license(): tags::License</pre></h4>
-</span>
-<div class="description"></div><span class="name-container">
-    <h4 class="name" id="empty"><pre>public fun empty(ctx: &amp;mut tx_context::TxContext): 
-    tags::TagDomain</pre></h4>
-</span>
-<div class="description"></div><span class="name-container">
-    <h4 class="name" id="has_tag"><pre>public fun has_tag&lt;T: <span class="ability">drop</span> + <span class="ability">store</span>&gt;(
-    domain: &amp;tags::TagDomain,
-): bool</pre></h4>
-</span>
-<div class="description"></div><span class="name-container">
-    <h4 class="name" id="add_tag"><pre>public fun add_tag&lt;T: <span class="ability">drop</span> + <span class="ability">store</span>&gt;(
-    domain: &amp;mut tags::TagDomain,
+</tr></tbody>
+        </table>
+    </div>
+</details>
+    <h3 class="subsection-title">Methods</h3>
+    <details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="art"><pre>public fun <a href="./tags.html#art" class="function">art</a>(): <a href="./tags.html">tags</a>::<a href="./tags.html#Art" class="type">Art</a></pre></h4>
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="profile_picture"><pre>public fun <a href="./tags.html#profile_picture" class="function">profile_picture</a>(): <a href="./tags.html">tags</a>::<a href="./tags.html#ProfilePicture" class="type">ProfilePicture</a></pre></h4>
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="collectible"><pre>public fun <a href="./tags.html#collectible" class="function">collectible</a>(): <a href="./tags.html">tags</a>::<a href="./tags.html#Collectible" class="type">Collectible</a></pre></h4>
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="game_asset"><pre>public fun <a href="./tags.html#game_asset" class="function">game_asset</a>(): <a href="./tags.html">tags</a>::<a href="./tags.html#GameAsset" class="type">GameAsset</a></pre></h4>
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="tokenised_asset"><pre>public fun <a href="./tags.html#tokenised_asset" class="function">tokenised_asset</a>(): <a href="./tags.html">tags</a>::<a href="./tags.html#TokenisedAsset" class="type">TokenisedAsset</a></pre></h4>
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="ticker"><pre>public fun <a href="./tags.html#ticker" class="function">ticker</a>(): <a href="./tags.html">tags</a>::<a href="./tags.html#Ticker" class="type">Ticker</a></pre></h4>
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="domain_name"><pre>public fun <a href="./tags.html#domain_name" class="function">domain_name</a>(): <a href="./tags.html">tags</a>::<a href="./tags.html#DomainName" class="type">DomainName</a></pre></h4>
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="music"><pre>public fun <a href="./tags.html#music" class="function">music</a>(): <a href="./tags.html">tags</a>::<a href="./tags.html#Music" class="type">Music</a></pre></h4>
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="video"><pre>public fun <a href="./tags.html#video" class="function">video</a>(): <a href="./tags.html">tags</a>::<a href="./tags.html#Video" class="type">Video</a></pre></h4>
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="ticket"><pre>public fun <a href="./tags.html#ticket" class="function">ticket</a>(): <a href="./tags.html">tags</a>::<a href="./tags.html#Ticket" class="type">Ticket</a></pre></h4>
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="license"><pre>public fun <a href="./tags.html#license" class="function">license</a>(): <a href="./tags.html">tags</a>::<a href="./tags.html#License" class="type">License</a></pre></h4>
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="empty"><pre>public fun <a href="./tags.html#empty" class="function">empty</a>(ctx: &mut tx_context::<span class="type">TxContext</span>): 
+    <a href="./tags.html">tags</a>::<a href="./tags.html#TagDomain" class="type">TagDomain</a></pre></h4>
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="has_tag"><pre>public fun <a href="./tags.html#has_tag" class="function">has_tag</a>&lt;T: <span class="ability">drop</span> + <span class="ability">store</span>&gt;(
+    domain: &<a href="./tags.html">tags</a>::<a href="./tags.html#TagDomain" class="type">TagDomain</a>,
+): <span class="type">bool</span></pre></h4>
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="add_tag"><pre>public fun <a href="./tags.html#add_tag" class="function">add_tag</a>&lt;T: <span class="ability">drop</span> + <span class="ability">store</span>&gt;(
+    domain: &mut <a href="./tags.html">tags</a>::<a href="./tags.html#TagDomain" class="type">TagDomain</a>,
     tag: T,
 )</pre></h4>
-</span>
-<div class="description"><p>Adds tag to <code>TagDomain</code></p>
-</div><span class="name-container">
-    <h4 class="name" id="remove_tag"><pre>public fun remove_tag&lt;T: <span class="ability">drop</span> + <span class="ability">store</span>&gt;(
-    domain: &amp;mut tags::TagDomain,
-)</pre></h4>
-</span>
-<div class="description"><p>Removes tag from <code>TagDomain</code></p>
-</div><span class="name-container">
-    <h4 class="name" id="tag_domain"><pre>public fun tag_domain&lt;C&gt;(nft: &amp;nft::Nft&lt;C&gt;): 
-    &tags::TagDomain</pre></h4>
-</span>
-<div class="description"><p>====== Interoperability ===</p>
-</div><span class="name-container">
-    <h4 class="name" id="collection_tag_domain"><pre>public fun collection_tag_domain&lt;C&gt;(
-    collection: &amp;collection::Collection&lt;C&gt;,
-): &tags::TagDomain</pre></h4>
-</span>
-<div class="description"></div><span class="name-container">
-    <h4 class="name" id="collection_tag_domain_mut"><pre>public fun collection_tag_domain_mut&lt;C&gt;(
-    collection: &amp;mut collection::Collection&lt;C&gt;,
-    ctx: &amp;mut tx_context::TxContext,
-): &mut tags::TagDomain</pre></h4>
-</span>
-<div class="description"><p>Requires that sender is a creator</p>
-</div><span class="name-container">
-    <h4 class="name" id="add_tag_domain"><pre>public fun add_tag_domain&lt;C&gt;(
-    nft: &amp;mut nft::Nft&lt;C&gt;,
-    tags: tags::TagDomain,
-    ctx: &amp;mut tx_context::TxContext,
-)</pre></h4>
-</span>
-<div class="description"></div><span class="name-container">
-    <h4 class="name" id="add_collection_tag_domain"><pre>public fun add_collection_tag_domain&lt;C&gt;(
-    collection: &amp;mut collection::Collection&lt;C&gt;,
-    mint_cap: &amp;collection::MintCap&lt;C&gt;,
-    tags: tags::TagDomain,
-)</pre></h4>
-</span>
-<div class="description"></div>
-    </article>
-</section><br class="clear">
-<!--<footer>OriginByte.io</footer>-->
+    </summary>
+    <div class="description"><p>Adds tag to <code>TagDomain</code></p>
 </div>
-</body>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="remove_tag"><pre>public fun <a href="./tags.html#remove_tag" class="function">remove_tag</a>&lt;T: <span class="ability">drop</span> + <span class="ability">store</span>&gt;(
+    domain: &mut <a href="./tags.html">tags</a>::<a href="./tags.html#TagDomain" class="type">TagDomain</a>,
+)</pre></h4>
+    </summary>
+    <div class="description"><p>Removes tag from <code>TagDomain</code></p>
+</div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="tag_domain"><pre>public fun <a href="./tags.html#tag_domain" class="function">tag_domain</a>&lt;C&gt;(nft: &<a href="./nft.html">nft</a>::<a href="./nft.html#Nft" class="type">Nft</a>&lt;C&gt;): 
+    &<a href="./tags.html">tags</a>::<a href="./tags.html#TagDomain" class="type">TagDomain</a></pre></h4>
+    </summary>
+    <div class="description"><p>====== Interoperability ===</p>
+</div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="collection_tag_domain"><pre>public fun <a href="./tags.html#collection_tag_domain" class="function">collection_tag_domain</a>&lt;C&gt;(
+    collection: &<a href="./collection.html">collection</a>::<a href="./collection.html#Collection" class="type">Collection</a>&lt;C&gt;,
+): &<a href="./tags.html">tags</a>::<a href="./tags.html#TagDomain" class="type">TagDomain</a></pre></h4>
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="collection_tag_domain_mut"><pre>public fun <a href="./tags.html#collection_tag_domain_mut" class="function">collection_tag_domain_mut</a>&lt;C&gt;(
+    collection: &mut <a href="./collection.html">collection</a>::<a href="./collection.html#Collection" class="type">Collection</a>&lt;C&gt;,
+    ctx: &mut tx_context::<span class="type">TxContext</span>,
+): &mut <a href="./tags.html">tags</a>::<a href="./tags.html#TagDomain" class="type">TagDomain</a></pre></h4>
+    </summary>
+    <div class="description"><p>Requires that sender is a creator</p>
+</div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="add_tag_domain"><pre>public fun <a href="./tags.html#add_tag_domain" class="function">add_tag_domain</a>&lt;C&gt;(
+    nft: &mut <a href="./nft.html">nft</a>::<a href="./nft.html#Nft" class="type">Nft</a>&lt;C&gt;,
+    tags: <a href="./tags.html">tags</a>::<a href="./tags.html#TagDomain" class="type">TagDomain</a>,
+    ctx: &mut tx_context::<span class="type">TxContext</span>,
+)</pre></h4>
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="add_collection_tag_domain"><pre>public fun <a href="./tags.html#add_collection_tag_domain" class="function">add_collection_tag_domain</a>&lt;C&gt;(
+    collection: &mut <a href="./collection.html">collection</a>::<a href="./collection.html#Collection" class="type">Collection</a>&lt;C&gt;,
+    mint_cap: &<a href="./collection.html">collection</a>::<a href="./collection.html#MintCap" class="type">MintCap</a>&lt;C&gt;,
+    tags: <a href="./tags.html">tags</a>::<a href="./tags.html#TagDomain" class="type">TagDomain</a>,
+)</pre></h4>
+    </summary>
+    <div class="description"></div>
+</details>
+</article></main>
+        </div>
+    </body>
 </html>

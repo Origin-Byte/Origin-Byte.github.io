@@ -270,18 +270,92 @@
     <a href="./tags.html#Video">Video</a>
 </li></ul>
 </li></ul></nav>
-            <main><h1 class="page-title">0x0::bidding</h1>
+            <main><h1 class="page-title">0x0::creators</h1>
 <article>
-    <p>Bidding module that allows users to bid for any given NFT in a safe,
-giving NFT owners a platform to sell their NFTs to any available bid.</p>
+    <p>Module of Collection <code>Creators</code> domain.</p>
+<p>Creators domain gathers all collection creators, their respective
+addresses as well as the share of royalty.</p>
 
     <h3 class="subsection-title">Structs</h3>
     <details class="toggle" open>
     <summary>
-        <h4 class="code-header" id="Witness"><pre><a href="./bidding.html">bidding</a>::<a href="./bidding.html#Witness" class="type">Witness</a> has <span class="ability">drop</span><pre></h4>
+        <h4 class="code-header" id="Creator"><pre><a href="./creators.html">creators</a>::<a href="./creators.html#Creator" class="type">Creator</a> has <span class="ability">copy</span>, <span class="ability">drop</span>, <span class="ability">store</span><pre></h4>
+    </summary>
+    <div class="description">
+        <p>=== Creator ===
+Creator struct which holds the addresses of the creators of the NFT
+Collection, as well their share of the royalties collected.</p>
+
+        <h5>Fields:</h5>
+        <table class="params">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th class="last">Description</th>
+                </tr>
+            </thead>
+            <tbody><tr>
+    <td class="name">
+        <code>who</code>            
+    </td>
+    <td class="type">
+        <code><span class="type">address</span></code>  
+    </td>
+    <td class="description last"></td>
+</tr><tr>
+    <td class="name">
+        <code>share_of_royalty_bps</code>            
+    </td>
+    <td class="type">
+        <code><span class="type">u16</span></code>  
+    </td>
+    <td class="description last"></td>
+</tr></tbody>
+        </table>
+    </div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="CreatorsDomain"><pre><a href="./creators.html">creators</a>::<a href="./creators.html#CreatorsDomain" class="type">CreatorsDomain</a> has <span class="ability">copy</span>, <span class="ability">drop</span>, <span class="ability">store</span><pre></h4>
     </summary>
     <div class="description">
         
+        <h5>Fields:</h5>
+        <table class="params">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th class="last">Description</th>
+                </tr>
+            </thead>
+            <tbody><tr>
+    <td class="name">
+        <code>is_frozen</code>            
+    </td>
+    <td class="type">
+        <code><span class="type">bool</span></code>  
+    </td>
+    <td class="description last"></td>
+</tr><tr>
+    <td class="name">
+        <code>creators</code>            
+    </td>
+    <td class="type">
+        <code>vec_map::<span class="type">VecMap</span>&lt;<span class="type">address</span>, <a href="./creators.html">creators</a>::<a href="./creators.html#Creator" class="type">Creator</a>&gt;</code>  
+    </td>
+    <td class="description last"><p>Address that receives the mint and trade royalties</p>
+</td>
+</tr></tbody>
+        </table>
+    </div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="Witness"><pre><a href="./creators.html">creators</a>::<a href="./creators.html#Witness" class="type">Witness</a> has <span class="ability">drop</span><pre></h4>
+    </summary>
+    <div class="description">
+        <p>====== Interoperability ===</p>
+
         <h5>Fields:</h5>
         <table class="params">
             <thead>
@@ -302,253 +376,159 @@ giving NFT owners a platform to sell their NFTs to any available bid.</p>
 </tr></tbody>
         </table>
     </div>
-</details><details class="toggle" open>
-    <summary>
-        <h4 class="code-header" id="Bid"><pre><a href="./bidding.html">bidding</a>::<a href="./bidding.html#Bid" class="type">Bid</a>&lt;FT&gt; has <span class="ability">key</span><pre></h4>
-    </summary>
-    <div class="description">
-        
-        <h5>Fields:</h5>
-        <table class="params">
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Type</th>
-                    <th class="last">Description</th>
-                </tr>
-            </thead>
-            <tbody><tr>
-    <td class="name">
-        <code>id</code>            
-    </td>
-    <td class="type">
-        <code>object::<span class="type">UID</span></code>  
-    </td>
-    <td class="description last"></td>
-</tr><tr>
-    <td class="name">
-        <code>nft</code>            
-    </td>
-    <td class="type">
-        <code>object::<span class="type">ID</span></code>  
-    </td>
-    <td class="description last"></td>
-</tr><tr>
-    <td class="name">
-        <code>buyer</code>            
-    </td>
-    <td class="type">
-        <code><span class="type">address</span></code>  
-    </td>
-    <td class="description last"></td>
-</tr><tr>
-    <td class="name">
-        <code>safe</code>            
-    </td>
-    <td class="type">
-        <code>object::<span class="type">ID</span></code>  
-    </td>
-    <td class="description last"></td>
-</tr><tr>
-    <td class="name">
-        <code>offer</code>            
-    </td>
-    <td class="type">
-        <code>balance::<span class="type">Balance</span>&lt;FT&gt;</code>  
-    </td>
-    <td class="description last"></td>
-</tr><tr>
-    <td class="name">
-        <code>commission</code>            
-    </td>
-    <td class="type">
-        <code>option::<span class="type">Option</span>&lt;<a href="./trading.html">trading</a>::<a href="./trading.html#BidCommission" class="type">BidCommission</a>&lt;FT&gt;&gt;</code>  
-    </td>
-    <td class="description last"></td>
-</tr></tbody>
-        </table>
-    </div>
-</details><details class="toggle" open>
-    <summary>
-        <h4 class="code-header" id="BidCreated"><pre><a href="./bidding.html">bidding</a>::<a href="./bidding.html#BidCreated" class="type">BidCreated</a>&lt;FT&gt; has <span class="ability">copy</span>, <span class="ability">drop</span><pre></h4>
-    </summary>
-    <div class="description">
-        
-        <h5>Fields:</h5>
-        <table class="params">
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Type</th>
-                    <th class="last">Description</th>
-                </tr>
-            </thead>
-            <tbody><tr>
-    <td class="name">
-        <code>id</code>            
-    </td>
-    <td class="type">
-        <code>object::<span class="type">ID</span></code>  
-    </td>
-    <td class="description last"></td>
-</tr><tr>
-    <td class="name">
-        <code>for_nft</code>            
-    </td>
-    <td class="type">
-        <code>object::<span class="type">ID</span></code>  
-    </td>
-    <td class="description last"></td>
-</tr><tr>
-    <td class="name">
-        <code>price</code>            
-    </td>
-    <td class="type">
-        <code><span class="type">u64</span></code>  
-    </td>
-    <td class="description last"></td>
-</tr></tbody>
-        </table>
-    </div>
-</details><details class="toggle" open>
-    <summary>
-        <h4 class="code-header" id="BidClosed"><pre><a href="./bidding.html">bidding</a>::<a href="./bidding.html#BidClosed" class="type">BidClosed</a>&lt;FT&gt; has <span class="ability">copy</span>, <span class="ability">drop</span><pre></h4>
-    </summary>
-    <div class="description">
-        
-        <h5>Fields:</h5>
-        <table class="params">
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Type</th>
-                    <th class="last">Description</th>
-                </tr>
-            </thead>
-            <tbody><tr>
-    <td class="name">
-        <code>id</code>            
-    </td>
-    <td class="type">
-        <code>object::<span class="type">ID</span></code>  
-    </td>
-    <td class="description last"></td>
-</tr><tr>
-    <td class="name">
-        <code>sold</code>            
-    </td>
-    <td class="type">
-        <code><span class="type">bool</span></code>  
-    </td>
-    <td class="description last"><p>Either sold or canceled</p>
-</td>
-</tr></tbody>
-        </table>
-    </div>
 </details>
     <h3 class="subsection-title">Methods</h3>
     <details class="toggle" open>
     <summary>
-        <h4 class="code-header" id="create_bid"><pre>public fun <a href="./bidding.html#create_bid" class="function">create_bid</a>&lt;FT&gt;(
-    nft: object::<span class="type">ID</span>,
-    buyers_safe: object::<span class="type">ID</span>,
-    price: <span class="type">u64</span>,
-    wallet: &mut coin::<span class="type">Coin</span>&lt;FT&gt;,
-    ctx: &mut tx_context::<span class="type">TxContext</span>,
-)</pre></h4>
+        <h4 class="code-header" id="new_creator"><pre>public fun <a href="./creators.html#new_creator" class="function">new_creator</a>(
+    who: <span class="type">address</span>,
+    share_of_royalty_bps: <span class="type">u16</span>,
+): <a href="./creators.html">creators</a>::<a href="./creators.html#Creator" class="type">Creator</a></pre></h4>
     </summary>
-    <div class="description"><p>Payable entry function to create a bid for an NFT.</p>
-<p>It performs the following:</p>
-<ul>
-<li>Sends funds Balance<!-- raw HTML omitted --> from <code>wallet</code> to the <code>bid</code></li>
-<li>Creates object <code>bid</code> and shares it.</li>
-</ul>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="who"><pre>public fun <a href="./creators.html#who" class="function">who</a>(creator: &<a href="./creators.html">creators</a>::<a href="./creators.html#Creator" class="type">Creator</a>): <span class="type">address</span></pre></h4>
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="share_of_royalty_bps"><pre>public fun <a href="./creators.html#share_of_royalty_bps" class="function">share_of_royalty_bps</a>(creator: &<a href="./creators.html">creators</a>::<a href="./creators.html#Creator" class="type">Creator</a>): 
+    <span class="type">u16</span></pre></h4>
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="empty"><pre>public fun <a href="./creators.html#empty" class="function">empty</a>(): <a href="./creators.html">creators</a>::<a href="./creators.html#CreatorsDomain" class="type">CreatorsDomain</a></pre></h4>
+    </summary>
+    <div class="description"><p>Creates an empty <code>Attributions</code> object</p>
+<p>By not attributing any <code>Creators</code>, nobody will ever be able to claim
+royalties from this <code>Attributions</code> object or modify it's domains.</p>
 </div>
 </details><details class="toggle" open>
     <summary>
-        <h4 class="code-header" id="create_bid_with_commission"><pre>public fun <a href="./bidding.html#create_bid_with_commission" class="function">create_bid_with_commission</a>&lt;FT&gt;(
-    nft: object::<span class="type">ID</span>,
-    buyers_safe: object::<span class="type">ID</span>,
-    price: <span class="type">u64</span>,
-    beneficiary: <span class="type">address</span>,
-    commission_ft: <span class="type">u64</span>,
-    wallet: &mut coin::<span class="type">Coin</span>&lt;FT&gt;,
+        <h4 class="code-header" id="from_address"><pre>public fun <a href="./creators.html#from_address" class="function">from_address</a>(who: <span class="type">address</span>): <a href="./creators.html">creators</a>::<a href="./creators.html#CreatorsDomain" class="type">CreatorsDomain</a></pre></h4>
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="from_creators"><pre>public fun <a href="./creators.html#from_creators" class="function">from_creators</a>(
+    creators: vec_map::<span class="type">VecMap</span>&lt;<span class="type">address</span>, <a href="./creators.html">creators</a>::<a href="./creators.html#Creator" class="type">Creator</a>&gt;,
+): <a href="./creators.html">creators</a>::<a href="./creators.html#CreatorsDomain" class="type">CreatorsDomain</a></pre></h4>
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="is_empty"><pre>public fun <a href="./creators.html#is_empty" class="function">is_empty</a>(domain: &<a href="./creators.html">creators</a>::<a href="./creators.html#CreatorsDomain" class="type">CreatorsDomain</a>): <span class="type">bool</span></pre></h4>
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="is_frozen"><pre>public fun <a href="./creators.html#is_frozen" class="function">is_frozen</a>(domain: &<a href="./creators.html">creators</a>::<a href="./creators.html#CreatorsDomain" class="type">CreatorsDomain</a>): <span class="type">bool</span></pre></h4>
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="creators"><pre>public fun <a href="./creators.html#creators" class="function">creators</a>(domain: &<a href="./creators.html">creators</a>::<a href="./creators.html#CreatorsDomain" class="type">CreatorsDomain</a>): 
+    &vec_map::<span class="type">VecMap</span>&lt;<span class="type">address</span>, <a href="./creators.html">creators</a>::<a href="./creators.html#Creator" class="type">Creator</a>&gt;</pre></h4>
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="get"><pre>public fun <a href="./creators.html#get" class="function">get</a>(
+    domain: &<a href="./creators.html">creators</a>::<a href="./creators.html#CreatorsDomain" class="type">CreatorsDomain</a>,
+    who: &<span class="type">address</span>,
+): &<a href="./creators.html">creators</a>::<a href="./creators.html#Creator" class="type">Creator</a></pre></h4>
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="add_creator"><pre>public fun <a href="./creators.html#add_creator" class="function">add_creator</a>(
+    domain: &mut <a href="./creators.html">creators</a>::<a href="./creators.html#CreatorsDomain" class="type">CreatorsDomain</a>,
+    new_creator: <a href="./creators.html">creators</a>::<a href="./creators.html#Creator" class="type">Creator</a>,
     ctx: &mut tx_context::<span class="type">TxContext</span>,
 )</pre></h4>
     </summary>
-    <div class="description"><p>Payable entry function to create a bid for an NFT.</p>
-<p>It performs the following:</p>
-<ul>
-<li>Sends funds Balance<!-- raw HTML omitted --> from <code>wallet</code> to the <code>bid</code></li>
-<li>Creates object <code>bid</code> with <code>commission</code> and shares it.</li>
-</ul>
-<p>To be called by a intermediate application, for the purpose
-of securing a commission for intermediating the process.</p>
+    <div class="description"><p>=== Mutability ===
+Add a <code>Creator</code> to CreatorsDomain object</p>
+<p>This must be done by a <code>Creator</code> which already has an attribution who
+gives up an arithmetic share of their royalty share.</p>
 </div>
 </details><details class="toggle" open>
     <summary>
-        <h4 class="code-header" id="sell_nft"><pre>public fun <a href="./bidding.html#sell_nft" class="function">sell_nft</a>&lt;C, FT&gt;(
-    bid: &mut <a href="./bidding.html">bidding</a>::<a href="./bidding.html#Bid" class="type">Bid</a>&lt;FT&gt;,
-    transfer_cap: <a href="./safe.html">safe</a>::<a href="./safe.html#TransferCap" class="type">TransferCap</a>,
-    sellers_safe: &mut <a href="./safe.html">safe</a>::<a href="./safe.html#Safe" class="type">Safe</a>,
-    buyers_safe: &mut <a href="./safe.html">safe</a>::<a href="./safe.html#Safe" class="type">Safe</a>,
-    allowlist: &<a href="./transfer_allowlist.html">transfer_allowlist</a>::<a href="./transfer_allowlist.html#Allowlist" class="type">Allowlist</a>,
+        <h4 class="code-header" id="remove_creator_by_transfer"><pre>public fun <a href="./creators.html#remove_creator_by_transfer" class="function">remove_creator_by_transfer</a>(
+    domain: &mut <a href="./creators.html">creators</a>::<a href="./creators.html#CreatorsDomain" class="type">CreatorsDomain</a>,
+    to: <span class="type">address</span>,
     ctx: &mut tx_context::<span class="type">TxContext</span>,
 )</pre></h4>
     </summary>
-    <div class="description"><p>Entry function to sell an NFT with an open <code>bid</code>.</p>
-<p>It performs the following:</p>
-<ul>
-<li>Splits funds from <code>Bid&lt;FT&gt;</code> by:
-<ul>
-<li>(1) Creating TradePayment&lt;C, FT&gt; for the trade amount</li>
-</ul>
-</li>
-<li>Transfers NFT from <code>sellers_safe</code> to <code>buyers_safe</code> and
-burns <code>TransferCap</code></li>
-<li>Transfers bid commission funds to the address
-<code>bid.commission.beneficiary</code></li>
-</ul>
+    <div class="description"><p>Remove a <code>Creator</code> from CreatorsDomain</p>
+<p><code>Creator</code> can only remove themselves.</p>
+<p>If the only <code>Creator</code> is removed then nobody will ever be able to claim
+royalties in the future again.</p>
+<p>Shares of removed <code>Creator</code> are allocated to the provided address, who
+must be a <code>Creator</code>.</p>
 </div>
 </details><details class="toggle" open>
     <summary>
-        <h4 class="code-header" id="sell_nft_with_commission"><pre>public fun <a href="./bidding.html#sell_nft_with_commission" class="function">sell_nft_with_commission</a>&lt;C, FT&gt;(
-    bid: &mut <a href="./bidding.html">bidding</a>::<a href="./bidding.html#Bid" class="type">Bid</a>&lt;FT&gt;,
-    transfer_cap: <a href="./safe.html">safe</a>::<a href="./safe.html#TransferCap" class="type">TransferCap</a>,
-    beneficiary: <span class="type">address</span>,
-    commission_ft: <span class="type">u64</span>,
-    sellers_safe: &mut <a href="./safe.html">safe</a>::<a href="./safe.html#Safe" class="type">Safe</a>,
-    buyers_safe: &mut <a href="./safe.html">safe</a>::<a href="./safe.html#Safe" class="type">Safe</a>,
-    allowlist: &<a href="./transfer_allowlist.html">transfer_allowlist</a>::<a href="./transfer_allowlist.html#Allowlist" class="type">Allowlist</a>,
-    ctx: &mut tx_context::<span class="type">TxContext</span>,
-)</pre></h4>
+        <h4 class="code-header" id="freeze_domains"><pre>public fun <a href="./creators.html#freeze_domains" class="function">freeze_domains</a>(domain: &mut <a href="./creators.html">creators</a>::<a href="./creators.html#CreatorsDomain" class="type">CreatorsDomain</a>)</pre></h4>
     </summary>
-    <div class="description"><p>Entry function to sell an NFT with an open <code>bid</code>.</p>
-<p>It performs the following:</p>
-<ul>
-<li>Splits funds from <code>Bid&lt;FT&gt;</code> by:
-<ul>
-<li>(1) Creating TradePayment&lt;C, FT&gt; for the Ask commision</li>
-<li>(2) Creating TradePayment&lt;C, FT&gt; for the net trade amount</li>
-</ul>
-</li>
-<li>Transfers NFT from <code>sellers_safe</code> to <code>buyers_safe</code> and
-burns <code>TransferCap</code></li>
-<li>Transfers bid commission funds to the address
-<code>bid.commission.beneficiary</code></li>
-</ul>
-<p>To be called by a intermediate application, for the purpose of
-securing a commission for intermediating the process.</p>
+    <div class="description"><p>Makes <code>Collection</code> domains immutable</p>
+<p>This is irreversible, use with caution.</p>
+<p>Will cause <code>assert_collection_has_creator</code> and <code>assert_is_creator</code> to
+always fail, thus making all standard domains immutable.</p>
 </div>
 </details><details class="toggle" open>
     <summary>
-        <h4 class="code-header" id="close_bid"><pre>public fun <a href="./bidding.html#close_bid" class="function">close_bid</a>&lt;FT&gt;(
-    bid: &mut <a href="./bidding.html">bidding</a>::<a href="./bidding.html#Bid" class="type">Bid</a>&lt;FT&gt;,
+        <h4 class="code-header" id="distribute_royalties"><pre>public fun <a href="./creators.html#distribute_royalties" class="function">distribute_royalties</a>&lt;FT&gt;(
+    domain: &<a href="./creators.html">creators</a>::<a href="./creators.html#CreatorsDomain" class="type">CreatorsDomain</a>,
+    aggregate: &mut balance::<span class="type">Balance</span>&lt;FT&gt;,
     ctx: &mut tx_context::<span class="type">TxContext</span>,
 )</pre></h4>
     </summary>
-    <div class="description"><p>If a user wants to cancel their position, they get their coins back.</p>
+    <div class="description"><p>Distributes content of <code>aggregate</code> balance among the creators defined
+in the <code>CreatorsDomain</code></p>
 </div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="assert_is_creator"><pre>public fun <a href="./creators.html#assert_is_creator" class="function">assert_is_creator</a>(
+    domain: &<a href="./creators.html">creators</a>::<a href="./creators.html#CreatorsDomain" class="type">CreatorsDomain</a>,
+    who: <span class="type">address</span>,
+)</pre></h4>
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="assert_collection_has_creator"><pre>public fun <a href="./creators.html#assert_collection_has_creator" class="function">assert_collection_has_creator</a>&lt;C&gt;(
+    collection: &<a href="./collection.html">collection</a>::<a href="./collection.html#Collection" class="type">Collection</a>&lt;C&gt;,
+    who: <span class="type">address</span>,
+)</pre></h4>
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="creators_domain"><pre>public fun <a href="./creators.html#creators_domain" class="function">creators_domain</a>&lt;C&gt;(
+    collection: &<a href="./collection.html">collection</a>::<a href="./collection.html#Collection" class="type">Collection</a>&lt;C&gt;,
+): &<a href="./creators.html">creators</a>::<a href="./creators.html#CreatorsDomain" class="type">CreatorsDomain</a></pre></h4>
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="creators_domain_mut"><pre>public fun <a href="./creators.html#creators_domain_mut" class="function">creators_domain_mut</a>&lt;C&gt;(
+    collection: &mut <a href="./collection.html">collection</a>::<a href="./collection.html#Collection" class="type">Collection</a>&lt;C&gt;,
+    ctx: &mut tx_context::<span class="type">TxContext</span>,
+): &mut <a href="./creators.html">creators</a>::<a href="./creators.html#CreatorsDomain" class="type">CreatorsDomain</a></pre></h4>
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h4 class="code-header" id="add_creators_domain"><pre>public fun <a href="./creators.html#add_creators_domain" class="function">add_creators_domain</a>&lt;C&gt;(
+    collection: &mut <a href="./collection.html">collection</a>::<a href="./collection.html#Collection" class="type">Collection</a>&lt;C&gt;,
+    mint_cap: &mut <a href="./collection.html">collection</a>::<a href="./collection.html#MintCap" class="type">MintCap</a>&lt;C&gt;,
+    domain: <a href="./creators.html">creators</a>::<a href="./creators.html#CreatorsDomain" class="type">CreatorsDomain</a>,
+)</pre></h4>
+    </summary>
+    <div class="description"></div>
 </details>
 </article></main>
         </div>
