@@ -11,6 +11,17 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet">
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script src="./assets/move.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2/dist/fuse.basic.min.js"></script>
+    <script>var moveModel = [{"d":"err::action_exclusive_to_standalone_listings","l":"./err.html#action_exclusive_to_standalone_listings","f":"err::<span class=\"function\">action_exclusive_to_standalone_listings</span>","de":""},{"d":"err::action_not_public","l":"./err.html#action_not_public","f":"err::<span class=\"function\">action_not_public</span>","de":""},{"d":"err::address_does_not_have_enough_shares","l":"./err.html#address_does_not_have_enough_shares","f":"err::<span class=\"function\">address_does_not_have_enough_shares</span>","de":""},{"d":"err::address_not_attributed","l":"./err.html#address_not_attributed","f":"err::<span class=\"function\">address_not_attributed</span>","de":""},{"d":"err::authority_not_allowlisted","l":"./err.html#authority_not_allowlisted","f":"err::<span class=\"function\">authority_not_allowlisted</span>","de":""},{"d":"err::commission_too_high","l":"./err.html#commission_too_high","f":"err::<span class=\"function\">commission_too_high</span>","de":""},{"d":"err::current_supply_cannot_be_negative","l":"./err.html#current_supply_cannot_be_negative","f":"err::<span class=\"function\">current_supply_cannot_be_negative</span>","de":""},{"d":"err::domain_already_defined","l":"./err.html#domain_already_defined","f":"err::<span class=\"function\">domain_already_defined</span>","de":""},{"d":"err::frozen_supply","l":"./err.html#frozen_supply","f":"err::<span class=\"function\">frozen_supply</span>","de":""},{"d":"err::generic_bag_full","l":"./err.html#generic_bag_full","f":"err::<span class=\"function\">generic_bag_full</span>","de":""},{"d":"err::generic_box_full","l":"./err.html#generic_box_full","f":"err::<span class=\"function\">generic_box_full</span>","de":""},{"d":"err::generic_nft_must_not_be_protocol_type","l":"./err.html#generic_nft_must_not_be_protocol_type","f":"err::<span class=\"function\">generic_nft_must_not_be_protocol_type</span>","de":""},{"d":"err::has_custom_fee_policy","l":"./err.html#has_custom_fee_policy","f":"err::<span class=\"function\">has_custom_fee_policy</span>","de":""},{"d":"err::incorrect_nft_certificate","l":"./err.html#incorrect_nft_certificate","f":"err::<span class=\"function\">incorrect_nft_certificate</span>","de":""},{"d":"err::incorrect_whitelist_certificate","l":"./err.html#incorrect_whitelist_certificate","f":"err::<span class=\"function\">incorrect_whitelist_certificate</span>","de":""},{"d":"err::invalid_total_share_of_royalties","l":"./err.html#invalid_total_share_of_royalties","f":"err::<span class=\"function\">invalid_total_share_of_royalties</span>","de":""},{"d":"err::listing_already_attached_to_marketplace","l":"./err.html#listing_already_attached_to_marketplace","f":"err::<span class=\"function\">listing_already_attached_to_marketplace</span>","de":""},{"d":"err::listing_has_not_applied_to_this_marketplace","l":"./err.html#listing_has_not_applied_to_this_marketplace","f":"err::<span class=\"function\">listing_has_not_applied_to_this_marketplace</span>","de":""},{"d":"err::listing_not_approved","l":"./err.html#listing_not_approved","f":"err::<span class=\"function\">listing_not_approved</span>","de":""},{"d":"err::listing_not_live","l":"./err.html#listing_not_live","f":"err::<span class=\"function\">listing_not_live</span>","de":""},{"d":"err::marketplace_listing_mismatch","l":"./err.html#marketplace_listing_mismatch","f":"err::<span class=\"function\">marketplace_listing_mismatch</span>","de":""},{"d":"err::max_supply_cannot_be_below_current_supply","l":"./err.html#max_supply_cannot_be_below_current_supply","f":"err::<span class=\"function\">max_supply_cannot_be_below_current_supply</span>","de":""},{"d":"err::mint_cap_mismatch","l":"./err.html#mint_cap_mismatch","f":"err::<span class=\"function\">mint_cap_mismatch</span>","de":""},{"d":"err::missing_dynamic_field","l":"./err.html#missing_dynamic_field","f":"err::<span class=\"function\">missing_dynamic_field</span>","de":""},{"d":"err::must_be_witness","l":"./err.html#must_be_witness","f":"err::<span class=\"function\">must_be_witness</span>","de":""},{"d":"err::nft_exclusively_listed","l":"./err.html#nft_exclusively_listed","f":"err::<span class=\"function\">nft_exclusively_listed</span>","de":""},{"d":"err::nft_is_generic","l":"./err.html#nft_is_generic","f":"err::<span class=\"function\">nft_is_generic</span>","de":""},{"d":"err::nft_not_exclusively_listed","l":"./err.html#nft_not_exclusively_listed","f":"err::<span class=\"function\">nft_not_exclusively_listed</span>","de":""},{"d":"err::nft_redemption_incompleted","l":"./err.html#nft_redemption_incompleted","f":"err::<span class=\"function\">nft_redemption_incompleted</span>","de":""},{"d":"err::nft_sale_incompleted","l":"./err.html#nft_sale_incompleted","f":"err::<span class=\"function\">nft_sale_incompleted</span>","de":""},{"d":"err::no_nfts_left","l":"./err.html#no_nfts_left","f":"err::<span class=\"function\">no_nfts_left</span>","de":""},{"d":"err::not_nft_owner","l":"./err.html#not_nft_owner","f":"err::<span class=\"function\">not_nft_owner</span>","de":""},{"d":"err::order_does_not_exist","l":"./err.html#order_does_not_exist","f":"err::<span class=\"function\">order_does_not_exist</span>","de":""},{"d":"err::order_owner_must_be_sender","l":"./err.html#order_owner_must_be_sender","f":"err::<span class=\"function\">order_owner_must_be_sender</span>","de":""},{"d":"err::order_price_below_reserve","l":"./err.html#order_price_below_reserve","f":"err::<span class=\"function\">order_price_below_reserve</span>","de":""},{"d":"err::safe_cap_mismatch","l":"./err.html#safe_cap_mismatch","f":"err::<span class=\"function\">safe_cap_mismatch</span>","de":""},{"d":"err::safe_does_not_accept_deposits","l":"./err.html#safe_does_not_accept_deposits","f":"err::<span class=\"function\">safe_does_not_accept_deposits</span>","de":""},{"d":"err::safe_does_not_contain_nft","l":"./err.html#safe_does_not_contain_nft","f":"err::<span class=\"function\">safe_does_not_contain_nft</span>","de":""},{"d":"err::safe_id_mismatch","l":"./err.html#safe_id_mismatch","f":"err::<span class=\"function\">safe_id_mismatch</span>","de":""},{"d":"err::sale_is_not_whitelisted","l":"./err.html#sale_is_not_whitelisted","f":"err::<span class=\"function\">sale_is_not_whitelisted</span>","de":""},{"d":"err::sale_is_whitelisted","l":"./err.html#sale_is_whitelisted","f":"err::<span class=\"function\">sale_is_whitelisted</span>","de":""},{"d":"err::sender_not_allowlist_admin","l":"./err.html#sender_not_allowlist_admin","f":"err::<span class=\"function\">sender_not_allowlist_admin</span>","de":""},{"d":"err::sender_not_owner","l":"./err.html#sender_not_owner","f":"err::<span class=\"function\">sender_not_owner</span>","de":""},{"d":"err::share_attribution_already_exists","l":"./err.html#share_attribution_already_exists","f":"err::<span class=\"function\">share_attribution_already_exists</span>","de":""},{"d":"err::supply_is_limited","l":"./err.html#supply_is_limited","f":"err::<span class=\"function\">supply_is_limited</span>","de":""},{"d":"err::supply_is_not_zero","l":"./err.html#supply_is_not_zero","f":"err::<span class=\"function\">supply_is_not_zero</span>","de":""},{"d":"err::supply_is_unlimited","l":"./err.html#supply_is_unlimited","f":"err::<span class=\"function\">supply_is_unlimited</span>","de":""},{"d":"err::supply_maxed_out","l":"./err.html#supply_maxed_out","f":"err::<span class=\"function\">supply_maxed_out</span>","de":""},{"d":"err::supply_policy_mismatch","l":"./err.html#supply_policy_mismatch","f":"err::<span class=\"function\">supply_policy_mismatch</span>","de":""},{"d":"err::transfer_cap_expired","l":"./err.html#transfer_cap_expired","f":"err::<span class=\"function\">transfer_cap_expired</span>","de":""},{"d":"err::transfer_cap_nft_mismatch","l":"./err.html#transfer_cap_nft_mismatch","f":"err::<span class=\"function\">transfer_cap_nft_mismatch</span>","de":""},{"d":"err::undefined_domain","l":"./err.html#undefined_domain","f":"err::<span class=\"function\">undefined_domain</span>","de":""},{"d":"err::undefined_inventory","l":"./err.html#undefined_inventory","f":"err::<span class=\"function\">undefined_inventory</span>","de":""},{"d":"err::undefined_market","l":"./err.html#undefined_market","f":"err::<span class=\"function\">undefined_market</span>","de":""},{"d":"err::undefined_nft_id","l":"./err.html#undefined_nft_id","f":"err::<span class=\"function\">undefined_nft_id</span>","de":""},{"d":"err::witness_source_mismatch","l":"./err.html#witness_source_mismatch","f":"err::<span class=\"function\">witness_source_mismatch</span>","de":""},{"d":"err::wrong_fee_policy_type","l":"./err.html#wrong_fee_policy_type","f":"err::<span class=\"function\">wrong_fee_policy_type</span>","de":""},{"d":"err::wrong_listing_admin","l":"./err.html#wrong_listing_admin","f":"err::<span class=\"function\">wrong_listing_admin</span>","de":""},{"d":"err::wrong_marketplace_admin","l":"./err.html#wrong_marketplace_admin","f":"err::<span class=\"function\">wrong_marketplace_admin</span>","de":""},{"d":"err::wrong_marketplace_or_listing_admin","l":"./err.html#wrong_marketplace_or_listing_admin","f":"err::<span class=\"function\">wrong_marketplace_or_listing_admin</span>","de":""},{"d":"utils::Marker","l":"./utils.html#Marker","f":"utils::<span class=\"hljs-type\">Marker</span>","de":" Used to mark type fields in dynamic fields"},{"d":"utils::assert_not_nft_protocol_type","l":"./utils.html#assert_not_nft_protocol_type","f":"utils::<span class=\"function\">assert_not_nft_protocol_type</span>","de":" T mustn't be exported by nft-protocol to avoid unexpected bugs"},{"d":"utils::assert_same_module_as_witness","l":"./utils.html#assert_same_module_as_witness","f":"utils::<span class=\"function\">assert_same_module_as_witness</span>","de":" First generic `T` is any type, second generic is `Witness`."},{"d":"utils::from_vec_to_map","l":"./utils.html#from_vec_to_map","f":"utils::<span class=\"function\">from_vec_to_map</span>","de":""},{"d":"utils::get_package_module_type","l":"./utils.html#get_package_module_type","f":"utils::<span class=\"function\">get_package_module_type</span>","de":""},{"d":"utils::is_nft_protocol_nft_type","l":"./utils.html#is_nft_protocol_nft_type","f":"utils::<span class=\"function\">is_nft_protocol_nft_type</span>","de":" Returns true if T is of type `nft_protocol::nft::Nft`"},{"d":"utils::marker","l":"./utils.html#marker","f":"utils::<span class=\"function\">marker</span>","de":""},{"d":"utils::nft_protocol_package_id","l":"./utils.html#nft_protocol_package_id","f":"utils::<span class=\"function\">nft_protocol_package_id</span>","de":""},{"d":"transfer_allowlist::Allowlist","l":"./transfer_allowlist.html#Allowlist","f":"transfer_allowlist::<span class=\"hljs-type\">Allowlist</span>","de":""},{"d":"transfer_allowlist::CollectionControlCap","l":"./transfer_allowlist.html#CollectionControlCap","f":"transfer_allowlist::<span class=\"hljs-type\">CollectionControlCap</span>","de":" Gives the collection admin a capability to insert and remove their"},{"d":"transfer_allowlist::create","l":"./transfer_allowlist.html#create","f":"transfer_allowlist::<span class=\"function\">create</span>","de":""},{"d":"transfer_allowlist::can_be_transferred","l":"./transfer_allowlist.html#can_be_transferred","f":"transfer_allowlist::<span class=\"function\">can_be_transferred</span>","de":" Checks whether given authority witness is in the allowlist, and also"},{"d":"transfer_allowlist::clear_collections","l":"./transfer_allowlist.html#clear_collections","f":"transfer_allowlist::<span class=\"function\">clear_collections</span>","de":" Removes all collections from this list."},{"d":"transfer_allowlist::create_collection_cap","l":"./transfer_allowlist.html#create_collection_cap","f":"transfer_allowlist::<span class=\"function\">create_collection_cap</span>","de":" See the docs for struct `CollectionControlCap`."},{"d":"transfer_allowlist::insert_authority","l":"./transfer_allowlist.html#insert_authority","f":"transfer_allowlist::<span class=\"function\">insert_authority</span>","de":" To insert a new authority into a list we need confirmation by the"},{"d":"transfer_allowlist::insert_collection","l":"./transfer_allowlist.html#insert_collection","f":"transfer_allowlist::<span class=\"function\">insert_collection</span>","de":" To add a collection to the list, we need a confirmation by both the"},{"d":"transfer_allowlist::remove_authority","l":"./transfer_allowlist.html#remove_authority","f":"transfer_allowlist::<span class=\"function\">remove_authority</span>","de":" The allowlist authority (via witness) can at any point remove any"},{"d":"transfer_allowlist::remove_collection","l":"./transfer_allowlist.html#remove_collection","f":"transfer_allowlist::<span class=\"function\">remove_collection</span>","de":" The allowlist owner can remove any collection at any point."},{"d":"transfer_allowlist::remove_itself","l":"./transfer_allowlist.html#remove_itself","f":"transfer_allowlist::<span class=\"function\">remove_itself</span>","de":" Any collection is allowed to remove itself from any allowlist at any"},{"d":"royalties::TradePayment","l":"./royalties.html#TradePayment","f":"royalties::<span class=\"hljs-type\">TradePayment</span>","de":" `W` is the collection's witness (not the one time witness!) which"},{"d":"royalties::balance","l":"./royalties.html#balance","f":"royalties::<span class=\"function\">balance</span>","de":""},{"d":"royalties::balance_mut","l":"./royalties.html#balance_mut","f":"royalties::<span class=\"function\">balance_mut</span>","de":" `W` is the collection's witness (not the one time witness!) which"},{"d":"royalties::amount","l":"./royalties.html#amount","f":"royalties::<span class=\"function\">amount</span>","de":""},{"d":"royalties::create","l":"./royalties.html#create","f":"royalties::<span class=\"function\">create</span>","de":""},{"d":"royalties::beneficiary","l":"./royalties.html#beneficiary","f":"royalties::<span class=\"function\">beneficiary</span>","de":""},{"d":"royalties::create_with_trade","l":"./royalties.html#create_with_trade","f":"royalties::<span class=\"function\">create_with_trade</span>","de":""},{"d":"royalties::transfer_remaining_to_beneficiary","l":"./royalties.html#transfer_remaining_to_beneficiary","f":"royalties::<span class=\"function\">transfer_remaining_to_beneficiary</span>","de":""},{"d":"trading::AskCommission","l":"./trading.html#AskCommission","f":"trading::<span class=\"hljs-type\">AskCommission</span>","de":" Enables collection of wallet/marketplace collection for listing an NFT."},{"d":"trading::BidCommission","l":"./trading.html#BidCommission","f":"trading::<span class=\"hljs-type\">BidCommission</span>","de":" Enables collection of wallet/marketplace collection for buying NFTs."},{"d":"trading::destroy_bid_commission","l":"./trading.html#destroy_bid_commission","f":"trading::<span class=\"function\">destroy_bid_commission</span>","de":""},{"d":"trading::new_ask_commission","l":"./trading.html#new_ask_commission","f":"trading::<span class=\"function\">new_ask_commission</span>","de":""},{"d":"trading::new_bid_commission","l":"./trading.html#new_bid_commission","f":"trading::<span class=\"function\">new_bid_commission</span>","de":""},{"d":"trading::settle_funds_no_royalties","l":"./trading.html#settle_funds_no_royalties","f":"trading::<span class=\"function\">settle_funds_no_royalties</span>","de":" No royalty collection, just transfer the funds directly."},{"d":"trading::settle_funds_with_royalties","l":"./trading.html#settle_funds_with_royalties","f":"trading::<span class=\"function\">settle_funds_with_royalties</span>","de":" Wraps the funds in an object which can be only unwrapped in a method"},{"d":"trading::transfer_bid_commission","l":"./trading.html#transfer_bid_commission","f":"trading::<span class=\"function\">transfer_bid_commission</span>","de":""},{"d":"nft::MintNftEvent","l":"./nft.html#MintNftEvent","f":"nft::<span class=\"hljs-type\">MintNftEvent</span>","de":" Event signalling that an `Nft` was minted"},{"d":"nft::Nft","l":"./nft.html#Nft","f":"nft::<span class=\"hljs-type\">Nft</span>","de":" `Nft` object"},{"d":"nft::new","l":"./nft.html#new","f":"nft::<span class=\"function\">new</span>","de":" Create a new `Nft`"},{"d":"nft::transfer","l":"./nft.html#transfer","f":"nft::<span class=\"function\">transfer</span>","de":" Transfer the `Nft` to `recipient` while changing the `logical_owner`"},{"d":"nft::add_domain","l":"./nft.html#add_domain","f":"nft::<span class=\"function\">add_domain</span>","de":" Adds domain of type `D` to `Nft`"},{"d":"nft::assert_domain","l":"./nft.html#assert_domain","f":"nft::<span class=\"function\">assert_domain</span>","de":" Assert that domain, `D`, exists on `Nft`"},{"d":"nft::assert_no_domain","l":"./nft.html#assert_no_domain","f":"nft::<span class=\"function\">assert_no_domain</span>","de":" Assert that domain, `D`, does not exist on `Nft`"},{"d":"nft::borrow_domain","l":"./nft.html#borrow_domain","f":"nft::<span class=\"function\">borrow_domain</span>","de":" Borrow domain of type `D` from `Nft`"},{"d":"nft::borrow_domain_mut","l":"./nft.html#borrow_domain_mut","f":"nft::<span class=\"function\">borrow_domain_mut</span>","de":" Mutably borrow domain of type `D` from `Nft`"},{"d":"nft::change_logical_owner","l":"./nft.html#change_logical_owner","f":"nft::<span class=\"function\">change_logical_owner</span>","de":" Change the `logical_owner` of the `Nft` to `recipient`"},{"d":"nft::has_domain","l":"./nft.html#has_domain","f":"nft::<span class=\"function\">has_domain</span>","de":" Check whether `Nft` has a domain of type `D`"},{"d":"nft::logical_owner","l":"./nft.html#logical_owner","f":"nft::<span class=\"function\">logical_owner</span>","de":" Returns the logical owner of the `Nft`"},{"d":"nft::remove_domain","l":"./nft.html#remove_domain","f":"nft::<span class=\"function\">remove_domain</span>","de":" Removes domain of type `D` from `Nft`"},{"d":"unprotected_safe::DepositEvent","l":"./unprotected_safe.html#DepositEvent","f":"unprotected_safe::<span class=\"hljs-type\">DepositEvent</span>","de":""},{"d":"unprotected_safe::NftRef","l":"./unprotected_safe.html#NftRef","f":"unprotected_safe::<span class=\"hljs-type\">NftRef</span>","de":" Keeps info about an NFT which enables us to issue transfer caps etc."},{"d":"unprotected_safe::OwnerCap","l":"./unprotected_safe.html#OwnerCap","f":"unprotected_safe::<span class=\"hljs-type\">OwnerCap</span>","de":" Whoever owns this object can perform some admin actions against the"},{"d":"unprotected_safe::TransferCap","l":"./unprotected_safe.html#TransferCap","f":"unprotected_safe::<span class=\"hljs-type\">TransferCap</span>","de":" Enables the owner to transfer given NFT out of the `Safe`."},{"d":"unprotected_safe::TransferEvent","l":"./unprotected_safe.html#TransferEvent","f":"unprotected_safe::<span class=\"hljs-type\">TransferEvent</span>","de":""},{"d":"unprotected_safe::UnprotectedSafe","l":"./unprotected_safe.html#UnprotectedSafe","f":"unprotected_safe::<span class=\"hljs-type\">UnprotectedSafe</span>","de":""},{"d":"unprotected_safe::new","l":"./unprotected_safe.html#new","f":"unprotected_safe::<span class=\"function\">new</span>","de":""},{"d":"unprotected_safe::assert_has_nft","l":"./unprotected_safe.html#assert_has_nft","f":"unprotected_safe::<span class=\"function\">assert_has_nft</span>","de":""},{"d":"unprotected_safe::assert_id","l":"./unprotected_safe.html#assert_id","f":"unprotected_safe::<span class=\"function\">assert_id</span>","de":""},{"d":"unprotected_safe::assert_nft_of_transfer_cap","l":"./unprotected_safe.html#assert_nft_of_transfer_cap","f":"unprotected_safe::<span class=\"function\">assert_nft_of_transfer_cap</span>","de":""},{"d":"unprotected_safe::assert_not_exclusively_listed","l":"./unprotected_safe.html#assert_not_exclusively_listed","f":"unprotected_safe::<span class=\"function\">assert_not_exclusively_listed</span>","de":""},{"d":"unprotected_safe::assert_owner_cap","l":"./unprotected_safe.html#assert_owner_cap","f":"unprotected_safe::<span class=\"function\">assert_owner_cap</span>","de":""},{"d":"unprotected_safe::assert_transfer_cap_exclusive","l":"./unprotected_safe.html#assert_transfer_cap_exclusive","f":"unprotected_safe::<span class=\"function\">assert_transfer_cap_exclusive</span>","de":""},{"d":"unprotected_safe::assert_transfer_cap_of_native_nft","l":"./unprotected_safe.html#assert_transfer_cap_of_native_nft","f":"unprotected_safe::<span class=\"function\">assert_transfer_cap_of_native_nft</span>","de":""},{"d":"unprotected_safe::assert_transfer_cap_of_safe","l":"./unprotected_safe.html#assert_transfer_cap_of_safe","f":"unprotected_safe::<span class=\"function\">assert_transfer_cap_of_safe</span>","de":""},{"d":"unprotected_safe::burn_transfer_cap","l":"./unprotected_safe.html#burn_transfer_cap","f":"unprotected_safe::<span class=\"function\">burn_transfer_cap</span>","de":" Destroys given transfer cap. This is mainly useful for exclusively listed"},{"d":"unprotected_safe::create_exclusive_transfer_cap","l":"./unprotected_safe.html#create_exclusive_transfer_cap","f":"unprotected_safe::<span class=\"function\">create_exclusive_transfer_cap</span>","de":" Creates an irrevocable and exclusive transfer cap."},{"d":"unprotected_safe::create_for_sender","l":"./unprotected_safe.html#create_for_sender","f":"unprotected_safe::<span class=\"function\">create_for_sender</span>","de":" Instantiates a new shared object `Safe` and transfer `OwnerCap` to the"},{"d":"unprotected_safe::create_safe","l":"./unprotected_safe.html#create_safe","f":"unprotected_safe::<span class=\"function\">create_safe</span>","de":" Creates a new `Safe` shared object and returns the authority capability"},{"d":"unprotected_safe::create_transfer_cap","l":"./unprotected_safe.html#create_transfer_cap","f":"unprotected_safe::<span class=\"function\">create_transfer_cap</span>","de":" Creates a `TransferCap` which must be claimed atomically."},{"d":"unprotected_safe::delist_nft","l":"./unprotected_safe.html#delist_nft","f":"unprotected_safe::<span class=\"function\">delist_nft</span>","de":" Changes the transfer ref version, thereby invalidating all existing"},{"d":"unprotected_safe::deposit_generic_nft","l":"./unprotected_safe.html#deposit_generic_nft","f":"unprotected_safe::<span class=\"function\">deposit_generic_nft</span>","de":" Transfer an NFT into the `Safe`."},{"d":"unprotected_safe::deposit_nft","l":"./unprotected_safe.html#deposit_nft","f":"unprotected_safe::<span class=\"function\">deposit_nft</span>","de":" Transfer an NFT into the `Safe`."},{"d":"unprotected_safe::has_generic_nft","l":"./unprotected_safe.html#has_generic_nft","f":"unprotected_safe::<span class=\"function\">has_generic_nft</span>","de":""},{"d":"unprotected_safe::has_nft","l":"./unprotected_safe.html#has_nft","f":"unprotected_safe::<span class=\"function\">has_nft</span>","de":""},{"d":"unprotected_safe::owner_cap_safe","l":"./unprotected_safe.html#owner_cap_safe","f":"unprotected_safe::<span class=\"function\">owner_cap_safe</span>","de":""},{"d":"unprotected_safe::transfer_cap_is_exclusive","l":"./unprotected_safe.html#transfer_cap_is_exclusive","f":"unprotected_safe::<span class=\"function\">transfer_cap_is_exclusive</span>","de":""},{"d":"unprotected_safe::transfer_cap_is_nft_generic","l":"./unprotected_safe.html#transfer_cap_is_nft_generic","f":"unprotected_safe::<span class=\"function\">transfer_cap_is_nft_generic</span>","de":""},{"d":"unprotected_safe::transfer_cap_nft","l":"./unprotected_safe.html#transfer_cap_nft","f":"unprotected_safe::<span class=\"function\">transfer_cap_nft</span>","de":""},{"d":"unprotected_safe::transfer_cap_safe","l":"./unprotected_safe.html#transfer_cap_safe","f":"unprotected_safe::<span class=\"function\">transfer_cap_safe</span>","de":""},{"d":"unprotected_safe::transfer_cap_version","l":"./unprotected_safe.html#transfer_cap_version","f":"unprotected_safe::<span class=\"function\">transfer_cap_version</span>","de":""},{"d":"unprotected_safe::transfer_generic_nft_to_recipient","l":"./unprotected_safe.html#transfer_generic_nft_to_recipient","f":"unprotected_safe::<span class=\"function\">transfer_generic_nft_to_recipient</span>","de":""},{"d":"unprotected_safe::transfer_generic_nft_to_safe","l":"./unprotected_safe.html#transfer_generic_nft_to_safe","f":"unprotected_safe::<span class=\"function\">transfer_generic_nft_to_safe</span>","de":""},{"d":"unprotected_safe::transfer_nft_to_recipient","l":"./unprotected_safe.html#transfer_nft_to_recipient","f":"unprotected_safe::<span class=\"function\">transfer_nft_to_recipient</span>","de":" Use a transfer cap to get an NFT out of the `Safe`."},{"d":"unprotected_safe::transfer_nft_to_safe","l":"./unprotected_safe.html#transfer_nft_to_safe","f":"unprotected_safe::<span class=\"function\">transfer_nft_to_safe</span>","de":" Use a transfer cap to get an NFT out of source `Safe` and deposit it"},{"d":"safe::OwnerCap","l":"./safe.html#OwnerCap","f":"safe::<span class=\"hljs-type\">OwnerCap</span>","de":" Whoever owns this object can perform some admin actions against the"},{"d":"safe::TransferCap","l":"./safe.html#TransferCap","f":"safe::<span class=\"hljs-type\">TransferCap</span>","de":" Enables the owner to transfer given NFT out of the `Safe`."},{"d":"safe::Safe","l":"./safe.html#Safe","f":"safe::<span class=\"hljs-type\">Safe</span>","de":""},{"d":"safe::new","l":"./safe.html#new","f":"safe::<span class=\"function\">new</span>","de":" Creates a new safe."},{"d":"safe::assert_has_nft","l":"./safe.html#assert_has_nft","f":"safe::<span class=\"function\">assert_has_nft</span>","de":""},{"d":"safe::assert_id","l":"./safe.html#assert_id","f":"safe::<span class=\"function\">assert_id</span>","de":""},{"d":"safe::assert_nft_of_transfer_cap","l":"./safe.html#assert_nft_of_transfer_cap","f":"safe::<span class=\"function\">assert_nft_of_transfer_cap</span>","de":""},{"d":"safe::assert_not_exclusively_listed","l":"./safe.html#assert_not_exclusively_listed","f":"safe::<span class=\"function\">assert_not_exclusively_listed</span>","de":""},{"d":"safe::assert_owner_cap","l":"./safe.html#assert_owner_cap","f":"safe::<span class=\"function\">assert_owner_cap</span>","de":""},{"d":"safe::assert_transfer_cap_exclusive","l":"./safe.html#assert_transfer_cap_exclusive","f":"safe::<span class=\"function\">assert_transfer_cap_exclusive</span>","de":""},{"d":"safe::assert_transfer_cap_of_native_nft","l":"./safe.html#assert_transfer_cap_of_native_nft","f":"safe::<span class=\"function\">assert_transfer_cap_of_native_nft</span>","de":""},{"d":"safe::assert_transfer_cap_of_safe","l":"./safe.html#assert_transfer_cap_of_safe","f":"safe::<span class=\"function\">assert_transfer_cap_of_safe</span>","de":""},{"d":"safe::burn_transfer_cap","l":"./safe.html#burn_transfer_cap","f":"safe::<span class=\"function\">burn_transfer_cap</span>","de":" Destroys given transfer cap. This is mainly useful for exclusively listed"},{"d":"safe::create_exclusive_transfer_cap","l":"./safe.html#create_exclusive_transfer_cap","f":"safe::<span class=\"function\">create_exclusive_transfer_cap</span>","de":" Creates an irrevocable and exclusive transfer cap."},{"d":"safe::create_for_sender","l":"./safe.html#create_for_sender","f":"safe::<span class=\"function\">create_for_sender</span>","de":" Instantiates a new shared object `Safe` and transfer"},{"d":"safe::create_safe","l":"./safe.html#create_safe","f":"safe::<span class=\"function\">create_safe</span>","de":" Creates a new `Safe` shared object and returns the"},{"d":"safe::create_transfer_cap","l":"./safe.html#create_transfer_cap","f":"safe::<span class=\"function\">create_transfer_cap</span>","de":" Creates a `TransferCap` which must be claimed atomically."},{"d":"safe::delist_nft","l":"./safe.html#delist_nft","f":"safe::<span class=\"function\">delist_nft</span>","de":" Changes the transfer ref version, thereby invalidating all existing"},{"d":"safe::deposit_generic_nft","l":"./safe.html#deposit_generic_nft","f":"safe::<span class=\"function\">deposit_generic_nft</span>","de":" Transfer an NFT into the `Safe`."},{"d":"safe::deposit_nft","l":"./safe.html#deposit_nft","f":"safe::<span class=\"function\">deposit_nft</span>","de":" Transfer an NFT into the `Safe`."},{"d":"safe::has_generic_nft","l":"./safe.html#has_generic_nft","f":"safe::<span class=\"function\">has_generic_nft</span>","de":""},{"d":"safe::has_nft","l":"./safe.html#has_nft","f":"safe::<span class=\"function\">has_nft</span>","de":""},{"d":"safe::owner_cap_safe","l":"./safe.html#owner_cap_safe","f":"safe::<span class=\"function\">owner_cap_safe</span>","de":""},{"d":"safe::transfer_cap_is_exclusive","l":"./safe.html#transfer_cap_is_exclusive","f":"safe::<span class=\"function\">transfer_cap_is_exclusive</span>","de":""},{"d":"safe::transfer_cap_is_nft_generic","l":"./safe.html#transfer_cap_is_nft_generic","f":"safe::<span class=\"function\">transfer_cap_is_nft_generic</span>","de":""},{"d":"safe::transfer_cap_nft","l":"./safe.html#transfer_cap_nft","f":"safe::<span class=\"function\">transfer_cap_nft</span>","de":""},{"d":"safe::transfer_cap_safe","l":"./safe.html#transfer_cap_safe","f":"safe::<span class=\"function\">transfer_cap_safe</span>","de":""},{"d":"safe::transfer_cap_version","l":"./safe.html#transfer_cap_version","f":"safe::<span class=\"function\">transfer_cap_version</span>","de":""},{"d":"safe::transfer_generic_nft_to_recipient","l":"./safe.html#transfer_generic_nft_to_recipient","f":"safe::<span class=\"function\">transfer_generic_nft_to_recipient</span>","de":""},{"d":"safe::transfer_generic_nft_to_safe","l":"./safe.html#transfer_generic_nft_to_safe","f":"safe::<span class=\"function\">transfer_generic_nft_to_safe</span>","de":""},{"d":"safe::transfer_nft_to_recipient","l":"./safe.html#transfer_nft_to_recipient","f":"safe::<span class=\"function\">transfer_nft_to_recipient</span>","de":" Use a transfer cap to get an NFT out of the `Safe`."},{"d":"safe::transfer_nft_to_safe","l":"./safe.html#transfer_nft_to_safe","f":"safe::<span class=\"function\">transfer_nft_to_safe</span>","de":" Use a transfer cap to get an NFT out of source `Safe` and"},{"d":"safe::are_all_deposits_enabled","l":"./safe.html#are_all_deposits_enabled","f":"safe::<span class=\"function\">are_all_deposits_enabled</span>","de":""},{"d":"safe::assert_can_deposit","l":"./safe.html#assert_can_deposit","f":"safe::<span class=\"function\">assert_can_deposit</span>","de":""},{"d":"safe::create_exclusive_transfer_cap_for_sender","l":"./safe.html#create_exclusive_transfer_cap_for_sender","f":"safe::<span class=\"function\">create_exclusive_transfer_cap_for_sender</span>","de":""},{"d":"safe::create_transfer_cap_for_sender","l":"./safe.html#create_transfer_cap_for_sender","f":"safe::<span class=\"function\">create_transfer_cap_for_sender</span>","de":""},{"d":"safe::deposit_generic_nft_privileged","l":"./safe.html#deposit_generic_nft_privileged","f":"safe::<span class=\"function\">deposit_generic_nft_privileged</span>","de":""},{"d":"safe::deposit_nft_privileged","l":"./safe.html#deposit_nft_privileged","f":"safe::<span class=\"function\">deposit_nft_privileged</span>","de":" Transfer an NFT from owner to the `Safe`."},{"d":"safe::disable_deposits_of_collection","l":"./safe.html#disable_deposits_of_collection","f":"safe::<span class=\"function\">disable_deposits_of_collection</span>","de":" The owner can restrict deposits into the `Safe` from given"},{"d":"safe::enable_any_deposit","l":"./safe.html#enable_any_deposit","f":"safe::<span class=\"function\">enable_any_deposit</span>","de":" No restriction on deposits."},{"d":"safe::enable_deposits_of_collection","l":"./safe.html#enable_deposits_of_collection","f":"safe::<span class=\"function\">enable_deposits_of_collection</span>","de":" The owner can enable deposits into the `Safe` from given"},{"d":"safe::inner","l":"./safe.html#inner","f":"safe::<span class=\"function\">inner</span>","de":""},{"d":"safe::restrict_deposits","l":"./safe.html#restrict_deposits","f":"safe::<span class=\"function\">restrict_deposits</span>","de":" Only owner or allowlisted collections can deposit."},{"d":"bidding::Witness","l":"./bidding.html#Witness","f":"bidding::<span class=\"hljs-type\">Witness</span>","de":" Witness used to authenticate witness protected endpoints"},{"d":"bidding::Bid","l":"./bidding.html#Bid","f":"bidding::<span class=\"hljs-type\">Bid</span>","de":""},{"d":"bidding::BidClosed","l":"./bidding.html#BidClosed","f":"bidding::<span class=\"hljs-type\">BidClosed</span>","de":""},{"d":"bidding::BidCreated","l":"./bidding.html#BidCreated","f":"bidding::<span class=\"hljs-type\">BidCreated</span>","de":""},{"d":"bidding::close_bid","l":"./bidding.html#close_bid","f":"bidding::<span class=\"function\">close_bid</span>","de":" If a user wants to cancel their position, they get their coins back."},{"d":"bidding::create_bid","l":"./bidding.html#create_bid","f":"bidding::<span class=\"function\">create_bid</span>","de":" Payable entry function to create a bid for an NFT."},{"d":"bidding::create_bid_with_commission","l":"./bidding.html#create_bid_with_commission","f":"bidding::<span class=\"function\">create_bid_with_commission</span>","de":" Payable entry function to create a bid for an NFT."},{"d":"bidding::sell_generic_nft","l":"./bidding.html#sell_generic_nft","f":"bidding::<span class=\"function\">sell_generic_nft</span>","de":" Similar to [`sell_nft`] except that this is meant for"},{"d":"bidding::sell_generic_nft_with_commission","l":"./bidding.html#sell_generic_nft_with_commission","f":"bidding::<span class=\"function\">sell_generic_nft_with_commission</span>","de":" Similar to [`sell_nft_with_commission`] except that this is meant for"},{"d":"bidding::sell_nft","l":"./bidding.html#sell_nft","f":"bidding::<span class=\"function\">sell_nft</span>","de":" Entry function to sell an NFT with an open `bid`."},{"d":"bidding::sell_nft_with_commission","l":"./bidding.html#sell_nft_with_commission","f":"bidding::<span class=\"function\">sell_nft_with_commission</span>","de":" Entry function to sell an NFT with an open `bid`."},{"d":"collection::Collection","l":"./collection.html#Collection","f":"collection::<span class=\"hljs-type\">Collection</span>","de":" NFT `Collection` object"},{"d":"collection::CollectionMintEvent","l":"./collection.html#CollectionMintEvent","f":"collection::<span class=\"hljs-type\">CollectionMintEvent</span>","de":" Event signalling that a `Collection` was minted"},{"d":"collection::MintCap","l":"./collection.html#MintCap","f":"collection::<span class=\"hljs-type\">MintCap</span>","de":" `MintCap<C>` delegates the capability to it's owner to mint `Nft<C>`."},{"d":"collection::create","l":"./collection.html#create","f":"collection::<span class=\"function\">create</span>","de":" Creates a `Collection<C>` and corresponding `MintCap<C>`"},{"d":"collection::add_domain","l":"./collection.html#add_domain","f":"collection::<span class=\"function\">add_domain</span>","de":" Adds domain of type `D` to `Collection`"},{"d":"collection::assert_domain","l":"./collection.html#assert_domain","f":"collection::<span class=\"function\">assert_domain</span>","de":" Assert that domain `D` exists on `Collection`"},{"d":"collection::assert_no_domain","l":"./collection.html#assert_no_domain","f":"collection::<span class=\"function\">assert_no_domain</span>","de":" Assert that domain `D` does not exist on `Collection`"},{"d":"collection::borrow_domain","l":"./collection.html#borrow_domain","f":"collection::<span class=\"function\">borrow_domain</span>","de":" Borrow domain of type `D` from `Nft`"},{"d":"collection::borrow_domain_mut","l":"./collection.html#borrow_domain_mut","f":"collection::<span class=\"function\">borrow_domain_mut</span>","de":" Mutably borrow domain of type `D` from `Collection`"},{"d":"collection::has_domain","l":"./collection.html#has_domain","f":"collection::<span class=\"function\">has_domain</span>","de":" Check whether `Collection` has a domain of type `D`"},{"d":"collection::remove_domain","l":"./collection.html#remove_domain","f":"collection::<span class=\"function\">remove_domain</span>","de":" Removes domain of type `D` from `Collection`"},{"d":"collection::assert_mint_cap","l":"./collection.html#assert_mint_cap","f":"collection::<span class=\"function\">assert_mint_cap</span>","de":" Assert that `MintCap` is associated with `Collection`"},{"d":"collection::collection_id","l":"./collection.html#collection_id","f":"collection::<span class=\"function\">collection_id</span>","de":" Returns ID of `Collection` associated with `MintCap`"},{"d":"creators::Witness","l":"./creators.html#Witness","f":"creators::<span class=\"hljs-type\">Witness</span>","de":" Witness used to authenticate witness protected endpoints"},{"d":"creators::CreatorsDomain","l":"./creators.html#CreatorsDomain","f":"creators::<span class=\"hljs-type\">CreatorsDomain</span>","de":" `CreatorsDomain` tracks collection creators"},{"d":"creators::is_empty","l":"./creators.html#is_empty","f":"creators::<span class=\"function\">is_empty</span>","de":" Returns whether `CreatorsDomain` has no defined creators"},{"d":"creators::add_creators_domain","l":"./creators.html#add_creators_domain","f":"creators::<span class=\"function\">add_creators_domain</span>","de":" Adds `CreatorsDomain` to `Collection`"},{"d":"creators::assert_collection_has_creator","l":"./creators.html#assert_collection_has_creator","f":"creators::<span class=\"function\">assert_collection_has_creator</span>","de":" Asserts that address is a `Creator` attributed in `CreatorsDomain` of"},{"d":"creators::assert_is_creator","l":"./creators.html#assert_is_creator","f":"creators::<span class=\"function\">assert_is_creator</span>","de":" Asserts that address is a `Creator` attributed in `CreatorsDomain`"},{"d":"creators::borrow_creators","l":"./creators.html#borrow_creators","f":"creators::<span class=\"function\">borrow_creators</span>","de":" Returns the list of creators defined on the `CreatorsDomain`"},{"d":"creators::contains_creator","l":"./creators.html#contains_creator","f":"creators::<span class=\"function\">contains_creator</span>","de":" Returns whether address is a defined creator"},{"d":"creators::creators_domain","l":"./creators.html#creators_domain","f":"creators::<span class=\"function\">creators_domain</span>","de":" Borrows `CreatorsDomain` from `Collection`"},{"d":"creators::creators_domain_mut","l":"./creators.html#creators_domain_mut","f":"creators::<span class=\"function\">creators_domain_mut</span>","de":" Mutably borrows `CreatorsDomain` from `Collection`"},{"d":"creators::freeze_domains","l":"./creators.html#freeze_domains","f":"creators::<span class=\"function\">freeze_domains</span>","de":" Makes `Collection` domains immutable"},{"d":"creators::from_address","l":"./creators.html#from_address","f":"creators::<span class=\"function\">from_address</span>","de":" Creates a `CreatorsDomain` object with only one creator"},{"d":"creators::from_creators","l":"./creators.html#from_creators","f":"creators::<span class=\"function\">from_creators</span>","de":" Creates a `CreatorsDomain` with multiple creators"},{"d":"creators::is_frozen","l":"./creators.html#is_frozen","f":"creators::<span class=\"function\">is_frozen</span>","de":" Returns whether `CreatorsDomain` is frozen"},{"d":"creators::new_empty","l":"./creators.html#new_empty","f":"creators::<span class=\"function\">new_empty</span>","de":" Creates an empty `CreatorsDomain` object"},{"d":"display::Witness","l":"./display.html#Witness","f":"display::<span class=\"hljs-type\">Witness</span>","de":" Witness used to authenticate witness protected endpoints"},{"d":"display::AttributesDomain","l":"./display.html#AttributesDomain","f":"display::<span class=\"hljs-type\">AttributesDomain</span>","de":""},{"d":"display::DisplayDomain","l":"./display.html#DisplayDomain","f":"display::<span class=\"hljs-type\">DisplayDomain</span>","de":""},{"d":"display::SymbolDomain","l":"./display.html#SymbolDomain","f":"display::<span class=\"hljs-type\">SymbolDomain</span>","de":""},{"d":"display::UrlDomain","l":"./display.html#UrlDomain","f":"display::<span class=\"hljs-type\">UrlDomain</span>","de":""},{"d":"display::name","l":"./display.html#name","f":"display::<span class=\"function\">name</span>","de":" Gets name of `DisplayDomain`"},{"d":"display::url","l":"./display.html#url","f":"display::<span class=\"function\">url</span>","de":" Gets URL of `UrlDomain`"},{"d":"display::symbol","l":"./display.html#symbol","f":"display::<span class=\"function\">symbol</span>","de":" Gets symbol of `SymbolDomain`"},{"d":"display::description","l":"./display.html#description","f":"display::<span class=\"function\">description</span>","de":" Gets description of `DisplayDomain`"},{"d":"display::keys","l":"./display.html#keys","f":"display::<span class=\"function\">keys</span>","de":" Gets Keys of `Attributes`"},{"d":"display::values","l":"./display.html#values","f":"display::<span class=\"function\">values</span>","de":" Gets Values of `Attributes`"},{"d":"display::add_attributes_domain","l":"./display.html#add_attributes_domain","f":"display::<span class=\"function\">add_attributes_domain</span>","de":""},{"d":"display::add_attributes_domain_from_vec","l":"./display.html#add_attributes_domain_from_vec","f":"display::<span class=\"function\">add_attributes_domain_from_vec</span>","de":""},{"d":"display::add_collection_display_domain","l":"./display.html#add_collection_display_domain","f":"display::<span class=\"function\">add_collection_display_domain</span>","de":""},{"d":"display::add_collection_symbol_domain","l":"./display.html#add_collection_symbol_domain","f":"display::<span class=\"function\">add_collection_symbol_domain</span>","de":""},{"d":"display::add_collection_url_domain","l":"./display.html#add_collection_url_domain","f":"display::<span class=\"function\">add_collection_url_domain</span>","de":""},{"d":"display::add_display_domain","l":"./display.html#add_display_domain","f":"display::<span class=\"function\">add_display_domain</span>","de":""},{"d":"display::add_symbol_domain","l":"./display.html#add_symbol_domain","f":"display::<span class=\"function\">add_symbol_domain</span>","de":""},{"d":"display::add_url_domain","l":"./display.html#add_url_domain","f":"display::<span class=\"function\">add_url_domain</span>","de":""},{"d":"display::attributes","l":"./display.html#attributes","f":"display::<span class=\"function\">attributes</span>","de":" Gets Keys of `Attributes`"},{"d":"display::collection_display_domain","l":"./display.html#collection_display_domain","f":"display::<span class=\"function\">collection_display_domain</span>","de":""},{"d":"display::display_attribute","l":"./display.html#display_attribute","f":"display::<span class=\"function\">display_attribute</span>","de":""},{"d":"display::display_attribute_mut","l":"./display.html#display_attribute_mut","f":"display::<span class=\"function\">display_attribute_mut</span>","de":""},{"d":"display::display_collection_symbol","l":"./display.html#display_collection_symbol","f":"display::<span class=\"function\">display_collection_symbol</span>","de":""},{"d":"display::display_collection_url","l":"./display.html#display_collection_url","f":"display::<span class=\"function\">display_collection_url</span>","de":""},{"d":"display::display_domain","l":"./display.html#display_domain","f":"display::<span class=\"function\">display_domain</span>","de":""},{"d":"display::display_symbol","l":"./display.html#display_symbol","f":"display::<span class=\"function\">display_symbol</span>","de":""},{"d":"display::display_url","l":"./display.html#display_url","f":"display::<span class=\"function\">display_url</span>","de":""},{"d":"display::new_attributes_domain","l":"./display.html#new_attributes_domain","f":"display::<span class=\"function\">new_attributes_domain</span>","de":" Creates new `Attributes` with a keys and values"},{"d":"display::new_display_domain","l":"./display.html#new_display_domain","f":"display::<span class=\"function\">new_display_domain</span>","de":" Creates a new `DisplayDomain` with name and description"},{"d":"display::new_symbol_domain","l":"./display.html#new_symbol_domain","f":"display::<span class=\"function\">new_symbol_domain</span>","de":" Creates new `SymbolDomain` with a symbol"},{"d":"display::new_url_domain","l":"./display.html#new_url_domain","f":"display::<span class=\"function\">new_url_domain</span>","de":" Creates new `UrlDomain` with a URL"},{"d":"display::set_description","l":"./display.html#set_description","f":"display::<span class=\"function\">set_description</span>","de":" Sets description of `DisplayDomain`"},{"d":"display::set_name","l":"./display.html#set_name","f":"display::<span class=\"function\">set_name</span>","de":" Sets name of `DisplayDomain`"},{"d":"display::set_symbol","l":"./display.html#set_symbol","f":"display::<span class=\"function\">set_symbol</span>","de":" Sets name of `DisplayDomain`"},{"d":"display::set_url","l":"./display.html#set_url","f":"display::<span class=\"function\">set_url</span>","de":" Sets name of `UrlDomain`"},{"d":"proceeds::Proceeds","l":"./proceeds.html#Proceeds","f":"proceeds::<span class=\"hljs-type\">Proceeds</span>","de":""},{"d":"proceeds::QtSold","l":"./proceeds.html#QtSold","f":"proceeds::<span class=\"hljs-type\">QtSold</span>","de":""},{"d":"proceeds::empty","l":"./proceeds.html#empty","f":"proceeds::<span class=\"function\">empty</span>","de":""},{"d":"proceeds::add","l":"./proceeds.html#add","f":"proceeds::<span class=\"function\">add</span>","de":""},{"d":"proceeds::balance","l":"./proceeds.html#balance","f":"proceeds::<span class=\"function\">balance</span>","de":""},{"d":"proceeds::total","l":"./proceeds.html#total","f":"proceeds::<span class=\"function\">total</span>","de":""},{"d":"proceeds::collect_with_fees","l":"./proceeds.html#collect_with_fees","f":"proceeds::<span class=\"function\">collect_with_fees</span>","de":""},{"d":"proceeds::collect_without_fees","l":"./proceeds.html#collect_without_fees","f":"proceeds::<span class=\"function\">collect_without_fees</span>","de":""},{"d":"proceeds::collected","l":"./proceeds.html#collected","f":"proceeds::<span class=\"function\">collected</span>","de":""},{"d":"object_box::ObjectBox","l":"./object_box.html#ObjectBox","f":"object_box::<span class=\"hljs-type\">ObjectBox</span>","de":""},{"d":"object_box::borrow","l":"./object_box.html#borrow","f":"object_box::<span class=\"function\">borrow</span>","de":""},{"d":"object_box::borrow_mut","l":"./object_box.html#borrow_mut","f":"object_box::<span class=\"function\">borrow_mut</span>","de":""},{"d":"object_box::empty","l":"./object_box.html#empty","f":"object_box::<span class=\"function\">empty</span>","de":""},{"d":"object_box::is_empty","l":"./object_box.html#is_empty","f":"object_box::<span class=\"function\">is_empty</span>","de":""},{"d":"object_box::remove","l":"./object_box.html#remove","f":"object_box::<span class=\"function\">remove</span>","de":""},{"d":"object_box::new","l":"./object_box.html#new","f":"object_box::<span class=\"function\">new</span>","de":""},{"d":"object_box::add","l":"./object_box.html#add","f":"object_box::<span class=\"function\">add</span>","de":""},{"d":"object_box::has_object","l":"./object_box.html#has_object","f":"object_box::<span class=\"function\">has_object</span>","de":""},{"d":"marketplace::Marketplace","l":"./marketplace.html#Marketplace","f":"marketplace::<span class=\"hljs-type\">Marketplace</span>","de":""},{"d":"marketplace::new","l":"./marketplace.html#new","f":"marketplace::<span class=\"function\">new</span>","de":" Initialises a `Marketplace` object and returns it"},{"d":"marketplace::receiver","l":"./marketplace.html#receiver","f":"marketplace::<span class=\"function\">receiver</span>","de":" Get the Marketplace's `receiver` address"},{"d":"marketplace::admin","l":"./marketplace.html#admin","f":"marketplace::<span class=\"function\">admin</span>","de":" Get the Marketplace's `admin` address"},{"d":"marketplace::assert_marketplace_admin","l":"./marketplace.html#assert_marketplace_admin","f":"marketplace::<span class=\"function\">assert_marketplace_admin</span>","de":""},{"d":"marketplace::default_fee","l":"./marketplace.html#default_fee","f":"marketplace::<span class=\"function\">default_fee</span>","de":" Get the Marketplace's `default_fee`"},{"d":"marketplace::init_marketplace","l":"./marketplace.html#init_marketplace","f":"marketplace::<span class=\"function\">init_marketplace</span>","de":" Initialises a `Marketplace` object and shares it"},{"d":"inventory::Inventory","l":"./inventory.html#Inventory","f":"inventory::<span class=\"hljs-type\">Inventory</span>","de":""},{"d":"inventory::is_empty","l":"./inventory.html#is_empty","f":"inventory::<span class=\"function\">is_empty</span>","de":""},{"d":"inventory::length","l":"./inventory.html#length","f":"inventory::<span class=\"function\">length</span>","de":" Check how many `nfts` there are to sell"},{"d":"inventory::new","l":"./inventory.html#new","f":"inventory::<span class=\"function\">new</span>","de":""},{"d":"inventory::deposit_nft","l":"./inventory.html#deposit_nft","f":"inventory::<span class=\"function\">deposit_nft</span>","de":" Adds NFT as a dynamic child object with its ID as key and"},{"d":"inventory::add_market","l":"./inventory.html#add_market","f":"inventory::<span class=\"function\">add_market</span>","de":" Adds a new market to `Inventory` allowing NFTs deposited to the"},{"d":"inventory::is_whitelisted","l":"./inventory.html#is_whitelisted","f":"inventory::<span class=\"function\">is_whitelisted</span>","de":""},{"d":"inventory::market","l":"./inventory.html#market","f":"inventory::<span class=\"function\">market</span>","de":" Get specific `Inventory` market"},{"d":"inventory::assert_is_live","l":"./inventory.html#assert_is_live","f":"inventory::<span class=\"function\">assert_is_live</span>","de":""},{"d":"inventory::assert_is_not_whitelisted","l":"./inventory.html#assert_is_not_whitelisted","f":"inventory::<span class=\"function\">assert_is_not_whitelisted</span>","de":""},{"d":"inventory::assert_is_whitelisted","l":"./inventory.html#assert_is_whitelisted","f":"inventory::<span class=\"function\">assert_is_whitelisted</span>","de":""},{"d":"inventory::assert_market","l":"./inventory.html#assert_market","f":"inventory::<span class=\"function\">assert_market</span>","de":""},{"d":"inventory::init_inventory","l":"./inventory.html#init_inventory","f":"inventory::<span class=\"function\">init_inventory</span>","de":" Creates a `Inventory` and transfers to transaction sender"},{"d":"inventory::is_live","l":"./inventory.html#is_live","f":"inventory::<span class=\"function\">is_live</span>","de":" Get the market's `live` status"},{"d":"inventory::market_mut","l":"./inventory.html#market_mut","f":"inventory::<span class=\"function\">market_mut</span>","de":" Get specific `Inventory` market mutably"},{"d":"inventory::markets","l":"./inventory.html#markets","f":"inventory::<span class=\"function\">markets</span>","de":" Get the `Inventory` markets"},{"d":"inventory::redeem_nft","l":"./inventory.html#redeem_nft","f":"inventory::<span class=\"function\">redeem_nft</span>","de":" Redeems NFT from `Inventory`"},{"d":"inventory::redeem_nft_transfer","l":"./inventory.html#redeem_nft_transfer","f":"inventory::<span class=\"function\">redeem_nft_transfer</span>","de":" Redeems NFT from `Inventory` and transfers to sender"},{"d":"inventory::set_live","l":"./inventory.html#set_live","f":"inventory::<span class=\"function\">set_live</span>","de":" Set market's live status"},{"d":"inventory::set_whitelisted","l":"./inventory.html#set_whitelisted","f":"inventory::<span class=\"function\">set_whitelisted</span>","de":" Set market's whitelist status"},{"d":"listing::CreateListingEvent","l":"./listing.html#CreateListingEvent","f":"listing::<span class=\"hljs-type\">CreateListingEvent</span>","de":" Event signalling that a `Listing` was created"},{"d":"listing::DeleteListingEvent","l":"./listing.html#DeleteListingEvent","f":"listing::<span class=\"hljs-type\">DeleteListingEvent</span>","de":" Event signalling that a `Listing` was deleted"},{"d":"listing::Listing","l":"./listing.html#Listing","f":"listing::<span class=\"hljs-type\">Listing</span>","de":""},{"d":"listing::RequestToJoin","l":"./listing.html#RequestToJoin","f":"listing::<span class=\"hljs-type\">RequestToJoin</span>","de":" An ephemeral object representing the intention of a `Listing` admin"},{"d":"listing::WhitelistCertificate","l":"./listing.html#WhitelistCertificate","f":"listing::<span class=\"hljs-type\">WhitelistCertificate</span>","de":" Within a `Listing`, each market has its own whitelist policy."},{"d":"listing::new","l":"./listing.html#new","f":"listing::<span class=\"function\">new</span>","de":" Initialises a `Listing` object and returns it."},{"d":"listing::pay","l":"./listing.html#pay","f":"listing::<span class=\"function\">pay</span>","de":""},{"d":"listing::receiver","l":"./listing.html#receiver","f":"listing::<span class=\"function\">receiver</span>","de":" Get the Listing's `receiver` address"},{"d":"listing::proceeds","l":"./listing.html#proceeds","f":"listing::<span class=\"function\">proceeds</span>","de":""},{"d":"listing::admin","l":"./listing.html#admin","f":"listing::<span class=\"function\">admin</span>","de":" Get the Listing's `admin` address"},{"d":"listing::inventory","l":"./listing.html#inventory","f":"listing::<span class=\"function\">inventory</span>","de":" Get the Listing's `Inventory`"},{"d":"listing::add_market","l":"./listing.html#add_market","f":"listing::<span class=\"function\">add_market</span>","de":" Adds a new Market to `markets` and Inventory to `inventories` tables"},{"d":"listing::init_inventory","l":"./listing.html#init_inventory","f":"listing::<span class=\"function\">init_inventory</span>","de":" Initializes an empty `Inventory` on `Listing`"},{"d":"listing::accept_listing_request","l":"./listing.html#accept_listing_request","f":"listing::<span class=\"function\">accept_listing_request</span>","de":" To be called by the `Marketpalce` administrator, to accept the `Listing`"},{"d":"listing::add_fee","l":"./listing.html#add_fee","f":"listing::<span class=\"function\">add_fee</span>","de":" Adds a fee object to the Listing's `custom_fee`"},{"d":"listing::add_inventory","l":"./listing.html#add_inventory","f":"listing::<span class=\"function\">add_inventory</span>","de":""},{"d":"listing::add_nft","l":"./listing.html#add_nft","f":"listing::<span class=\"function\">add_nft</span>","de":" Adds NFT as a dynamic child object with its ID as key"},{"d":"listing::assert_correct_admin","l":"./listing.html#assert_correct_admin","f":"listing::<span class=\"function\">assert_correct_admin</span>","de":""},{"d":"listing::assert_default_fee","l":"./listing.html#assert_default_fee","f":"listing::<span class=\"function\">assert_default_fee</span>","de":""},{"d":"listing::assert_inventory","l":"./listing.html#assert_inventory","f":"listing::<span class=\"function\">assert_inventory</span>","de":""},{"d":"listing::assert_listing_admin","l":"./listing.html#assert_listing_admin","f":"listing::<span class=\"function\">assert_listing_admin</span>","de":""},{"d":"listing::assert_listing_marketplace_match","l":"./listing.html#assert_listing_marketplace_match","f":"listing::<span class=\"function\">assert_listing_marketplace_match</span>","de":""},{"d":"listing::assert_whitelist_certificate_market","l":"./listing.html#assert_whitelist_certificate_market","f":"listing::<span class=\"function\">assert_whitelist_certificate_market</span>","de":""},{"d":"listing::burn_whitelist_certificate","l":"./listing.html#burn_whitelist_certificate","f":"listing::<span class=\"function\">burn_whitelist_certificate</span>","de":""},{"d":"listing::collect_proceeds","l":"./listing.html#collect_proceeds","f":"listing::<span class=\"function\">collect_proceeds</span>","de":" To be called by `Listing` admins for standalone `Listings`."},{"d":"listing::contains_custom_fee","l":"./listing.html#contains_custom_fee","f":"listing::<span class=\"function\">contains_custom_fee</span>","de":""},{"d":"listing::create_inventory","l":"./listing.html#create_inventory","f":"listing::<span class=\"function\">create_inventory</span>","de":""},{"d":"listing::custom_fee","l":"./listing.html#custom_fee","f":"listing::<span class=\"function\">custom_fee</span>","de":""},{"d":"listing::init_listing","l":"./listing.html#init_listing","f":"listing::<span class=\"function\">init_listing</span>","de":" Initialises a standalone `Listing` object."},{"d":"listing::inventory_internal_mut","l":"./listing.html#inventory_internal_mut","f":"listing::<span class=\"function\">inventory_internal_mut</span>","de":" Get the Listing's `Inventory` mutably"},{"d":"listing::issue_whitelist_certificate","l":"./listing.html#issue_whitelist_certificate","f":"listing::<span class=\"function\">issue_whitelist_certificate</span>","de":""},{"d":"listing::proceeds_mut","l":"./listing.html#proceeds_mut","f":"listing::<span class=\"function\">proceeds_mut</span>","de":""},{"d":"listing::request_to_join_marketplace","l":"./listing.html#request_to_join_marketplace","f":"listing::<span class=\"function\">request_to_join_marketplace</span>","de":" To be called by the `Listing` administrator, to declare the intention"},{"d":"listing::sale_off","l":"./listing.html#sale_off","f":"listing::<span class=\"function\">sale_off</span>","de":" Set market's live status to `false` therefore pausing or stopping the"},{"d":"listing::sale_off_delegated","l":"./listing.html#sale_off_delegated","f":"listing::<span class=\"function\">sale_off_delegated</span>","de":" Set market's live status to `false` therefore pausing or stopping the"},{"d":"listing::sale_on","l":"./listing.html#sale_on","f":"listing::<span class=\"function\">sale_on</span>","de":" Set market's live status to `true` therefore making the NFT sale live."},{"d":"listing::sale_on_delegated","l":"./listing.html#sale_on_delegated","f":"listing::<span class=\"function\">sale_on_delegated</span>","de":" Set market's live status to `true` therefore making the NFT sale live."},{"d":"listing::transfer_whitelist_certificate","l":"./listing.html#transfer_whitelist_certificate","f":"listing::<span class=\"function\">transfer_whitelist_certificate</span>","de":""},{"d":"dutch_auction::Witness","l":"./dutch_auction.html#Witness","f":"dutch_auction::<span class=\"hljs-type\">Witness</span>","de":" Witness used to authenticate witness protected endpoints"},{"d":"dutch_auction::Bid","l":"./dutch_auction.html#Bid","f":"dutch_auction::<span class=\"hljs-type\">Bid</span>","de":" A bid for one NFT"},{"d":"dutch_auction::DutchAuctionMarket","l":"./dutch_auction.html#DutchAuctionMarket","f":"dutch_auction::<span class=\"hljs-type\">DutchAuctionMarket</span>","de":""},{"d":"dutch_auction::new","l":"./dutch_auction.html#new","f":"dutch_auction::<span class=\"function\">new</span>","de":""},{"d":"dutch_auction::create_bid","l":"./dutch_auction.html#create_bid","f":"dutch_auction::<span class=\"function\">create_bid</span>","de":" Creates a bid in a FIFO manner, previous bids are retained"},{"d":"dutch_auction::bid_amount","l":"./dutch_auction.html#bid_amount","f":"dutch_auction::<span class=\"function\">bid_amount</span>","de":""},{"d":"dutch_auction::bid_owner","l":"./dutch_auction.html#bid_owner","f":"dutch_auction::<span class=\"function\">bid_owner</span>","de":""},{"d":"dutch_auction::bids","l":"./dutch_auction.html#bids","f":"dutch_auction::<span class=\"function\">bids</span>","de":" Get the auction's bids"},{"d":"dutch_auction::cancel_bid","l":"./dutch_auction.html#cancel_bid","f":"dutch_auction::<span class=\"function\">cancel_bid</span>","de":" Cancels a single bid at the given price level in a FIFO manner"},{"d":"dutch_auction::create_bid_whitelisted","l":"./dutch_auction.html#create_bid_whitelisted","f":"dutch_auction::<span class=\"function\">create_bid_whitelisted</span>","de":""},{"d":"dutch_auction::create_market_on_inventory","l":"./dutch_auction.html#create_market_on_inventory","f":"dutch_auction::<span class=\"function\">create_market_on_inventory</span>","de":" Creates a `DutchAuctionMarket<FT>` on `Inventory`"},{"d":"dutch_auction::reserve_price","l":"./dutch_auction.html#reserve_price","f":"dutch_auction::<span class=\"function\">reserve_price</span>","de":" Get the auction's reserve price"},{"d":"dutch_auction::create_market_on_listing","l":"./dutch_auction.html#create_market_on_listing","f":"dutch_auction::<span class=\"function\">create_market_on_listing</span>","de":" Creates a `DutchAuctionMarket<FT>` on `Listing`"},{"d":"dutch_auction::init_market","l":"./dutch_auction.html#init_market","f":"dutch_auction::<span class=\"function\">init_market</span>","de":" Creates a `DutchAuctionMarket<FT>` and transfers to transaction sender"},{"d":"dutch_auction::sale_cancel","l":"./dutch_auction.html#sale_cancel","f":"dutch_auction::<span class=\"function\">sale_cancel</span>","de":" Cancel the auction and toggle the Slingshot's `live` to `false`."},{"d":"dutch_auction::sale_conclude","l":"./dutch_auction.html#sale_conclude","f":"dutch_auction::<span class=\"function\">sale_conclude</span>","de":" Conclude the auction and toggle the Slingshot's `live` to `false`."},{"d":"fixed_price::Witness","l":"./fixed_price.html#Witness","f":"fixed_price::<span class=\"hljs-type\">Witness</span>","de":" Witness used to authenticate witness protected endpoints"},{"d":"fixed_price::FixedPriceMarket","l":"./fixed_price.html#FixedPriceMarket","f":"fixed_price::<span class=\"hljs-type\">FixedPriceMarket</span>","de":""},{"d":"fixed_price::new","l":"./fixed_price.html#new","f":"fixed_price::<span class=\"function\">new</span>","de":""},{"d":"fixed_price::price","l":"./fixed_price.html#price","f":"fixed_price::<span class=\"function\">price</span>","de":" Get the market's fixed price"},{"d":"fixed_price::create_market_on_inventory","l":"./fixed_price.html#create_market_on_inventory","f":"fixed_price::<span class=\"function\">create_market_on_inventory</span>","de":" Creates a `FixedPriceMarket<FT>` on `Inventory`"},{"d":"fixed_price::create_market_on_listing","l":"./fixed_price.html#create_market_on_listing","f":"fixed_price::<span class=\"function\">create_market_on_listing</span>","de":" Creates a `FixedPriceMarket<FT>` on `Listing`"},{"d":"fixed_price::init_market","l":"./fixed_price.html#init_market","f":"fixed_price::<span class=\"function\">init_market</span>","de":" Creates a `FixedPriceMarket<FT>` and transfers to transaction sender"},{"d":"fixed_price::buy_nft","l":"./fixed_price.html#buy_nft","f":"fixed_price::<span class=\"function\">buy_nft</span>","de":" Permissionless endpoint to buy NFT certificates for non-whitelisted sales."},{"d":"fixed_price::buy_whitelisted_nft","l":"./fixed_price.html#buy_whitelisted_nft","f":"fixed_price::<span class=\"function\">buy_whitelisted_nft</span>","de":" Permissioned endpoint to buy NFT certificates for whitelisted sales."},{"d":"fixed_price::set_price","l":"./fixed_price.html#set_price","f":"fixed_price::<span class=\"function\">set_price</span>","de":" Permissioned endpoint to be called by `admin` to edit the fixed price"},{"d":"flat_fee::FlatFee","l":"./flat_fee.html#FlatFee","f":"flat_fee::<span class=\"hljs-type\">FlatFee</span>","de":""},{"d":"flat_fee::new","l":"./flat_fee.html#new","f":"flat_fee::<span class=\"function\">new</span>","de":""},{"d":"flat_fee::collect_proceeds_and_fees","l":"./flat_fee.html#collect_proceeds_and_fees","f":"flat_fee::<span class=\"function\">collect_proceeds_and_fees</span>","de":""},{"d":"flat_fee::init_fee","l":"./flat_fee.html#init_fee","f":"flat_fee::<span class=\"function\">init_fee</span>","de":""},{"d":"supply::Supply","l":"./supply.html#Supply","f":"supply::<span class=\"hljs-type\">Supply</span>","de":""},{"d":"supply::max","l":"./supply.html#max","f":"supply::<span class=\"function\">max</span>","de":""},{"d":"supply::new","l":"./supply.html#new","f":"supply::<span class=\"function\">new</span>","de":""},{"d":"supply::destroy","l":"./supply.html#destroy","f":"supply::<span class=\"function\">destroy</span>","de":""},{"d":"supply::ceil_supply","l":"./supply.html#ceil_supply","f":"supply::<span class=\"function\">ceil_supply</span>","de":""},{"d":"supply::current","l":"./supply.html#current","f":"supply::<span class=\"function\">current</span>","de":""},{"d":"supply::decrease_ceil","l":"./supply.html#decrease_ceil","f":"supply::<span class=\"function\">decrease_ceil</span>","de":""},{"d":"supply::decrement_supply","l":"./supply.html#decrement_supply","f":"supply::<span class=\"function\">decrement_supply</span>","de":""},{"d":"supply::increase_ceil","l":"./supply.html#increase_ceil","f":"supply::<span class=\"function\">increase_ceil</span>","de":""},{"d":"supply::increment_supply","l":"./supply.html#increment_supply","f":"supply::<span class=\"function\">increment_supply</span>","de":""},{"d":"flyweight::Archetype","l":"./flyweight.html#Archetype","f":"flyweight::<span class=\"hljs-type\">Archetype</span>","de":""},{"d":"flyweight::BurnEvent","l":"./flyweight.html#BurnEvent","f":"flyweight::<span class=\"hljs-type\">BurnEvent</span>","de":""},{"d":"flyweight::MintEvent","l":"./flyweight.html#MintEvent","f":"flyweight::<span class=\"hljs-type\">MintEvent</span>","de":""},{"d":"flyweight::Pointer","l":"./flyweight.html#Pointer","f":"flyweight::<span class=\"hljs-type\">Pointer</span>","de":""},{"d":"flyweight::Registry","l":"./flyweight.html#Registry","f":"flyweight::<span class=\"hljs-type\">Registry</span>","de":""},{"d":"flyweight::new","l":"./flyweight.html#new","f":"flyweight::<span class=\"function\">new</span>","de":" Create a `Archetype` object and shares it."},{"d":"flyweight::add_archetype","l":"./flyweight.html#add_archetype","f":"flyweight::<span class=\"function\">add_archetype</span>","de":""},{"d":"flyweight::add_archetypes_domain","l":"./flyweight.html#add_archetypes_domain","f":"flyweight::<span class=\"function\">add_archetypes_domain</span>","de":""},{"d":"flyweight::borrow_nft","l":"./flyweight.html#borrow_nft","f":"flyweight::<span class=\"function\">borrow_nft</span>","de":""},{"d":"flyweight::borrow_nft_mut","l":"./flyweight.html#borrow_nft_mut","f":"flyweight::<span class=\"function\">borrow_nft_mut</span>","de":""},{"d":"flyweight::init_registry","l":"./flyweight.html#init_registry","f":"flyweight::<span class=\"function\">init_registry</span>","de":" Create a `Registry` object"},{"d":"flyweight::set_archetype","l":"./flyweight.html#set_archetype","f":"flyweight::<span class=\"function\">set_archetype</span>","de":" Create a `Pointer` object and adds it to NFT."},{"d":"ob::Witness","l":"./ob.html#Witness","f":"ob::<span class=\"hljs-type\">Witness</span>","de":" Witness used to authenticate witness protected endpoints"},{"d":"ob::Bid","l":"./ob.html#Bid","f":"ob::<span class=\"hljs-type\">Bid</span>","de":" An offer for a single NFT in a collection."},{"d":"ob::BidClosed","l":"./ob.html#BidClosed","f":"ob::<span class=\"hljs-type\">BidClosed</span>","de":" When de-listed, not when bought!"},{"d":"ob::BidCreated","l":"./ob.html#BidCreated","f":"ob::<span class=\"hljs-type\">BidCreated</span>","de":""},{"d":"ob::Ask","l":"./ob.html#Ask","f":"ob::<span class=\"hljs-type\">Ask</span>","de":" Object which is associated with a single NFT."},{"d":"ob::AskClosed","l":"./ob.html#AskClosed","f":"ob::<span class=\"hljs-type\">AskClosed</span>","de":" When de-listed, not when sold!"},{"d":"ob::AskCreated","l":"./ob.html#AskCreated","f":"ob::<span class=\"hljs-type\">AskCreated</span>","de":""},{"d":"ob::Orderbook","l":"./ob.html#Orderbook","f":"ob::<span class=\"hljs-type\">Orderbook</span>","de":" A critbit order book implementation. Contains two ordered trees:"},{"d":"ob::TradeExecuted","l":"./ob.html#TradeExecuted","f":"ob::<span class=\"hljs-type\">TradeExecuted</span>","de":""},{"d":"ob::TradeIntermediate","l":"./ob.html#TradeIntermediate","f":"ob::<span class=\"hljs-type\">TradeIntermediate</span>","de":" `TradeIntermediate` is made a shared object and can be called"},{"d":"ob::WitnessProtectedActions","l":"./ob.html#WitnessProtectedActions","f":"ob::<span class=\"hljs-type\">WitnessProtectedActions</span>","de":" The contract which creates the orderbook can restrict specific actions"},{"d":"ob::new","l":"./ob.html#new","f":"ob::<span class=\"function\">new</span>","de":" `C`ollection kind of NFTs to be traded, and `F`ungible `T`oken to be"},{"d":"ob::create","l":"./ob.html#create","f":"ob::<span class=\"function\">create</span>","de":" Creates a new empty orderbook as a shared object."},{"d":"ob::create_bid","l":"./ob.html#create_bid","f":"ob::<span class=\"function\">create_bid</span>","de":" How many (`price`) fungible tokens should be taken from sender's wallet"},{"d":"ob::create_bid_with_commission","l":"./ob.html#create_bid_with_commission","f":"ob::<span class=\"function\">create_bid_with_commission</span>","de":" Same as [`create_bid`] but with a"},{"d":"ob::bid_owner","l":"./ob.html#bid_owner","f":"ob::<span class=\"function\">bid_owner</span>","de":""},{"d":"ob::cancel_bid","l":"./ob.html#cancel_bid","f":"ob::<span class=\"function\">cancel_bid</span>","de":" Cancel a bid owned by the sender at given price. If there are two bids"},{"d":"ob::buy_nft","l":"./ob.html#buy_nft","f":"ob::<span class=\"function\">buy_nft</span>","de":" To buy a specific NFT listed in the orderbook, the client provides the"},{"d":"ob::ask_nft","l":"./ob.html#ask_nft","f":"ob::<span class=\"function\">ask_nft</span>","de":""},{"d":"ob::ask_owner","l":"./ob.html#ask_owner","f":"ob::<span class=\"function\">ask_owner</span>","de":""},{"d":"ob::ask_price","l":"./ob.html#ask_price","f":"ob::<span class=\"function\">ask_price</span>","de":""},{"d":"ob::bid_offer","l":"./ob.html#bid_offer","f":"ob::<span class=\"function\">bid_offer</span>","de":""},{"d":"ob::borrow_asks","l":"./ob.html#borrow_asks","f":"ob::<span class=\"function\">borrow_asks</span>","de":""},{"d":"ob::borrow_bids","l":"./ob.html#borrow_bids","f":"ob::<span class=\"function\">borrow_bids</span>","de":""},{"d":"ob::buy_generic_nft","l":"./ob.html#buy_generic_nft","f":"ob::<span class=\"function\">buy_generic_nft</span>","de":" Similar to [`buy_nft`] except that this is meant for generic"},{"d":"ob::buy_generic_nft_protected","l":"./ob.html#buy_generic_nft_protected","f":"ob::<span class=\"function\">buy_generic_nft_protected</span>","de":" Same as [`buy_generic_nft`] but protected by"},{"d":"ob::buy_nft_protected","l":"./ob.html#buy_nft_protected","f":"ob::<span class=\"function\">buy_nft_protected</span>","de":" Same as [`buy_nft`] but protected by"},{"d":"ob::cancel_ask","l":"./ob.html#cancel_ask","f":"ob::<span class=\"function\">cancel_ask</span>","de":" To cancel an offer on a specific NFT, the client provides the price they"},{"d":"ob::cancel_ask_protected","l":"./ob.html#cancel_ask_protected","f":"ob::<span class=\"function\">cancel_ask_protected</span>","de":" Same as [`cancel_ask`] but protected by"},{"d":"ob::cancel_bid_protected","l":"./ob.html#cancel_bid_protected","f":"ob::<span class=\"function\">cancel_bid_protected</span>","de":" Same as [`cancel_bid`] but protected by"},{"d":"ob::create_ask","l":"./ob.html#create_ask","f":"ob::<span class=\"function\">create_ask</span>","de":" Offer given NFT to be traded for given (`requested_tokens`) tokens."},{"d":"ob::create_ask_protected","l":"./ob.html#create_ask_protected","f":"ob::<span class=\"function\">create_ask_protected</span>","de":" Same as [`create_ask`] but protected by"},{"d":"ob::create_ask_with_commission","l":"./ob.html#create_ask_with_commission","f":"ob::<span class=\"function\">create_ask_with_commission</span>","de":" Same as [`create_ask`] but with a"},{"d":"ob::create_ask_with_commission_protected","l":"./ob.html#create_ask_with_commission_protected","f":"ob::<span class=\"function\">create_ask_with_commission_protected</span>","de":" Same as [`create_ask_protected`] but with a"},{"d":"ob::create_bid_protected","l":"./ob.html#create_bid_protected","f":"ob::<span class=\"function\">create_bid_protected</span>","de":" Same as [`create_bid`] but protected by"},{"d":"ob::create_bid_with_commission_protected","l":"./ob.html#create_bid_with_commission_protected","f":"ob::<span class=\"function\">create_bid_with_commission_protected</span>","de":" Same as [`create_bid_protected`] but with a"},{"d":"ob::custom_protection","l":"./ob.html#custom_protection","f":"ob::<span class=\"function\">custom_protection</span>","de":""},{"d":"ob::finish_trade","l":"./ob.html#finish_trade","f":"ob::<span class=\"function\">finish_trade</span>","de":" When a bid is created and there's an ask with a lower price, then the"},{"d":"ob::finish_trade_of_generic_nft","l":"./ob.html#finish_trade_of_generic_nft","f":"ob::<span class=\"function\">finish_trade_of_generic_nft</span>","de":" Similar to [`finish_trade`] except that this is meant for generic"},{"d":"ob::is_buy_nft_protected","l":"./ob.html#is_buy_nft_protected","f":"ob::<span class=\"function\">is_buy_nft_protected</span>","de":""},{"d":"ob::protected_actions","l":"./ob.html#protected_actions","f":"ob::<span class=\"function\">protected_actions</span>","de":""},{"d":"ob::is_cancel_ask_protected","l":"./ob.html#is_cancel_ask_protected","f":"ob::<span class=\"function\">is_cancel_ask_protected</span>","de":""},{"d":"ob::is_cancel_bid_protected","l":"./ob.html#is_cancel_bid_protected","f":"ob::<span class=\"function\">is_cancel_bid_protected</span>","de":""},{"d":"ob::is_create_ask_protected","l":"./ob.html#is_create_ask_protected","f":"ob::<span class=\"function\">is_create_ask_protected</span>","de":""},{"d":"ob::is_create_bid_protected","l":"./ob.html#is_create_bid_protected","f":"ob::<span class=\"function\">is_create_bid_protected</span>","de":""},{"d":"ob::new_unprotected","l":"./ob.html#new_unprotected","f":"ob::<span class=\"function\">new_unprotected</span>","de":" Returns a new orderbook without any protection, ie. all endpoints can"},{"d":"ob::new_with_protected_actions","l":"./ob.html#new_with_protected_actions","f":"ob::<span class=\"function\">new_with_protected_actions</span>","de":""},{"d":"ob::no_protection","l":"./ob.html#no_protection","f":"ob::<span class=\"function\">no_protection</span>","de":" Settings where all endpoints can be called as entry point functions."},{"d":"ob::set_protection","l":"./ob.html#set_protection","f":"ob::<span class=\"function\">set_protection</span>","de":""},{"d":"ob::share","l":"./ob.html#share","f":"ob::<span class=\"function\">share</span>","de":""},{"d":"ob::toggle_protection_on_buy_nft","l":"./ob.html#toggle_protection_on_buy_nft","f":"ob::<span class=\"function\">toggle_protection_on_buy_nft</span>","de":""},{"d":"ob::toggle_protection_on_cancel_ask","l":"./ob.html#toggle_protection_on_cancel_ask","f":"ob::<span class=\"function\">toggle_protection_on_cancel_ask</span>","de":""},{"d":"ob::toggle_protection_on_cancel_bid","l":"./ob.html#toggle_protection_on_cancel_bid","f":"ob::<span class=\"function\">toggle_protection_on_cancel_bid</span>","de":""},{"d":"ob::toggle_protection_on_create_ask","l":"./ob.html#toggle_protection_on_create_ask","f":"ob::<span class=\"function\">toggle_protection_on_create_ask</span>","de":""},{"d":"ob::toggle_protection_on_create_bid","l":"./ob.html#toggle_protection_on_create_bid","f":"ob::<span class=\"function\">toggle_protection_on_create_bid</span>","de":""},{"d":"royalty_strategy_constant::ConstantRoyaltyStrategy","l":"./royalty_strategy_constant.html#ConstantRoyaltyStrategy","f":"royalty_strategy_constant::<span class=\"hljs-type\">ConstantRoyaltyStrategy</span>","de":""},{"d":"royalty_strategy_constant::new","l":"./royalty_strategy_constant.html#new","f":"royalty_strategy_constant::<span class=\"function\">new</span>","de":""},{"d":"royalty_strategy_constant::calculate","l":"./royalty_strategy_constant.html#calculate","f":"royalty_strategy_constant::<span class=\"function\">calculate</span>","de":""},{"d":"royalty_strategy_constant::royalty_fee","l":"./royalty_strategy_constant.html#royalty_fee","f":"royalty_strategy_constant::<span class=\"function\">royalty_fee</span>","de":""},{"d":"royalty_strategy_bps::BpsRoyaltyStrategy","l":"./royalty_strategy_bps.html#BpsRoyaltyStrategy","f":"royalty_strategy_bps::<span class=\"hljs-type\">BpsRoyaltyStrategy</span>","de":""},{"d":"royalty_strategy_bps::new","l":"./royalty_strategy_bps.html#new","f":"royalty_strategy_bps::<span class=\"function\">new</span>","de":""},{"d":"royalty_strategy_bps::calculate","l":"./royalty_strategy_bps.html#calculate","f":"royalty_strategy_bps::<span class=\"function\">calculate</span>","de":""},{"d":"royalty_strategy_bps::royalty_fee_bps","l":"./royalty_strategy_bps.html#royalty_fee_bps","f":"royalty_strategy_bps::<span class=\"function\">royalty_fee_bps</span>","de":""},{"d":"royalty::Witness","l":"./royalty.html#Witness","f":"royalty::<span class=\"hljs-type\">Witness</span>","de":" Witness used to authenticate witness protected endpoints"},{"d":"royalty::RoyaltyDomain","l":"./royalty.html#RoyaltyDomain","f":"royalty::<span class=\"hljs-type\">RoyaltyDomain</span>","de":" `RoyaltyDomain` stores royalty strategies for `Collection` and"},{"d":"royalty::from_address","l":"./royalty.html#from_address","f":"royalty::<span class=\"function\">from_address</span>","de":" Creates a `RoyaltyDomain` object with only one address attribution"},{"d":"royalty::new_empty","l":"./royalty.html#new_empty","f":"royalty::<span class=\"function\">new_empty</span>","de":" Creates an empty `RoyaltyDomain` object"},{"d":"royalty::add_constant_royalty","l":"./royalty.html#add_constant_royalty","f":"royalty::<span class=\"function\">add_constant_royalty</span>","de":" Add constant royalty policy"},{"d":"royalty::add_proportional_royalty","l":"./royalty.html#add_proportional_royalty","f":"royalty::<span class=\"function\">add_proportional_royalty</span>","de":" Add proportional royalty policy"},{"d":"royalty::add_royalty_domain","l":"./royalty.html#add_royalty_domain","f":"royalty::<span class=\"function\">add_royalty_domain</span>","de":" Registers `RoyaltyDomain` on the given `Collection`"},{"d":"royalty::add_royalty_strategy","l":"./royalty.html#add_royalty_strategy","f":"royalty::<span class=\"function\">add_royalty_strategy</span>","de":" Add a generic royalty strategy"},{"d":"royalty::add_share","l":"./royalty.html#add_share","f":"royalty::<span class=\"function\">add_share</span>","de":" Attribute a share of royalties to an address"},{"d":"royalty::add_share_to_empty","l":"./royalty.html#add_share_to_empty","f":"royalty::<span class=\"function\">add_share_to_empty</span>","de":" Attribute royalties to an address"},{"d":"royalty::add_shares_to_empty","l":"./royalty.html#add_shares_to_empty","f":"royalty::<span class=\"function\">add_shares_to_empty</span>","de":" Attribute royalties to addresses"},{"d":"royalty::borrow_share","l":"./royalty.html#borrow_share","f":"royalty::<span class=\"function\">borrow_share</span>","de":" Returns the `Creator` type for the given address"},{"d":"royalty::borrow_shares","l":"./royalty.html#borrow_shares","f":"royalty::<span class=\"function\">borrow_shares</span>","de":" Returns the list of creators defined on the `CreatorsDomain`"},{"d":"royalty::borrow_strategy","l":"./royalty.html#borrow_strategy","f":"royalty::<span class=\"function\">borrow_strategy</span>","de":" Borrow a royalty strategy"},{"d":"royalty::borrow_strategy_mut","l":"./royalty.html#borrow_strategy_mut","f":"royalty::<span class=\"function\">borrow_strategy_mut</span>","de":" Mutably borrow a royalty strategy"},{"d":"royalty::calculate_constant_royalty","l":"./royalty.html#calculate_constant_royalty","f":"royalty::<span class=\"function\">calculate_constant_royalty</span>","de":" Calculate how many tokens are due for the defined constant royalty"},{"d":"royalty::calculate_proportional_royalty","l":"./royalty.html#calculate_proportional_royalty","f":"royalty::<span class=\"function\">calculate_proportional_royalty</span>","de":" Calculate how many tokens are due for the defined proportional royalty"},{"d":"royalty::collect_royalty","l":"./royalty.html#collect_royalty","f":"royalty::<span class=\"function\">collect_royalty</span>","de":" Collects an `amount` of tokens from the provided balance into the"},{"d":"royalty::contains_share","l":"./royalty.html#contains_share","f":"royalty::<span class=\"function\">contains_share</span>","de":" Returns true when address is a defined creator"},{"d":"royalty::contains_shares","l":"./royalty.html#contains_shares","f":"royalty::<span class=\"function\">contains_shares</span>","de":" Returns true when a share attribution exists"},{"d":"royalty::contains_strategy","l":"./royalty.html#contains_strategy","f":"royalty::<span class=\"function\">contains_strategy</span>","de":" Check whether a royalty strategy is defined"},{"d":"royalty::distribute_balance","l":"./royalty.html#distribute_balance","f":"royalty::<span class=\"function\">distribute_balance</span>","de":" Distributes the contents of a `Balance<FT>` among the addresses defined"},{"d":"royalty::distribute_royalties","l":"./royalty.html#distribute_royalties","f":"royalty::<span class=\"function\">distribute_royalties</span>","de":" Distributes the aggregated royalties for fungible token, `FT`, among"},{"d":"royalty::from_shares","l":"./royalty.html#from_shares","f":"royalty::<span class=\"function\">from_shares</span>","de":" Creates a `RoyaltyDomain` with multiple attributions"},{"d":"royalty::remove_constant_royalty","l":"./royalty.html#remove_constant_royalty","f":"royalty::<span class=\"function\">remove_constant_royalty</span>","de":" Remove constant royalty policy"},{"d":"royalty::remove_creator_by_transfer","l":"./royalty.html#remove_creator_by_transfer","f":"royalty::<span class=\"function\">remove_creator_by_transfer</span>","de":" Remove a share attribution from an address and transfer attribution to"},{"d":"royalty::remove_proportional_royalty","l":"./royalty.html#remove_proportional_royalty","f":"royalty::<span class=\"function\">remove_proportional_royalty</span>","de":" Remove proportional royalty policy"},{"d":"royalty::remove_strategy","l":"./royalty.html#remove_strategy","f":"royalty::<span class=\"function\">remove_strategy</span>","de":" Remove a royalty strategy"},{"d":"royalty::royalty_domain","l":"./royalty.html#royalty_domain","f":"royalty::<span class=\"function\">royalty_domain</span>","de":" Get reference to `RoyaltyDomain`"},{"d":"royalty::royalty_domain_mut","l":"./royalty.html#royalty_domain_mut","f":"royalty::<span class=\"function\">royalty_domain_mut</span>","de":" Get mutable reference to `RoyaltyDomain`"},{"d":"supply_policy::SupplyPolicy","l":"./supply_policy.html#SupplyPolicy","f":"supply_policy::<span class=\"hljs-type\">SupplyPolicy</span>","de":""},{"d":"supply_policy::supply","l":"./supply_policy.html#supply","f":"supply_policy::<span class=\"function\">supply</span>","de":""},{"d":"supply_policy::supply_mut","l":"./supply_policy.html#supply_mut","f":"supply_policy::<span class=\"function\">supply_mut</span>","de":""},{"d":"supply_policy::ceil_supply","l":"./supply_policy.html#ceil_supply","f":"supply_policy::<span class=\"function\">ceil_supply</span>","de":""},{"d":"supply_policy::decrement_supply","l":"./supply_policy.html#decrement_supply","f":"supply_policy::<span class=\"function\">decrement_supply</span>","de":""},{"d":"supply_policy::increment_supply","l":"./supply_policy.html#increment_supply","f":"supply_policy::<span class=\"function\">increment_supply</span>","de":" Increase `supply.current` for regulated policies"},{"d":"supply_policy::create_regulated","l":"./supply_policy.html#create_regulated","f":"supply_policy::<span class=\"function\">create_regulated</span>","de":""},{"d":"supply_policy::create_unregulated","l":"./supply_policy.html#create_unregulated","f":"supply_policy::<span class=\"function\">create_unregulated</span>","de":""},{"d":"supply_policy::decrease_max_supply","l":"./supply_policy.html#decrease_max_supply","f":"supply_policy::<span class=\"function\">decrease_max_supply</span>","de":" Decreases the `supply.cap` by the `value` amount for"},{"d":"supply_policy::destroy_regulated","l":"./supply_policy.html#destroy_regulated","f":"supply_policy::<span class=\"function\">destroy_regulated</span>","de":""},{"d":"supply_policy::increase_max_supply","l":"./supply_policy.html#increase_max_supply","f":"supply_policy::<span class=\"function\">increase_max_supply</span>","de":" Increases the `supply.max` by the `value` amount for"},{"d":"supply_policy::regulated","l":"./supply_policy.html#regulated","f":"supply_policy::<span class=\"function\">regulated</span>","de":""},{"d":"tags::Witness","l":"./tags.html#Witness","f":"tags::<span class=\"hljs-type\">Witness</span>","de":" Witness used to authenticate witness protected endpoints"},{"d":"tags::Art","l":"./tags.html#Art","f":"tags::<span class=\"hljs-type\">Art</span>","de":""},{"d":"tags::Collectible","l":"./tags.html#Collectible","f":"tags::<span class=\"hljs-type\">Collectible</span>","de":""},{"d":"tags::DomainName","l":"./tags.html#DomainName","f":"tags::<span class=\"hljs-type\">DomainName</span>","de":""},{"d":"tags::GameAsset","l":"./tags.html#GameAsset","f":"tags::<span class=\"hljs-type\">GameAsset</span>","de":""},{"d":"tags::License","l":"./tags.html#License","f":"tags::<span class=\"hljs-type\">License</span>","de":""},{"d":"tags::Music","l":"./tags.html#Music","f":"tags::<span class=\"hljs-type\">Music</span>","de":""},{"d":"tags::ProfilePicture","l":"./tags.html#ProfilePicture","f":"tags::<span class=\"hljs-type\">ProfilePicture</span>","de":""},{"d":"tags::TagDomain","l":"./tags.html#TagDomain","f":"tags::<span class=\"hljs-type\">TagDomain</span>","de":""},{"d":"tags::Ticker","l":"./tags.html#Ticker","f":"tags::<span class=\"hljs-type\">Ticker</span>","de":""},{"d":"tags::Ticket","l":"./tags.html#Ticket","f":"tags::<span class=\"hljs-type\">Ticket</span>","de":""},{"d":"tags::TokenisedAsset","l":"./tags.html#TokenisedAsset","f":"tags::<span class=\"hljs-type\">TokenisedAsset</span>","de":""},{"d":"tags::Video","l":"./tags.html#Video","f":"tags::<span class=\"hljs-type\">Video</span>","de":""},{"d":"tags::empty","l":"./tags.html#empty","f":"tags::<span class=\"function\">empty</span>","de":""},{"d":"tags::add_collection_tag_domain","l":"./tags.html#add_collection_tag_domain","f":"tags::<span class=\"function\">add_collection_tag_domain</span>","de":""},{"d":"tags::add_tag","l":"./tags.html#add_tag","f":"tags::<span class=\"function\">add_tag</span>","de":" Adds tag to `TagDomain`"},{"d":"tags::add_tag_domain","l":"./tags.html#add_tag_domain","f":"tags::<span class=\"function\">add_tag_domain</span>","de":""},{"d":"tags::art","l":"./tags.html#art","f":"tags::<span class=\"function\">art</span>","de":""},{"d":"tags::collectible","l":"./tags.html#collectible","f":"tags::<span class=\"function\">collectible</span>","de":""},{"d":"tags::collection_tag_domain","l":"./tags.html#collection_tag_domain","f":"tags::<span class=\"function\">collection_tag_domain</span>","de":""},{"d":"tags::collection_tag_domain_mut","l":"./tags.html#collection_tag_domain_mut","f":"tags::<span class=\"function\">collection_tag_domain_mut</span>","de":" Requires that sender is a creator"},{"d":"tags::domain_name","l":"./tags.html#domain_name","f":"tags::<span class=\"function\">domain_name</span>","de":""},{"d":"tags::game_asset","l":"./tags.html#game_asset","f":"tags::<span class=\"function\">game_asset</span>","de":""},{"d":"tags::has_tag","l":"./tags.html#has_tag","f":"tags::<span class=\"function\">has_tag</span>","de":""},{"d":"tags::license","l":"./tags.html#license","f":"tags::<span class=\"function\">license</span>","de":""},{"d":"tags::music","l":"./tags.html#music","f":"tags::<span class=\"function\">music</span>","de":""},{"d":"tags::profile_picture","l":"./tags.html#profile_picture","f":"tags::<span class=\"function\">profile_picture</span>","de":""},{"d":"tags::remove_tag","l":"./tags.html#remove_tag","f":"tags::<span class=\"function\">remove_tag</span>","de":" Removes tag from `TagDomain`"},{"d":"tags::tag_domain","l":"./tags.html#tag_domain","f":"tags::<span class=\"function\">tag_domain</span>","de":""},{"d":"tags::ticker","l":"./tags.html#ticker","f":"tags::<span class=\"function\">ticker</span>","de":""},{"d":"tags::ticket","l":"./tags.html#ticket","f":"tags::<span class=\"function\">ticket</span>","de":""},{"d":"tags::tokenised_asset","l":"./tags.html#tokenised_asset","f":"tags::<span class=\"function\">tokenised_asset</span>","de":""},{"d":"tags::video","l":"./tags.html#video","f":"tags::<span class=\"function\">video</span>","de":""}]</script>
+
+    <script>
+        hljs.configure({languages:["move"]})
+        hljs.highlightAll();
+    </script>
+
     </head>
     <body>
         <div id="container-movedoc">
@@ -18,330 +29,328 @@
     <img src="./assets/accent.svg" style="position: absolute">
     <img src="./assets/ob.svg" class="logo">
 </a>
-<h3>Modules</h3>
+<h2>Modules</h2>
 <ul><li>
     <a href="./err.html">err</a>
     <ul class="methods"></ul>
 </li><li>
     <a href="./utils.html">utils</a>
-    <ul class="methods"><li data-type="type">
+    <ul class="methods"><li>
     <a href="./utils.html#Marker">Marker</a>
 </li></ul>
 </li><li>
     <a href="./transfer_allowlist.html">transfer_allowlist</a>
-    <ul class="methods"><li data-type="type">
+    <ul class="methods"><li>
     <a href="./transfer_allowlist.html#Allowlist">Allowlist</a>
-</li><li data-type="type">
+</li><li>
     <a href="./transfer_allowlist.html#CollectionControlCap">CollectionControlCap</a>
 </li></ul>
 </li><li>
     <a href="./royalties.html">royalties</a>
-    <ul class="methods"><li data-type="type">
+    <ul class="methods"><li>
     <a href="./royalties.html#TradePayment">TradePayment</a>
 </li></ul>
 </li><li>
     <a href="./trading.html">trading</a>
-    <ul class="methods"><li data-type="type">
+    <ul class="methods"><li>
     <a href="./trading.html#AskCommission">AskCommission</a>
-</li><li data-type="type">
+</li><li>
     <a href="./trading.html#BidCommission">BidCommission</a>
 </li></ul>
 </li><li>
     <a href="./nft.html">nft</a>
-    <ul class="methods"><li data-type="type">
+    <ul class="methods"><li>
     <a href="./nft.html#MintNftEvent">MintNftEvent</a>
-</li><li data-type="type">
+</li><li>
     <a href="./nft.html#Nft">Nft</a>
 </li></ul>
 </li><li>
     <a href="./unprotected_safe.html">unprotected_safe</a>
-    <ul class="methods"><li data-type="type">
+    <ul class="methods"><li>
     <a href="./unprotected_safe.html#DepositEvent">DepositEvent</a>
-</li><li data-type="type">
+</li><li>
     <a href="./unprotected_safe.html#NftRef">NftRef</a>
-</li><li data-type="type">
+</li><li>
     <a href="./unprotected_safe.html#OwnerCap">OwnerCap</a>
-</li><li data-type="type">
+</li><li>
     <a href="./unprotected_safe.html#TransferCap">TransferCap</a>
-</li><li data-type="type">
+</li><li>
     <a href="./unprotected_safe.html#TransferEvent">TransferEvent</a>
-</li><li data-type="type">
+</li><li>
     <a href="./unprotected_safe.html#UnprotectedSafe">UnprotectedSafe</a>
 </li></ul>
 </li><li>
     <a href="./safe.html">safe</a>
-    <ul class="methods"><li data-type="type">
+    <ul class="methods"><li>
     <a href="./safe.html#OwnerCap">OwnerCap</a>
-</li><li data-type="type">
+</li><li>
     <a href="./safe.html#TransferCap">TransferCap</a>
-</li><li data-type="type">
+</li><li>
     <a href="./safe.html#Safe">Safe</a>
 </li></ul>
 </li><li>
     <a href="./bidding.html">bidding</a>
-    <ul class="methods"><li data-type="type">
+    <ul class="methods"><li>
     <a href="./bidding.html#Witness">Witness</a>
-</li><li data-type="type">
+</li><li>
     <a href="./bidding.html#Bid">Bid</a>
-</li><li data-type="type">
+</li><li>
     <a href="./bidding.html#BidClosed">BidClosed</a>
-</li><li data-type="type">
+</li><li>
     <a href="./bidding.html#BidCreated">BidCreated</a>
 </li></ul>
 </li><li>
     <a href="./collection.html">collection</a>
-    <ul class="methods"><li data-type="type">
+    <ul class="methods"><li>
     <a href="./collection.html#Collection">Collection</a>
-</li><li data-type="type">
+</li><li>
     <a href="./collection.html#CollectionMintEvent">CollectionMintEvent</a>
-</li><li data-type="type">
+</li><li>
     <a href="./collection.html#MintCap">MintCap</a>
 </li></ul>
 </li><li>
     <a href="./creators.html">creators</a>
-    <ul class="methods"><li data-type="type">
+    <ul class="methods"><li>
     <a href="./creators.html#Witness">Witness</a>
-</li><li data-type="type">
-    <a href="./creators.html#Creator">Creator</a>
-</li><li data-type="type">
+</li><li>
     <a href="./creators.html#CreatorsDomain">CreatorsDomain</a>
 </li></ul>
 </li><li>
     <a href="./display.html">display</a>
-    <ul class="methods"><li data-type="type">
+    <ul class="methods"><li>
     <a href="./display.html#Witness">Witness</a>
-</li><li data-type="type">
+</li><li>
     <a href="./display.html#AttributesDomain">AttributesDomain</a>
-</li><li data-type="type">
+</li><li>
     <a href="./display.html#DisplayDomain">DisplayDomain</a>
-</li><li data-type="type">
+</li><li>
     <a href="./display.html#SymbolDomain">SymbolDomain</a>
-</li><li data-type="type">
+</li><li>
     <a href="./display.html#UrlDomain">UrlDomain</a>
 </li></ul>
 </li><li>
     <a href="./proceeds.html">proceeds</a>
-    <ul class="methods"><li data-type="type">
+    <ul class="methods"><li>
     <a href="./proceeds.html#Proceeds">Proceeds</a>
-</li><li data-type="type">
+</li><li>
     <a href="./proceeds.html#QtSold">QtSold</a>
 </li></ul>
 </li><li>
     <a href="./object_box.html">object_box</a>
-    <ul class="methods"><li data-type="type">
+    <ul class="methods"><li>
     <a href="./object_box.html#ObjectBox">ObjectBox</a>
 </li></ul>
 </li><li>
     <a href="./marketplace.html">marketplace</a>
-    <ul class="methods"><li data-type="type">
+    <ul class="methods"><li>
     <a href="./marketplace.html#Marketplace">Marketplace</a>
 </li></ul>
 </li><li>
     <a href="./inventory.html">inventory</a>
-    <ul class="methods"><li data-type="type">
+    <ul class="methods"><li>
     <a href="./inventory.html#Inventory">Inventory</a>
 </li></ul>
 </li><li>
     <a href="./listing.html">listing</a>
-    <ul class="methods"><li data-type="type">
+    <ul class="methods"><li>
     <a href="./listing.html#CreateListingEvent">CreateListingEvent</a>
-</li><li data-type="type">
+</li><li>
     <a href="./listing.html#DeleteListingEvent">DeleteListingEvent</a>
-</li><li data-type="type">
+</li><li>
     <a href="./listing.html#Listing">Listing</a>
-</li><li data-type="type">
+</li><li>
     <a href="./listing.html#RequestToJoin">RequestToJoin</a>
-</li><li data-type="type">
+</li><li>
     <a href="./listing.html#WhitelistCertificate">WhitelistCertificate</a>
 </li></ul>
 </li><li>
     <a href="./dutch_auction.html">dutch_auction</a>
-    <ul class="methods"><li data-type="type">
+    <ul class="methods"><li>
     <a href="./dutch_auction.html#Witness">Witness</a>
-</li><li data-type="type">
+</li><li>
     <a href="./dutch_auction.html#Bid">Bid</a>
-</li><li data-type="type">
+</li><li>
     <a href="./dutch_auction.html#DutchAuctionMarket">DutchAuctionMarket</a>
 </li></ul>
 </li><li>
     <a href="./fixed_price.html">fixed_price</a>
-    <ul class="methods"><li data-type="type">
+    <ul class="methods"><li>
     <a href="./fixed_price.html#Witness">Witness</a>
-</li><li data-type="type">
+</li><li>
     <a href="./fixed_price.html#FixedPriceMarket">FixedPriceMarket</a>
 </li></ul>
 </li><li>
     <a href="./flat_fee.html">flat_fee</a>
-    <ul class="methods"><li data-type="type">
+    <ul class="methods"><li>
     <a href="./flat_fee.html#FlatFee">FlatFee</a>
 </li></ul>
 </li><li>
     <a href="./supply.html">supply</a>
-    <ul class="methods"><li data-type="type">
+    <ul class="methods"><li>
     <a href="./supply.html#Supply">Supply</a>
 </li></ul>
 </li><li>
     <a href="./flyweight.html">flyweight</a>
-    <ul class="methods"><li data-type="type">
+    <ul class="methods"><li>
     <a href="./flyweight.html#Archetype">Archetype</a>
-</li><li data-type="type">
+</li><li>
     <a href="./flyweight.html#BurnEvent">BurnEvent</a>
-</li><li data-type="type">
+</li><li>
     <a href="./flyweight.html#MintEvent">MintEvent</a>
-</li><li data-type="type">
+</li><li>
     <a href="./flyweight.html#Pointer">Pointer</a>
-</li><li data-type="type">
+</li><li>
     <a href="./flyweight.html#Registry">Registry</a>
 </li></ul>
 </li><li>
     <a href="./ob.html">ob</a>
-    <ul class="methods"><li data-type="type">
+    <ul class="methods"><li>
     <a href="./ob.html#Witness">Witness</a>
-</li><li data-type="type">
+</li><li>
     <a href="./ob.html#Bid">Bid</a>
-</li><li data-type="type">
+</li><li>
     <a href="./ob.html#BidClosed">BidClosed</a>
-</li><li data-type="type">
+</li><li>
     <a href="./ob.html#BidCreated">BidCreated</a>
-</li><li data-type="type">
+</li><li>
     <a href="./ob.html#Ask">Ask</a>
-</li><li data-type="type">
+</li><li>
     <a href="./ob.html#AskClosed">AskClosed</a>
-</li><li data-type="type">
+</li><li>
     <a href="./ob.html#AskCreated">AskCreated</a>
-</li><li data-type="type">
+</li><li>
     <a href="./ob.html#Orderbook">Orderbook</a>
-</li><li data-type="type">
+</li><li>
     <a href="./ob.html#TradeExecuted">TradeExecuted</a>
-</li><li data-type="type">
+</li><li>
     <a href="./ob.html#TradeIntermediate">TradeIntermediate</a>
-</li><li data-type="type">
+</li><li>
     <a href="./ob.html#WitnessProtectedActions">WitnessProtectedActions</a>
 </li></ul>
 </li><li>
     <a href="./royalty_strategy_constant.html">royalty_strategy_constant</a>
-    <ul class="methods"><li data-type="type">
+    <ul class="methods"><li>
     <a href="./royalty_strategy_constant.html#ConstantRoyaltyStrategy">ConstantRoyaltyStrategy</a>
 </li></ul>
 </li><li>
     <a href="./royalty_strategy_bps.html">royalty_strategy_bps</a>
-    <ul class="methods"><li data-type="type">
+    <ul class="methods"><li>
     <a href="./royalty_strategy_bps.html#BpsRoyaltyStrategy">BpsRoyaltyStrategy</a>
 </li></ul>
 </li><li>
     <a href="./royalty.html">royalty</a>
-    <ul class="methods"><li data-type="type">
+    <ul class="methods"><li>
     <a href="./royalty.html#Witness">Witness</a>
-</li><li data-type="type">
+</li><li>
     <a href="./royalty.html#RoyaltyDomain">RoyaltyDomain</a>
 </li></ul>
 </li><li>
     <a href="./supply_policy.html">supply_policy</a>
-    <ul class="methods"><li data-type="type">
+    <ul class="methods"><li>
     <a href="./supply_policy.html#SupplyPolicy">SupplyPolicy</a>
 </li></ul>
 </li><li>
     <a href="./tags.html">tags</a>
-    <ul class="methods"><li data-type="type">
+    <ul class="methods"><li>
     <a href="./tags.html#Witness">Witness</a>
-</li><li data-type="type">
+</li><li>
     <a href="./tags.html#Art">Art</a>
-</li><li data-type="type">
+</li><li>
     <a href="./tags.html#Collectible">Collectible</a>
-</li><li data-type="type">
+</li><li>
     <a href="./tags.html#DomainName">DomainName</a>
-</li><li data-type="type">
+</li><li>
     <a href="./tags.html#GameAsset">GameAsset</a>
-</li><li data-type="type">
+</li><li>
     <a href="./tags.html#License">License</a>
-</li><li data-type="type">
+</li><li>
     <a href="./tags.html#Music">Music</a>
-</li><li data-type="type">
+</li><li>
     <a href="./tags.html#ProfilePicture">ProfilePicture</a>
-</li><li data-type="type">
+</li><li>
     <a href="./tags.html#TagDomain">TagDomain</a>
-</li><li data-type="type">
+</li><li>
     <a href="./tags.html#Ticker">Ticker</a>
-</li><li data-type="type">
+</li><li>
     <a href="./tags.html#Ticket">Ticket</a>
-</li><li data-type="type">
+</li><li>
     <a href="./tags.html#TokenisedAsset">TokenisedAsset</a>
-</li><li data-type="type">
+</li><li>
     <a href="./tags.html#Video">Video</a>
 </li></ul>
 </li></ul></nav>
-            <main><h1 class="page-title">0x0::trading</h1>
+            <main>
+                <nav>
+                    <form>
+                        <input id="search-input" name="search" aria-label="Search the documentation" autocomplete="off" spellcheck="false" placeholder="Click to search" type="search">
+                    </form>
+                </nav>
+                <section id="main-content"><h1>0x0::trading</h1>
 <article>
     <p>Reusable trading primitives.</p>
 
-    <h3 class="subsection-title">Structs</h3>
+    <h2>Structs</h2>
     <details class="toggle" open>
     <summary>
-        <h4 class="code-header" id="BidCommission"><pre><a href="./trading.html">trading</a>::<a href="./trading.html#BidCommission" class="type">BidCommission</a>&lt;FT&gt; has <span class="ability">store</span><pre></h4>
+        <h3 class="code-header" id="BidCommission"><pre><a href="./trading.html">trading</a>::<a href="./trading.html#BidCommission" class="hljs-type">BidCommission</a>&lt;FT&gt; has <span class="ability">store</span><pre></h3>
     </summary>
     <div class="description">
+        <h4>Fields:</h4>
+<table class="params">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th class="last">Description</th>
+        </tr>
+    </thead>
+    <tbody><tr>
+    <td class="name">
+        <code>cut</code>
+    </td>
+    <td class="hljs-type">
+        <code>balance::<span class="hljs-type">Balance</span>&lt;FT&gt;</code>
+    </td>
+    <td class="description last"><p>This is given to the facilitator of the trade.</p>
+</td>
+</tr><tr>
+    <td class="name">
+        <code>beneficiary</code>
+    </td>
+    <td class="hljs-type">
+        <code><span class="hljs-type">address</span></code>
+    </td>
+    <td class="description last"><p>A new <code>Coin</code> object is created and sent to this address.</p>
+</td>
+</tr></tbody>
+</table>
         <p>Enables collection of wallet/marketplace collection for buying NFTs.</p>
 <ol>
 <li>user bids via wallet to buy NFT for <code>p</code>, wallet wants fee <code>f</code></li>
 <li>when executed, <code>p</code> goes to seller and <code>f</code> goes to wallet</li>
 </ol>
 
-        <h5>Fields:</h5>
-        <table class="params">
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Type</th>
-                    <th class="last">Description</th>
-                </tr>
-            </thead>
-            <tbody><tr>
-    <td class="name">
-        <code>cut</code>            
-    </td>
-    <td class="type">
-        <code>balance::<span class="type">Balance</span>&lt;FT&gt;</code>  
-    </td>
-    <td class="description last"><p>This is given to the facilitator of the trade.</p>
-</td>
-</tr><tr>
-    <td class="name">
-        <code>beneficiary</code>            
-    </td>
-    <td class="type">
-        <code><span class="type">address</span></code>  
-    </td>
-    <td class="description last"><p>A new <code>Coin</code> object is created and sent to this address.</p>
-</td>
-</tr></tbody>
-        </table>
     </div>
 </details><details class="toggle" open>
     <summary>
-        <h4 class="code-header" id="AskCommission"><pre><a href="./trading.html">trading</a>::<a href="./trading.html#AskCommission" class="type">AskCommission</a> has <span class="ability">drop</span>, <span class="ability">store</span><pre></h4>
+        <h3 class="code-header" id="AskCommission"><pre><a href="./trading.html">trading</a>::<a href="./trading.html#AskCommission" class="hljs-type">AskCommission</a> has <span class="ability">drop</span>, <span class="ability">store</span><pre></h3>
     </summary>
     <div class="description">
-        <p>Enables collection of wallet/marketplace collection for listing an NFT.</p>
-<ol>
-<li>user lists NFT via wallet for price <code>p</code>, wallet requests fee <code>f</code></li>
-<li>when executed, <code>p - f</code> goes to user and <code>f</code> goes to wallet</li>
-</ol>
-
-        <h5>Fields:</h5>
-        <table class="params">
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Type</th>
-                    <th class="last">Description</th>
-                </tr>
-            </thead>
-            <tbody><tr>
+        <h4>Fields:</h4>
+<table class="params">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th class="last">Description</th>
+        </tr>
+    </thead>
+    <tbody><tr>
     <td class="name">
-        <code>cut</code>            
+        <code>cut</code>
     </td>
-    <td class="type">
-        <code><span class="type">u64</span></code>  
+    <td class="hljs-type">
+        <code><span class="hljs-type">u64</span></code>
     </td>
     <td class="description last"><p>How many tokens of the transferred amount should go to the party
 which holds the private key of <code>beneficiary</code> address.</p>
@@ -349,64 +358,84 @@ which holds the private key of <code>beneficiary</code> address.</p>
 </td>
 </tr><tr>
     <td class="name">
-        <code>beneficiary</code>            
+        <code>beneficiary</code>
     </td>
-    <td class="type">
-        <code><span class="type">address</span></code>  
+    <td class="hljs-type">
+        <code><span class="hljs-type">address</span></code>
     </td>
     <td class="description last"><p>A new <code>Coin</code> object is created and sent to this address.</p>
 </td>
 </tr></tbody>
-        </table>
+</table>
+        <p>Enables collection of wallet/marketplace collection for listing an NFT.</p>
+<ol>
+<li>user lists NFT via wallet for price <code>p</code>, wallet requests fee <code>f</code></li>
+<li>when executed, <code>p - f</code> goes to user and <code>f</code> goes to wallet</li>
+</ol>
+
     </div>
 </details>
-    <h3 class="subsection-title">Methods</h3>
+    <h2>Methods</h2>
     <details class="toggle" open>
     <summary>
-        <h4 class="code-header" id="new_ask_commission"><pre>public fun <a href="./trading.html#new_ask_commission" class="function">new_ask_commission</a>(beneficiary: <span class="type">address</span>, cut: <span class="type">u64</span>): 
-    <a href="./trading.html">trading</a>::<a href="./trading.html#AskCommission" class="type">AskCommission</a></pre></h4>
+        <h3 class="code-header" id="new_ask_commission"><pre><span class="hljs-keyword">public fun </span><a href="./trading.html#new_ask_commission" class="function">new_ask_commission</a>(beneficiary: <span class="hljs-type">address</span>, cut: <span class="hljs-type">u64</span>): 
+    <a href="./trading.html">trading</a>::<a href="./trading.html#AskCommission" class="hljs-type">AskCommission</a></pre></h3>
     </summary>
     <div class="description"></div>
 </details><details class="toggle" open>
     <summary>
-        <h4 class="code-header" id="new_bid_commission"><pre>public fun <a href="./trading.html#new_bid_commission" class="function">new_bid_commission</a>&lt;FT&gt;(
-    beneficiary: <span class="type">address</span>,
-    cut: balance::<span class="type">Balance</span>&lt;FT&gt;,
-): <a href="./trading.html">trading</a>::<a href="./trading.html#BidCommission" class="type">BidCommission</a>&lt;FT&gt;</pre></h4>
+        <h3 class="code-header" id="new_bid_commission"><pre><span class="hljs-keyword">public fun </span><a href="./trading.html#new_bid_commission" class="function">new_bid_commission</a>&lt;FT&gt;(
+    beneficiary: <span class="hljs-type">address</span>,
+    cut: balance::<span class="hljs-type">Balance</span>&lt;FT&gt;,
+): <a href="./trading.html">trading</a>::<a href="./trading.html#BidCommission" class="hljs-type">BidCommission</a>&lt;FT&gt;</pre></h3>
     </summary>
     <div class="description"></div>
 </details><details class="toggle" open>
     <summary>
-        <h4 class="code-header" id="destroy_bid_commission"><pre>public fun <a href="./trading.html#destroy_bid_commission" class="function">destroy_bid_commission</a>&lt;FT&gt;(
-    commission: <a href="./trading.html">trading</a>::<a href="./trading.html#BidCommission" class="type">BidCommission</a>&lt;FT&gt;,
-): (balance::<span class="type">Balance</span>&lt;FT&gt;, <span class="type">address</span>)</pre></h4>
+        <h3 class="code-header" id="destroy_bid_commission"><pre><span class="hljs-keyword">public fun </span><a href="./trading.html#destroy_bid_commission" class="function">destroy_bid_commission</a>&lt;FT&gt;(
+    commission: <a href="./trading.html">trading</a>::<a href="./trading.html#BidCommission" class="hljs-type">BidCommission</a>&lt;FT&gt;,
+): (balance::<span class="hljs-type">Balance</span>&lt;FT&gt;, <span class="hljs-type">address</span>)</pre></h3>
     </summary>
     <div class="description"></div>
 </details><details class="toggle" open>
     <summary>
-        <h4 class="code-header" id="transfer_bid_commission"><pre>public fun <a href="./trading.html#transfer_bid_commission" class="function">transfer_bid_commission</a>&lt;
-    FT,
-&gt;(
-    commission: &mut option::<span class="type">Option</span>&lt;<a href="./trading.html">trading</a>::<a href="./trading.html#BidCommission" class="type">BidCommission</a>&lt;FT&gt;&gt;,
-    ctx: &mut tx_context::<span class="type">TxContext</span>,
-)</pre></h4>
+        <h3 class="code-header" id="transfer_bid_commission"><pre><span class="hljs-keyword">public fun </span><a href="./trading.html#transfer_bid_commission" class="function">transfer_bid_commission</a>&lt;FT&gt;(
+    commission: &<span class="hljs-keyword">mut </span>option::<span class="hljs-type">Option</span>&lt;<a href="./trading.html">trading</a>::<a href="./trading.html#BidCommission" class="hljs-type">BidCommission</a>&lt;FT&gt;&gt;,
+    ctx: &<span class="hljs-keyword">mut </span>tx_context::<span class="hljs-type">TxContext</span>,
+)</pre></h3>
     </summary>
     <div class="description"></div>
 </details><details class="toggle" open>
     <summary>
-        <h4 class="code-header" id="settle_funds"><pre>public fun <a href="./trading.html#settle_funds" class="function">settle_funds</a>&lt;
-    C,
-    FT,
-&gt;(
-    paid: &mut balance::<span class="type">Balance</span>&lt;FT&gt;,
-    recipient: <span class="type">address</span>,
-    maybe_commission: &mut option::<span class="type">Option</span>&lt;<a href="./trading.html">trading</a>::<a href="./trading.html#AskCommission" class="type">AskCommission</a>&gt;,
-    ctx: &mut tx_context::<span class="type">TxContext</span>,
-)</pre></h4>
+        <h3 class="code-header" id="settle_funds_with_royalties"><pre><span class="hljs-keyword">public fun </span><a href="./trading.html#settle_funds_with_royalties" class="function">settle_funds_with_royalties</a>&lt;C, FT&gt;(
+    paid: &<span class="hljs-keyword">mut </span>balance::<span class="hljs-type">Balance</span>&lt;FT&gt;,
+    recipient: <span class="hljs-type">address</span>,
+    maybe_commission: &<span class="hljs-keyword">mut </span>option::<span class="hljs-type">Option</span>&lt;<a href="./trading.html">trading</a>::<a href="./trading.html#AskCommission" class="hljs-type">AskCommission</a>&gt;,
+    ctx: &<span class="hljs-keyword">mut </span>tx_context::<span class="hljs-type">TxContext</span>,
+)</pre></h3>
     </summary>
-    <div class="description"></div>
+    <div class="description"><p>Wraps the funds in an object which can be only unwrapped in a method
+of the <code>C</code>ollection that deals with royalties.</p>
+</div>
+</details><details class="toggle" open>
+    <summary>
+        <h3 class="code-header" id="settle_funds_no_royalties"><pre><span class="hljs-keyword">public fun </span><a href="./trading.html#settle_funds_no_royalties" class="function">settle_funds_no_royalties</a>&lt;C, FT&gt;(
+    paid: &<span class="hljs-keyword">mut </span>balance::<span class="hljs-type">Balance</span>&lt;FT&gt;,
+    recipient: <span class="hljs-type">address</span>,
+    maybe_commission: &<span class="hljs-keyword">mut </span>option::<span class="hljs-type">Option</span>&lt;<a href="./trading.html">trading</a>::<a href="./trading.html#AskCommission" class="hljs-type">AskCommission</a>&gt;,
+    ctx: &<span class="hljs-keyword">mut </span>tx_context::<span class="hljs-type">TxContext</span>,
+)</pre></h3>
+    </summary>
+    <div class="description"><p>No royalty collection, just transfer the funds directly.</p>
+</div>
 </details>
-</article></main>
+</article></section>
+                <section id="alternative-display" class="hidden">
+                    <h1>Results</h1>
+                    <div id="search-results"></div>
+                </section>
+                <script src="./assets/search.js"></script>
+            </main>
         </div>
     </body>
 </html>
