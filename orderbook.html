@@ -354,22 +354,42 @@
                         <input id="search-input" name="search" aria-label="Search the documentation" autocomplete="off" spellcheck="false" placeholder="Click to search" type="search">
                     </form>
                 </nav>
-                <section id="main-content"><h1>0x52f6dee1b2a9b63d448e1e3956199a1625c63a3c::royalty</h1>
+                <section id="main-content"><h1>0x52f6dee1b2a9b63d448e1e3956199a1625c63a3c::orderbook</h1>
 <article>
-    <p>Module of Collection <code>RoyaltyDomain</code></p>
-<p><code>RoyaltyDomain</code> allows creators to define custom royalty strategies,
-collect royalties for their collections. Additionally, creators and their
-respective royalty share are tracked.</p>
-<p><code>royalty</code> does not provide a generic <code>calculate</code> function that takes into
-account all royalty strategies defined on the domain, as the OriginByte
-standard does not know how to read strategies not otherwise defined by it.</p>
-<p>The module relies on an external contract to drive the royalty gathering
-and dirtribution flow.</p>
+    <p>Orderbook where bids are fungible tokens and asks are NFTs.
+A bid is a request to buy one NFT from a specific collection.
+An ask is one NFT with a min price condition.</p>
+<p>One can</p>
+<ul>
+<li>create a new orderbook between a given collection and a bid token;</li>
+<li>set publicly accessible actions to be witness protected;</li>
+<li>open a new bid;</li>
+<li>cancel an existing bid they own;</li>
+<li>offer an NFT if collection matches OB collection;</li>
+<li>cancel an existing NFT offer;</li>
+<li>instantly buy a specific NFT;</li>
+<li>open bids and asks with a commission on behalf of a user;</li>
+<li>trade both native and 3rd party collections.</li>
+</ul>
+<h1>Other resources</h1>
+<ul>
+<li>https://docs.originbyte.io/origin-byte/about-our-programs/liquidity-layer/orderbook</li>
+<li>https://origin-byte.github.io/ob.html</li>
+</ul>
 
     <h2>Structs</h2>
     <details class="toggle" open>
     <summary>
-        <h3 class="code-header" id="RoyaltyDomain"><pre><a href="./royalty.html">royalty</a>::<a href="./royalty.html#RoyaltyDomain" class="hljs-type">RoyaltyDomain</a> has <span class="ability">store</span><pre></h3>
+        <h3 class="code-header" id="Witness"><pre><a href="./orderbook.html">orderbook</a>::<a href="./orderbook.html#Witness" class="hljs-type">Witness</a> has <span class="ability">drop</span><pre></h3>
+    </summary>
+    <div class="description">
+        
+        <p>Witness used to authenticate witness protected endpoints</p>
+
+    </div>
+</details><details class="toggle" open>
+    <summary>
+        <h3 class="code-header" id="Orderbook"><pre><a href="./orderbook.html">orderbook</a>::<a href="./orderbook.html#Orderbook" class="hljs-type">Orderbook</a>&lt;C, FT&gt; has <span class="ability">key</span><pre></h3>
     </summary>
     <div class="description">
         <h4>Fields:</h4>
@@ -383,373 +403,1376 @@ and dirtribution flow.</p>
     </thead>
     <tbody><tr>
     <td class="name">
-        <code>strategies</code>
+        <code>id</code>
     </td>
     <td class="hljs-type">
         <code>object::<span class="hljs-type">UID</span></code>
     </td>
-    <td class="description last"><p>Royalty strategies</p>
+    <td class="description last"></td>
+</tr><tr>
+    <td class="name">
+        <code>protected_actions</code>
+    </td>
+    <td class="hljs-type">
+        <code><a href="./orderbook.html">orderbook</a>::<a href="./orderbook.html#WitnessProtectedActions" class="hljs-type">WitnessProtectedActions</a></code>
+    </td>
+    <td class="description last"><p>Actions which have a flag set to true can only be called via a
+witness protected implementation.</p>
 </td>
 </tr><tr>
     <td class="name">
-        <code>aggregations</code>
+        <code>asks</code>
     </td>
     <td class="hljs-type">
-        <code>object::<span class="hljs-type">UID</span></code>
+        <code>crit_bit_u64::<span class="hljs-type">CB</span>&lt;<span class="hljs-type">vector<span>&lt;<a href="./orderbook.html">orderbook</a>::<a href="./orderbook.html#Ask" class="hljs-type">Ask</a>&gt;&gt;</code>
     </td>
-    <td class="description last"><p>Aggregates received royalties across different coins</p>
+    <td class="description last"><p>An ask order stores an NFT to be traded. The price associated with
+such an order is saying:</p>
+<blockquote>
+<p>for this NFT, I want to receive at least this amount of FT.</p>
+</blockquote>
 </td>
 </tr><tr>
     <td class="name">
-        <code>royalty_shares_bps</code>
+        <code>bids</code>
     </td>
     <td class="hljs-type">
-        <code>vec_map::<span class="hljs-type">VecMap</span>&lt;<span class="hljs-type">address</span>, <span class="hljs-type">u16</span>&gt;</code>
+        <code>crit_bit_u64::<span class="hljs-type">CB</span>&lt;<span class="hljs-type">vector<span>&lt;<a href="./orderbook.html">orderbook</a>::<a href="./orderbook.html#Bid" class="hljs-type">Bid</a>&lt;FT&gt;&gt;&gt;</code>
     </td>
-    <td class="description last"><p>Royalty share received by addresses</p>
+    <td class="description last"><p>A bid order stores amount of tokens of type &quot;B&quot;(id) to trade. A bid
+order is saying:</p>
+<blockquote>
+<p>for any NFT in this collection, I will spare this many tokens</p>
+</blockquote>
 </td>
 </tr></tbody>
 </table>
-        <p><code>RoyaltyDomain</code> stores royalty strategies for <code>Collection</code> and
-distributes them among creators</p>
-<h5>Usage</h5>
-<p><code>RoyaltyDomain</code> can only calculate royalties owed and distribute them
-to shareholders, as a result, it relies on trusted price execution.</p>
-<p>The usage example shows how to derive the owed royalties from the
-example collection, <code>Suimarines</code>, which uses <code>TradePayment</code> as the
-price oracle, but is also responsible for deconstructing it. For more
-information read <a href="./royalties.html">royalties</a>.</p>
-<pre><code>module nft_protocol::suimarines {
-    struct Witness has drop {}
-
-    public entry fun collect_royalty&lt;FT&gt;(
-        payment: &amp;mut TradePayment&lt;SUIMARINES, FT&gt;,
-        collection: &amp;mut Collection&lt;SUIMARINES&gt;,
-        ctx: &amp;mut TxContext,
-    ) {
-        let b = royalties::balance_mut(Witness {}, payment);
-
-        let domain = royalty::royalty_domain(collection);
-        let royalty_owed =
-            royalty::calculate_proportional_royalty(domain, balance::value(b));
-
-        royalty::collect_royalty(collection, b, royalty_owed);
-        royalties::transfer_remaining_to_beneficiary(Witness {}, payment, ctx);
-    }
-}
-</code></pre>
+        <p>A critbit order book implementation. Contains two ordered trees:</p>
+<ol>
+<li>bids ASC</li>
+<li>asks DESC</li>
+</ol>
 
     </div>
 </details><details class="toggle" open>
     <summary>
-        <h3 class="code-header" id="Witness"><pre><a href="./royalty.html">royalty</a>::<a href="./royalty.html#Witness" class="hljs-type">Witness</a> has <span class="ability">drop</span><pre></h3>
+        <h3 class="code-header" id="WitnessProtectedActions"><pre><a href="./orderbook.html">orderbook</a>::<a href="./orderbook.html#WitnessProtectedActions" class="hljs-type">WitnessProtectedActions</a> has <span class="ability">drop</span>, <span class="ability">store</span><pre></h3>
     </summary>
     <div class="description">
+        <h4>Fields:</h4>
+<table class="params">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th class="last">Description</th>
+        </tr>
+    </thead>
+    <tbody><tr>
+    <td class="name">
+        <code>buy_nft</code>
+    </td>
+    <td class="hljs-type">
+        <code><span class="hljs-type">bool</span></code>
+    </td>
+    <td class="description last"></td>
+</tr><tr>
+    <td class="name">
+        <code>cancel_ask</code>
+    </td>
+    <td class="hljs-type">
+        <code><span class="hljs-type">bool</span></code>
+    </td>
+    <td class="description last"></td>
+</tr><tr>
+    <td class="name">
+        <code>cancel_bid</code>
+    </td>
+    <td class="hljs-type">
+        <code><span class="hljs-type">bool</span></code>
+    </td>
+    <td class="description last"></td>
+</tr><tr>
+    <td class="name">
+        <code>create_ask</code>
+    </td>
+    <td class="hljs-type">
+        <code><span class="hljs-type">bool</span></code>
+    </td>
+    <td class="description last"></td>
+</tr><tr>
+    <td class="name">
+        <code>create_bid</code>
+    </td>
+    <td class="hljs-type">
+        <code><span class="hljs-type">bool</span></code>
+    </td>
+    <td class="description last"></td>
+</tr></tbody>
+</table>
+        <p>The contract which creates the orderbook can restrict specific actions
+to be only callable with a witness pattern and not via the entry point
+function.</p>
+<p>This means contracts can build on top of this orderbook their custom
+logic if they desire so, or they can just use the entry point functions
+which might be good enough for most use cases.</p>
+<h1>Important</h1>
+<p>If a method is protected, then clients call instead of the relevant
+endpoint in the orderbook a standardized endpoint in the witness-owning
+smart contract.</p>
+<p>Another way to think about this from marketplace or wallet POV:
+If I see that an action is protected, I can decide to either call
+the downstream implementation in the collection smart contract, or just
+not enable to perform that specific action at all.</p>
+
+    </div>
+</details><details class="toggle" open>
+    <summary>
+        <h3 class="code-header" id="Bid"><pre><a href="./orderbook.html">orderbook</a>::<a href="./orderbook.html#Bid" class="hljs-type">Bid</a>&lt;FT&gt; has <span class="ability">store</span><pre></h3>
+    </summary>
+    <div class="description">
+        <h4>Fields:</h4>
+<table class="params">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th class="last">Description</th>
+        </tr>
+    </thead>
+    <tbody><tr>
+    <td class="name">
+        <code>offer</code>
+    </td>
+    <td class="hljs-type">
+        <code>balance::<span class="hljs-type">Balance</span>&lt;FT&gt;</code>
+    </td>
+    <td class="description last"><p>How many token are being offered by the order issuer for one NFT.</p>
+</td>
+</tr><tr>
+    <td class="name">
+        <code>owner</code>
+    </td>
+    <td class="hljs-type">
+        <code><span class="hljs-type">address</span></code>
+    </td>
+    <td class="description last"><p>The address of the user who created this bid and who will receive an
+NFT in exchange for their tokens.</p>
+</td>
+</tr><tr>
+    <td class="name">
+        <code>safe</code>
+    </td>
+    <td class="hljs-type">
+        <code>object::<span class="hljs-type">ID</span></code>
+    </td>
+    <td class="description last"><p>Points to <code>Safe</code> shared object into which to deposit NFT.</p>
+</td>
+</tr><tr>
+    <td class="name">
+        <code>commission</code>
+    </td>
+    <td class="hljs-type">
+        <code>option::<span class="hljs-type">Option</span>&lt;<a href="./trading.html">trading</a>::<a href="./trading.html#BidCommission" class="hljs-type">BidCommission</a>&lt;FT&gt;&gt;</code>
+    </td>
+    <td class="description last"><p>If the NFT is offered via a marketplace or a wallet, the
+facilitator can optionally set how many tokens they want to claim
+on top of the offer.</p>
+</td>
+</tr></tbody>
+</table>
+        <p>An offer for a single NFT in a collection.</p>
+
+    </div>
+</details><details class="toggle" open>
+    <summary>
+        <h3 class="code-header" id="Ask"><pre><a href="./orderbook.html">orderbook</a>::<a href="./orderbook.html#Ask" class="hljs-type">Ask</a> has <span class="ability">store</span><pre></h3>
+    </summary>
+    <div class="description">
+        <h4>Fields:</h4>
+<table class="params">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th class="last">Description</th>
+        </tr>
+    </thead>
+    <tbody><tr>
+    <td class="name">
+        <code>price</code>
+    </td>
+    <td class="hljs-type">
+        <code><span class="hljs-type">u64</span></code>
+    </td>
+    <td class="description last"><p>How many tokens does the seller want for their NFT in exchange.</p>
+</td>
+</tr><tr>
+    <td class="name">
+        <code>transfer_cap</code>
+    </td>
+    <td class="hljs-type">
+        <code><a href="./safe.html">safe</a>::<a href="./safe.html#TransferCap" class="hljs-type">TransferCap</a></code>
+    </td>
+    <td class="description last"><p>Capability to get an NFT from a safe.</p>
+</td>
+</tr><tr>
+    <td class="name">
+        <code>owner</code>
+    </td>
+    <td class="hljs-type">
+        <code><span class="hljs-type">address</span></code>
+    </td>
+    <td class="description last"><p>Who owns the NFT.</p>
+</td>
+</tr><tr>
+    <td class="name">
+        <code>commission</code>
+    </td>
+    <td class="hljs-type">
+        <code>option::<span class="hljs-type">Option</span>&lt;<a href="./trading.html">trading</a>::<a href="./trading.html#AskCommission" class="hljs-type">AskCommission</a>&gt;</code>
+    </td>
+    <td class="description last"><p>If the NFT is offered via a marketplace or a wallet, the
+facilitator can optionally set how many tokens they want to claim
+from the price of the NFT for themselves as a commission.</p>
+</td>
+</tr></tbody>
+</table>
+        <p>Object which is associated with a single NFT.</p>
+<p>When [<code>Ask</code>] is created, we transfer the ownership of the NFT to this
+new object.
+When an ask is matched with a bid, we transfer the ownership of the
+[<code>Ask</code>] object to the bid owner (buyer).
+The buyer can then claim the NFT via [<code>claim_nft</code>] endpoint.</p>
+
+    </div>
+</details><details class="toggle" open>
+    <summary>
+        <h3 class="code-header" id="TradeIntermediate"><pre><a href="./orderbook.html">orderbook</a>::<a href="./orderbook.html#TradeIntermediate" class="hljs-type">TradeIntermediate</a>&lt;C, FT&gt; has <span class="ability">key</span><pre></h3>
+    </summary>
+    <div class="description">
+        <h4>Fields:</h4>
+<table class="params">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th class="last">Description</th>
+        </tr>
+    </thead>
+    <tbody><tr>
+    <td class="name">
+        <code>id</code>
+    </td>
+    <td class="hljs-type">
+        <code>object::<span class="hljs-type">UID</span></code>
+    </td>
+    <td class="description last"></td>
+</tr><tr>
+    <td class="name">
+        <code>transfer_cap</code>
+    </td>
+    <td class="hljs-type">
+        <code>option::<span class="hljs-type">Option</span>&lt;<a href="./safe.html">safe</a>::<a href="./safe.html#TransferCap" class="hljs-type">TransferCap</a>&gt;</code>
+    </td>
+    <td class="description last"><p>in option bcs we want to extract it but cannot destroy shared obj
+in Sui yet</p>
+<p>https://github.com/MystenLabs/sui/issues/2083</p>
+</td>
+</tr><tr>
+    <td class="name">
+        <code>seller</code>
+    </td>
+    <td class="hljs-type">
+        <code><span class="hljs-type">address</span></code>
+    </td>
+    <td class="description last"></td>
+</tr><tr>
+    <td class="name">
+        <code>buyer</code>
+    </td>
+    <td class="hljs-type">
+        <code><span class="hljs-type">address</span></code>
+    </td>
+    <td class="description last"></td>
+</tr><tr>
+    <td class="name">
+        <code>buyer_safe</code>
+    </td>
+    <td class="hljs-type">
+        <code>object::<span class="hljs-type">ID</span></code>
+    </td>
+    <td class="description last"></td>
+</tr><tr>
+    <td class="name">
+        <code>paid</code>
+    </td>
+    <td class="hljs-type">
+        <code>balance::<span class="hljs-type">Balance</span>&lt;FT&gt;</code>
+    </td>
+    <td class="description last"></td>
+</tr><tr>
+    <td class="name">
+        <code>commission</code>
+    </td>
+    <td class="hljs-type">
+        <code>option::<span class="hljs-type">Option</span>&lt;<a href="./trading.html">trading</a>::<a href="./trading.html#AskCommission" class="hljs-type">AskCommission</a>&gt;</code>
+    </td>
+    <td class="description last"></td>
+</tr></tbody>
+</table>
+        <p><code>TradeIntermediate</code> is made a shared object and can be called
+permissionlessly.</p>
+
+    </div>
+</details><details class="toggle" open>
+    <summary>
+        <h3 class="code-header" id="OrderbookCreatedEvent"><pre><a href="./orderbook.html">orderbook</a>::<a href="./orderbook.html#OrderbookCreatedEvent" class="hljs-type">OrderbookCreatedEvent</a> has <span class="ability">copy</span>, <span class="ability">drop</span><pre></h3>
+    </summary>
+    <div class="description">
+        <h4>Fields:</h4>
+<table class="params">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th class="last">Description</th>
+        </tr>
+    </thead>
+    <tbody><tr>
+    <td class="name">
+        <code>orderbook</code>
+    </td>
+    <td class="hljs-type">
+        <code>object::<span class="hljs-type">ID</span></code>
+    </td>
+    <td class="description last"></td>
+</tr><tr>
+    <td class="name">
+        <code>collection_type</code>
+    </td>
+    <td class="hljs-type">
+        <code>ascii::<span class="hljs-type">String</span></code>
+    </td>
+    <td class="description last"></td>
+</tr><tr>
+    <td class="name">
+        <code>fungible_token_type</code>
+    </td>
+    <td class="hljs-type">
+        <code>ascii::<span class="hljs-type">String</span></code>
+    </td>
+    <td class="description last"></td>
+</tr></tbody>
+</table>
         
-        <p>Witness used to authenticate witness protected endpoints</p>
+    </div>
+</details><details class="toggle" open>
+    <summary>
+        <h3 class="code-header" id="AskCreatedEvent"><pre><a href="./orderbook.html">orderbook</a>::<a href="./orderbook.html#AskCreatedEvent" class="hljs-type">AskCreatedEvent</a> has <span class="ability">copy</span>, <span class="ability">drop</span><pre></h3>
+    </summary>
+    <div class="description">
+        <h4>Fields:</h4>
+<table class="params">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th class="last">Description</th>
+        </tr>
+    </thead>
+    <tbody><tr>
+    <td class="name">
+        <code>nft</code>
+    </td>
+    <td class="hljs-type">
+        <code>object::<span class="hljs-type">ID</span></code>
+    </td>
+    <td class="description last"></td>
+</tr><tr>
+    <td class="name">
+        <code>orderbook</code>
+    </td>
+    <td class="hljs-type">
+        <code>object::<span class="hljs-type">ID</span></code>
+    </td>
+    <td class="description last"></td>
+</tr><tr>
+    <td class="name">
+        <code>owner</code>
+    </td>
+    <td class="hljs-type">
+        <code><span class="hljs-type">address</span></code>
+    </td>
+    <td class="description last"></td>
+</tr><tr>
+    <td class="name">
+        <code>price</code>
+    </td>
+    <td class="hljs-type">
+        <code><span class="hljs-type">u64</span></code>
+    </td>
+    <td class="description last"></td>
+</tr><tr>
+    <td class="name">
+        <code>safe</code>
+    </td>
+    <td class="hljs-type">
+        <code>object::<span class="hljs-type">ID</span></code>
+    </td>
+    <td class="description last"></td>
+</tr></tbody>
+</table>
+        
+    </div>
+</details><details class="toggle" open>
+    <summary>
+        <h3 class="code-header" id="AskClosedEvent"><pre><a href="./orderbook.html">orderbook</a>::<a href="./orderbook.html#AskClosedEvent" class="hljs-type">AskClosedEvent</a> has <span class="ability">copy</span>, <span class="ability">drop</span><pre></h3>
+    </summary>
+    <div class="description">
+        <h4>Fields:</h4>
+<table class="params">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th class="last">Description</th>
+        </tr>
+    </thead>
+    <tbody><tr>
+    <td class="name">
+        <code>nft</code>
+    </td>
+    <td class="hljs-type">
+        <code>object::<span class="hljs-type">ID</span></code>
+    </td>
+    <td class="description last"></td>
+</tr><tr>
+    <td class="name">
+        <code>orderbook</code>
+    </td>
+    <td class="hljs-type">
+        <code>object::<span class="hljs-type">ID</span></code>
+    </td>
+    <td class="description last"></td>
+</tr><tr>
+    <td class="name">
+        <code>owner</code>
+    </td>
+    <td class="hljs-type">
+        <code><span class="hljs-type">address</span></code>
+    </td>
+    <td class="description last"></td>
+</tr><tr>
+    <td class="name">
+        <code>price</code>
+    </td>
+    <td class="hljs-type">
+        <code><span class="hljs-type">u64</span></code>
+    </td>
+    <td class="description last"></td>
+</tr></tbody>
+</table>
+        <p>When de-listed, not when sold!</p>
+
+    </div>
+</details><details class="toggle" open>
+    <summary>
+        <h3 class="code-header" id="BidCreatedEvent"><pre><a href="./orderbook.html">orderbook</a>::<a href="./orderbook.html#BidCreatedEvent" class="hljs-type">BidCreatedEvent</a> has <span class="ability">copy</span>, <span class="ability">drop</span><pre></h3>
+    </summary>
+    <div class="description">
+        <h4>Fields:</h4>
+<table class="params">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th class="last">Description</th>
+        </tr>
+    </thead>
+    <tbody><tr>
+    <td class="name">
+        <code>orderbook</code>
+    </td>
+    <td class="hljs-type">
+        <code>object::<span class="hljs-type">ID</span></code>
+    </td>
+    <td class="description last"></td>
+</tr><tr>
+    <td class="name">
+        <code>owner</code>
+    </td>
+    <td class="hljs-type">
+        <code><span class="hljs-type">address</span></code>
+    </td>
+    <td class="description last"></td>
+</tr><tr>
+    <td class="name">
+        <code>price</code>
+    </td>
+    <td class="hljs-type">
+        <code><span class="hljs-type">u64</span></code>
+    </td>
+    <td class="description last"></td>
+</tr><tr>
+    <td class="name">
+        <code>safe</code>
+    </td>
+    <td class="hljs-type">
+        <code>object::<span class="hljs-type">ID</span></code>
+    </td>
+    <td class="description last"></td>
+</tr></tbody>
+</table>
+        
+    </div>
+</details><details class="toggle" open>
+    <summary>
+        <h3 class="code-header" id="BidClosedEvent"><pre><a href="./orderbook.html">orderbook</a>::<a href="./orderbook.html#BidClosedEvent" class="hljs-type">BidClosedEvent</a> has <span class="ability">copy</span>, <span class="ability">drop</span><pre></h3>
+    </summary>
+    <div class="description">
+        <h4>Fields:</h4>
+<table class="params">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th class="last">Description</th>
+        </tr>
+    </thead>
+    <tbody><tr>
+    <td class="name">
+        <code>orderbook</code>
+    </td>
+    <td class="hljs-type">
+        <code>object::<span class="hljs-type">ID</span></code>
+    </td>
+    <td class="description last"></td>
+</tr><tr>
+    <td class="name">
+        <code>owner</code>
+    </td>
+    <td class="hljs-type">
+        <code><span class="hljs-type">address</span></code>
+    </td>
+    <td class="description last"></td>
+</tr><tr>
+    <td class="name">
+        <code>price</code>
+    </td>
+    <td class="hljs-type">
+        <code><span class="hljs-type">u64</span></code>
+    </td>
+    <td class="description last"></td>
+</tr></tbody>
+</table>
+        <p>When de-listed, not when bought!</p>
+
+    </div>
+</details><details class="toggle" open>
+    <summary>
+        <h3 class="code-header" id="TradeFilledEvent"><pre><a href="./orderbook.html">orderbook</a>::<a href="./orderbook.html#TradeFilledEvent" class="hljs-type">TradeFilledEvent</a> has <span class="ability">copy</span>, <span class="ability">drop</span><pre></h3>
+    </summary>
+    <div class="description">
+        <h4>Fields:</h4>
+<table class="params">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th class="last">Description</th>
+        </tr>
+    </thead>
+    <tbody><tr>
+    <td class="name">
+        <code>buyer_safe</code>
+    </td>
+    <td class="hljs-type">
+        <code>object::<span class="hljs-type">ID</span></code>
+    </td>
+    <td class="description last"></td>
+</tr><tr>
+    <td class="name">
+        <code>buyer</code>
+    </td>
+    <td class="hljs-type">
+        <code><span class="hljs-type">address</span></code>
+    </td>
+    <td class="description last"></td>
+</tr><tr>
+    <td class="name">
+        <code>nft</code>
+    </td>
+    <td class="hljs-type">
+        <code>object::<span class="hljs-type">ID</span></code>
+    </td>
+    <td class="description last"></td>
+</tr><tr>
+    <td class="name">
+        <code>orderbook</code>
+    </td>
+    <td class="hljs-type">
+        <code>object::<span class="hljs-type">ID</span></code>
+    </td>
+    <td class="description last"></td>
+</tr><tr>
+    <td class="name">
+        <code>price</code>
+    </td>
+    <td class="hljs-type">
+        <code><span class="hljs-type">u64</span></code>
+    </td>
+    <td class="description last"></td>
+</tr><tr>
+    <td class="name">
+        <code>seller_safe</code>
+    </td>
+    <td class="hljs-type">
+        <code>object::<span class="hljs-type">ID</span></code>
+    </td>
+    <td class="description last"></td>
+</tr><tr>
+    <td class="name">
+        <code>seller</code>
+    </td>
+    <td class="hljs-type">
+        <code><span class="hljs-type">address</span></code>
+    </td>
+    <td class="description last"></td>
+</tr><tr>
+    <td class="name">
+        <code>trade_intermediate</code>
+    </td>
+    <td class="hljs-type">
+        <code>option::<span class="hljs-type">Option</span>&lt;object::<span class="hljs-type">ID</span>&gt;</code>
+    </td>
+    <td class="description last"><p>Is <code>None</code> if the NFT was bought directly (<code>buy_nft</code> or
+<code>buy_generic_nft</code>.)</p>
+<p>Is <code>Some</code> if the NFT was bought via <code>create_bid</code> or <code>create_ask</code>.</p>
+</td>
+</tr></tbody>
+</table>
+        <p>Either an ask is created and immediately matched with a bid, or a bid
+is created and immediately matched with an ask.
+In both cases [<code>TradeFilledEvent</code>] is emitted.
+In such case, the property <code>trade_intermediate</code> is <code>Some</code>.</p>
+<p>If the NFT was bought directly (<code>buy_nft</code> or <code>buy_generic_nft</code>), then
+the property <code>trade_intermediate</code> is <code>None</code>.</p>
 
     </div>
 </details>
     <h2>Methods</h2>
     <details class="toggle" open>
     <summary>
-        <h3 class="code-header" id="new_empty"><pre><span class="hljs-keyword">public fun </span><a href="./royalty.html#new_empty" class="function">new_empty</a>(ctx: &<span class="hljs-keyword">mut </span>tx_context::<span class="hljs-type">TxContext</span>): 
-    <a href="./royalty.html">royalty</a>::<a href="./royalty.html#RoyaltyDomain" class="hljs-type">RoyaltyDomain</a></pre></h3>
-    </summary>
-    <div class="description"><p>Creates an empty <code>RoyaltyDomain</code> object</p>
-<p>By not attributing any addresses, nobody will ever be able to claim
-royalties from this <code>RoyaltyDomain</code> object.</p>
-</div>
-</details><details class="toggle" open>
-    <summary>
-        <h3 class="code-header" id="from_address"><pre><span class="hljs-keyword">public fun </span><a href="./royalty.html#from_address" class="function">from_address</a>(
-    who: <span class="hljs-type">address</span>,
+        <h3 class="code-header" id="create_bid"><pre><span class="hljs-keyword">public entry fun </span><a href="./orderbook.html#create_bid" class="function">create_bid</a>&lt;C, FT&gt;(
+    book: &<span class="hljs-keyword">mut </span><a href="./orderbook.html">orderbook</a>::<a href="./orderbook.html#Orderbook" class="hljs-type">Orderbook</a>&lt;C, FT&gt;,
+    buyer_safe: &<span class="hljs-keyword">mut </span><a href="./safe.html">safe</a>::<a href="./safe.html#Safe" class="hljs-type">Safe</a>,
+    price: <span class="hljs-type">u64</span>,
+    wallet: &<span class="hljs-keyword">mut </span>coin::<span class="hljs-type">Coin</span>&lt;FT&gt;,
     ctx: &<span class="hljs-keyword">mut </span>tx_context::<span class="hljs-type">TxContext</span>,
-): <a href="./royalty.html">royalty</a>::<a href="./royalty.html#RoyaltyDomain" class="hljs-type">RoyaltyDomain</a></pre></h3>
+)</pre></h3>
     </summary>
-    <div class="description"><p>Creates a <code>RoyaltyDomain</code> object with only one address attribution</p>
-<p>Only the single address will be able to claim royalties from this
-<code>RoyaltyDomain</code> object.</p>
+    <div class="description"><p>How many (<code>price</code>) fungible tokens should be taken from sender's wallet
+and put into the orderbook with the intention of exchanging them for
+1 NFT.</p>
+<p>If the <code>price</code> is higher than the lowest ask requested price, then we
+execute a trade straight away.
+In such a case, a new shared object [<code>TradeIntermediate</code>] is created.
+Otherwise we add the bid to the orderbook's state.</p>
+<p>The client provides the Safe into which they wish to receive an NFT.</p>
 </div>
 </details><details class="toggle" open>
     <summary>
-        <h3 class="code-header" id="from_shares"><pre><span class="hljs-keyword">public fun </span><a href="./royalty.html#from_shares" class="function">from_shares</a>(
-    royalty_shares_bps: vec_map::<span class="hljs-type">VecMap</span>&lt;<span class="hljs-type">address</span>, <span class="hljs-type">u16</span>&gt;,
+        <h3 class="code-header" id="create_bid_protected"><pre><span class="hljs-keyword">public fun </span><a href="./orderbook.html#create_bid_protected" class="function">create_bid_protected</a>&lt;W: <span class="ability">drop</span>, C, FT&gt;(
+    _witness: W,
+    book: &<span class="hljs-keyword">mut </span><a href="./orderbook.html">orderbook</a>::<a href="./orderbook.html#Orderbook" class="hljs-type">Orderbook</a>&lt;C, FT&gt;,
+    buyer_safe: &<span class="hljs-keyword">mut </span><a href="./safe.html">safe</a>::<a href="./safe.html#Safe" class="hljs-type">Safe</a>,
+    price: <span class="hljs-type">u64</span>,
+    wallet: &<span class="hljs-keyword">mut </span>coin::<span class="hljs-type">Coin</span>&lt;FT&gt;,
     ctx: &<span class="hljs-keyword">mut </span>tx_context::<span class="hljs-type">TxContext</span>,
-): <a href="./royalty.html">royalty</a>::<a href="./royalty.html#RoyaltyDomain" class="hljs-type">RoyaltyDomain</a></pre></h3>
+)</pre></h3>
     </summary>
-    <div class="description"><p>Creates a <code>RoyaltyDomain</code> with multiple attributions</p>
-<p>Attributed addresses will be able to claim royalties weighted by their
-share in the total royalties.</p>
-<h5>Panics</h5>
-<p>Panics if total sum of creator basis point share is not equal to 10000</p>
+    <div class="description"><p>Same as [<code>create_bid</code>] but protected by
+<a href="https://docs.originbyte.io/origin-byte/about-our-programs/liquidity-layer/orderbook#witness-protected-actions">collection witness</a>.</p>
 </div>
 </details><details class="toggle" open>
     <summary>
-        <h3 class="code-header" id="borrow_share"><pre><span class="hljs-keyword">public fun </span><a href="./royalty.html#borrow_share" class="function">borrow_share</a>(
-    domain: &<a href="./royalty.html">royalty</a>::<a href="./royalty.html#RoyaltyDomain" class="hljs-type">RoyaltyDomain</a>,
-    who: &<span class="hljs-type">address</span>,
-): &<span class="hljs-type">u16</span></pre></h3>
+        <h3 class="code-header" id="create_safe_and_bid"><pre><span class="hljs-keyword">public entry fun </span><a href="./orderbook.html#create_safe_and_bid" class="function">create_safe_and_bid</a>&lt;C, FT&gt;(
+    book: &<span class="hljs-keyword">mut </span><a href="./orderbook.html">orderbook</a>::<a href="./orderbook.html#Orderbook" class="hljs-type">Orderbook</a>&lt;C, FT&gt;,
+    price: <span class="hljs-type">u64</span>,
+    wallet: &<span class="hljs-keyword">mut </span>coin::<span class="hljs-type">Coin</span>&lt;FT&gt;,
+    ctx: &<span class="hljs-keyword">mut </span>tx_context::<span class="hljs-type">TxContext</span>,
+)</pre></h3>
     </summary>
-    <div class="description"><p>Returns the <code>Creator</code> type for the given address</p>
-<h5>Panics</h5>
-<p>Panics if the provided address is not an attributed creator</p>
+    <div class="description"><p>Same as [<code>create_bid</code>] but creates a new safe for the sender first</p>
 </div>
 </details><details class="toggle" open>
     <summary>
-        <h3 class="code-header" id="contains_share"><pre><span class="hljs-keyword">public fun </span><a href="./royalty.html#contains_share" class="function">contains_share</a>(
-    domain: &<a href="./royalty.html">royalty</a>::<a href="./royalty.html#RoyaltyDomain" class="hljs-type">RoyaltyDomain</a>,
-    who: &<span class="hljs-type">address</span>,
+        <h3 class="code-header" id="create_bid_with_commission"><pre><span class="hljs-keyword">public entry fun </span><a href="./orderbook.html#create_bid_with_commission" class="function">create_bid_with_commission</a>&lt;C, FT&gt;(
+    book: &<span class="hljs-keyword">mut </span><a href="./orderbook.html">orderbook</a>::<a href="./orderbook.html#Orderbook" class="hljs-type">Orderbook</a>&lt;C, FT&gt;,
+    buyer_safe: &<span class="hljs-keyword">mut </span><a href="./safe.html">safe</a>::<a href="./safe.html#Safe" class="hljs-type">Safe</a>,
+    price: <span class="hljs-type">u64</span>,
+    beneficiary: <span class="hljs-type">address</span>,
+    commission_ft: <span class="hljs-type">u64</span>,
+    wallet: &<span class="hljs-keyword">mut </span>coin::<span class="hljs-type">Coin</span>&lt;FT&gt;,
+    ctx: &<span class="hljs-keyword">mut </span>tx_context::<span class="hljs-type">TxContext</span>,
+)</pre></h3>
+    </summary>
+    <div class="description"><p>Same as [<code>create_bid</code>] but with a
+<a href="https://docs.originbyte.io/origin-byte/about-our-programs/liquidity-layer/orderbook#commission">commission</a>.</p>
+</div>
+</details><details class="toggle" open>
+    <summary>
+        <h3 class="code-header" id="create_bid_with_commission_protected"><pre><span class="hljs-keyword">public fun </span><a href="./orderbook.html#create_bid_with_commission_protected" class="function">create_bid_with_commission_protected</a>&lt;W: <span class="ability">drop</span>, C, FT&gt;(
+    _witness: W,
+    book: &<span class="hljs-keyword">mut </span><a href="./orderbook.html">orderbook</a>::<a href="./orderbook.html#Orderbook" class="hljs-type">Orderbook</a>&lt;C, FT&gt;,
+    buyer_safe: &<span class="hljs-keyword">mut </span><a href="./safe.html">safe</a>::<a href="./safe.html#Safe" class="hljs-type">Safe</a>,
+    price: <span class="hljs-type">u64</span>,
+    beneficiary: <span class="hljs-type">address</span>,
+    commission_ft: <span class="hljs-type">u64</span>,
+    wallet: &<span class="hljs-keyword">mut </span>coin::<span class="hljs-type">Coin</span>&lt;FT&gt;,
+    ctx: &<span class="hljs-keyword">mut </span>tx_context::<span class="hljs-type">TxContext</span>,
+)</pre></h3>
+    </summary>
+    <div class="description"><p>Same as [<code>create_bid_protected</code>] but with a
+<a href="https://docs.originbyte.io/origin-byte/about-our-programs/liquidity-layer/orderbook#commission">commission</a>.</p>
+</div>
+</details><details class="toggle" open>
+    <summary>
+        <h3 class="code-header" id="create_safe_and_bid_with_commission"><pre><span class="hljs-keyword">public entry fun </span><a href="./orderbook.html#create_safe_and_bid_with_commission" class="function">create_safe_and_bid_with_commission</a>&lt;C, FT&gt;(
+    book: &<span class="hljs-keyword">mut </span><a href="./orderbook.html">orderbook</a>::<a href="./orderbook.html#Orderbook" class="hljs-type">Orderbook</a>&lt;C, FT&gt;,
+    price: <span class="hljs-type">u64</span>,
+    beneficiary: <span class="hljs-type">address</span>,
+    commission_ft: <span class="hljs-type">u64</span>,
+    wallet: &<span class="hljs-keyword">mut </span>coin::<span class="hljs-type">Coin</span>&lt;FT&gt;,
+    ctx: &<span class="hljs-keyword">mut </span>tx_context::<span class="hljs-type">TxContext</span>,
+)</pre></h3>
+    </summary>
+    <div class="description"><p>Same as [<code>create_safe_and_bid</code>] but with a
+<a href="https://docs.originbyte.io/origin-byte/about-our-programs/liquidity-layer/orderbook#commission">commission</a>.</p>
+</div>
+</details><details class="toggle" open>
+    <summary>
+        <h3 class="code-header" id="cancel_bid"><pre><span class="hljs-keyword">public entry fun </span><a href="./orderbook.html#cancel_bid" class="function">cancel_bid</a>&lt;C, FT&gt;(
+    book: &<span class="hljs-keyword">mut </span><a href="./orderbook.html">orderbook</a>::<a href="./orderbook.html#Orderbook" class="hljs-type">Orderbook</a>&lt;C, FT&gt;,
+    bid_price_level: <span class="hljs-type">u64</span>,
+    wallet: &<span class="hljs-keyword">mut </span>coin::<span class="hljs-type">Coin</span>&lt;FT&gt;,
+    ctx: &<span class="hljs-keyword">mut </span>tx_context::<span class="hljs-type">TxContext</span>,
+)</pre></h3>
+    </summary>
+    <div class="description"><p>Cancel a bid owned by the sender at given price. If there are two bids
+with the same price, the one created later is cancelled.</p>
+</div>
+</details><details class="toggle" open>
+    <summary>
+        <h3 class="code-header" id="cancel_bid_protected"><pre><span class="hljs-keyword">public fun </span><a href="./orderbook.html#cancel_bid_protected" class="function">cancel_bid_protected</a>&lt;W: <span class="ability">drop</span>, C, FT&gt;(
+    _witness: W,
+    book: &<span class="hljs-keyword">mut </span><a href="./orderbook.html">orderbook</a>::<a href="./orderbook.html#Orderbook" class="hljs-type">Orderbook</a>&lt;C, FT&gt;,
+    bid_price_level: <span class="hljs-type">u64</span>,
+    wallet: &<span class="hljs-keyword">mut </span>coin::<span class="hljs-type">Coin</span>&lt;FT&gt;,
+    ctx: &<span class="hljs-keyword">mut </span>tx_context::<span class="hljs-type">TxContext</span>,
+)</pre></h3>
+    </summary>
+    <div class="description"><p>Same as [<code>cancel_bid</code>] but protected by
+<a href="https://docs.originbyte.io/origin-byte/about-our-programs/liquidity-layer/orderbook#witness-protected-actions">collection witness</a>.</p>
+</div>
+</details><details class="toggle" open>
+    <summary>
+        <h3 class="code-header" id="create_ask"><pre><span class="hljs-keyword">public entry fun </span><a href="./orderbook.html#create_ask" class="function">create_ask</a>&lt;C, FT&gt;(
+    book: &<span class="hljs-keyword">mut </span><a href="./orderbook.html">orderbook</a>::<a href="./orderbook.html#Orderbook" class="hljs-type">Orderbook</a>&lt;C, FT&gt;,
+    requested_tokens: <span class="hljs-type">u64</span>,
+    transfer_cap: <a href="./safe.html">safe</a>::<a href="./safe.html#TransferCap" class="hljs-type">TransferCap</a>,
+    seller_safe: &<span class="hljs-keyword">mut </span><a href="./safe.html">safe</a>::<a href="./safe.html#Safe" class="hljs-type">Safe</a>,
+    ctx: &<span class="hljs-keyword">mut </span>tx_context::<span class="hljs-type">TxContext</span>,
+)</pre></h3>
+    </summary>
+    <div class="description"><p>Offer given NFT to be traded for given (<code>requested_tokens</code>) tokens.
+If there exists a bid with higher offer than <code>requested_tokens</code>, then
+trade is immediately executed.
+In such a case, a new shared object [<code>TradeIntermediate</code>] is created.
+Otherwise the transfer cap is stored in the orderbook.</p>
+</div>
+</details><details class="toggle" open>
+    <summary>
+        <h3 class="code-header" id="list_nft"><pre><span class="hljs-keyword">public entry fun </span><a href="./orderbook.html#list_nft" class="function">list_nft</a>&lt;C, FT&gt;(
+    book: &<span class="hljs-keyword">mut </span><a href="./orderbook.html">orderbook</a>::<a href="./orderbook.html#Orderbook" class="hljs-type">Orderbook</a>&lt;C, FT&gt;,
+    requested_tokens: <span class="hljs-type">u64</span>,
+    nft: object::<span class="hljs-type">ID</span>,
+    owner_cap: &<a href="./safe.html">safe</a>::<a href="./safe.html#OwnerCap" class="hljs-type">OwnerCap</a>,
+    seller_safe: &<span class="hljs-keyword">mut </span><a href="./safe.html">safe</a>::<a href="./safe.html#Safe" class="hljs-type">Safe</a>,
+    ctx: &<span class="hljs-keyword">mut </span>tx_context::<span class="hljs-type">TxContext</span>,
+)</pre></h3>
+    </summary>
+    <div class="description"><p>Creates exclusive transfer cap and then calls [<code>create_ask</code>].</p>
+</div>
+</details><details class="toggle" open>
+    <summary>
+        <h3 class="code-header" id="list_multiple_nfts"><pre><span class="hljs-keyword">public entry fun </span><a href="./orderbook.html#list_multiple_nfts" class="function">list_multiple_nfts</a>&lt;C, FT&gt;(
+    book: &<span class="hljs-keyword">mut </span><a href="./orderbook.html">orderbook</a>::<a href="./orderbook.html#Orderbook" class="hljs-type">Orderbook</a>&lt;C, FT&gt;,
+    nfts: <span class="hljs-type">vector<span>&lt;object::<span class="hljs-type">ID</span>&gt;,
+    prices: <span class="hljs-type">vector<span>&lt;<span class="hljs-type">u64</span>&gt;,
+    owner_cap: &<a href="./safe.html">safe</a>::<a href="./safe.html#OwnerCap" class="hljs-type">OwnerCap</a>,
+    seller_safe: &<span class="hljs-keyword">mut </span><a href="./safe.html">safe</a>::<a href="./safe.html#Safe" class="hljs-type">Safe</a>,
+    ctx: &<span class="hljs-keyword">mut </span>tx_context::<span class="hljs-type">TxContext</span>,
+)</pre></h3>
+    </summary>
+    <div class="description"><p>Provide list of NFTs and corresponding prices (index # match.)</p>
+<p>The NFTs must be deposited in the seller's safe.</p>
+<h4>Panics</h4>
+<ul>
+<li>If <code>nfts</code> and <code>prices</code> have different lengths</li>
+<li>If <code>nfts</code> is empty</li>
+</ul>
+</div>
+</details><details class="toggle" open>
+    <summary>
+        <h3 class="code-header" id="deposit_and_list_nft"><pre><span class="hljs-keyword">public entry fun </span><a href="./orderbook.html#deposit_and_list_nft" class="function">deposit_and_list_nft</a>&lt;T: <span class="ability">store</span> + <span class="ability">key</span>, C, FT&gt;(
+    book: &<span class="hljs-keyword">mut </span><a href="./orderbook.html">orderbook</a>::<a href="./orderbook.html#Orderbook" class="hljs-type">Orderbook</a>&lt;C, FT&gt;,
+    nft: T,
+    requested_tokens: <span class="hljs-type">u64</span>,
+    owner_cap: &<a href="./safe.html">safe</a>::<a href="./safe.html#OwnerCap" class="hljs-type">OwnerCap</a>,
+    seller_safe: &<span class="hljs-keyword">mut </span><a href="./safe.html">safe</a>::<a href="./safe.html#Safe" class="hljs-type">Safe</a>,
+    ctx: &<span class="hljs-keyword">mut </span>tx_context::<span class="hljs-type">TxContext</span>,
+)</pre></h3>
+    </summary>
+    <div class="description"><ol>
+<li>Deposits an NFT to safe</li>
+<li>Calls [<code>list_nft</code>]</li>
+</ol>
+<p>The type <code>T</code> in case of OB collections is <code>Nft&lt;C&gt;</code>.
+In case of generic collections <code>C == T</code>.</p>
+<p>This endpoint is useful mainly for generic collections, because NFTs
+of OB <em>usually</em> live in a safe in the first place.</p>
+</div>
+</details><details class="toggle" open>
+    <summary>
+        <h3 class="code-header" id="create_safe_and_deposit_and_list_nft"><pre><span class="hljs-keyword">public entry fun </span><a href="./orderbook.html#create_safe_and_deposit_and_list_nft" class="function">create_safe_and_deposit_and_list_nft</a>&lt;T: <span class="ability">store</span> + <span class="ability">key</span>, C, FT&gt;(
+    book: &<span class="hljs-keyword">mut </span><a href="./orderbook.html">orderbook</a>::<a href="./orderbook.html#Orderbook" class="hljs-type">Orderbook</a>&lt;C, FT&gt;,
+    nft: T,
+    requested_tokens: <span class="hljs-type">u64</span>,
+    ctx: &<span class="hljs-keyword">mut </span>tx_context::<span class="hljs-type">TxContext</span>,
+)</pre></h3>
+    </summary>
+    <div class="description"><ol>
+<li>Creates a new safe for the sender</li>
+<li>Calls [<code>deposit_and_list_nft</code>]</li>
+</ol>
+</div>
+</details><details class="toggle" open>
+    <summary>
+        <h3 class="code-header" id="create_ask_protected"><pre><span class="hljs-keyword">public fun </span><a href="./orderbook.html#create_ask_protected" class="function">create_ask_protected</a>&lt;W: <span class="ability">drop</span>, C, FT&gt;(
+    _witness: W,
+    book: &<span class="hljs-keyword">mut </span><a href="./orderbook.html">orderbook</a>::<a href="./orderbook.html#Orderbook" class="hljs-type">Orderbook</a>&lt;C, FT&gt;,
+    requested_tokens: <span class="hljs-type">u64</span>,
+    transfer_cap: <a href="./safe.html">safe</a>::<a href="./safe.html#TransferCap" class="hljs-type">TransferCap</a>,
+    seller_safe: &<span class="hljs-keyword">mut </span><a href="./safe.html">safe</a>::<a href="./safe.html#Safe" class="hljs-type">Safe</a>,
+    ctx: &<span class="hljs-keyword">mut </span>tx_context::<span class="hljs-type">TxContext</span>,
+)</pre></h3>
+    </summary>
+    <div class="description"><p>Same as [<code>create_ask</code>] but protected by
+<a href="https://docs.originbyte.io/origin-byte/about-our-programs/liquidity-layer/orderbook#witness-protected-actions">collection witness</a>.</p>
+</div>
+</details><details class="toggle" open>
+    <summary>
+        <h3 class="code-header" id="create_ask_with_commission"><pre><span class="hljs-keyword">public entry fun </span><a href="./orderbook.html#create_ask_with_commission" class="function">create_ask_with_commission</a>&lt;C, FT&gt;(
+    book: &<span class="hljs-keyword">mut </span><a href="./orderbook.html">orderbook</a>::<a href="./orderbook.html#Orderbook" class="hljs-type">Orderbook</a>&lt;C, FT&gt;,
+    requested_tokens: <span class="hljs-type">u64</span>,
+    transfer_cap: <a href="./safe.html">safe</a>::<a href="./safe.html#TransferCap" class="hljs-type">TransferCap</a>,
+    beneficiary: <span class="hljs-type">address</span>,
+    commission: <span class="hljs-type">u64</span>,
+    seller_safe: &<span class="hljs-keyword">mut </span><a href="./safe.html">safe</a>::<a href="./safe.html#Safe" class="hljs-type">Safe</a>,
+    ctx: &<span class="hljs-keyword">mut </span>tx_context::<span class="hljs-type">TxContext</span>,
+)</pre></h3>
+    </summary>
+    <div class="description"><p>Same as [<code>create_ask</code>] but with a
+<a href="https://docs.originbyte.io/origin-byte/about-our-programs/liquidity-layer/orderbook#commission">commission</a>.</p>
+</div>
+</details><details class="toggle" open>
+    <summary>
+        <h3 class="code-header" id="list_nft_with_commission"><pre><span class="hljs-keyword">public entry fun </span><a href="./orderbook.html#list_nft_with_commission" class="function">list_nft_with_commission</a>&lt;C, FT&gt;(
+    book: &<span class="hljs-keyword">mut </span><a href="./orderbook.html">orderbook</a>::<a href="./orderbook.html#Orderbook" class="hljs-type">Orderbook</a>&lt;C, FT&gt;,
+    requested_tokens: <span class="hljs-type">u64</span>,
+    nft: object::<span class="hljs-type">ID</span>,
+    owner_cap: &<a href="./safe.html">safe</a>::<a href="./safe.html#OwnerCap" class="hljs-type">OwnerCap</a>,
+    beneficiary: <span class="hljs-type">address</span>,
+    commission: <span class="hljs-type">u64</span>,
+    seller_safe: &<span class="hljs-keyword">mut </span><a href="./safe.html">safe</a>::<a href="./safe.html#Safe" class="hljs-type">Safe</a>,
+    ctx: &<span class="hljs-keyword">mut </span>tx_context::<span class="hljs-type">TxContext</span>,
+)</pre></h3>
+    </summary>
+    <div class="description"><p>Same as [<code>list_nft</code>] but with a
+<a href="https://docs.originbyte.io/origin-byte/about-our-programs/liquidity-layer/orderbook#commission">commission</a>.</p>
+</div>
+</details><details class="toggle" open>
+    <summary>
+        <h3 class="code-header" id="list_multiple_nfts_with_commission"><pre><span class="hljs-keyword">public entry fun </span><a href="./orderbook.html#list_multiple_nfts_with_commission" class="function">list_multiple_nfts_with_commission</a>&lt;C, FT&gt;(
+    book: &<span class="hljs-keyword">mut </span><a href="./orderbook.html">orderbook</a>::<a href="./orderbook.html#Orderbook" class="hljs-type">Orderbook</a>&lt;C, FT&gt;,
+    nfts: <span class="hljs-type">vector<span>&lt;object::<span class="hljs-type">ID</span>&gt;,
+    prices: <span class="hljs-type">vector<span>&lt;<span class="hljs-type">u64</span>&gt;,
+    beneficiary: <span class="hljs-type">address</span>,
+    commissions: <span class="hljs-type">vector<span>&lt;<span class="hljs-type">u64</span>&gt;,
+    owner_cap: &<a href="./safe.html">safe</a>::<a href="./safe.html#OwnerCap" class="hljs-type">OwnerCap</a>,
+    seller_safe: &<span class="hljs-keyword">mut </span><a href="./safe.html">safe</a>::<a href="./safe.html#Safe" class="hljs-type">Safe</a>,
+    ctx: &<span class="hljs-keyword">mut </span>tx_context::<span class="hljs-type">TxContext</span>,
+)</pre></h3>
+    </summary>
+    <div class="description"><p>Same as [<code>list_multiple_nfts</code>] but with a
+<a href="https://docs.originbyte.io/origin-byte/about-our-programs/liquidity-layer/orderbook#commission">commission</a>.</p>
+<p>The commission is a vector which is associated with the NFTs by index.</p>
+<h4>Panics</h4>
+<p>If the commissions length does not match the NFTs length.</p>
+</div>
+</details><details class="toggle" open>
+    <summary>
+        <h3 class="code-header" id="deposit_and_list_nft_with_commission"><pre><span class="hljs-keyword">public entry fun </span><a href="./orderbook.html#deposit_and_list_nft_with_commission" class="function">deposit_and_list_nft_with_commission</a>&lt;T: <span class="ability">store</span> + <span class="ability">key</span>, C, FT&gt;(
+    book: &<span class="hljs-keyword">mut </span><a href="./orderbook.html">orderbook</a>::<a href="./orderbook.html#Orderbook" class="hljs-type">Orderbook</a>&lt;C, FT&gt;,
+    nft: T,
+    requested_tokens: <span class="hljs-type">u64</span>,
+    owner_cap: &<a href="./safe.html">safe</a>::<a href="./safe.html#OwnerCap" class="hljs-type">OwnerCap</a>,
+    beneficiary: <span class="hljs-type">address</span>,
+    commission: <span class="hljs-type">u64</span>,
+    seller_safe: &<span class="hljs-keyword">mut </span><a href="./safe.html">safe</a>::<a href="./safe.html#Safe" class="hljs-type">Safe</a>,
+    ctx: &<span class="hljs-keyword">mut </span>tx_context::<span class="hljs-type">TxContext</span>,
+)</pre></h3>
+    </summary>
+    <div class="description"><p>Same as [<code>deposit_and_list_nft_with</code>] but with a
+<a href="https://docs.originbyte.io/origin-byte/about-our-programs/liquidity-layer/orderbook#commission">commission</a>.</p>
+</div>
+</details><details class="toggle" open>
+    <summary>
+        <h3 class="code-header" id="create_safe_and_deposit_and_list_nft_with_commission"><pre><span class="hljs-keyword">public entry fun </span><a href="./orderbook.html#create_safe_and_deposit_and_list_nft_with_commission" class="function">create_safe_and_deposit_and_list_nft_with_commission</a>&lt;T: <span class="ability">store</span> + <span class="ability">key</span>, C, FT&gt;(
+    book: &<span class="hljs-keyword">mut </span><a href="./orderbook.html">orderbook</a>::<a href="./orderbook.html#Orderbook" class="hljs-type">Orderbook</a>&lt;C, FT&gt;,
+    nft: T,
+    requested_tokens: <span class="hljs-type">u64</span>,
+    beneficiary: <span class="hljs-type">address</span>,
+    commission: <span class="hljs-type">u64</span>,
+    ctx: &<span class="hljs-keyword">mut </span>tx_context::<span class="hljs-type">TxContext</span>,
+)</pre></h3>
+    </summary>
+    <div class="description"><p>Same as [<code>create_safe_and_deposit_and_list_nft</code>] but with a
+<a href="https://docs.originbyte.io/origin-byte/about-our-programs/liquidity-layer/orderbook#commission">commission</a>.</p>
+</div>
+</details><details class="toggle" open>
+    <summary>
+        <h3 class="code-header" id="create_ask_with_commission_protected"><pre><span class="hljs-keyword">public fun </span><a href="./orderbook.html#create_ask_with_commission_protected" class="function">create_ask_with_commission_protected</a>&lt;W: <span class="ability">drop</span>, C, FT&gt;(
+    _witness: W,
+    book: &<span class="hljs-keyword">mut </span><a href="./orderbook.html">orderbook</a>::<a href="./orderbook.html#Orderbook" class="hljs-type">Orderbook</a>&lt;C, FT&gt;,
+    requested_tokens: <span class="hljs-type">u64</span>,
+    transfer_cap: <a href="./safe.html">safe</a>::<a href="./safe.html#TransferCap" class="hljs-type">TransferCap</a>,
+    beneficiary: <span class="hljs-type">address</span>,
+    commission: <span class="hljs-type">u64</span>,
+    seller_safe: &<span class="hljs-keyword">mut </span><a href="./safe.html">safe</a>::<a href="./safe.html#Safe" class="hljs-type">Safe</a>,
+    ctx: &<span class="hljs-keyword">mut </span>tx_context::<span class="hljs-type">TxContext</span>,
+)</pre></h3>
+    </summary>
+    <div class="description"><p>Same as [<code>create_ask_protected</code>] but with a
+<a href="https://docs.originbyte.io/origin-byte/about-our-programs/liquidity-layer/orderbook#commission">commission</a>.</p>
+<h4>Panics</h4>
+<p>The <code>commission</code> arg must be less than <code>requested_tokens</code>.</p>
+</div>
+</details><details class="toggle" open>
+    <summary>
+        <h3 class="code-header" id="cancel_ask"><pre><span class="hljs-keyword">public entry fun </span><a href="./orderbook.html#cancel_ask" class="function">cancel_ask</a>&lt;C, FT&gt;(
+    book: &<span class="hljs-keyword">mut </span><a href="./orderbook.html">orderbook</a>::<a href="./orderbook.html#Orderbook" class="hljs-type">Orderbook</a>&lt;C, FT&gt;,
+    nft_price_level: <span class="hljs-type">u64</span>,
+    nft_id: object::<span class="hljs-type">ID</span>,
+    ctx: &<span class="hljs-keyword">mut </span>tx_context::<span class="hljs-type">TxContext</span>,
+)</pre></h3>
+    </summary>
+    <div class="description"><p>To cancel an offer on a specific NFT, the client provides the price they
+listed it for.
+The [<code>TransferCap</code>] object is transferred back to the tx sender.</p>
+</div>
+</details><details class="toggle" open>
+    <summary>
+        <h3 class="code-header" id="cancel_ask_protected"><pre><span class="hljs-keyword">public fun </span><a href="./orderbook.html#cancel_ask_protected" class="function">cancel_ask_protected</a>&lt;W: <span class="ability">drop</span>, C, FT&gt;(
+    _witness: W,
+    book: &<span class="hljs-keyword">mut </span><a href="./orderbook.html">orderbook</a>::<a href="./orderbook.html#Orderbook" class="hljs-type">Orderbook</a>&lt;C, FT&gt;,
+    nft_price_level: <span class="hljs-type">u64</span>,
+    nft_id: object::<span class="hljs-type">ID</span>,
+    ctx: &<span class="hljs-keyword">mut </span>tx_context::<span class="hljs-type">TxContext</span>,
+)</pre></h3>
+    </summary>
+    <div class="description"><p>Same as [<code>cancel_ask</code>] but protected by
+<a href="https://docs.originbyte.io/origin-byte/about-our-programs/liquidity-layer/orderbook#witness-protected-actions">collection witness</a>.</p>
+</div>
+</details><details class="toggle" open>
+    <summary>
+        <h3 class="code-header" id="cancel_ask_and_discard_transfer_cap"><pre><span class="hljs-keyword">public entry fun </span><a href="./orderbook.html#cancel_ask_and_discard_transfer_cap" class="function">cancel_ask_and_discard_transfer_cap</a>&lt;C, FT&gt;(
+    book: &<span class="hljs-keyword">mut </span><a href="./orderbook.html">orderbook</a>::<a href="./orderbook.html#Orderbook" class="hljs-type">Orderbook</a>&lt;C, FT&gt;,
+    nft_price_level: <span class="hljs-type">u64</span>,
+    nft_id: object::<span class="hljs-type">ID</span>,
+    seller_safe: &<span class="hljs-keyword">mut </span><a href="./safe.html">safe</a>::<a href="./safe.html#Safe" class="hljs-type">Safe</a>,
+    ctx: &<span class="hljs-keyword">mut </span>tx_context::<span class="hljs-type">TxContext</span>,
+)</pre></h3>
+    </summary>
+    <div class="description"><p>Same as [<code>cancel_ask</code>] but the [<code>TransferCap</code>] is burned instead of
+transferred back to the tx sender.</p>
+</div>
+</details><details class="toggle" open>
+    <summary>
+        <h3 class="code-header" id="edit_ask"><pre><span class="hljs-keyword">public entry fun </span><a href="./orderbook.html#edit_ask" class="function">edit_ask</a>&lt;C, FT&gt;(
+    book: &<span class="hljs-keyword">mut </span><a href="./orderbook.html">orderbook</a>::<a href="./orderbook.html#Orderbook" class="hljs-type">Orderbook</a>&lt;C, FT&gt;,
+    old_price: <span class="hljs-type">u64</span>,
+    nft_id: object::<span class="hljs-type">ID</span>,
+    new_price: <span class="hljs-type">u64</span>,
+    seller_safe: &<span class="hljs-keyword">mut </span><a href="./safe.html">safe</a>::<a href="./safe.html#Safe" class="hljs-type">Safe</a>,
+    ctx: &<span class="hljs-keyword">mut </span>tx_context::<span class="hljs-type">TxContext</span>,
+)</pre></h3>
+    </summary>
+    <div class="description"><p>Removes the old ask and creates a new one with the same NFT.
+Two events are emitted at least:
+Firstly, we always emit <code>AskRemovedEvent</code> for the old ask.
+Then either <code>AskCreatedEvent</code> or <code>TradeFilledEvent</code>.
+Depends on whether the ask is filled immediately or not.</p>
+</div>
+</details><details class="toggle" open>
+    <summary>
+        <h3 class="code-header" id="edit_bid"><pre><span class="hljs-keyword">public entry fun </span><a href="./orderbook.html#edit_bid" class="function">edit_bid</a>&lt;C, FT&gt;(
+    book: &<span class="hljs-keyword">mut </span><a href="./orderbook.html">orderbook</a>::<a href="./orderbook.html#Orderbook" class="hljs-type">Orderbook</a>&lt;C, FT&gt;,
+    buyer_safe: &<span class="hljs-keyword">mut </span><a href="./safe.html">safe</a>::<a href="./safe.html#Safe" class="hljs-type">Safe</a>,
+    old_price: <span class="hljs-type">u64</span>,
+    new_price: <span class="hljs-type">u64</span>,
+    wallet: &<span class="hljs-keyword">mut </span>coin::<span class="hljs-type">Coin</span>&lt;FT&gt;,
+    ctx: &<span class="hljs-keyword">mut </span>tx_context::<span class="hljs-type">TxContext</span>,
+)</pre></h3>
+    </summary>
+    <div class="description"><p>Cancels the old bid and creates a new one with new price.</p>
+</div>
+</details><details class="toggle" open>
+    <summary>
+        <h3 class="code-header" id="buy_nft"><pre><span class="hljs-keyword">public entry fun </span><a href="./orderbook.html#buy_nft" class="function">buy_nft</a>&lt;C, FT&gt;(
+    book: &<span class="hljs-keyword">mut </span><a href="./orderbook.html">orderbook</a>::<a href="./orderbook.html#Orderbook" class="hljs-type">Orderbook</a>&lt;C, FT&gt;,
+    nft_id: object::<span class="hljs-type">ID</span>,
+    price: <span class="hljs-type">u64</span>,
+    wallet: &<span class="hljs-keyword">mut </span>coin::<span class="hljs-type">Coin</span>&lt;FT&gt;,
+    seller_safe: &<span class="hljs-keyword">mut </span><a href="./safe.html">safe</a>::<a href="./safe.html#Safe" class="hljs-type">Safe</a>,
+    buyer_safe: &<span class="hljs-keyword">mut </span><a href="./safe.html">safe</a>::<a href="./safe.html#Safe" class="hljs-type">Safe</a>,
+    allowlist: &<a href="./transfer_allowlist.html">transfer_allowlist</a>::<a href="./transfer_allowlist.html#Allowlist" class="hljs-type">Allowlist</a>,
+    ctx: &<span class="hljs-keyword">mut </span>tx_context::<span class="hljs-type">TxContext</span>,
+)</pre></h3>
+    </summary>
+    <div class="description"><p>To buy a specific NFT listed in the orderbook, the client provides the
+price for which the NFT is listed.</p>
+<p>The NFT is transferred from the seller's Safe to the buyer's Safe.</p>
+<p>In this case, it's important to provide both the price and NFT ID to
+avoid actions such as offering an NFT for a really low price and then
+quickly changing the price to a higher one.</p>
+<p>The provided [<code>Coin</code>] wallet is used to pay for the NFT.</p>
+<p>The whitelist is used to check if the orderbook is authorized to trade
+the collection at all.</p>
+<p>This endpoint does not create a new [<code>TradeIntermediate</code>], rather
+performs he transfer straight away.</p>
+</div>
+</details><details class="toggle" open>
+    <summary>
+        <h3 class="code-header" id="create_safe_and_buy_nft"><pre><span class="hljs-keyword">public entry fun </span><a href="./orderbook.html#create_safe_and_buy_nft" class="function">create_safe_and_buy_nft</a>&lt;C, FT&gt;(
+    book: &<span class="hljs-keyword">mut </span><a href="./orderbook.html">orderbook</a>::<a href="./orderbook.html#Orderbook" class="hljs-type">Orderbook</a>&lt;C, FT&gt;,
+    nft_id: object::<span class="hljs-type">ID</span>,
+    price: <span class="hljs-type">u64</span>,
+    wallet: &<span class="hljs-keyword">mut </span>coin::<span class="hljs-type">Coin</span>&lt;FT&gt;,
+    seller_safe: &<span class="hljs-keyword">mut </span><a href="./safe.html">safe</a>::<a href="./safe.html#Safe" class="hljs-type">Safe</a>,
+    allowlist: &<a href="./transfer_allowlist.html">transfer_allowlist</a>::<a href="./transfer_allowlist.html#Allowlist" class="hljs-type">Allowlist</a>,
+    ctx: &<span class="hljs-keyword">mut </span>tx_context::<span class="hljs-type">TxContext</span>,
+)</pre></h3>
+    </summary>
+    <div class="description"><ol>
+<li>Creates a new [<code>Safe</code>] for the sender</li>
+<li>Buys the NFT into this new safe</li>
+<li>Shares the safe and gives the owner cap to sender</li>
+</ol>
+</div>
+</details><details class="toggle" open>
+    <summary>
+        <h3 class="code-header" id="buy_generic_nft"><pre><span class="hljs-keyword">public entry fun </span><a href="./orderbook.html#buy_generic_nft" class="function">buy_generic_nft</a>&lt;C: <span class="ability">store</span> + <span class="ability">key</span>, FT&gt;(
+    book: &<span class="hljs-keyword">mut </span><a href="./orderbook.html">orderbook</a>::<a href="./orderbook.html#Orderbook" class="hljs-type">Orderbook</a>&lt;C, FT&gt;,
+    nft_id: object::<span class="hljs-type">ID</span>,
+    price: <span class="hljs-type">u64</span>,
+    wallet: &<span class="hljs-keyword">mut </span>coin::<span class="hljs-type">Coin</span>&lt;FT&gt;,
+    seller_safe: &<span class="hljs-keyword">mut </span><a href="./safe.html">safe</a>::<a href="./safe.html#Safe" class="hljs-type">Safe</a>,
+    buyer_safe: &<span class="hljs-keyword">mut </span><a href="./safe.html">safe</a>::<a href="./safe.html#Safe" class="hljs-type">Safe</a>,
+    ctx: &<span class="hljs-keyword">mut </span>tx_context::<span class="hljs-type">TxContext</span>,
+)</pre></h3>
+    </summary>
+    <div class="description"><p>Similar to [<code>buy_nft</code>] except that this is meant for generic
+collections, ie. those which aren't native to our protocol.</p>
+</div>
+</details><details class="toggle" open>
+    <summary>
+        <h3 class="code-header" id="create_safe_and_buy_generic_nft"><pre><span class="hljs-keyword">public entry fun </span><a href="./orderbook.html#create_safe_and_buy_generic_nft" class="function">create_safe_and_buy_generic_nft</a>&lt;C: <span class="ability">store</span> + <span class="ability">key</span>, FT&gt;(
+    book: &<span class="hljs-keyword">mut </span><a href="./orderbook.html">orderbook</a>::<a href="./orderbook.html#Orderbook" class="hljs-type">Orderbook</a>&lt;C, FT&gt;,
+    nft_id: object::<span class="hljs-type">ID</span>,
+    price: <span class="hljs-type">u64</span>,
+    wallet: &<span class="hljs-keyword">mut </span>coin::<span class="hljs-type">Coin</span>&lt;FT&gt;,
+    seller_safe: &<span class="hljs-keyword">mut </span><a href="./safe.html">safe</a>::<a href="./safe.html#Safe" class="hljs-type">Safe</a>,
+    ctx: &<span class="hljs-keyword">mut </span>tx_context::<span class="hljs-type">TxContext</span>,
+)</pre></h3>
+    </summary>
+    <div class="description"><ol>
+<li>Creates a new [<code>Safe</code>] for the sender</li>
+<li>Buys the NFT into this new safe</li>
+<li>Shares the safe and gives the owner cap to sender</li>
+</ol>
+</div>
+</details><details class="toggle" open>
+    <summary>
+        <h3 class="code-header" id="buy_nft_protected"><pre><span class="hljs-keyword">public fun </span><a href="./orderbook.html#buy_nft_protected" class="function">buy_nft_protected</a>&lt;W: <span class="ability">drop</span>, C, FT&gt;(
+    _witness: W,
+    book: &<span class="hljs-keyword">mut </span><a href="./orderbook.html">orderbook</a>::<a href="./orderbook.html#Orderbook" class="hljs-type">Orderbook</a>&lt;C, FT&gt;,
+    nft_id: object::<span class="hljs-type">ID</span>,
+    price: <span class="hljs-type">u64</span>,
+    wallet: &<span class="hljs-keyword">mut </span>coin::<span class="hljs-type">Coin</span>&lt;FT&gt;,
+    seller_safe: &<span class="hljs-keyword">mut </span><a href="./safe.html">safe</a>::<a href="./safe.html#Safe" class="hljs-type">Safe</a>,
+    buyer_safe: &<span class="hljs-keyword">mut </span><a href="./safe.html">safe</a>::<a href="./safe.html#Safe" class="hljs-type">Safe</a>,
+    allowlist: &<a href="./transfer_allowlist.html">transfer_allowlist</a>::<a href="./transfer_allowlist.html#Allowlist" class="hljs-type">Allowlist</a>,
+    ctx: &<span class="hljs-keyword">mut </span>tx_context::<span class="hljs-type">TxContext</span>,
+)</pre></h3>
+    </summary>
+    <div class="description"><p>Same as [<code>buy_nft</code>] but protected by
+<a href="https://docs.originbyte.io/origin-byte/about-our-programs/liquidity-layer/orderbook#witness-protected-actions">collection witness</a>.</p>
+</div>
+</details><details class="toggle" open>
+    <summary>
+        <h3 class="code-header" id="buy_generic_nft_protected"><pre><span class="hljs-keyword">public fun </span><a href="./orderbook.html#buy_generic_nft_protected" class="function">buy_generic_nft_protected</a>&lt;W: <span class="ability">drop</span>, C: <span class="ability">store</span> + <span class="ability">key</span>, FT&gt;(
+    _witness: W,
+    book: &<span class="hljs-keyword">mut </span><a href="./orderbook.html">orderbook</a>::<a href="./orderbook.html#Orderbook" class="hljs-type">Orderbook</a>&lt;C, FT&gt;,
+    nft_id: object::<span class="hljs-type">ID</span>,
+    price: <span class="hljs-type">u64</span>,
+    wallet: &<span class="hljs-keyword">mut </span>coin::<span class="hljs-type">Coin</span>&lt;FT&gt;,
+    seller_safe: &<span class="hljs-keyword">mut </span><a href="./safe.html">safe</a>::<a href="./safe.html#Safe" class="hljs-type">Safe</a>,
+    buyer_safe: &<span class="hljs-keyword">mut </span><a href="./safe.html">safe</a>::<a href="./safe.html#Safe" class="hljs-type">Safe</a>,
+    ctx: &<span class="hljs-keyword">mut </span>tx_context::<span class="hljs-type">TxContext</span>,
+)</pre></h3>
+    </summary>
+    <div class="description"><p>Same as [<code>buy_generic_nft</code>] but protected by
+<a href="https://docs.originbyte.io/origin-byte/about-our-programs/liquidity-layer/orderbook#witness-protected-actions">collection witness</a>.</p>
+</div>
+</details><details class="toggle" open>
+    <summary>
+        <h3 class="code-header" id="finish_trade"><pre><span class="hljs-keyword">public entry fun </span><a href="./orderbook.html#finish_trade" class="function">finish_trade</a>&lt;C, FT&gt;(
+    trade: &<span class="hljs-keyword">mut </span><a href="./orderbook.html">orderbook</a>::<a href="./orderbook.html#TradeIntermediate" class="hljs-type">TradeIntermediate</a>&lt;C, FT&gt;,
+    seller_safe: &<span class="hljs-keyword">mut </span><a href="./safe.html">safe</a>::<a href="./safe.html#Safe" class="hljs-type">Safe</a>,
+    buyer_safe: &<span class="hljs-keyword">mut </span><a href="./safe.html">safe</a>::<a href="./safe.html#Safe" class="hljs-type">Safe</a>,
+    allowlist: &<a href="./transfer_allowlist.html">transfer_allowlist</a>::<a href="./transfer_allowlist.html#Allowlist" class="hljs-type">Allowlist</a>,
+    ctx: &<span class="hljs-keyword">mut </span>tx_context::<span class="hljs-type">TxContext</span>,
+)</pre></h3>
+    </summary>
+    <div class="description"><p>When a bid is created and there's an ask with a lower price, then the
+trade cannot be resolved immediately.</p>
+<p>That's because we don't know the <code>Safe</code> ID up front in OB.</p>
+<p>Therefore, orderbook creates [<code>TradeIntermediate</code>] which then has to be
+permissionlessly resolved via this endpoint.</p>
+</div>
+</details><details class="toggle" open>
+    <summary>
+        <h3 class="code-header" id="finish_trade_of_generic_nft"><pre><span class="hljs-keyword">public entry fun </span><a href="./orderbook.html#finish_trade_of_generic_nft" class="function">finish_trade_of_generic_nft</a>&lt;C: <span class="ability">store</span> + <span class="ability">key</span>, FT&gt;(
+    trade: &<span class="hljs-keyword">mut </span><a href="./orderbook.html">orderbook</a>::<a href="./orderbook.html#TradeIntermediate" class="hljs-type">TradeIntermediate</a>&lt;C, FT&gt;,
+    seller_safe: &<span class="hljs-keyword">mut </span><a href="./safe.html">safe</a>::<a href="./safe.html#Safe" class="hljs-type">Safe</a>,
+    buyer_safe: &<span class="hljs-keyword">mut </span><a href="./safe.html">safe</a>::<a href="./safe.html#Safe" class="hljs-type">Safe</a>,
+    ctx: &<span class="hljs-keyword">mut </span>tx_context::<span class="hljs-type">TxContext</span>,
+)</pre></h3>
+    </summary>
+    <div class="description"><p>Similar to [<code>finish_trade</code>] except that this is meant for generic
+collections, ie. those which aren't native to our protocol.</p>
+</div>
+</details><details class="toggle" open>
+    <summary>
+        <h3 class="code-header" id="new"><pre><span class="hljs-keyword">public fun </span><a href="./orderbook.html#new" class="function">new</a>&lt;C, FT&gt;(
+    protected_actions: <a href="./orderbook.html">orderbook</a>::<a href="./orderbook.html#WitnessProtectedActions" class="hljs-type">WitnessProtectedActions</a>,
+    ctx: &<span class="hljs-keyword">mut </span>tx_context::<span class="hljs-type">TxContext</span>,
+): <a href="./orderbook.html">orderbook</a>::<a href="./orderbook.html#Orderbook" class="hljs-type">Orderbook</a>&lt;C, FT&gt;</pre></h3>
+    </summary>
+    <div class="description"><p><code>C</code>ollection kind of NFTs to be traded, and <code>F</code>ungible <code>T</code>oken to be
+quoted for an NFT in such a collection.</p>
+<p>By default, an orderbook has no restriction on actions, ie. all can be
+called with public entry functions.</p>
+<p>To implement specific logic in your smart contract, you can toggle the
+protection on specific actions. That will make them only accessible via
+witness protected methods.</p>
+</div>
+</details><details class="toggle" open>
+    <summary>
+        <h3 class="code-header" id="new_unprotected"><pre><span class="hljs-keyword">public fun </span><a href="./orderbook.html#new_unprotected" class="function">new_unprotected</a>&lt;C, FT&gt;(
+    ctx: &<span class="hljs-keyword">mut </span>tx_context::<span class="hljs-type">TxContext</span>,
+): <a href="./orderbook.html">orderbook</a>::<a href="./orderbook.html#Orderbook" class="hljs-type">Orderbook</a>&lt;C, FT&gt;</pre></h3>
+    </summary>
+    <div class="description"><p>Returns a new orderbook without any protection, ie. all endpoints can
+be called as entry points.</p>
+</div>
+</details><details class="toggle" open>
+    <summary>
+        <h3 class="code-header" id="new_with_protected_actions"><pre><span class="hljs-keyword">public fun </span><a href="./orderbook.html#new_with_protected_actions" class="function">new_with_protected_actions</a>&lt;C, FT&gt;(
+    protected_actions: <a href="./orderbook.html">orderbook</a>::<a href="./orderbook.html#WitnessProtectedActions" class="hljs-type">WitnessProtectedActions</a>,
+    ctx: &<span class="hljs-keyword">mut </span>tx_context::<span class="hljs-type">TxContext</span>,
+): <a href="./orderbook.html">orderbook</a>::<a href="./orderbook.html#Orderbook" class="hljs-type">Orderbook</a>&lt;C, FT&gt;</pre></h3>
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h3 class="code-header" id="create"><pre><span class="hljs-keyword">public entry fun </span><a href="./orderbook.html#create" class="function">create</a>&lt;C, FT&gt;(
+    ctx: &<span class="hljs-keyword">mut </span>tx_context::<span class="hljs-type">TxContext</span>,
+)</pre></h3>
+    </summary>
+    <div class="description"><p>Creates a new empty orderbook as a shared object.</p>
+<p>All actions can be called as entry points.</p>
+</div>
+</details><details class="toggle" open>
+    <summary>
+        <h3 class="code-header" id="share"><pre><span class="hljs-keyword">public fun </span><a href="./orderbook.html#share" class="function">share</a>&lt;C, FT&gt;(
+    ob: <a href="./orderbook.html">orderbook</a>::<a href="./orderbook.html#Orderbook" class="hljs-type">Orderbook</a>&lt;C, FT&gt;,
+)</pre></h3>
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h3 class="code-header" id="no_protection"><pre><span class="hljs-keyword">public fun </span><a href="./orderbook.html#no_protection" class="function">no_protection</a>(): <a href="./orderbook.html">orderbook</a>::<a href="./orderbook.html#WitnessProtectedActions" class="hljs-type">WitnessProtectedActions</a></pre></h3>
+    </summary>
+    <div class="description"><p>Settings where all endpoints can be called as entry point functions.</p>
+</div>
+</details><details class="toggle" open>
+    <summary>
+        <h3 class="code-header" id="custom_protection"><pre><span class="hljs-keyword">public fun </span><a href="./orderbook.html#custom_protection" class="function">custom_protection</a>(
+    buy_nft: <span class="hljs-type">bool</span>,
+    cancel_ask: <span class="hljs-type">bool</span>,
+    cancel_bid: <span class="hljs-type">bool</span>,
+    create_ask: <span class="hljs-type">bool</span>,
+    create_bid: <span class="hljs-type">bool</span>,
+): <a href="./orderbook.html">orderbook</a>::<a href="./orderbook.html#WitnessProtectedActions" class="hljs-type">WitnessProtectedActions</a></pre></h3>
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h3 class="code-header" id="set_protection"><pre><span class="hljs-keyword">public fun </span><a href="./orderbook.html#set_protection" class="function">set_protection</a>&lt;W: <span class="ability">drop</span>, C, FT&gt;(
+    _witness: W,
+    ob: &<span class="hljs-keyword">mut </span><a href="./orderbook.html">orderbook</a>::<a href="./orderbook.html#Orderbook" class="hljs-type">Orderbook</a>&lt;C, FT&gt;,
+    protected_actions: <a href="./orderbook.html">orderbook</a>::<a href="./orderbook.html#WitnessProtectedActions" class="hljs-type">WitnessProtectedActions</a>,
+)</pre></h3>
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h3 class="code-header" id="toggle_protection_on_buy_nft"><pre><span class="hljs-keyword">public fun </span><a href="./orderbook.html#toggle_protection_on_buy_nft" class="function">toggle_protection_on_buy_nft</a>&lt;W: <span class="ability">drop</span>, C, FT&gt;(
+    _witness: W,
+    book: &<span class="hljs-keyword">mut </span><a href="./orderbook.html">orderbook</a>::<a href="./orderbook.html#Orderbook" class="hljs-type">Orderbook</a>&lt;C, FT&gt;,
+)</pre></h3>
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h3 class="code-header" id="toggle_protection_on_cancel_ask"><pre><span class="hljs-keyword">public fun </span><a href="./orderbook.html#toggle_protection_on_cancel_ask" class="function">toggle_protection_on_cancel_ask</a>&lt;W: <span class="ability">drop</span>, C, FT&gt;(
+    _witness: W,
+    book: &<span class="hljs-keyword">mut </span><a href="./orderbook.html">orderbook</a>::<a href="./orderbook.html#Orderbook" class="hljs-type">Orderbook</a>&lt;C, FT&gt;,
+)</pre></h3>
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h3 class="code-header" id="toggle_protection_on_cancel_bid"><pre><span class="hljs-keyword">public fun </span><a href="./orderbook.html#toggle_protection_on_cancel_bid" class="function">toggle_protection_on_cancel_bid</a>&lt;W: <span class="ability">drop</span>, C, FT&gt;(
+    _witness: W,
+    book: &<span class="hljs-keyword">mut </span><a href="./orderbook.html">orderbook</a>::<a href="./orderbook.html#Orderbook" class="hljs-type">Orderbook</a>&lt;C, FT&gt;,
+)</pre></h3>
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h3 class="code-header" id="toggle_protection_on_create_ask"><pre><span class="hljs-keyword">public fun </span><a href="./orderbook.html#toggle_protection_on_create_ask" class="function">toggle_protection_on_create_ask</a>&lt;W: <span class="ability">drop</span>, C, FT&gt;(
+    _witness: W,
+    book: &<span class="hljs-keyword">mut </span><a href="./orderbook.html">orderbook</a>::<a href="./orderbook.html#Orderbook" class="hljs-type">Orderbook</a>&lt;C, FT&gt;,
+)</pre></h3>
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h3 class="code-header" id="toggle_protection_on_create_bid"><pre><span class="hljs-keyword">public fun </span><a href="./orderbook.html#toggle_protection_on_create_bid" class="function">toggle_protection_on_create_bid</a>&lt;W: <span class="ability">drop</span>, C, FT&gt;(
+    _witness: W,
+    book: &<span class="hljs-keyword">mut </span><a href="./orderbook.html">orderbook</a>::<a href="./orderbook.html#Orderbook" class="hljs-type">Orderbook</a>&lt;C, FT&gt;,
+)</pre></h3>
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h3 class="code-header" id="borrow_bids"><pre><span class="hljs-keyword">public fun </span><a href="./orderbook.html#borrow_bids" class="function">borrow_bids</a>&lt;C, FT&gt;(
+    book: &<a href="./orderbook.html">orderbook</a>::<a href="./orderbook.html#Orderbook" class="hljs-type">Orderbook</a>&lt;C, FT&gt;,
+): 
+    &crit_bit_u64::<span class="hljs-type">CB</span>&lt;<span class="hljs-type">vector<span>&lt;<a href="./orderbook.html">orderbook</a>::<a href="./orderbook.html#Bid" class="hljs-type">Bid</a>&lt;FT&gt;&gt;&gt;</pre></h3>
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h3 class="code-header" id="bid_offer"><pre><span class="hljs-keyword">public fun </span><a href="./orderbook.html#bid_offer" class="function">bid_offer</a>&lt;FT&gt;(bid: &<a href="./orderbook.html">orderbook</a>::<a href="./orderbook.html#Bid" class="hljs-type">Bid</a>&lt;FT&gt;): 
+    &balance::<span class="hljs-type">Balance</span>&lt;FT&gt;</pre></h3>
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h3 class="code-header" id="bid_owner"><pre><span class="hljs-keyword">public fun </span><a href="./orderbook.html#bid_owner" class="function">bid_owner</a>&lt;FT&gt;(bid: &<a href="./orderbook.html">orderbook</a>::<a href="./orderbook.html#Bid" class="hljs-type">Bid</a>&lt;FT&gt;): 
+    <span class="hljs-type">address</span></pre></h3>
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h3 class="code-header" id="borrow_asks"><pre><span class="hljs-keyword">public fun </span><a href="./orderbook.html#borrow_asks" class="function">borrow_asks</a>&lt;C, FT&gt;(
+    book: &<a href="./orderbook.html">orderbook</a>::<a href="./orderbook.html#Orderbook" class="hljs-type">Orderbook</a>&lt;C, FT&gt;,
+): &crit_bit_u64::<span class="hljs-type">CB</span>&lt;<span class="hljs-type">vector<span>&lt;<a href="./orderbook.html">orderbook</a>::<a href="./orderbook.html#Ask" class="hljs-type">Ask</a>&gt;&gt;</pre></h3>
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h3 class="code-header" id="ask_price"><pre><span class="hljs-keyword">public fun </span><a href="./orderbook.html#ask_price" class="function">ask_price</a>(ask: &<a href="./orderbook.html">orderbook</a>::<a href="./orderbook.html#Ask" class="hljs-type">Ask</a>): <span class="hljs-type">u64</span></pre></h3>
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h3 class="code-header" id="ask_nft"><pre><span class="hljs-keyword">public fun </span><a href="./orderbook.html#ask_nft" class="function">ask_nft</a>(ask: &<a href="./orderbook.html">orderbook</a>::<a href="./orderbook.html#Ask" class="hljs-type">Ask</a>): &<a href="./safe.html">safe</a>::<a href="./safe.html#TransferCap" class="hljs-type">TransferCap</a></pre></h3>
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h3 class="code-header" id="ask_owner"><pre><span class="hljs-keyword">public fun </span><a href="./orderbook.html#ask_owner" class="function">ask_owner</a>(ask: &<a href="./orderbook.html">orderbook</a>::<a href="./orderbook.html#Ask" class="hljs-type">Ask</a>): <span class="hljs-type">address</span></pre></h3>
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h3 class="code-header" id="protected_actions"><pre><span class="hljs-keyword">public fun </span><a href="./orderbook.html#protected_actions" class="function">protected_actions</a>&lt;C, FT&gt;(
+    book: &<a href="./orderbook.html">orderbook</a>::<a href="./orderbook.html#Orderbook" class="hljs-type">Orderbook</a>&lt;C, FT&gt;,
+): &<a href="./orderbook.html">orderbook</a>::<a href="./orderbook.html#WitnessProtectedActions" class="hljs-type">WitnessProtectedActions</a></pre></h3>
+    </summary>
+    <div class="description"></div>
+</details><details class="toggle" open>
+    <summary>
+        <h3 class="code-header" id="is_create_ask_protected"><pre><span class="hljs-keyword">public fun </span><a href="./orderbook.html#is_create_ask_protected" class="function">is_create_ask_protected</a>(
+    protected_actions: &<a href="./orderbook.html">orderbook</a>::<a href="./orderbook.html#WitnessProtectedActions" class="hljs-type">WitnessProtectedActions</a>,
 ): <span class="hljs-type">bool</span></pre></h3>
     </summary>
-    <div class="description"><p>Returns true when address is a defined creator</p>
-</div>
+    <div class="description"></div>
 </details><details class="toggle" open>
     <summary>
-        <h3 class="code-header" id="contains_shares"><pre><span class="hljs-keyword">public fun </span><a href="./royalty.html#contains_shares" class="function">contains_shares</a>(domain: &<a href="./royalty.html">royalty</a>::<a href="./royalty.html#RoyaltyDomain" class="hljs-type">RoyaltyDomain</a>): 
-    <span class="hljs-type">bool</span></pre></h3>
-    </summary>
-    <div class="description"><p>Returns true when a share attribution exists</p>
-</div>
-</details><details class="toggle" open>
-    <summary>
-        <h3 class="code-header" id="borrow_shares"><pre><span class="hljs-keyword">public fun </span><a href="./royalty.html#borrow_shares" class="function">borrow_shares</a>(domain: &<a href="./royalty.html">royalty</a>::<a href="./royalty.html#RoyaltyDomain" class="hljs-type">RoyaltyDomain</a>): 
-    &vec_map::<span class="hljs-type">VecMap</span>&lt;<span class="hljs-type">address</span>, <span class="hljs-type">u16</span>&gt;</pre></h3>
-    </summary>
-    <div class="description"><p>Returns the list of creators defined on the <code>CreatorsDomain</code></p>
-</div>
-</details><details class="toggle" open>
-    <summary>
-        <h3 class="code-header" id="add_share"><pre><span class="hljs-keyword">public fun </span><a href="./royalty.html#add_share" class="function">add_share</a>(
-    domain: &<span class="hljs-keyword">mut </span><a href="./royalty.html">royalty</a>::<a href="./royalty.html#RoyaltyDomain" class="hljs-type">RoyaltyDomain</a>,
-    who: <span class="hljs-type">address</span>,
-    share: <span class="hljs-type">u16</span>,
-    ctx: &<span class="hljs-keyword">mut </span>tx_context::<span class="hljs-type">TxContext</span>,
-)</pre></h3>
-    </summary>
-    <div class="description"><p>Attribute a share of royalties to an address</p>
-<p>This must be done by an address which already has an attribution and
-partially gives up a share of their royalties for the benefit of the
-new attribution. Ensures that the total sum of shares remains constant.</p>
-<h5>Panics</h5>
-<p>Panics if the transaction sender does not have a large enough royalty
-share to transfer to the new creator or is not attributed in the first
-place.</p>
-</div>
-</details><details class="toggle" open>
-    <summary>
-        <h3 class="code-header" id="add_share_to_empty"><pre><span class="hljs-keyword">public fun </span><a href="./royalty.html#add_share_to_empty" class="function">add_share_to_empty</a>(
-    domain: &<span class="hljs-keyword">mut </span><a href="./royalty.html">royalty</a>::<a href="./royalty.html#RoyaltyDomain" class="hljs-type">RoyaltyDomain</a>,
-    who: <span class="hljs-type">address</span>,
-)</pre></h3>
-    </summary>
-    <div class="description"><p>Attribute royalties to an address</p>
-<h5>Panics</h5>
-<p>Panics if a share attribution already exists</p>
-</div>
-</details><details class="toggle" open>
-    <summary>
-        <h3 class="code-header" id="add_shares_to_empty"><pre><span class="hljs-keyword">public fun </span><a href="./royalty.html#add_shares_to_empty" class="function">add_shares_to_empty</a>(
-    domain: &<span class="hljs-keyword">mut </span><a href="./royalty.html">royalty</a>::<a href="./royalty.html#RoyaltyDomain" class="hljs-type">RoyaltyDomain</a>,
-    royalty_shares_bps: vec_map::<span class="hljs-type">VecMap</span>&lt;<span class="hljs-type">address</span>, <span class="hljs-type">u16</span>&gt;,
-)</pre></h3>
-    </summary>
-    <div class="description"><p>Attribute royalties to addresses</p>
-<h5>Panics</h5>
-<p>Panics if a share attribution already exists</p>
-</div>
-</details><details class="toggle" open>
-    <summary>
-        <h3 class="code-header" id="remove_creator_by_transfer"><pre><span class="hljs-keyword">public fun </span><a href="./royalty.html#remove_creator_by_transfer" class="function">remove_creator_by_transfer</a>(
-    domain: &<span class="hljs-keyword">mut </span><a href="./royalty.html">royalty</a>::<a href="./royalty.html#RoyaltyDomain" class="hljs-type">RoyaltyDomain</a>,
-    to: <span class="hljs-type">address</span>,
-    ctx: &<span class="hljs-keyword">mut </span>tx_context::<span class="hljs-type">TxContext</span>,
-)</pre></h3>
-    </summary>
-    <div class="description"><p>Remove a share attribution from an address and transfer attribution to
-another address</p>
-<p>Shares of the removed attribution are allocated to the provided
-address, ensures that the total sum of shares remains constant.</p>
-<h5>Panics</h5>
-<p>Panics if attempting to remove attribution which doesn't belong to the
-transaction sender</p>
-</div>
-</details><details class="toggle" open>
-    <summary>
-        <h3 class="code-header" id="add_royalty_strategy"><pre><span class="hljs-keyword">public fun </span><a href="./royalty.html#add_royalty_strategy" class="function">add_royalty_strategy</a>&lt;Strategy: <span class="ability">drop</span> + <span class="ability">store</span>&gt;(
-    domain: &<span class="hljs-keyword">mut </span><a href="./royalty.html">royalty</a>::<a href="./royalty.html#RoyaltyDomain" class="hljs-type">RoyaltyDomain</a>,
-    strategy: Strategy,
-)</pre></h3>
-    </summary>
-    <div class="description"><p>Add a generic royalty strategy</p>
-<p>Royalty strategies which are not part of the OriginByte standard must
-implement their own calculation methods. Prefer using
-<code>add_proportional_royalty</code> and <code>add_constant_royalty</code> if only adding
-standard royalty strategies.</p>
-<h5>Panics</h5>
-<p>Panics if royalty strategy of the same type was already registered</p>
-</div>
-</details><details class="toggle" open>
-    <summary>
-        <h3 class="code-header" id="remove_strategy"><pre><span class="hljs-keyword">public fun </span><a href="./royalty.html#remove_strategy" class="function">remove_strategy</a>&lt;Strategy: <span class="ability">drop</span> + <span class="ability">store</span>&gt;(
-    domain: &<span class="hljs-keyword">mut </span><a href="./royalty.html">royalty</a>::<a href="./royalty.html#RoyaltyDomain" class="hljs-type">RoyaltyDomain</a>,
-): Strategy</pre></h3>
-    </summary>
-    <div class="description"><p>Remove a royalty strategy</p>
-<p>Prefer using <code>remove_proportional_royalty</code> and
-<code>remove_constant_royalty</code> if only removing standard royalty strategies.</p>
-<h5>Panics</h5>
-<p>Panics if strategy was not defined</p>
-</div>
-</details><details class="toggle" open>
-    <summary>
-        <h3 class="code-header" id="contains_strategy"><pre><span class="hljs-keyword">public fun </span><a href="./royalty.html#contains_strategy" class="function">contains_strategy</a>&lt;Strategy: <span class="ability">drop</span> + <span class="ability">store</span>&gt;(
-    domain: &<a href="./royalty.html">royalty</a>::<a href="./royalty.html#RoyaltyDomain" class="hljs-type">RoyaltyDomain</a>,
+        <h3 class="code-header" id="is_create_bid_protected"><pre><span class="hljs-keyword">public fun </span><a href="./orderbook.html#is_create_bid_protected" class="function">is_create_bid_protected</a>(
+    protected_actions: &<a href="./orderbook.html">orderbook</a>::<a href="./orderbook.html#WitnessProtectedActions" class="hljs-type">WitnessProtectedActions</a>,
 ): <span class="hljs-type">bool</span></pre></h3>
     </summary>
-    <div class="description"><p>Check whether a royalty strategy is defined</p>
-</div>
+    <div class="description"></div>
 </details><details class="toggle" open>
     <summary>
-        <h3 class="code-header" id="borrow_strategy"><pre><span class="hljs-keyword">public fun </span><a href="./royalty.html#borrow_strategy" class="function">borrow_strategy</a>&lt;Strategy: <span class="ability">drop</span> + <span class="ability">store</span>&gt;(
-    domain: &<a href="./royalty.html">royalty</a>::<a href="./royalty.html#RoyaltyDomain" class="hljs-type">RoyaltyDomain</a>,
-): &Strategy</pre></h3>
+        <h3 class="code-header" id="is_cancel_ask_protected"><pre><span class="hljs-keyword">public fun </span><a href="./orderbook.html#is_cancel_ask_protected" class="function">is_cancel_ask_protected</a>(
+    protected_actions: &<a href="./orderbook.html">orderbook</a>::<a href="./orderbook.html#WitnessProtectedActions" class="hljs-type">WitnessProtectedActions</a>,
+): <span class="hljs-type">bool</span></pre></h3>
     </summary>
-    <div class="description"><p>Borrow a royalty strategy</p>
-<h5>Panics</h5>
-<p>Panics if strategy was not defined</p>
-</div>
+    <div class="description"></div>
 </details><details class="toggle" open>
     <summary>
-        <h3 class="code-header" id="borrow_strategy_mut"><pre><span class="hljs-keyword">public fun </span><a href="./royalty.html#borrow_strategy_mut" class="function">borrow_strategy_mut</a>&lt;Strategy: <span class="ability">drop</span> + <span class="ability">store</span>&gt;(
-    domain: &<span class="hljs-keyword">mut </span><a href="./royalty.html">royalty</a>::<a href="./royalty.html#RoyaltyDomain" class="hljs-type">RoyaltyDomain</a>,
-): &<span class="hljs-keyword">mut </span>Strategy</pre></h3>
+        <h3 class="code-header" id="is_cancel_bid_protected"><pre><span class="hljs-keyword">public fun </span><a href="./orderbook.html#is_cancel_bid_protected" class="function">is_cancel_bid_protected</a>(
+    protected_actions: &<a href="./orderbook.html">orderbook</a>::<a href="./orderbook.html#WitnessProtectedActions" class="hljs-type">WitnessProtectedActions</a>,
+): <span class="hljs-type">bool</span></pre></h3>
     </summary>
-    <div class="description"><p>Mutably borrow a royalty strategy</p>
-<h5>Panics</h5>
-<p>Panics if strategy was not defined</p>
-</div>
+    <div class="description"></div>
 </details><details class="toggle" open>
     <summary>
-        <h3 class="code-header" id="add_proportional_royalty"><pre><span class="hljs-keyword">public fun </span><a href="./royalty.html#add_proportional_royalty" class="function">add_proportional_royalty</a>(
-    domain: &<span class="hljs-keyword">mut </span><a href="./royalty.html">royalty</a>::<a href="./royalty.html#RoyaltyDomain" class="hljs-type">RoyaltyDomain</a>,
-    royalty_fee_bps: <span class="hljs-type">u64</span>,
-)</pre></h3>
+        <h3 class="code-header" id="is_buy_nft_protected"><pre><span class="hljs-keyword">public fun </span><a href="./orderbook.html#is_buy_nft_protected" class="function">is_buy_nft_protected</a>(
+    protected_actions: &<a href="./orderbook.html">orderbook</a>::<a href="./orderbook.html#WitnessProtectedActions" class="hljs-type">WitnessProtectedActions</a>,
+): <span class="hljs-type">bool</span></pre></h3>
     </summary>
-    <div class="description"><p>Add proportional royalty policy</p>
-</div>
-</details><details class="toggle" open>
-    <summary>
-        <h3 class="code-header" id="add_constant_royalty"><pre><span class="hljs-keyword">public fun </span><a href="./royalty.html#add_constant_royalty" class="function">add_constant_royalty</a>(
-    domain: &<span class="hljs-keyword">mut </span><a href="./royalty.html">royalty</a>::<a href="./royalty.html#RoyaltyDomain" class="hljs-type">RoyaltyDomain</a>,
-    royalty_fee: <span class="hljs-type">u64</span>,
-)</pre></h3>
-    </summary>
-    <div class="description"><p>Add constant royalty policy</p>
-</div>
-</details><details class="toggle" open>
-    <summary>
-        <h3 class="code-header" id="remove_proportional_royalty"><pre><span class="hljs-keyword">public fun </span><a href="./royalty.html#remove_proportional_royalty" class="function">remove_proportional_royalty</a>(
-    domain: &<span class="hljs-keyword">mut </span><a href="./royalty.html">royalty</a>::<a href="./royalty.html#RoyaltyDomain" class="hljs-type">RoyaltyDomain</a>,
-): <a href="./royalty_strategy_bps.html">royalty_strategy_bps</a>::<a href="./royalty_strategy_bps.html#BpsRoyaltyStrategy" class="hljs-type">BpsRoyaltyStrategy</a></pre></h3>
-    </summary>
-    <div class="description"><p>Remove proportional royalty policy</p>
-</div>
-</details><details class="toggle" open>
-    <summary>
-        <h3 class="code-header" id="remove_constant_royalty"><pre><span class="hljs-keyword">public fun </span><a href="./royalty.html#remove_constant_royalty" class="function">remove_constant_royalty</a>(
-    domain: &<span class="hljs-keyword">mut </span><a href="./royalty.html">royalty</a>::<a href="./royalty.html#RoyaltyDomain" class="hljs-type">RoyaltyDomain</a>,
-): <a href="./royalty_strategy_constant.html">royalty_strategy_constant</a>::<a href="./royalty_strategy_constant.html#ConstantRoyaltyStrategy" class="hljs-type">ConstantRoyaltyStrategy</a></pre></h3>
-    </summary>
-    <div class="description"><p>Remove constant royalty policy</p>
-</div>
-</details><details class="toggle" open>
-    <summary>
-        <h3 class="code-header" id="calculate_proportional_royalty"><pre><span class="hljs-keyword">public fun </span><a href="./royalty.html#calculate_proportional_royalty" class="function">calculate_proportional_royalty</a>(
-    domain: &<a href="./royalty.html">royalty</a>::<a href="./royalty.html#RoyaltyDomain" class="hljs-type">RoyaltyDomain</a>,
-    amount: <span class="hljs-type">u64</span>,
-): <span class="hljs-type">u64</span></pre></h3>
-    </summary>
-    <div class="description"><p>Calculate how many tokens are due for the defined proportional royalty
-strategy.</p>
-<p>Zero if strategy is undefined.</p>
-</div>
-</details><details class="toggle" open>
-    <summary>
-        <h3 class="code-header" id="calculate_constant_royalty"><pre><span class="hljs-keyword">public fun </span><a href="./royalty.html#calculate_constant_royalty" class="function">calculate_constant_royalty</a>(
-    domain: &<a href="./royalty.html">royalty</a>::<a href="./royalty.html#RoyaltyDomain" class="hljs-type">RoyaltyDomain</a>,
-): <span class="hljs-type">u64</span></pre></h3>
-    </summary>
-    <div class="description"><p>Calculate how many tokens are due for the defined constant royalty
-strategy.</p>
-<p>Zero if strategy is undefined.</p>
-</div>
-</details><details class="toggle" open>
-    <summary>
-        <h3 class="code-header" id="collect_royalty"><pre><span class="hljs-keyword">public fun </span><a href="./royalty.html#collect_royalty" class="function">collect_royalty</a>&lt;C, FT&gt;(
-    collection: &<span class="hljs-keyword">mut </span><a href="./collection.html">collection</a>::<a href="./collection.html#Collection" class="hljs-type">Collection</a>&lt;C&gt;,
-    source: &<span class="hljs-keyword">mut </span>balance::<span class="hljs-type">Balance</span>&lt;FT&gt;,
-    amount: <span class="hljs-type">u64</span>,
-)</pre></h3>
-    </summary>
-    <div class="description"><p>Collects an <code>amount</code> of tokens from the provided balance into the
-aggregate balance of the <code>RoyaltyDomain</code> registered on the <code>Collection</code></p>
-<p>Requires that a <code>RoyaltyDomain</code> is registered on the collection</p>
-</div>
-</details><details class="toggle" open>
-    <summary>
-        <h3 class="code-header" id="distribute_royalties"><pre><span class="hljs-keyword">public entry fun </span><a href="./royalty.html#distribute_royalties" class="function">distribute_royalties</a>&lt;C, FT&gt;(
-    collection: &<span class="hljs-keyword">mut </span><a href="./collection.html">collection</a>::<a href="./collection.html#Collection" class="hljs-type">Collection</a>&lt;C&gt;,
-    ctx: &<span class="hljs-keyword">mut </span>tx_context::<span class="hljs-type">TxContext</span>,
-)</pre></h3>
-    </summary>
-    <div class="description"><p>Distributes the aggregated royalties for fungible token, <code>FT</code>, among
-the creators defined in <code>CreatorsDomain</code>.</p>
-<p>This endpoint is permissionless and can be called by anyone.</p>
-<h5>Panics</h5>
-<p>Panics if there is no aggregate for token <code>FT</code>.</p>
-</div>
-</details><details class="toggle" open>
-    <summary>
-        <h3 class="code-header" id="distribute_balance"><pre><span class="hljs-keyword">public fun </span><a href="./royalty.html#distribute_balance" class="function">distribute_balance</a>&lt;FT&gt;(
-    shares: &vec_map::<span class="hljs-type">VecMap</span>&lt;<span class="hljs-type">address</span>, <span class="hljs-type">u16</span>&gt;,
-    aggregate: &<span class="hljs-keyword">mut </span>balance::<span class="hljs-type">Balance</span>&lt;FT&gt;,
-    ctx: &<span class="hljs-keyword">mut </span>tx_context::<span class="hljs-type">TxContext</span>,
-)</pre></h3>
-    </summary>
-    <div class="description"><p>Distributes the contents of a <code>Balance&lt;FT&gt;</code> among the addresses defined
-in <code>VecMap&lt;address, u16&gt;</code></p>
-<p><code>VecMap&lt;address, u16&gt;</code> is treated as the basis point share in total
-royalties due to the address.</p>
-</div>
-</details><details class="toggle" open>
-    <summary>
-        <h3 class="code-header" id="royalty_domain"><pre><span class="hljs-keyword">public fun </span><a href="./royalty.html#royalty_domain" class="function">royalty_domain</a>&lt;C&gt;(
-    collection: &<a href="./collection.html">collection</a>::<a href="./collection.html#Collection" class="hljs-type">Collection</a>&lt;C&gt;,
-): &<a href="./royalty.html">royalty</a>::<a href="./royalty.html#RoyaltyDomain" class="hljs-type">RoyaltyDomain</a></pre></h3>
-    </summary>
-    <div class="description"><p>Get reference to <code>RoyaltyDomain</code></p>
-</div>
-</details><details class="toggle" open>
-    <summary>
-        <h3 class="code-header" id="royalty_domain_mut"><pre><span class="hljs-keyword">public fun </span><a href="./royalty.html#royalty_domain_mut" class="function">royalty_domain_mut</a>&lt;C&gt;(
-    _witness: <a href="./witness.html">witness</a>::<a href="./witness.html#Witness" class="hljs-type">Witness</a>&lt;C&gt;,
-    collection: &<span class="hljs-keyword">mut </span><a href="./collection.html">collection</a>::<a href="./collection.html#Collection" class="hljs-type">Collection</a>&lt;C&gt;,
-): &<span class="hljs-keyword">mut </span><a href="./royalty.html">royalty</a>::<a href="./royalty.html#RoyaltyDomain" class="hljs-type">RoyaltyDomain</a></pre></h3>
-    </summary>
-    <div class="description"><p>Get mutable reference to <code>RoyaltyDomain</code></p>
-<p>Requires that <code>CreatorsDomain</code> is defined and sender is a creator</p>
-</div>
-</details><details class="toggle" open>
-    <summary>
-        <h3 class="code-header" id="add_royalty_domain"><pre><span class="hljs-keyword">public fun </span><a href="./royalty.html#add_royalty_domain" class="function">add_royalty_domain</a>&lt;C, W&gt;(
-    witness: &W,
-    collection: &<span class="hljs-keyword">mut </span><a href="./collection.html">collection</a>::<a href="./collection.html#Collection" class="hljs-type">Collection</a>&lt;C&gt;,
-    domain: <a href="./royalty.html">royalty</a>::<a href="./royalty.html#RoyaltyDomain" class="hljs-type">RoyaltyDomain</a>,
-)</pre></h3>
-    </summary>
-    <div class="description"><p>Registers <code>RoyaltyDomain</code> on the given <code>Collection</code></p>
-</div>
+    <div class="description"></div>
 </details>
 </article></section>
                 <section id="alternative-display" class="hidden">

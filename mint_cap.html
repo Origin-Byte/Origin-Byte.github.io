@@ -354,22 +354,24 @@
                         <input id="search-input" name="search" aria-label="Search the documentation" autocomplete="off" spellcheck="false" placeholder="Click to search" type="search">
                     </form>
                 </nav>
-                <section id="main-content"><h1>0x52f6dee1b2a9b63d448e1e3956199a1625c63a3c::royalty</h1>
+                <section id="main-content"><h1>0x52f6dee1b2a9b63d448e1e3956199a1625c63a3c::mint_cap</h1>
 <article>
-    <p>Module of Collection <code>RoyaltyDomain</code></p>
-<p><code>RoyaltyDomain</code> allows creators to define custom royalty strategies,
-collect royalties for their collections. Additionally, creators and their
-respective royalty share are tracked.</p>
-<p><code>royalty</code> does not provide a generic <code>calculate</code> function that takes into
-account all royalty strategies defined on the domain, as the OriginByte
-standard does not know how to read strategies not otherwise defined by it.</p>
-<p>The module relies on an external contract to drive the royalty gathering
-and dirtribution flow.</p>
+    <p>Module defining the multiple <code>MintCap</code> used across the OriginByte
+ecosystem.</p>
+<p>Ownership of <code>MintCap</code> is necessary to mint NFTs and can also be used to
+delegate the permission to mint NFTs (but not modify collections) using
+<code>RegulatedMintCap</code> and <code>UnregulatedMintCap</code>.</p>
+<p>Multiple <code>RegulatedMintCap</code> and <code>UnregulatedMintCap</code> can be created
+therefore the objects must be securely protected against malicious
+access.</p>
+<p>An additional restriction placed upon <code>RegulatedMintCap</code> and
+<code>UnregulatedMintCap</code> is that they may not be used to further delegate more
+mint capabilities.</p>
 
     <h2>Structs</h2>
     <details class="toggle" open>
     <summary>
-        <h3 class="code-header" id="RoyaltyDomain"><pre><a href="./royalty.html">royalty</a>::<a href="./royalty.html#RoyaltyDomain" class="hljs-type">RoyaltyDomain</a> has <span class="ability">store</span><pre></h3>
+        <h3 class="code-header" id="MintCap"><pre><a href="./mint_cap.html">mint_cap</a>::<a href="./mint_cap.html#MintCap" class="hljs-type">MintCap</a>&lt;C&gt; has <span class="ability">store</span>, <span class="ability">key</span><pre></h3>
     </summary>
     <div class="description">
         <h4>Fields:</h4>
@@ -383,372 +385,251 @@ and dirtribution flow.</p>
     </thead>
     <tbody><tr>
     <td class="name">
-        <code>strategies</code>
+        <code>id</code>
     </td>
     <td class="hljs-type">
         <code>object::<span class="hljs-type">UID</span></code>
     </td>
-    <td class="description last"><p>Royalty strategies</p>
+    <td class="description last"><p><code>MintCap</code> ID</p>
 </td>
 </tr><tr>
     <td class="name">
-        <code>aggregations</code>
+        <code>collection_id</code>
     </td>
     <td class="hljs-type">
-        <code>object::<span class="hljs-type">UID</span></code>
+        <code>object::<span class="hljs-type">ID</span></code>
     </td>
-    <td class="description last"><p>Aggregates received royalties across different coins</p>
-</td>
-</tr><tr>
-    <td class="name">
-        <code>royalty_shares_bps</code>
-    </td>
-    <td class="hljs-type">
-        <code>vec_map::<span class="hljs-type">VecMap</span>&lt;<span class="hljs-type">address</span>, <span class="hljs-type">u16</span>&gt;</code>
-    </td>
-    <td class="description last"><p>Royalty share received by addresses</p>
+    <td class="description last"><p>ID of the <code>Collection</code> that <code>MintCap</code> controls.</p>
+<p>Intended for discovery.</p>
 </td>
 </tr></tbody>
 </table>
-        <p><code>RoyaltyDomain</code> stores royalty strategies for <code>Collection</code> and
-distributes them among creators</p>
-<h5>Usage</h5>
-<p><code>RoyaltyDomain</code> can only calculate royalties owed and distribute them
-to shareholders, as a result, it relies on trusted price execution.</p>
-<p>The usage example shows how to derive the owed royalties from the
-example collection, <code>Suimarines</code>, which uses <code>TradePayment</code> as the
-price oracle, but is also responsible for deconstructing it. For more
-information read <a href="./royalties.html">royalties</a>.</p>
-<pre><code>module nft_protocol::suimarines {
-    struct Witness has drop {}
-
-    public entry fun collect_royalty&lt;FT&gt;(
-        payment: &amp;mut TradePayment&lt;SUIMARINES, FT&gt;,
-        collection: &amp;mut Collection&lt;SUIMARINES&gt;,
-        ctx: &amp;mut TxContext,
-    ) {
-        let b = royalties::balance_mut(Witness {}, payment);
-
-        let domain = royalty::royalty_domain(collection);
-        let royalty_owed =
-            royalty::calculate_proportional_royalty(domain, balance::value(b));
-
-        royalty::collect_royalty(collection, b, royalty_owed);
-        royalties::transfer_remaining_to_beneficiary(Witness {}, payment, ctx);
-    }
-}
-</code></pre>
+        <p><code>MintCap&lt;C&gt;</code> delegates the capability to it's owner to mint <code>Nft&lt;C&gt;</code>.
+There is only one <code>MintCap</code> per <code>Collection&lt;C&gt;</code>.</p>
+<p>This pattern is useful as <code>MintCap</code> can be made shared allowing users
+to mint NFTs themselves, such as in a name service application.</p>
 
     </div>
 </details><details class="toggle" open>
     <summary>
-        <h3 class="code-header" id="Witness"><pre><a href="./royalty.html">royalty</a>::<a href="./royalty.html#Witness" class="hljs-type">Witness</a> has <span class="ability">drop</span><pre></h3>
+        <h3 class="code-header" id="UnregulatedMintCap"><pre><a href="./mint_cap.html">mint_cap</a>::<a href="./mint_cap.html#UnregulatedMintCap" class="hljs-type">UnregulatedMintCap</a>&lt;C&gt; has <span class="ability">store</span>, <span class="ability">key</span><pre></h3>
     </summary>
     <div class="description">
-        
-        <p>Witness used to authenticate witness protected endpoints</p>
+        <h4>Fields:</h4>
+<table class="params">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th class="last">Description</th>
+        </tr>
+    </thead>
+    <tbody><tr>
+    <td class="name">
+        <code>id</code>
+    </td>
+    <td class="hljs-type">
+        <code>object::<span class="hljs-type">UID</span></code>
+    </td>
+    <td class="description last"><p><code>RegulatedMintCap</code> ID</p>
+</td>
+</tr><tr>
+    <td class="name">
+        <code>collection_id</code>
+    </td>
+    <td class="hljs-type">
+        <code>object::<span class="hljs-type">ID</span></code>
+    </td>
+    <td class="description last"><p>ID of the <code>Collection</code> that <code>RegulatedMintCap</code> controls</p>
+<p>Intended for discovery.</p>
+</td>
+</tr></tbody>
+</table>
+        <p><code>UnregulatedMintCap</code> delegates the capability to it's owner to mint
+<code>Nft</code> from collections with unregulated supply.</p>
+
+    </div>
+</details><details class="toggle" open>
+    <summary>
+        <h3 class="code-header" id="RegulatedMintCap"><pre><a href="./mint_cap.html">mint_cap</a>::<a href="./mint_cap.html#RegulatedMintCap" class="hljs-type">RegulatedMintCap</a>&lt;C&gt; has <span class="ability">store</span>, <span class="ability">key</span><pre></h3>
+    </summary>
+    <div class="description">
+        <h4>Fields:</h4>
+<table class="params">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th class="last">Description</th>
+        </tr>
+    </thead>
+    <tbody><tr>
+    <td class="name">
+        <code>id</code>
+    </td>
+    <td class="hljs-type">
+        <code>object::<span class="hljs-type">UID</span></code>
+    </td>
+    <td class="description last"><p><code>RegulatedMintCap</code> ID</p>
+</td>
+</tr><tr>
+    <td class="name">
+        <code>collection_id</code>
+    </td>
+    <td class="hljs-type">
+        <code>object::<span class="hljs-type">ID</span></code>
+    </td>
+    <td class="description last"><p>ID of the <code>Collection</code> that <code>RegulatedMintCap</code> controls</p>
+<p>Intended for discovery.</p>
+</td>
+</tr><tr>
+    <td class="name">
+        <code>supply</code>
+    </td>
+    <td class="hljs-type">
+        <code><a href="./supply.html">supply</a>::<a href="./supply.html#Supply" class="hljs-type">Supply</a></code>
+    </td>
+    <td class="description last"><p>Supply that <code>RegulatedMintCap</code> is entitled to mint</p>
+</td>
+</tr></tbody>
+</table>
+        <p><code>RegulatedMintCap</code> delegates the capability to it's owner to mint
+<code>Nft</code> from collections with regulated supply.</p>
 
     </div>
 </details>
     <h2>Methods</h2>
     <details class="toggle" open>
     <summary>
-        <h3 class="code-header" id="new_empty"><pre><span class="hljs-keyword">public fun </span><a href="./royalty.html#new_empty" class="function">new_empty</a>(ctx: &<span class="hljs-keyword">mut </span>tx_context::<span class="hljs-type">TxContext</span>): 
-    <a href="./royalty.html">royalty</a>::<a href="./royalty.html#RoyaltyDomain" class="hljs-type">RoyaltyDomain</a></pre></h3>
-    </summary>
-    <div class="description"><p>Creates an empty <code>RoyaltyDomain</code> object</p>
-<p>By not attributing any addresses, nobody will ever be able to claim
-royalties from this <code>RoyaltyDomain</code> object.</p>
-</div>
-</details><details class="toggle" open>
-    <summary>
-        <h3 class="code-header" id="from_address"><pre><span class="hljs-keyword">public fun </span><a href="./royalty.html#from_address" class="function">from_address</a>(
-    who: <span class="hljs-type">address</span>,
+        <h3 class="code-header" id="new"><pre><span class="hljs-keyword">public(friend) fun </span><a href="./mint_cap.html#new" class="function">new</a>&lt;C&gt;(
+    collection_id: object::<span class="hljs-type">ID</span>,
     ctx: &<span class="hljs-keyword">mut </span>tx_context::<span class="hljs-type">TxContext</span>,
-): <a href="./royalty.html">royalty</a>::<a href="./royalty.html#RoyaltyDomain" class="hljs-type">RoyaltyDomain</a></pre></h3>
+): <a href="./mint_cap.html">mint_cap</a>::<a href="./mint_cap.html#MintCap" class="hljs-type">MintCap</a>&lt;C&gt;</pre></h3>
     </summary>
-    <div class="description"><p>Creates a <code>RoyaltyDomain</code> object with only one address attribution</p>
-<p>Only the single address will be able to claim royalties from this
-<code>RoyaltyDomain</code> object.</p>
+    <div class="description"><p>Create a new <code>MintCap</code></p>
+<p>Only one <code>MintCap</code> must exist per collection</p>
 </div>
 </details><details class="toggle" open>
     <summary>
-        <h3 class="code-header" id="from_shares"><pre><span class="hljs-keyword">public fun </span><a href="./royalty.html#from_shares" class="function">from_shares</a>(
-    royalty_shares_bps: vec_map::<span class="hljs-type">VecMap</span>&lt;<span class="hljs-type">address</span>, <span class="hljs-type">u16</span>&gt;,
+        <h3 class="code-header" id="collection_id"><pre><span class="hljs-keyword">public fun </span><a href="./mint_cap.html#collection_id" class="function">collection_id</a>&lt;C&gt;(
+    mint: &<a href="./mint_cap.html">mint_cap</a>::<a href="./mint_cap.html#MintCap" class="hljs-type">MintCap</a>&lt;C&gt;,
+): object::<span class="hljs-type">ID</span></pre></h3>
+    </summary>
+    <div class="description"><p>Returns ID of <code>Collection</code> associated with <code>MintCap</code></p>
+</div>
+</details><details class="toggle" open>
+    <summary>
+        <h3 class="code-header" id="new_unregulated"><pre><span class="hljs-keyword">public(friend) fun </span><a href="./mint_cap.html#new_unregulated" class="function">new_unregulated</a>&lt;C&gt;(
+    _mint_cap: &<a href="./mint_cap.html">mint_cap</a>::<a href="./mint_cap.html#MintCap" class="hljs-type">MintCap</a>&lt;C&gt;,
+    collection_id: object::<span class="hljs-type">ID</span>,
     ctx: &<span class="hljs-keyword">mut </span>tx_context::<span class="hljs-type">TxContext</span>,
-): <a href="./royalty.html">royalty</a>::<a href="./royalty.html#RoyaltyDomain" class="hljs-type">RoyaltyDomain</a></pre></h3>
+): <a href="./mint_cap.html">mint_cap</a>::<a href="./mint_cap.html#UnregulatedMintCap" class="hljs-type">UnregulatedMintCap</a>&lt;C&gt;</pre></h3>
     </summary>
-    <div class="description"><p>Creates a <code>RoyaltyDomain</code> with multiple attributions</p>
-<p>Attributed addresses will be able to claim royalties weighted by their
-share in the total royalties.</p>
-<h5>Panics</h5>
-<p>Panics if total sum of creator basis point share is not equal to 10000</p>
+    <div class="description"><p>Create a new <code>UnregulatedMintCap</code></p>
+<p><code>UnregulatedMintCap</code> may only be created by
+<code>supply_domain::delegate_unregulated</code>.</p>
 </div>
 </details><details class="toggle" open>
     <summary>
-        <h3 class="code-header" id="borrow_share"><pre><span class="hljs-keyword">public fun </span><a href="./royalty.html#borrow_share" class="function">borrow_share</a>(
-    domain: &<a href="./royalty.html">royalty</a>::<a href="./royalty.html#RoyaltyDomain" class="hljs-type">RoyaltyDomain</a>,
-    who: &<span class="hljs-type">address</span>,
-): &<span class="hljs-type">u16</span></pre></h3>
+        <h3 class="code-header" id="delete_unregulated"><pre><span class="hljs-keyword">public fun </span><a href="./mint_cap.html#delete_unregulated" class="function">delete_unregulated</a>&lt;C&gt;(
+    mint: <a href="./mint_cap.html">mint_cap</a>::<a href="./mint_cap.html#UnregulatedMintCap" class="hljs-type">UnregulatedMintCap</a>&lt;C&gt;,
+)</pre></h3>
     </summary>
-    <div class="description"><p>Returns the <code>Creator</code> type for the given address</p>
-<h5>Panics</h5>
-<p>Panics if the provided address is not an attributed creator</p>
+    <div class="description"><p>Delete <code>UnregulatedMintCap</code></p>
 </div>
 </details><details class="toggle" open>
     <summary>
-        <h3 class="code-header" id="contains_share"><pre><span class="hljs-keyword">public fun </span><a href="./royalty.html#contains_share" class="function">contains_share</a>(
-    domain: &<a href="./royalty.html">royalty</a>::<a href="./royalty.html#RoyaltyDomain" class="hljs-type">RoyaltyDomain</a>,
-    who: &<span class="hljs-type">address</span>,
-): <span class="hljs-type">bool</span></pre></h3>
+        <h3 class="code-header" id="unregulated_collection_id"><pre><span class="hljs-keyword">public fun </span><a href="./mint_cap.html#unregulated_collection_id" class="function">unregulated_collection_id</a>&lt;C&gt;(
+    mint: &<a href="./mint_cap.html">mint_cap</a>::<a href="./mint_cap.html#UnregulatedMintCap" class="hljs-type">UnregulatedMintCap</a>&lt;C&gt;,
+): object::<span class="hljs-type">ID</span></pre></h3>
     </summary>
-    <div class="description"><p>Returns true when address is a defined creator</p>
+    <div class="description"><p>Returns ID of <code>Collection</code> associated with <code>RegulatedMintCap</code></p>
 </div>
 </details><details class="toggle" open>
     <summary>
-        <h3 class="code-header" id="contains_shares"><pre><span class="hljs-keyword">public fun </span><a href="./royalty.html#contains_shares" class="function">contains_shares</a>(domain: &<a href="./royalty.html">royalty</a>::<a href="./royalty.html#RoyaltyDomain" class="hljs-type">RoyaltyDomain</a>): 
-    <span class="hljs-type">bool</span></pre></h3>
-    </summary>
-    <div class="description"><p>Returns true when a share attribution exists</p>
-</div>
-</details><details class="toggle" open>
-    <summary>
-        <h3 class="code-header" id="borrow_shares"><pre><span class="hljs-keyword">public fun </span><a href="./royalty.html#borrow_shares" class="function">borrow_shares</a>(domain: &<a href="./royalty.html">royalty</a>::<a href="./royalty.html#RoyaltyDomain" class="hljs-type">RoyaltyDomain</a>): 
-    &vec_map::<span class="hljs-type">VecMap</span>&lt;<span class="hljs-type">address</span>, <span class="hljs-type">u16</span>&gt;</pre></h3>
-    </summary>
-    <div class="description"><p>Returns the list of creators defined on the <code>CreatorsDomain</code></p>
-</div>
-</details><details class="toggle" open>
-    <summary>
-        <h3 class="code-header" id="add_share"><pre><span class="hljs-keyword">public fun </span><a href="./royalty.html#add_share" class="function">add_share</a>(
-    domain: &<span class="hljs-keyword">mut </span><a href="./royalty.html">royalty</a>::<a href="./royalty.html#RoyaltyDomain" class="hljs-type">RoyaltyDomain</a>,
-    who: <span class="hljs-type">address</span>,
-    share: <span class="hljs-type">u16</span>,
+        <h3 class="code-header" id="new_regulated"><pre><span class="hljs-keyword">public(friend) fun </span><a href="./mint_cap.html#new_regulated" class="function">new_regulated</a>&lt;C&gt;(
+    _mint_cap: &<a href="./mint_cap.html">mint_cap</a>::<a href="./mint_cap.html#MintCap" class="hljs-type">MintCap</a>&lt;C&gt;,
+    collection_id: object::<span class="hljs-type">ID</span>,
+    supply: <a href="./supply.html">supply</a>::<a href="./supply.html#Supply" class="hljs-type">Supply</a>,
     ctx: &<span class="hljs-keyword">mut </span>tx_context::<span class="hljs-type">TxContext</span>,
-)</pre></h3>
+): <a href="./mint_cap.html">mint_cap</a>::<a href="./mint_cap.html#RegulatedMintCap" class="hljs-type">RegulatedMintCap</a>&lt;C&gt;</pre></h3>
     </summary>
-    <div class="description"><p>Attribute a share of royalties to an address</p>
-<p>This must be done by an address which already has an attribution and
-partially gives up a share of their royalties for the benefit of the
-new attribution. Ensures that the total sum of shares remains constant.</p>
-<h5>Panics</h5>
-<p>Panics if the transaction sender does not have a large enough royalty
-share to transfer to the new creator or is not attributed in the first
-place.</p>
+    <div class="description"><p>Create a new <code>RegulatedMintCap</code></p>
+<p><code>RegulatedMintCap</code> may only be created by
+<code>supply_domain::delegate_regulated</code>.</p>
 </div>
 </details><details class="toggle" open>
     <summary>
-        <h3 class="code-header" id="add_share_to_empty"><pre><span class="hljs-keyword">public fun </span><a href="./royalty.html#add_share_to_empty" class="function">add_share_to_empty</a>(
-    domain: &<span class="hljs-keyword">mut </span><a href="./royalty.html">royalty</a>::<a href="./royalty.html#RoyaltyDomain" class="hljs-type">RoyaltyDomain</a>,
-    who: <span class="hljs-type">address</span>,
-)</pre></h3>
-    </summary>
-    <div class="description"><p>Attribute royalties to an address</p>
-<h5>Panics</h5>
-<p>Panics if a share attribution already exists</p>
-</div>
-</details><details class="toggle" open>
-    <summary>
-        <h3 class="code-header" id="add_shares_to_empty"><pre><span class="hljs-keyword">public fun </span><a href="./royalty.html#add_shares_to_empty" class="function">add_shares_to_empty</a>(
-    domain: &<span class="hljs-keyword">mut </span><a href="./royalty.html">royalty</a>::<a href="./royalty.html#RoyaltyDomain" class="hljs-type">RoyaltyDomain</a>,
-    royalty_shares_bps: vec_map::<span class="hljs-type">VecMap</span>&lt;<span class="hljs-type">address</span>, <span class="hljs-type">u16</span>&gt;,
-)</pre></h3>
-    </summary>
-    <div class="description"><p>Attribute royalties to addresses</p>
-<h5>Panics</h5>
-<p>Panics if a share attribution already exists</p>
-</div>
-</details><details class="toggle" open>
-    <summary>
-        <h3 class="code-header" id="remove_creator_by_transfer"><pre><span class="hljs-keyword">public fun </span><a href="./royalty.html#remove_creator_by_transfer" class="function">remove_creator_by_transfer</a>(
-    domain: &<span class="hljs-keyword">mut </span><a href="./royalty.html">royalty</a>::<a href="./royalty.html#RoyaltyDomain" class="hljs-type">RoyaltyDomain</a>,
-    to: <span class="hljs-type">address</span>,
+        <h3 class="code-header" id="from_unregulated"><pre><span class="hljs-keyword">public fun </span><a href="./mint_cap.html#from_unregulated" class="function">from_unregulated</a>&lt;C&gt;(
+    mint_cap: <a href="./mint_cap.html">mint_cap</a>::<a href="./mint_cap.html#UnregulatedMintCap" class="hljs-type">UnregulatedMintCap</a>&lt;C&gt;,
+    supply: <span class="hljs-type">u64</span>,
     ctx: &<span class="hljs-keyword">mut </span>tx_context::<span class="hljs-type">TxContext</span>,
-)</pre></h3>
+): <a href="./mint_cap.html">mint_cap</a>::<a href="./mint_cap.html#RegulatedMintCap" class="hljs-type">RegulatedMintCap</a>&lt;C&gt;</pre></h3>
     </summary>
-    <div class="description"><p>Remove a share attribution from an address and transfer attribution to
-another address</p>
-<p>Shares of the removed attribution are allocated to the provided
-address, ensures that the total sum of shares remains constant.</p>
-<h5>Panics</h5>
-<p>Panics if attempting to remove attribution which doesn't belong to the
-transaction sender</p>
+    <div class="description"><p>Create a new <code>RegulatedMintCap</code> from <code>UnregulatedMintCap</code></p>
+<p>Presence of <code>UnregulatedMintCap</code> implies that <code>Collection</code> supply is
+unregulated, therefore it is safe to create arbitrary
+<code>RegulatedMintCap</code>.</p>
 </div>
 </details><details class="toggle" open>
     <summary>
-        <h3 class="code-header" id="add_royalty_strategy"><pre><span class="hljs-keyword">public fun </span><a href="./royalty.html#add_royalty_strategy" class="function">add_royalty_strategy</a>&lt;Strategy: <span class="ability">drop</span> + <span class="ability">store</span>&gt;(
-    domain: &<span class="hljs-keyword">mut </span><a href="./royalty.html">royalty</a>::<a href="./royalty.html#RoyaltyDomain" class="hljs-type">RoyaltyDomain</a>,
-    strategy: Strategy,
-)</pre></h3>
-    </summary>
-    <div class="description"><p>Add a generic royalty strategy</p>
-<p>Royalty strategies which are not part of the OriginByte standard must
-implement their own calculation methods. Prefer using
-<code>add_proportional_royalty</code> and <code>add_constant_royalty</code> if only adding
-standard royalty strategies.</p>
-<h5>Panics</h5>
-<p>Panics if royalty strategy of the same type was already registered</p>
-</div>
-</details><details class="toggle" open>
-    <summary>
-        <h3 class="code-header" id="remove_strategy"><pre><span class="hljs-keyword">public fun </span><a href="./royalty.html#remove_strategy" class="function">remove_strategy</a>&lt;Strategy: <span class="ability">drop</span> + <span class="ability">store</span>&gt;(
-    domain: &<span class="hljs-keyword">mut </span><a href="./royalty.html">royalty</a>::<a href="./royalty.html#RoyaltyDomain" class="hljs-type">RoyaltyDomain</a>,
-): Strategy</pre></h3>
-    </summary>
-    <div class="description"><p>Remove a royalty strategy</p>
-<p>Prefer using <code>remove_proportional_royalty</code> and
-<code>remove_constant_royalty</code> if only removing standard royalty strategies.</p>
-<h5>Panics</h5>
-<p>Panics if strategy was not defined</p>
-</div>
-</details><details class="toggle" open>
-    <summary>
-        <h3 class="code-header" id="contains_strategy"><pre><span class="hljs-keyword">public fun </span><a href="./royalty.html#contains_strategy" class="function">contains_strategy</a>&lt;Strategy: <span class="ability">drop</span> + <span class="ability">store</span>&gt;(
-    domain: &<a href="./royalty.html">royalty</a>::<a href="./royalty.html#RoyaltyDomain" class="hljs-type">RoyaltyDomain</a>,
-): <span class="hljs-type">bool</span></pre></h3>
-    </summary>
-    <div class="description"><p>Check whether a royalty strategy is defined</p>
-</div>
-</details><details class="toggle" open>
-    <summary>
-        <h3 class="code-header" id="borrow_strategy"><pre><span class="hljs-keyword">public fun </span><a href="./royalty.html#borrow_strategy" class="function">borrow_strategy</a>&lt;Strategy: <span class="ability">drop</span> + <span class="ability">store</span>&gt;(
-    domain: &<a href="./royalty.html">royalty</a>::<a href="./royalty.html#RoyaltyDomain" class="hljs-type">RoyaltyDomain</a>,
-): &Strategy</pre></h3>
-    </summary>
-    <div class="description"><p>Borrow a royalty strategy</p>
-<h5>Panics</h5>
-<p>Panics if strategy was not defined</p>
-</div>
-</details><details class="toggle" open>
-    <summary>
-        <h3 class="code-header" id="borrow_strategy_mut"><pre><span class="hljs-keyword">public fun </span><a href="./royalty.html#borrow_strategy_mut" class="function">borrow_strategy_mut</a>&lt;Strategy: <span class="ability">drop</span> + <span class="ability">store</span>&gt;(
-    domain: &<span class="hljs-keyword">mut </span><a href="./royalty.html">royalty</a>::<a href="./royalty.html#RoyaltyDomain" class="hljs-type">RoyaltyDomain</a>,
-): &<span class="hljs-keyword">mut </span>Strategy</pre></h3>
-    </summary>
-    <div class="description"><p>Mutably borrow a royalty strategy</p>
-<h5>Panics</h5>
-<p>Panics if strategy was not defined</p>
-</div>
-</details><details class="toggle" open>
-    <summary>
-        <h3 class="code-header" id="add_proportional_royalty"><pre><span class="hljs-keyword">public fun </span><a href="./royalty.html#add_proportional_royalty" class="function">add_proportional_royalty</a>(
-    domain: &<span class="hljs-keyword">mut </span><a href="./royalty.html">royalty</a>::<a href="./royalty.html#RoyaltyDomain" class="hljs-type">RoyaltyDomain</a>,
-    royalty_fee_bps: <span class="hljs-type">u64</span>,
-)</pre></h3>
-    </summary>
-    <div class="description"><p>Add proportional royalty policy</p>
-</div>
-</details><details class="toggle" open>
-    <summary>
-        <h3 class="code-header" id="add_constant_royalty"><pre><span class="hljs-keyword">public fun </span><a href="./royalty.html#add_constant_royalty" class="function">add_constant_royalty</a>(
-    domain: &<span class="hljs-keyword">mut </span><a href="./royalty.html">royalty</a>::<a href="./royalty.html#RoyaltyDomain" class="hljs-type">RoyaltyDomain</a>,
-    royalty_fee: <span class="hljs-type">u64</span>,
-)</pre></h3>
-    </summary>
-    <div class="description"><p>Add constant royalty policy</p>
-</div>
-</details><details class="toggle" open>
-    <summary>
-        <h3 class="code-header" id="remove_proportional_royalty"><pre><span class="hljs-keyword">public fun </span><a href="./royalty.html#remove_proportional_royalty" class="function">remove_proportional_royalty</a>(
-    domain: &<span class="hljs-keyword">mut </span><a href="./royalty.html">royalty</a>::<a href="./royalty.html#RoyaltyDomain" class="hljs-type">RoyaltyDomain</a>,
-): <a href="./royalty_strategy_bps.html">royalty_strategy_bps</a>::<a href="./royalty_strategy_bps.html#BpsRoyaltyStrategy" class="hljs-type">BpsRoyaltyStrategy</a></pre></h3>
-    </summary>
-    <div class="description"><p>Remove proportional royalty policy</p>
-</div>
-</details><details class="toggle" open>
-    <summary>
-        <h3 class="code-header" id="remove_constant_royalty"><pre><span class="hljs-keyword">public fun </span><a href="./royalty.html#remove_constant_royalty" class="function">remove_constant_royalty</a>(
-    domain: &<span class="hljs-keyword">mut </span><a href="./royalty.html">royalty</a>::<a href="./royalty.html#RoyaltyDomain" class="hljs-type">RoyaltyDomain</a>,
-): <a href="./royalty_strategy_constant.html">royalty_strategy_constant</a>::<a href="./royalty_strategy_constant.html#ConstantRoyaltyStrategy" class="hljs-type">ConstantRoyaltyStrategy</a></pre></h3>
-    </summary>
-    <div class="description"><p>Remove constant royalty policy</p>
-</div>
-</details><details class="toggle" open>
-    <summary>
-        <h3 class="code-header" id="calculate_proportional_royalty"><pre><span class="hljs-keyword">public fun </span><a href="./royalty.html#calculate_proportional_royalty" class="function">calculate_proportional_royalty</a>(
-    domain: &<a href="./royalty.html">royalty</a>::<a href="./royalty.html#RoyaltyDomain" class="hljs-type">RoyaltyDomain</a>,
-    amount: <span class="hljs-type">u64</span>,
-): <span class="hljs-type">u64</span></pre></h3>
-    </summary>
-    <div class="description"><p>Calculate how many tokens are due for the defined proportional royalty
-strategy.</p>
-<p>Zero if strategy is undefined.</p>
-</div>
-</details><details class="toggle" open>
-    <summary>
-        <h3 class="code-header" id="calculate_constant_royalty"><pre><span class="hljs-keyword">public fun </span><a href="./royalty.html#calculate_constant_royalty" class="function">calculate_constant_royalty</a>(
-    domain: &<a href="./royalty.html">royalty</a>::<a href="./royalty.html#RoyaltyDomain" class="hljs-type">RoyaltyDomain</a>,
-): <span class="hljs-type">u64</span></pre></h3>
-    </summary>
-    <div class="description"><p>Calculate how many tokens are due for the defined constant royalty
-strategy.</p>
-<p>Zero if strategy is undefined.</p>
-</div>
-</details><details class="toggle" open>
-    <summary>
-        <h3 class="code-header" id="collect_royalty"><pre><span class="hljs-keyword">public fun </span><a href="./royalty.html#collect_royalty" class="function">collect_royalty</a>&lt;C, FT&gt;(
-    collection: &<span class="hljs-keyword">mut </span><a href="./collection.html">collection</a>::<a href="./collection.html#Collection" class="hljs-type">Collection</a>&lt;C&gt;,
-    source: &<span class="hljs-keyword">mut </span>balance::<span class="hljs-type">Balance</span>&lt;FT&gt;,
-    amount: <span class="hljs-type">u64</span>,
-)</pre></h3>
-    </summary>
-    <div class="description"><p>Collects an <code>amount</code> of tokens from the provided balance into the
-aggregate balance of the <code>RoyaltyDomain</code> registered on the <code>Collection</code></p>
-<p>Requires that a <code>RoyaltyDomain</code> is registered on the collection</p>
-</div>
-</details><details class="toggle" open>
-    <summary>
-        <h3 class="code-header" id="distribute_royalties"><pre><span class="hljs-keyword">public entry fun </span><a href="./royalty.html#distribute_royalties" class="function">distribute_royalties</a>&lt;C, FT&gt;(
-    collection: &<span class="hljs-keyword">mut </span><a href="./collection.html">collection</a>::<a href="./collection.html#Collection" class="hljs-type">Collection</a>&lt;C&gt;,
+        <h3 class="code-header" id="delegate"><pre><span class="hljs-keyword">public fun </span><a href="./mint_cap.html#delegate" class="function">delegate</a>&lt;C&gt;(
+    delegated: &<span class="hljs-keyword">mut </span><a href="./mint_cap.html">mint_cap</a>::<a href="./mint_cap.html#RegulatedMintCap" class="hljs-type">RegulatedMintCap</a>&lt;C&gt;,
+    value: <span class="hljs-type">u64</span>,
     ctx: &<span class="hljs-keyword">mut </span>tx_context::<span class="hljs-type">TxContext</span>,
-)</pre></h3>
+): <a href="./mint_cap.html">mint_cap</a>::<a href="./mint_cap.html#RegulatedMintCap" class="hljs-type">RegulatedMintCap</a>&lt;C&gt;</pre></h3>
     </summary>
-    <div class="description"><p>Distributes the aggregated royalties for fungible token, <code>FT</code>, among
-the creators defined in <code>CreatorsDomain</code>.</p>
-<p>This endpoint is permissionless and can be called by anyone.</p>
-<h5>Panics</h5>
-<p>Panics if there is no aggregate for token <code>FT</code>.</p>
+    <div class="description"><p>Creates a new <code>RegulatedMintCap</code> by delegating some supply from an
+existing <code>RegulatedMintCap</code>.</p>
+<h4>Panics</h4>
+<p>Panics if supply exceeds maximum.</p>
 </div>
 </details><details class="toggle" open>
     <summary>
-        <h3 class="code-header" id="distribute_balance"><pre><span class="hljs-keyword">public fun </span><a href="./royalty.html#distribute_balance" class="function">distribute_balance</a>&lt;FT&gt;(
-    shares: &vec_map::<span class="hljs-type">VecMap</span>&lt;<span class="hljs-type">address</span>, <span class="hljs-type">u16</span>&gt;,
-    aggregate: &<span class="hljs-keyword">mut </span>balance::<span class="hljs-type">Balance</span>&lt;FT&gt;,
+        <h3 class="code-header" id="delegate_all"><pre><span class="hljs-keyword">public fun </span><a href="./mint_cap.html#delegate_all" class="function">delegate_all</a>&lt;C&gt;(
+    delegated: &<span class="hljs-keyword">mut </span><a href="./mint_cap.html">mint_cap</a>::<a href="./mint_cap.html#RegulatedMintCap" class="hljs-type">RegulatedMintCap</a>&lt;C&gt;,
     ctx: &<span class="hljs-keyword">mut </span>tx_context::<span class="hljs-type">TxContext</span>,
+): <a href="./mint_cap.html">mint_cap</a>::<a href="./mint_cap.html#RegulatedMintCap" class="hljs-type">RegulatedMintCap</a>&lt;C&gt;</pre></h3>
+    </summary>
+    <div class="description"><p>Creates a new <code>RegulatedMintCap</code> by delegating all remaining supply
+from existing <code>RegulatedMintCap</code>.</p>
+</div>
+</details><details class="toggle" open>
+    <summary>
+        <h3 class="code-header" id="delete_regulated"><pre><span class="hljs-keyword">public fun </span><a href="./mint_cap.html#delete_regulated" class="function">delete_regulated</a>&lt;C&gt;(
+    mint: <a href="./mint_cap.html">mint_cap</a>::<a href="./mint_cap.html#RegulatedMintCap" class="hljs-type">RegulatedMintCap</a>&lt;C&gt;,
+): <a href="./supply.html">supply</a>::<a href="./supply.html#Supply" class="hljs-type">Supply</a></pre></h3>
+    </summary>
+    <div class="description"><p>Delete <code>RegulatedMintCap&lt;C&gt;</code></p>
+</div>
+</details><details class="toggle" open>
+    <summary>
+        <h3 class="code-header" id="regulated_collection_id"><pre><span class="hljs-keyword">public fun </span><a href="./mint_cap.html#regulated_collection_id" class="function">regulated_collection_id</a>&lt;C&gt;(
+    mint: &<a href="./mint_cap.html">mint_cap</a>::<a href="./mint_cap.html#RegulatedMintCap" class="hljs-type">RegulatedMintCap</a>&lt;C&gt;,
+): object::<span class="hljs-type">ID</span></pre></h3>
+    </summary>
+    <div class="description"><p>Returns ID of <code>Collection</code> associated with <code>RegulatedMintCap</code></p>
+</div>
+</details><details class="toggle" open>
+    <summary>
+        <h3 class="code-header" id="borrow_supply"><pre><span class="hljs-keyword">public fun </span><a href="./mint_cap.html#borrow_supply" class="function">borrow_supply</a>&lt;C&gt;(
+    delegated: &<a href="./mint_cap.html">mint_cap</a>::<a href="./mint_cap.html#RegulatedMintCap" class="hljs-type">RegulatedMintCap</a>&lt;C&gt;,
+): &<a href="./supply.html">supply</a>::<a href="./supply.html#Supply" class="hljs-type">Supply</a></pre></h3>
+    </summary>
+    <div class="description"><p>Borrow <code>RegulatedMintCap</code> <code>Supply</code></p>
+</div>
+</details><details class="toggle" open>
+    <summary>
+        <h3 class="code-header" id="increment_supply"><pre><span class="hljs-keyword">public entry fun </span><a href="./mint_cap.html#increment_supply" class="function">increment_supply</a>&lt;C&gt;(
+    delegated: &<span class="hljs-keyword">mut </span><a href="./mint_cap.html">mint_cap</a>::<a href="./mint_cap.html#RegulatedMintCap" class="hljs-type">RegulatedMintCap</a>&lt;C&gt;,
+    value: <span class="hljs-type">u64</span>,
 )</pre></h3>
     </summary>
-    <div class="description"><p>Distributes the contents of a <code>Balance&lt;FT&gt;</code> among the addresses defined
-in <code>VecMap&lt;address, u16&gt;</code></p>
-<p><code>VecMap&lt;address, u16&gt;</code> is treated as the basis point share in total
-royalties due to the address.</p>
-</div>
-</details><details class="toggle" open>
-    <summary>
-        <h3 class="code-header" id="royalty_domain"><pre><span class="hljs-keyword">public fun </span><a href="./royalty.html#royalty_domain" class="function">royalty_domain</a>&lt;C&gt;(
-    collection: &<a href="./collection.html">collection</a>::<a href="./collection.html#Collection" class="hljs-type">Collection</a>&lt;C&gt;,
-): &<a href="./royalty.html">royalty</a>::<a href="./royalty.html#RoyaltyDomain" class="hljs-type">RoyaltyDomain</a></pre></h3>
-    </summary>
-    <div class="description"><p>Get reference to <code>RoyaltyDomain</code></p>
-</div>
-</details><details class="toggle" open>
-    <summary>
-        <h3 class="code-header" id="royalty_domain_mut"><pre><span class="hljs-keyword">public fun </span><a href="./royalty.html#royalty_domain_mut" class="function">royalty_domain_mut</a>&lt;C&gt;(
-    _witness: <a href="./witness.html">witness</a>::<a href="./witness.html#Witness" class="hljs-type">Witness</a>&lt;C&gt;,
-    collection: &<span class="hljs-keyword">mut </span><a href="./collection.html">collection</a>::<a href="./collection.html#Collection" class="hljs-type">Collection</a>&lt;C&gt;,
-): &<span class="hljs-keyword">mut </span><a href="./royalty.html">royalty</a>::<a href="./royalty.html#RoyaltyDomain" class="hljs-type">RoyaltyDomain</a></pre></h3>
-    </summary>
-    <div class="description"><p>Get mutable reference to <code>RoyaltyDomain</code></p>
-<p>Requires that <code>CreatorsDomain</code> is defined and sender is a creator</p>
-</div>
-</details><details class="toggle" open>
-    <summary>
-        <h3 class="code-header" id="add_royalty_domain"><pre><span class="hljs-keyword">public fun </span><a href="./royalty.html#add_royalty_domain" class="function">add_royalty_domain</a>&lt;C, W&gt;(
-    witness: &W,
-    collection: &<span class="hljs-keyword">mut </span><a href="./collection.html">collection</a>::<a href="./collection.html#Collection" class="hljs-type">Collection</a>&lt;C&gt;,
-    domain: <a href="./royalty.html">royalty</a>::<a href="./royalty.html#RoyaltyDomain" class="hljs-type">RoyaltyDomain</a>,
-)</pre></h3>
-    </summary>
-    <div class="description"><p>Registers <code>RoyaltyDomain</code> on the given <code>Collection</code></p>
+    <div class="description"><p>Increments the delegated supply of <code>Inventory</code></p>
+<p>This endpoint must be called before a new <code>Nft</code> object is created to
+ensure that global supply tracking remains consistent.</p>
+<h4>Panics</h4>
+<p>Panics if delegated supply is exceeded.</p>
 </div>
 </details>
 </article></section>
