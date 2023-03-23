@@ -413,13 +413,17 @@
                         <input id="search-input" name="search" aria-label="Search the documentation" autocomplete="off" spellcheck="false" placeholder="Click to search" type="search">
                     </form>
                 </nav>
-                <section id="main-content"><h1>0x0::loose_mint_cap</h1>
+                <section id="main-content"><h1>0x0::composable_url</h1>
 <article>
-    
+    <p>Module of <code>ComposableUrlDomain</code></p>
+<p><code>ComposableUrlDomain</code> does not itself compose NFTs but serves as a display
+standard provider for and NFT which composes <code>UrlDomain</code> with
+<code>AttributesDomain</code>.</p>
+
     <h2>Structs</h2>
     <details class="toggle" open>
     <summary>
-        <h3 class="code-header" id="PointerDomain"><pre><a href="./loose_mint_cap.html">loose_mint_cap</a>::<a href="./loose_mint_cap.html#PointerDomain" class="hljs-type">PointerDomain</a> has <span class="ability">store</span><pre></h3>
+        <h3 class="code-header" id="ComposableUrlDomain"><pre><a href="./composable_url.html">composable_url</a>::<a href="./composable_url.html#ComposableUrlDomain" class="hljs-type">ComposableUrlDomain</a> has <span class="ability">store</span><pre></h3>
     </summary>
     <div class="description">
         <h4>Fields:</h4>
@@ -432,170 +436,115 @@
         </tr>
     </thead>
     <tbody><tr>
-    <td class="name">
-        <code>metadata_id</code>
-    </td>
-    <td class="hljs-type">
-        <code>object::<span class="hljs-type">ID</span></code>
-    </td>
-    <td class="description last"><p><code>Metadata</code> ID that this NFT is a loose representation of</p>
-</td>
-</tr></tbody>
-</table>
-        
-    </div>
-</details><details class="toggle" open>
-    <summary>
-        <h3 class="code-header" id="LooseMintCap"><pre><a href="./loose_mint_cap.html">loose_mint_cap</a>::<a href="./loose_mint_cap.html#LooseMintCap" class="hljs-type">LooseMintCap</a>&lt;C&gt; has <span class="ability">store</span>, <span class="ability">key</span><pre></h3>
-    </summary>
-    <div class="description">
-        <h4>Fields:</h4>
-<table class="params">
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Type</th>
-            <th class="last">Description</th>
-        </tr>
-    </thead>
-    <tbody><tr>
-    <td class="name">
-        <code>id</code>
-    </td>
-    <td class="hljs-type">
-        <code>object::<span class="hljs-type">UID</span></code>
-    </td>
-    <td class="description last"><p><code>LooseMintCap</code> ID</p>
-</td>
-</tr><tr>
-    <td class="name">
-        <code>name</code>
-    </td>
-    <td class="hljs-type">
-        <code>string::<span class="hljs-type">String</span></code>
-    </td>
-    <td class="description last"><p><code>Nft</code> name</p>
-</td>
-</tr><tr>
     <td class="name">
         <code>url</code>
     </td>
     <td class="hljs-type">
         <code>url::<span class="hljs-type">Url</span></code>
     </td>
-    <td class="description last"><p><code>Nft</code> URL</p>
-</td>
-</tr><tr>
-    <td class="name">
-        <code>metadata_id</code>
-    </td>
-    <td class="hljs-type">
-        <code>object::<span class="hljs-type">ID</span></code>
-    </td>
-    <td class="description last"><p><code>Metadata</code> ID for which this <code>LooseMintCap</code> is allowed to mint
-NFTs</p>
+    <td class="description last"><p>Composed URL</p>
 </td>
 </tr></tbody>
 </table>
-        <p><code>LooseMintCap</code> object</p>
-<p><code>LooseMintCap</code> ensures that supply policy on <code>Collection</code> and
-<code>Metadata</code> are not violated.</p>
+        <p>Domain for providing composed URL data</p>
+
+    </div>
+</details><details class="toggle" open>
+    <summary>
+        <h3 class="code-header" id="Witness"><pre><a href="./composable_url.html">composable_url</a>::<a href="./composable_url.html#Witness" class="hljs-type">Witness</a> has <span class="ability">drop</span><pre></h3>
+    </summary>
+    <div class="description">
+        
+        <p>Witness used to authenticate witness protected endpoints</p>
 
     </div>
 </details>
     <h2>Methods</h2>
     <details class="toggle" open>
     <summary>
-        <h3 class="code-header" id="metadata_id"><pre><span class="hljs-keyword">public fun </span><a href="./loose_mint_cap.html#metadata_id" class="function">metadata_id</a>(
-    pointer: &<a href="./loose_mint_cap.html">loose_mint_cap</a>::<a href="./loose_mint_cap.html#PointerDomain" class="hljs-type">PointerDomain</a>,
-): object::<span class="hljs-type">ID</span></pre></h3>
+        <h3 class="code-header" id="new"><pre><span class="hljs-keyword">public fun </span><a href="./composable_url.html#new" class="function">new</a>(): <a href="./composable_url.html">composable_url</a>::<a href="./composable_url.html#ComposableUrlDomain" class="hljs-type">ComposableUrlDomain</a></pre></h3>
     </summary>
-    <div class="description"><p>Return <code>ID</code> of <code>Metadata</code> associated with this pointer</p>
+    <div class="description"><p>Creates new <code>ComposableUrlDomain</code> with no predefined NFTs</p>
 </div>
 </details><details class="toggle" open>
     <summary>
-        <h3 class="code-header" id="from_unregulated"><pre><span class="hljs-keyword">public(friend) fun </span><a href="./loose_mint_cap.html#from_unregulated" class="function">from_unregulated</a>&lt;C&gt;(
-    mint_cap: <a href="./mint_cap.html">mint_cap</a>::<a href="./mint_cap.html#UnregulatedMintCap" class="hljs-type">UnregulatedMintCap</a>&lt;C&gt;,
-    metadata_id: object::<span class="hljs-type">ID</span>,
-    name: string::<span class="hljs-type">String</span>,
+        <h3 class="code-header" id="set_url"><pre><span class="hljs-keyword">public fun </span><a href="./composable_url.html#set_url" class="function">set_url</a>&lt;C&gt;(
+    witness: <a href="./witness.html">witness</a>::<a href="./witness.html#Witness" class="hljs-type">Witness</a>&lt;C&gt;,
+    nft: &<span class="hljs-keyword">mut </span><a href="./nft.html">nft</a>::<a href="./nft.html#Nft" class="hljs-type">Nft</a>&lt;C&gt;,
     url: url::<span class="hljs-type">Url</span>,
-    ctx: &<span class="hljs-keyword">mut </span>tx_context::<span class="hljs-type">TxContext</span>,
-): <a href="./loose_mint_cap.html">loose_mint_cap</a>::<a href="./loose_mint_cap.html#LooseMintCap" class="hljs-type">LooseMintCap</a>&lt;C&gt;</pre></h3>
-    </summary>
-    <div class="description"><p>Create <code>LooseMintCap</code> with unregulated supply</p>
-<h4>Safety</h4>
-<p>Neither <code>Collection</code> nor <code>Metadata</code> have regulated supply.</p>
-</div>
-</details><details class="toggle" open>
-    <summary>
-        <h3 class="code-header" id="from_regulated"><pre><span class="hljs-keyword">public(friend) fun </span><a href="./loose_mint_cap.html#from_regulated" class="function">from_regulated</a>&lt;C&gt;(
-    mint_cap: <a href="./mint_cap.html">mint_cap</a>::<a href="./mint_cap.html#RegulatedMintCap" class="hljs-type">RegulatedMintCap</a>&lt;C&gt;,
-    metadata_id: object::<span class="hljs-type">ID</span>,
-    name: string::<span class="hljs-type">String</span>,
-    url: url::<span class="hljs-type">Url</span>,
-    ctx: &<span class="hljs-keyword">mut </span>tx_context::<span class="hljs-type">TxContext</span>,
-): <a href="./loose_mint_cap.html">loose_mint_cap</a>::<a href="./loose_mint_cap.html#LooseMintCap" class="hljs-type">LooseMintCap</a>&lt;C&gt;</pre></h3>
-    </summary>
-    <div class="description"><p>Create <code>LooseMintCap</code> with unregulated supply</p>
-<h4>Safety</h4>
-<p>Either <code>Collection</code> or <code>Metadata</code> must have regulated supply, such
-that <code>RegulatedMintCap</code> does not violate either.</p>
-</div>
-</details><details class="toggle" open>
-    <summary>
-        <h3 class="code-header" id="name"><pre><span class="hljs-keyword">public fun </span><a href="./loose_mint_cap.html#name" class="function">name</a>&lt;C&gt;(
-    mint_cap: &<a href="./loose_mint_cap.html">loose_mint_cap</a>::<a href="./loose_mint_cap.html#LooseMintCap" class="hljs-type">LooseMintCap</a>&lt;C&gt;,
-): &string::<span class="hljs-type">String</span></pre></h3>
-    </summary>
-    <div class="description"><p>Get loose <code>Nft</code> name</p>
-</div>
-</details><details class="toggle" open>
-    <summary>
-        <h3 class="code-header" id="url"><pre><span class="hljs-keyword">public fun </span><a href="./loose_mint_cap.html#url" class="function">url</a>&lt;C&gt;(
-    mint_cap: &<a href="./loose_mint_cap.html">loose_mint_cap</a>::<a href="./loose_mint_cap.html#LooseMintCap" class="hljs-type">LooseMintCap</a>&lt;C&gt;,
-): &url::<span class="hljs-type">Url</span></pre></h3>
-    </summary>
-    <div class="description"><p>Get loose <code>Nft</code> URL</p>
-</div>
-</details><details class="toggle" open>
-    <summary>
-        <h3 class="code-header" id="is_regulated"><pre><span class="hljs-keyword">public fun </span><a href="./loose_mint_cap.html#is_regulated" class="function">is_regulated</a>&lt;C&gt;(
-    mint_cap: &<a href="./loose_mint_cap.html">loose_mint_cap</a>::<a href="./loose_mint_cap.html#LooseMintCap" class="hljs-type">LooseMintCap</a>&lt;C&gt;,
-): <span class="hljs-type">bool</span></pre></h3>
-    </summary>
-    <div class="description"><p>Returns whether <code>LooseMintCap</code> is eligible to mint NFTs of the
-given type</p>
-</div>
-</details><details class="toggle" open>
-    <summary>
-        <h3 class="code-header" id="supply"><pre><span class="hljs-keyword">public fun </span><a href="./loose_mint_cap.html#supply" class="function">supply</a>&lt;C&gt;(
-    mint_cap: &<a href="./loose_mint_cap.html">loose_mint_cap</a>::<a href="./loose_mint_cap.html#LooseMintCap" class="hljs-type">LooseMintCap</a>&lt;C&gt;,
-): option::<span class="hljs-type">Option</span>&lt;<span class="hljs-type">u64</span>&gt;</pre></h3>
-    </summary>
-    <div class="description"><p>Returns the remaining supply available to <code>LooseMintCap</code></p>
-<p>If factory is unregulated then none will be returned.</p>
-</div>
-</details><details class="toggle" open>
-    <summary>
-        <h3 class="code-header" id="mint_nft"><pre><span class="hljs-keyword">public fun </span><a href="./loose_mint_cap.html#mint_nft" class="function">mint_nft</a>&lt;C&gt;(
-    mint_cap: &<span class="hljs-keyword">mut </span><a href="./loose_mint_cap.html">loose_mint_cap</a>::<a href="./loose_mint_cap.html#LooseMintCap" class="hljs-type">LooseMintCap</a>&lt;C&gt;,
-    ctx: &<span class="hljs-keyword">mut </span>tx_context::<span class="hljs-type">TxContext</span>,
-): <a href="./nft.html">nft</a>::<a href="./nft.html#Nft" class="hljs-type">Nft</a>&lt;C&gt;</pre></h3>
-    </summary>
-    <div class="description"><p>Mints <code>Nft</code> from <code>LooseMintCap</code></p>
-<h4>Panics</h4>
-<p>Panics if supply was exceeded.</p>
-</div>
-</details><details class="toggle" open>
-    <summary>
-        <h3 class="code-header" id="mint_nft_and_transfer"><pre><span class="hljs-keyword">public entry fun </span><a href="./loose_mint_cap.html#mint_nft_and_transfer" class="function">mint_nft_and_transfer</a>&lt;C&gt;(
-    mint_cap: &<span class="hljs-keyword">mut </span><a href="./loose_mint_cap.html">loose_mint_cap</a>::<a href="./loose_mint_cap.html#LooseMintCap" class="hljs-type">LooseMintCap</a>&lt;C&gt;,
-    ctx: &<span class="hljs-keyword">mut </span>tx_context::<span class="hljs-type">TxContext</span>,
 )</pre></h3>
     </summary>
-    <div class="description"><p>Mints <code>Nft</code> from <code>LooseMintCap</code> and transfer to transaction sender</p>
+    <div class="description"><p>Sets URL of <code>ComposableUrlDomain</code></p>
+<p>Also sets static <code>url</code> field on <code>Nft</code>.</p>
 <h4>Panics</h4>
-<p>Panics if supply was exceeded.</p>
+<p>Panics if <code>ComposableUrlDomain</code> does not exist on <code>Nft</code></p>
+</div>
+</details><details class="toggle" open>
+    <summary>
+        <h3 class="code-header" id="regenerate"><pre><span class="hljs-keyword">public fun </span><a href="./composable_url.html#regenerate" class="function">regenerate</a>&lt;C&gt;(
+    witness: <a href="./witness.html">witness</a>::<a href="./witness.html#Witness" class="hljs-type">Witness</a>&lt;C&gt;,
+    nft: &<span class="hljs-keyword">mut </span><a href="./nft.html">nft</a>::<a href="./nft.html#Nft" class="hljs-type">Nft</a>&lt;C&gt;,
+)</pre></h3>
+    </summary>
+    <div class="description"><p>Regenerates composed URL data</p>
+<h4>Panics</h4>
+<p>Panics if <code>ComposableUrlDomain</code> or <code>UrlDomain</code> is not registered</p>
+</div>
+</details><details class="toggle" open>
+    <summary>
+        <h3 class="code-header" id="has_composable_url"><pre><span class="hljs-keyword">public fun </span><a href="./composable_url.html#has_composable_url" class="function">has_composable_url</a>&lt;C&gt;(
+    nft: &<a href="./nft.html">nft</a>::<a href="./nft.html#Nft" class="hljs-type">Nft</a>&lt;C&gt;,
+): <span class="hljs-type">bool</span></pre></h3>
+    </summary>
+    <div class="description"><p>Returns whether <code>ComposableUrlDomain</code> is registered on <code>Nft</code></p>
+</div>
+</details><details class="toggle" open>
+    <summary>
+        <h3 class="code-header" id="borrow_composable_url"><pre><span class="hljs-keyword">public fun </span><a href="./composable_url.html#borrow_composable_url" class="function">borrow_composable_url</a>&lt;C&gt;(
+    nft: &<a href="./nft.html">nft</a>::<a href="./nft.html#Nft" class="hljs-type">Nft</a>&lt;C&gt;,
+): &url::<span class="hljs-type">Url</span></pre></h3>
+    </summary>
+    <div class="description"><p>Borrows composed URL data from <code>Nft</code></p>
+<h4>Panics</h4>
+<p>Panics if <code>ComposableUrlDomain</code> is not registered on the <code>Nft</code></p>
+</div>
+</details><details class="toggle" open>
+    <summary>
+        <h3 class="code-header" id="add_composable_url"><pre><span class="hljs-keyword">public fun </span><a href="./composable_url.html#add_composable_url" class="function">add_composable_url</a>&lt;C, W&gt;(
+    witness: &W,
+    nft: &<span class="hljs-keyword">mut </span><a href="./nft.html">nft</a>::<a href="./nft.html#Nft" class="hljs-type">Nft</a>&lt;C&gt;,
+)</pre></h3>
+    </summary>
+    <div class="description"><p>Adds <code>UrlDomain</code> to <code>Nft</code></p>
+<p><code>ComposableUrlDomain</code> will not be automatically updated so
+<code>composable_url::register</code> and <code>composable_url::regenerate</code> must be
+called.</p>
+<h4>Panics</h4>
+<p>Panics if <code>UrlDomain</code> domain already exists</p>
+</div>
+</details><details class="toggle" open>
+    <summary>
+        <h3 class="code-header" id="add_composable_url_delegated"><pre><span class="hljs-keyword">public fun </span><a href="./composable_url.html#add_composable_url_delegated" class="function">add_composable_url_delegated</a>&lt;C&gt;(
+    _witness: <a href="./witness.html">witness</a>::<a href="./witness.html#Witness" class="hljs-type">Witness</a>&lt;C&gt;,
+    nft: &<span class="hljs-keyword">mut </span><a href="./nft.html">nft</a>::<a href="./nft.html#Nft" class="hljs-type">Nft</a>&lt;C&gt;,
+)</pre></h3>
+    </summary>
+    <div class="description"><p>Adds <code>UrlDomain</code> to <code>Nft</code></p>
+<p><code>ComposableUrlDomain</code> will not be automatically updated so
+<code>composable_url::register</code> and <code>composable_url::regenerate</code> must be
+called.</p>
+<h4>Panics</h4>
+<p>Panics if <code>UrlDomain</code> domain already exists</p>
+</div>
+</details><details class="toggle" open>
+    <summary>
+        <h3 class="code-header" id="assert_composable_url"><pre><span class="hljs-keyword">public fun </span><a href="./composable_url.html#assert_composable_url" class="function">assert_composable_url</a>&lt;C&gt;(
+    nft: &<a href="./nft.html">nft</a>::<a href="./nft.html#Nft" class="hljs-type">Nft</a>&lt;C&gt;,
+)</pre></h3>
+    </summary>
+    <div class="description"><p>Asserts that <code>ComposableUrlDomain</code> is registered on <code>Nft</code></p>
+<h4>Panics</h4>
+<p>Panics if <code>ComposableUrlDomain</code> is not registered</p>
 </div>
 </details>
 </article></section>

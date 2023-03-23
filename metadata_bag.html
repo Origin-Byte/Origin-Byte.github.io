@@ -413,40 +413,21 @@
                         <input id="search-input" name="search" aria-label="Search the documentation" autocomplete="off" spellcheck="false" placeholder="Click to search" type="search">
                     </form>
                 </nav>
-                <section id="main-content"><h1>0x0::loose_mint_cap</h1>
+                <section id="main-content"><h1>0x0::metadata_bag</h1>
 <article>
     
     <h2>Structs</h2>
     <details class="toggle" open>
     <summary>
-        <h3 class="code-header" id="PointerDomain"><pre><a href="./loose_mint_cap.html">loose_mint_cap</a>::<a href="./loose_mint_cap.html#PointerDomain" class="hljs-type">PointerDomain</a> has <span class="ability">store</span><pre></h3>
+        <h3 class="code-header" id="Witness"><pre><a href="./metadata_bag.html">metadata_bag</a>::<a href="./metadata_bag.html#Witness" class="hljs-type">Witness</a> has <span class="ability">drop</span><pre></h3>
     </summary>
     <div class="description">
-        <h4>Fields:</h4>
-<table class="params">
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Type</th>
-            <th class="last">Description</th>
-        </tr>
-    </thead>
-    <tbody><tr>
-    <td class="name">
-        <code>metadata_id</code>
-    </td>
-    <td class="hljs-type">
-        <code>object::<span class="hljs-type">ID</span></code>
-    </td>
-    <td class="description last"><p><code>Metadata</code> ID that this NFT is a loose representation of</p>
-</td>
-</tr></tbody>
-</table>
+        
         
     </div>
 </details><details class="toggle" open>
     <summary>
-        <h3 class="code-header" id="LooseMintCap"><pre><a href="./loose_mint_cap.html">loose_mint_cap</a>::<a href="./loose_mint_cap.html#LooseMintCap" class="hljs-type">LooseMintCap</a>&lt;C&gt; has <span class="ability">store</span>, <span class="ability">key</span><pre></h3>
+        <h3 class="code-header" id="MetadataBagDomain"><pre><a href="./metadata_bag.html">metadata_bag</a>::<a href="./metadata_bag.html#MetadataBagDomain" class="hljs-type">MetadataBagDomain</a>&lt;C&gt; has <span class="ability">store</span>, <span class="ability">key</span><pre></h3>
     </summary>
     <div class="description">
         <h4>Fields:</h4>
@@ -465,137 +446,169 @@
     <td class="hljs-type">
         <code>object::<span class="hljs-type">UID</span></code>
     </td>
-    <td class="description last"><p><code>LooseMintCap</code> ID</p>
-</td>
+    <td class="description last"></td>
 </tr><tr>
     <td class="name">
-        <code>name</code>
+        <code>table</code>
     </td>
     <td class="hljs-type">
-        <code>string::<span class="hljs-type">String</span></code>
+        <code>object_table::<span class="hljs-type">ObjectTable</span>&lt;object::<span class="hljs-type">ID</span>, <a href="./metadata.html">metadata</a>::<a href="./metadata.html#Metadata" class="hljs-type">Metadata</a>&lt;C&gt;&gt;</code>
     </td>
-    <td class="description last"><p><code>Nft</code> name</p>
-</td>
-</tr><tr>
-    <td class="name">
-        <code>url</code>
-    </td>
-    <td class="hljs-type">
-        <code>url::<span class="hljs-type">Url</span></code>
-    </td>
-    <td class="description last"><p><code>Nft</code> URL</p>
-</td>
-</tr><tr>
-    <td class="name">
-        <code>metadata_id</code>
-    </td>
-    <td class="hljs-type">
-        <code>object::<span class="hljs-type">ID</span></code>
-    </td>
-    <td class="description last"><p><code>Metadata</code> ID for which this <code>LooseMintCap</code> is allowed to mint
-NFTs</p>
-</td>
+    <td class="description last"></td>
 </tr></tbody>
 </table>
-        <p><code>LooseMintCap</code> object</p>
-<p><code>LooseMintCap</code> ensures that supply policy on <code>Collection</code> and
-<code>Metadata</code> are not violated.</p>
+        <p><code>MetadataBagDomain</code> object</p>
 
     </div>
 </details>
     <h2>Methods</h2>
     <details class="toggle" open>
     <summary>
-        <h3 class="code-header" id="metadata_id"><pre><span class="hljs-keyword">public fun </span><a href="./loose_mint_cap.html#metadata_id" class="function">metadata_id</a>(
-    pointer: &<a href="./loose_mint_cap.html">loose_mint_cap</a>::<a href="./loose_mint_cap.html#PointerDomain" class="hljs-type">PointerDomain</a>,
-): object::<span class="hljs-type">ID</span></pre></h3>
-    </summary>
-    <div class="description"><p>Return <code>ID</code> of <code>Metadata</code> associated with this pointer</p>
-</div>
-</details><details class="toggle" open>
-    <summary>
-        <h3 class="code-header" id="from_unregulated"><pre><span class="hljs-keyword">public(friend) fun </span><a href="./loose_mint_cap.html#from_unregulated" class="function">from_unregulated</a>&lt;C&gt;(
-    mint_cap: <a href="./mint_cap.html">mint_cap</a>::<a href="./mint_cap.html#UnregulatedMintCap" class="hljs-type">UnregulatedMintCap</a>&lt;C&gt;,
-    metadata_id: object::<span class="hljs-type">ID</span>,
-    name: string::<span class="hljs-type">String</span>,
-    url: url::<span class="hljs-type">Url</span>,
+        <h3 class="code-header" id="new_metadata_bag"><pre><span class="hljs-keyword">public fun </span><a href="./metadata_bag.html#new_metadata_bag" class="function">new_metadata_bag</a>&lt;C&gt;(
     ctx: &<span class="hljs-keyword">mut </span>tx_context::<span class="hljs-type">TxContext</span>,
-): <a href="./loose_mint_cap.html">loose_mint_cap</a>::<a href="./loose_mint_cap.html#LooseMintCap" class="hljs-type">LooseMintCap</a>&lt;C&gt;</pre></h3>
+): <a href="./metadata_bag.html">metadata_bag</a>::<a href="./metadata_bag.html#MetadataBagDomain" class="hljs-type">MetadataBagDomain</a>&lt;C&gt;</pre></h3>
     </summary>
-    <div class="description"><p>Create <code>LooseMintCap</code> with unregulated supply</p>
-<h4>Safety</h4>
-<p>Neither <code>Collection</code> nor <code>Metadata</code> have regulated supply.</p>
+    <div class="description"><p>Create a <code>MetadataBagDomain</code> object</p>
 </div>
 </details><details class="toggle" open>
     <summary>
-        <h3 class="code-header" id="from_regulated"><pre><span class="hljs-keyword">public(friend) fun </span><a href="./loose_mint_cap.html#from_regulated" class="function">from_regulated</a>&lt;C&gt;(
-    mint_cap: <a href="./mint_cap.html">mint_cap</a>::<a href="./mint_cap.html#RegulatedMintCap" class="hljs-type">RegulatedMintCap</a>&lt;C&gt;,
-    metadata_id: object::<span class="hljs-type">ID</span>,
-    name: string::<span class="hljs-type">String</span>,
-    url: url::<span class="hljs-type">Url</span>,
-    ctx: &<span class="hljs-keyword">mut </span>tx_context::<span class="hljs-type">TxContext</span>,
-): <a href="./loose_mint_cap.html">loose_mint_cap</a>::<a href="./loose_mint_cap.html#LooseMintCap" class="hljs-type">LooseMintCap</a>&lt;C&gt;</pre></h3>
-    </summary>
-    <div class="description"><p>Create <code>LooseMintCap</code> with unregulated supply</p>
-<h4>Safety</h4>
-<p>Either <code>Collection</code> or <code>Metadata</code> must have regulated supply, such
-that <code>RegulatedMintCap</code> does not violate either.</p>
-</div>
-</details><details class="toggle" open>
-    <summary>
-        <h3 class="code-header" id="name"><pre><span class="hljs-keyword">public fun </span><a href="./loose_mint_cap.html#name" class="function">name</a>&lt;C&gt;(
-    mint_cap: &<a href="./loose_mint_cap.html">loose_mint_cap</a>::<a href="./loose_mint_cap.html#LooseMintCap" class="hljs-type">LooseMintCap</a>&lt;C&gt;,
-): &string::<span class="hljs-type">String</span></pre></h3>
-    </summary>
-    <div class="description"><p>Get loose <code>Nft</code> name</p>
-</div>
-</details><details class="toggle" open>
-    <summary>
-        <h3 class="code-header" id="url"><pre><span class="hljs-keyword">public fun </span><a href="./loose_mint_cap.html#url" class="function">url</a>&lt;C&gt;(
-    mint_cap: &<a href="./loose_mint_cap.html">loose_mint_cap</a>::<a href="./loose_mint_cap.html#LooseMintCap" class="hljs-type">LooseMintCap</a>&lt;C&gt;,
-): &url::<span class="hljs-type">Url</span></pre></h3>
-    </summary>
-    <div class="description"><p>Get loose <code>Nft</code> URL</p>
-</div>
-</details><details class="toggle" open>
-    <summary>
-        <h3 class="code-header" id="is_regulated"><pre><span class="hljs-keyword">public fun </span><a href="./loose_mint_cap.html#is_regulated" class="function">is_regulated</a>&lt;C&gt;(
-    mint_cap: &<a href="./loose_mint_cap.html">loose_mint_cap</a>::<a href="./loose_mint_cap.html#LooseMintCap" class="hljs-type">LooseMintCap</a>&lt;C&gt;,
-): <span class="hljs-type">bool</span></pre></h3>
-    </summary>
-    <div class="description"><p>Returns whether <code>LooseMintCap</code> is eligible to mint NFTs of the
-given type</p>
-</div>
-</details><details class="toggle" open>
-    <summary>
-        <h3 class="code-header" id="supply"><pre><span class="hljs-keyword">public fun </span><a href="./loose_mint_cap.html#supply" class="function">supply</a>&lt;C&gt;(
-    mint_cap: &<a href="./loose_mint_cap.html">loose_mint_cap</a>::<a href="./loose_mint_cap.html#LooseMintCap" class="hljs-type">LooseMintCap</a>&lt;C&gt;,
-): option::<span class="hljs-type">Option</span>&lt;<span class="hljs-type">u64</span>&gt;</pre></h3>
-    </summary>
-    <div class="description"><p>Returns the remaining supply available to <code>LooseMintCap</code></p>
-<p>If factory is unregulated then none will be returned.</p>
-</div>
-</details><details class="toggle" open>
-    <summary>
-        <h3 class="code-header" id="mint_nft"><pre><span class="hljs-keyword">public fun </span><a href="./loose_mint_cap.html#mint_nft" class="function">mint_nft</a>&lt;C&gt;(
-    mint_cap: &<span class="hljs-keyword">mut </span><a href="./loose_mint_cap.html">loose_mint_cap</a>::<a href="./loose_mint_cap.html#LooseMintCap" class="hljs-type">LooseMintCap</a>&lt;C&gt;,
-    ctx: &<span class="hljs-keyword">mut </span>tx_context::<span class="hljs-type">TxContext</span>,
-): <a href="./nft.html">nft</a>::<a href="./nft.html#Nft" class="hljs-type">Nft</a>&lt;C&gt;</pre></h3>
-    </summary>
-    <div class="description"><p>Mints <code>Nft</code> from <code>LooseMintCap</code></p>
-<h4>Panics</h4>
-<p>Panics if supply was exceeded.</p>
-</div>
-</details><details class="toggle" open>
-    <summary>
-        <h3 class="code-header" id="mint_nft_and_transfer"><pre><span class="hljs-keyword">public entry fun </span><a href="./loose_mint_cap.html#mint_nft_and_transfer" class="function">mint_nft_and_transfer</a>&lt;C&gt;(
-    mint_cap: &<span class="hljs-keyword">mut </span><a href="./loose_mint_cap.html">loose_mint_cap</a>::<a href="./loose_mint_cap.html#LooseMintCap" class="hljs-type">LooseMintCap</a>&lt;C&gt;,
+        <h3 class="code-header" id="init_metadata_bag"><pre><span class="hljs-keyword">public fun </span><a href="./metadata_bag.html#init_metadata_bag" class="function">init_metadata_bag</a>&lt;C, W&gt;(
+    witness: &W,
+    collection: &<span class="hljs-keyword">mut </span><a href="./collection.html">collection</a>::<a href="./collection.html#Collection" class="hljs-type">Collection</a>&lt;C&gt;,
     ctx: &<span class="hljs-keyword">mut </span>tx_context::<span class="hljs-type">TxContext</span>,
 )</pre></h3>
     </summary>
-    <div class="description"><p>Mints <code>Nft</code> from <code>LooseMintCap</code> and transfer to transaction sender</p>
+    <div class="description"><p>Create a <code>MetadataBagDomain</code> object and register on <code>Collection</code></p>
+</div>
+</details><details class="toggle" open>
+    <summary>
+        <h3 class="code-header" id="contains_metadata"><pre><span class="hljs-keyword">public fun </span><a href="./metadata_bag.html#contains_metadata" class="function">contains_metadata</a>&lt;C&gt;(
+    metadata_bag: &<a href="./metadata_bag.html">metadata_bag</a>::<a href="./metadata_bag.html#MetadataBagDomain" class="hljs-type">MetadataBagDomain</a>&lt;C&gt;,
+    metadata_id: object::<span class="hljs-type">ID</span>,
+): <span class="hljs-type">bool</span></pre></h3>
+    </summary>
+    <div class="description"><p>Returns whether <code>Metadata</code> with <code>ID</code> is registered on <code>MetadataBagDomain</code></p>
+</div>
+</details><details class="toggle" open>
+    <summary>
+        <h3 class="code-header" id="borrow_metadata"><pre><span class="hljs-keyword">public fun </span><a href="./metadata_bag.html#borrow_metadata" class="function">borrow_metadata</a>&lt;C&gt;(
+    metadata_bag: &<a href="./metadata_bag.html">metadata_bag</a>::<a href="./metadata_bag.html#MetadataBagDomain" class="hljs-type">MetadataBagDomain</a>&lt;C&gt;,
+    metadata_id: object::<span class="hljs-type">ID</span>,
+): &<a href="./metadata.html">metadata</a>::<a href="./metadata.html#Metadata" class="hljs-type">Metadata</a>&lt;C&gt;</pre></h3>
+    </summary>
+    <div class="description"><p>Borrows <code>Metadata</code> from <code>MetadataBagDomain</code></p>
 <h4>Panics</h4>
-<p>Panics if supply was exceeded.</p>
+<p>Panics if <code>Metadata</code> does not exist on <code>MetadataBagDomain</code>.</p>
+</div>
+</details><details class="toggle" open>
+    <summary>
+        <h3 class="code-header" id="add_metadata"><pre><span class="hljs-keyword">public entry fun </span><a href="./metadata_bag.html#add_metadata" class="function">add_metadata</a>&lt;C&gt;(
+    _mint_cap: &<a href="./mint_cap.html">mint_cap</a>::<a href="./mint_cap.html#MintCap" class="hljs-type">MintCap</a>&lt;C&gt;,
+    metadata_bag: &<span class="hljs-keyword">mut </span><a href="./metadata_bag.html">metadata_bag</a>::<a href="./metadata_bag.html#MetadataBagDomain" class="hljs-type">MetadataBagDomain</a>&lt;C&gt;,
+    metadata: <a href="./metadata.html">metadata</a>::<a href="./metadata.html#Metadata" class="hljs-type">Metadata</a>&lt;C&gt;,
+)</pre></h3>
+    </summary>
+    <div class="description"><p>Add <code>Metadata</code> to <code>MetadataBagDomain</code></p>
+</div>
+</details><details class="toggle" open>
+    <summary>
+        <h3 class="code-header" id="freeze_metadata_supply"><pre><span class="hljs-keyword">public entry fun </span><a href="./metadata_bag.html#freeze_metadata_supply" class="function">freeze_metadata_supply</a>&lt;C&gt;(
+    collection: &<span class="hljs-keyword">mut </span><a href="./collection.html">collection</a>::<a href="./collection.html#Collection" class="hljs-type">Collection</a>&lt;C&gt;,
+    metadata_id: object::<span class="hljs-type">ID</span>,
+)</pre></h3>
+    </summary>
+    <div class="description"><p>Freeze <code>Metadata</code> supply in <code>Collection</code></p>
+</div>
+</details><details class="toggle" open>
+    <summary>
+        <h3 class="code-header" id="is_archetypal"><pre><span class="hljs-keyword">public fun </span><a href="./metadata_bag.html#is_archetypal" class="function">is_archetypal</a>&lt;C&gt;(
+    collection: &<a href="./collection.html">collection</a>::<a href="./collection.html#Collection" class="hljs-type">Collection</a>&lt;C&gt;,
+): <span class="hljs-type">bool</span></pre></h3>
+    </summary>
+    <div class="description"><p>Return whether <code>Collection</code> has defined an metadata <code>MetadataBagDomain</code></p>
+</div>
+</details><details class="toggle" open>
+    <summary>
+        <h3 class="code-header" id="add_metadata_bag"><pre><span class="hljs-keyword">public fun </span><a href="./metadata_bag.html#add_metadata_bag" class="function">add_metadata_bag</a>&lt;C, W&gt;(
+    witness: &W,
+    collection: &<span class="hljs-keyword">mut </span><a href="./collection.html">collection</a>::<a href="./collection.html#Collection" class="hljs-type">Collection</a>&lt;C&gt;,
+    metadata_bag: <a href="./metadata_bag.html">metadata_bag</a>::<a href="./metadata_bag.html#MetadataBagDomain" class="hljs-type">MetadataBagDomain</a>&lt;C&gt;,
+)</pre></h3>
+    </summary>
+    <div class="description"><p>Add <code>MetadataBagDomain</code> to <code>Collection</code></p>
+</div>
+</details><details class="toggle" open>
+    <summary>
+        <h3 class="code-header" id="borrow_metagada_bag"><pre><span class="hljs-keyword">public fun </span><a href="./metadata_bag.html#borrow_metagada_bag" class="function">borrow_metagada_bag</a>&lt;C&gt;(
+    collection: &<a href="./collection.html">collection</a>::<a href="./collection.html#Collection" class="hljs-type">Collection</a>&lt;C&gt;,
+): &<a href="./metadata_bag.html">metadata_bag</a>::<a href="./metadata_bag.html#MetadataBagDomain" class="hljs-type">MetadataBagDomain</a>&lt;C&gt;</pre></h3>
+    </summary>
+    <div class="description"><p>Borrows <code>MetadataBagDomain</code> from <code>Collection</code></p>
+<h4>Panics</h4>
+<p>Panics if <code>Collection</code> does not have a <code>MetadataBagDomain</code>.</p>
+</div>
+</details><details class="toggle" open>
+    <summary>
+        <h3 class="code-header" id="add_metadata_to_collection"><pre><span class="hljs-keyword">public entry fun </span><a href="./metadata_bag.html#add_metadata_to_collection" class="function">add_metadata_to_collection</a>&lt;C&gt;(
+    _mint_cap: &<a href="./mint_cap.html">mint_cap</a>::<a href="./mint_cap.html#MintCap" class="hljs-type">MintCap</a>&lt;C&gt;,
+    collection: &<span class="hljs-keyword">mut </span><a href="./collection.html">collection</a>::<a href="./collection.html#Collection" class="hljs-type">Collection</a>&lt;C&gt;,
+    metadata: <a href="./metadata.html">metadata</a>::<a href="./metadata.html#Metadata" class="hljs-type">Metadata</a>&lt;C&gt;,
+)</pre></h3>
+    </summary>
+    <div class="description"><p>Add <code>Metadata</code> to <code>Collection</code></p>
+<h4>Panics</h4>
+<p>Panics if <code>Collection</code> does not have a <code>MetadataBagDomain</code>.</p>
+</div>
+</details><details class="toggle" open>
+    <summary>
+        <h3 class="code-header" id="delegate_regulated"><pre><span class="hljs-keyword">public fun </span><a href="./metadata_bag.html#delegate_regulated" class="function">delegate_regulated</a>&lt;C&gt;(
+    mint_cap: <a href="./mint_cap.html">mint_cap</a>::<a href="./mint_cap.html#RegulatedMintCap" class="hljs-type">RegulatedMintCap</a>&lt;C&gt;,
+    collection: &<span class="hljs-keyword">mut </span><a href="./collection.html">collection</a>::<a href="./collection.html#Collection" class="hljs-type">Collection</a>&lt;C&gt;,
+    metadata_id: object::<span class="hljs-type">ID</span>,
+    ctx: &<span class="hljs-keyword">mut </span>tx_context::<span class="hljs-type">TxContext</span>,
+): <a href="./loose_mint_cap.html">loose_mint_cap</a>::<a href="./loose_mint_cap.html#LooseMintCap" class="hljs-type">LooseMintCap</a>&lt;C&gt;</pre></h3>
+    </summary>
+    <div class="description"><p>Delegates metadata minting rights while maintaining <code>Collection</code> and
+<code>Metadata</code> level supply invariants.</p>
+<p>The argument of <code>RegulatedMintCap</code> implies that supply is at least
+controlled at the <code>Collection</code> level.</p>
+<h4>Panics</h4>
+<p>Panics if metadata <code>MetadataBagDomain</code> is not registered on <code>Collection</code>
+or <code>Metadata</code> does not exist.</p>
+</div>
+</details><details class="toggle" open>
+    <summary>
+        <h3 class="code-header" id="delegate_unregulated"><pre><span class="hljs-keyword">public fun </span><a href="./metadata_bag.html#delegate_unregulated" class="function">delegate_unregulated</a>&lt;C&gt;(
+    mint_cap: <a href="./mint_cap.html">mint_cap</a>::<a href="./mint_cap.html#UnregulatedMintCap" class="hljs-type">UnregulatedMintCap</a>&lt;C&gt;,
+    collection: &<span class="hljs-keyword">mut </span><a href="./collection.html">collection</a>::<a href="./collection.html#Collection" class="hljs-type">Collection</a>&lt;C&gt;,
+    metadata_id: object::<span class="hljs-type">ID</span>,
+    ctx: &<span class="hljs-keyword">mut </span>tx_context::<span class="hljs-type">TxContext</span>,
+): <a href="./loose_mint_cap.html">loose_mint_cap</a>::<a href="./loose_mint_cap.html#LooseMintCap" class="hljs-type">LooseMintCap</a>&lt;C&gt;</pre></h3>
+    </summary>
+    <div class="description"><p>Delegates metadata minting rights while maintaining <code>Collection</code> and
+<code>Metadata</code> level supply invariants.</p>
+<p>The argument of <code>RegulatedMintCap</code> implies that supply is at least
+controlled at the <code>Collection</code> level.</p>
+<h4>Panics</h4>
+<p>Panics if metadata <code>MetadataBagDomain</code> is not registered on <code>Collection</code>
+or <code>Metadata</code> does not exist.</p>
+</div>
+</details><details class="toggle" open>
+    <summary>
+        <h3 class="code-header" id="assert_archetypal"><pre><span class="hljs-keyword">public fun </span><a href="./metadata_bag.html#assert_archetypal" class="function">assert_archetypal</a>&lt;C&gt;(
+    collection: &<a href="./collection.html">collection</a>::<a href="./collection.html#Collection" class="hljs-type">Collection</a>&lt;C&gt;,
+)</pre></h3>
+    </summary>
+    <div class="description"><p>Asserts that <code>Collection</code> has a defined <code>MetadataBagDomain</code></p>
+</div>
+</details><details class="toggle" open>
+    <summary>
+        <h3 class="code-header" id="assert_metadata"><pre><span class="hljs-keyword">public fun </span><a href="./metadata_bag.html#assert_metadata" class="function">assert_metadata</a>&lt;C&gt;(
+    metadata_bag: &<a href="./metadata_bag.html">metadata_bag</a>::<a href="./metadata_bag.html#MetadataBagDomain" class="hljs-type">MetadataBagDomain</a>&lt;C&gt;,
+    metadata_id: object::<span class="hljs-type">ID</span>,
+)</pre></h3>
+    </summary>
+    <div class="description"><p>Asserts that <code>Metadata</code> with <code>ID</code> is registered on <code>MetadataBagDomain</code></p>
 </div>
 </details>
 </article></section>
